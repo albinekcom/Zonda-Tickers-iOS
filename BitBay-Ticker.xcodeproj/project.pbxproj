@@ -12,7 +12,6 @@
 		8CC185011EFE4CAC0083DA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
-		8CC185111EFE4CAC0083DA30 /* BitBay_TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185101EFE4CAC0083DA30 /* BitBay_TickerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +33,6 @@
 		8CC185051EFE4CAC0083DA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CC185071EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC1850C1EFE4CAC0083DA30 /* BitBay-TickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BitBay-TickerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CC185101EFE4CAC0083DA30 /* BitBay_TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBay_TickerTests.swift; sourceTree = "<group>"; };
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +88,6 @@
 		8CC1850F1EFE4CAC0083DA30 /* BitBay-TickerTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CC185101EFE4CAC0083DA30 /* BitBay_TickerTests.swift */,
 				8CC185121EFE4CAC0083DA30 /* Info.plist */,
 			);
 			path = "BitBay-TickerTests";
@@ -210,7 +207,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CC185111EFE4CAC0083DA30 /* BitBay_TickerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +410,7 @@
 				8CC185171EFE4CAC0083DA30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CC185181EFE4CAC0083DA30 /* Build configuration list for PBXNativeTarget "BitBay-TickerTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +419,7 @@
 				8CC1851A1EFE4CAC0083DA30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

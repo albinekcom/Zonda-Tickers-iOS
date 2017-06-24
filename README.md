@@ -1,2 +1,3 @@
-# BitBay-Ticker-iOS
-BitBay Ticker for iOS devices
+# BitBay Ticker (iOS)
+
+BitBay Ticker for iOS devices.
