@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
+		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC184FE1EFE4CAC0083DA30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FD1EFE4CAC0083DA30 /* ViewController.swift */; };
 		8CC185011EFE4CAC0083DA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
+		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CC184FD1EFE4CAC0083DA30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C5815911EFF96A20083E122 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C5815941EFF96CB0083E122 /* Ticker.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8C5815981EFF97340083E122 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C5815961EFF97030083E122 /* TickerTests.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		8CC184EF1EFE4CAC0083DA30 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +95,7 @@
 		8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXGroup;
 			children = (
+				8C5815911EFF96A20083E122 /* Model */,
 				8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */,
 				8CC184FD1EFE4CAC0083DA30 /* ViewController.swift */,
 				8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */,
@@ -88,6 +109,7 @@
 		8CC1850F1EFE4CAC0083DA30 /* BitBay-TickerTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C5815981EFF97340083E122 /* Model */,
 				8CC185121EFE4CAC0083DA30 /* Info.plist */,
 			);
 			path = "BitBay-TickerTests";
@@ -149,6 +171,7 @@
 					8CC1850B1EFE4CAC0083DA30 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = AXTXBRU9S7;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8CC184F71EFE4CAC0083DA30;
 					};
@@ -199,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CC184FE1EFE4CAC0083DA30 /* ViewController.swift in Sources */,
+				8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5815971EFF97030083E122 /* TickerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,11 +391,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				INFOPLIST_FILE = "BitBay-TickerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-TickerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitBay-Ticker.app/BitBay-Ticker";
 			};
@@ -381,6 +408,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				INFOPLIST_FILE = "BitBay-TickerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
