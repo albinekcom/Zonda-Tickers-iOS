@@ -14,11 +14,11 @@
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
-		8CC184FE1EFE4CAC0083DA30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FD1EFE4CAC0083DA30 /* ViewController.swift */; };
 		8CC185011EFE4CAC0083DA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
 		8CC7DDA51EFFED9C00050A7F /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */; };
+		8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */; };
 		ADDFE86648DC8970E0982986 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91937493DCBCD003EA208242 /* AVFoundation.framework */; };
 		D58F77DA1A05C67A5C4878E3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBC3E3BB96755C9DFA32131 /* CoreVideo.framework */; };
 		E7A3C37842C31C334C420719 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6DBCB5CEC98873275BFD9D /* SystemConfiguration.framework */; };
@@ -45,7 +45,6 @@
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CC184FD1EFE4CAC0083DA30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CC185001EFE4CAC0083DA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CC185021EFE4CAC0083DA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CC185051EFE4CAC0083DA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = "BitBay-Ticker/External/Frameworks/BuddyBuildSDK.framework"; sourceTree = "<group>"; };
 		8CC7DDA91EFFEDD500050A7F /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickersViewController.swift; path = Main/TickersViewController.swift; sourceTree = "<group>"; };
 		91937493DCBCD003EA208242 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B087561A567A814D6F909055 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		BF13BF0B80336B95A6FA66B6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -124,9 +124,9 @@
 		8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXGroup;
 			children = (
+				8CDAD4041F01926600EB2EC9 /* Main */,
 				8CC7DDA81EFFEDD500050A7F /* Supporting Files */,
 				8C5815911EFF96A20083E122 /* Model */,
-				8CC184FD1EFE4CAC0083DA30 /* ViewController.swift */,
 				8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */,
 				8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */,
 				8CC185021EFE4CAC0083DA30 /* Assets.xcassets */,
@@ -151,6 +151,14 @@
 				8CC7DDA91EFFEDD500050A7F /* Bridging-Header.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CDAD4041F01926600EB2EC9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		C24AC6780E9338DA000950BE /* Frameworks */ = {
@@ -275,9 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CC184FE1EFE4CAC0083DA30 /* ViewController.swift in Sources */,
 				8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
+				8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
