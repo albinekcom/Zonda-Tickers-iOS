@@ -5,3 +5,14 @@
 [![codecov](https://codecov.io/gh/albinekcom/BitBay-Ticker-iOS/branch/master/graph/badge.svg)](https://codecov.io/gh/albinekcom/BitBay-Ticker-iOS)
 
 BitBay Ticker for iOS devices.
+
+## Usage
+
+Clone this repository, execute `carthage update` and open `BitBay-Ticker.xcodeproj`.
+
+```bash
+$ git clone https://github.com/albinekcom/BitBay-Ticker-iOS.git
+$ cd BitBay-Ticker-iOS
+$ carthage update
+$ open BitBay-Ticker.xcodeproj
+```
