@@ -11,6 +11,8 @@
 		2813002B72BE0497CDBCD3DB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF13BF0B80336B95A6FA66B6 /* CoreTelephony.framework */; };
 		5128D05AE6867DE011AC6A7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B087561A567A814D6F909055 /* CoreText.framework */; };
 		7657910227263AEC49DE266B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */; };
+		8C2F173F1F02A56E006FD66F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; };
+		8C2F17401F02A56E006FD66F /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
@@ -35,12 +37,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8C2F17411F02A56E006FD66F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8C2F17401F02A56E006FD66F /* RxSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0BBC3E3BB96755C9DFA32131 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		0C6FBCC098A756FF3056C13A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		33A699178FC3E6814FE15A91 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7E6DBCB5CEC98873275BFD9D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2F173F1F02A56E006FD66F /* RxSwift.framework in Frameworks */,
 				7657910227263AEC49DE266B /* AssetsLibrary.framework in Frameworks */,
 				5128D05AE6867DE011AC6A7F /* CoreText.framework in Frameworks */,
 				2813002B72BE0497CDBCD3DB /* CoreTelephony.framework in Frameworks */,
@@ -164,6 +182,7 @@
 		C24AC6780E9338DA000950BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C2F173E1F02A56E006FD66F /* RxSwift.framework */,
 				8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */,
 				0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */,
 				B087561A567A814D6F909055 /* CoreText.framework */,
@@ -187,6 +206,7 @@
 				8CC184F41EFE4CAC0083DA30 /* Sources */,
 				8CC184F51EFE4CAC0083DA30 /* Frameworks */,
 				8CC184F61EFE4CAC0083DA30 /* Resources */,
+				8C2F17411F02A56E006FD66F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -431,6 +451,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/BitBay-Ticker/External/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "BitBay-Ticker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -450,6 +471,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/BitBay-Ticker/External/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "BitBay-Ticker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
