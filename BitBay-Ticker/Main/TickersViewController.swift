@@ -1,5 +1,5 @@
+import RxCocoa
 import RxSwift
-import UIKit
 
 final class TickersViewController: UIViewController {
     
@@ -7,23 +7,68 @@ final class TickersViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private let tickersNamesToRefresh: [Ticker.Name] = [.btcpln, .ethpln, .ltcpln, .lskpln]
+    
+    private var viewModels = Variable<[TickerViewModel]>([])
+    
     // MARK: - Managing View
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        helloRx()
+        setupViewModels()
+        setupRefreshControl()
+        
+        tickersTableView.tableFooterView = UIView()
+        refresh()
     }
     
-    private func helloRx() {
-        Observable
-            .just("It should work!")
+    private func setupViewModels() {
+        viewModels
+            .asObservable()
+            .bind(to: tickersTableView.rx.items(cellIdentifier: "TickerTableViewCell", cellType: UITableViewCell.self)) { (_, viewModel, cell) in
+                cell.textLabel?.text = viewModel.title
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl
+            .rx
+            .controlEvent(.valueChanged)
             .subscribe(
-                onNext: { (element) in
-                    print(element)
+                onNext: { [weak self] (_) in
+                    self?.refresh()
                 }
             )
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
+        
+        tickersTableView.refreshControl = refreshControl
+    }
+    
+    private func refresh() {
+        Observable
+            .zip(
+                tickersNamesToRefresh.map { (tickerName) in
+                    return TickerFactory.makeObservableTicker(named: tickerName)
+                }
+            )
+            .map { (tickers) -> [TickerViewModel] in
+                return tickers.map { ticker in
+                    return TickerViewModel(model: ticker)
+                }
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { [weak self] (elements) in
+                    self?.viewModels.value = elements
+                },
+                onDisposed: { [weak self] in
+                    self?.tickersTableView.refreshControl?.endRefreshing()
+                }
+            )
+            .disposed(by: disposeBag)
     }
     
 }

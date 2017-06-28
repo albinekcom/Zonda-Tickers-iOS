@@ -1,5 +1,3 @@
-import Foundation
-
 struct Ticker {
     
     enum Name: String {
