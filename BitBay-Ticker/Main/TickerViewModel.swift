@@ -2,10 +2,6 @@ struct TickerViewModel {
     
     let model: Ticker
     
-    var title: String {
-        return "\(name): \(last)"
-    }
-    
     var last: String {
         guard let last = model.last else { return "-" }
         

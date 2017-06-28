@@ -31,11 +31,6 @@ final class TickerViewModelTests: XCTestCase {
     
     // MARK: - Tests
     
-    func testTitle() {
-        XCTAssertEqual("", viewModel.title)
-        XCTAssertEqual("", viewModelWithEmptyTicker.title)
-    }
-    
     func testLast() {
         XCTAssertEqual("", viewModel.last)
         XCTAssertEqual("", viewModelWithEmptyTicker.last)

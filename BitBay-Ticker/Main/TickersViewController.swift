@@ -27,7 +27,8 @@ final class TickersViewController: UIViewController {
         viewModels
             .asObservable()
             .bind(to: tickersTableView.rx.items(cellIdentifier: "TickerTableViewCell", cellType: UITableViewCell.self)) { (_, viewModel, cell) in
-                cell.textLabel?.text = viewModel.title
+                cell.textLabel?.text = viewModel.name
+                cell.detailTextLabel?.text = viewModel.last
             }
             .disposed(by: disposeBag)
     }
