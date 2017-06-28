@@ -32,12 +32,12 @@ final class TickerViewModelTests: XCTestCase {
     // MARK: - Tests
     
     func testLast() {
-        XCTAssertEqual("", viewModel.last)
-        XCTAssertEqual("", viewModelWithEmptyTicker.last)
+        XCTAssertEqual("3.3", viewModel.last)
+        XCTAssertEqual("-", viewModelWithEmptyTicker.last)
     }
     
     func testName() {
-        XCTAssertEqual("", viewModel.name)
+        XCTAssertEqual("BTC/PLN", viewModel.name)
     }
     
 }
