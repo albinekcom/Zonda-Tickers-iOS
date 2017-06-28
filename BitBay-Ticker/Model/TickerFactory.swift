@@ -17,7 +17,7 @@ struct TickerFactory {
             }
             .map { (_, data) -> [String: Any] in
                 guard
-                    let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+                    let jsonObject = try? JSONSerialization.jsonObject(with: data),
                     let result = jsonObject as? [String: Any] else {
                         return [:]
                 }
