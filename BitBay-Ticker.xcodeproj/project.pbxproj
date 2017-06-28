@@ -12,12 +12,8 @@
 		5128D05AE6867DE011AC6A7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B087561A567A814D6F909055 /* CoreText.framework */; };
 		7657910227263AEC49DE266B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */; };
 		8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
-		8C1CF6EB1F04275E00E6F0D4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
-		8C1CF6EC1F04275E00E6F0D4 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
 		8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */; };
-		8C2F173F1F02A56E006FD66F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; };
-		8C2F17401F02A56E006FD66F /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
@@ -41,21 +37,6 @@
 			remoteInfo = "BitBay-Ticker";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8C2F17411F02A56E006FD66F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8C1CF6EC1F04275E00E6F0D4 /* RxCocoa.framework in Embed Frameworks */,
-				8C2F17401F02A56E006FD66F /* RxSwift.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -91,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C2F173F1F02A56E006FD66F /* RxSwift.framework in Frameworks */,
 				7657910227263AEC49DE266B /* AssetsLibrary.framework in Frameworks */,
 				5128D05AE6867DE011AC6A7F /* CoreText.framework in Frameworks */,
 				2813002B72BE0497CDBCD3DB /* CoreTelephony.framework in Frameworks */,
@@ -100,7 +80,6 @@
 				ADDFE86648DC8970E0982986 /* AVFoundation.framework in Frameworks */,
 				22D4B494C269AB2CBA0F7950 /* CoreMedia.framework in Frameworks */,
 				8CC7DDA51EFFED9C00050A7F /* BuddyBuildSDK.framework in Frameworks */,
-				8C1CF6EB1F04275E00E6F0D4 /* RxCocoa.framework in Frameworks */,
 				D58F77DA1A05C67A5C4878E3 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +208,7 @@
 				8CC184F41EFE4CAC0083DA30 /* Sources */,
 				8CC184F51EFE4CAC0083DA30 /* Frameworks */,
 				8CC184F61EFE4CAC0083DA30 /* Resources */,
-				8C2F17411F02A56E006FD66F /* Embed Frameworks */,
+				8C1CF6F21F04351400E6F0D4 /* Run Script For Carthage */,
 			);
 			buildRules = (
 			);
@@ -320,6 +299,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C1CF6F21F04351400E6F0D4 /* Run Script For Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			name = "Run Script For Carthage";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CC184F41EFE4CAC0083DA30 /* Sources */ = {
