@@ -54,6 +54,8 @@ final class TickersViewController: UIViewController {
     }
     
     private func refresh() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         Observable
             .zip(
                 tickersNamesToRefresh.map { (tickerName) in
@@ -71,6 +73,7 @@ final class TickersViewController: UIViewController {
                     self?.viewModels.value = elements
                 },
                 onDisposed: { [weak self] in
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self?.tickersTableView.refreshControl?.endRefreshing()
                 }
             )
