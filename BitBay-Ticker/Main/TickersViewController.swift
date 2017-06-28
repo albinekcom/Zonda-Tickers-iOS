@@ -18,8 +18,8 @@ final class TickersViewController: UIViewController {
         
         setupViewModels()
         setupRefreshControl()
+        setupTickersTableView()
         
-        tickersTableView.tableFooterView = UIView()
         refresh()
     }
     
@@ -29,6 +29,7 @@ final class TickersViewController: UIViewController {
             .bind(to: tickersTableView.rx.items(cellIdentifier: "TickerTableViewCell", cellType: UITableViewCell.self)) { (_, viewModel, cell) in
                 cell.textLabel?.text = viewModel.name
                 cell.detailTextLabel?.text = viewModel.last
+                cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
     }
@@ -46,6 +47,10 @@ final class TickersViewController: UIViewController {
             .disposed(by: disposeBag)
         
         tickersTableView.refreshControl = refreshControl
+    }
+    
+    private func setupTickersTableView() {
+        tickersTableView.tableFooterView = UIView()
     }
     
     private func refresh() {
