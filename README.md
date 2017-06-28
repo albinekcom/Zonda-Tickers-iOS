@@ -1,3 +1,5 @@
+<img src="http://imgh.us/bitbay_ticker_logo.svg" alt="BitBay Ticker - logo">
+
 # BitBay Ticker (iOS)
 
 ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
