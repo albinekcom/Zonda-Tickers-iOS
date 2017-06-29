@@ -26,7 +26,7 @@ final class TickersViewController: UIViewController {
         setupNavigation()
         setupRefreshControl()
         
-        refresh()
+        refreshAtStartup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +79,15 @@ final class TickersViewController: UIViewController {
     }
     
     // MARK: - Refreshing
+    
+    private func refreshAtStartup() {
+        guard let refreshControl = tickersTableView.refreshControl else { return }
+        
+        tickersTableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.height)
+        refreshControl.beginRefreshing()
+        
+        refresh()
+    }
     
     private func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true

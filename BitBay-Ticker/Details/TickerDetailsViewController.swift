@@ -26,6 +26,8 @@ final class TickerDetailsViewController: UIViewController {
         title = viewModel.name
     }
     
+    // MARK: - Setting
+    
     private func setupTickersTableView() {
         tickerDetailsTableView.tableFooterView = UIView()
     }
