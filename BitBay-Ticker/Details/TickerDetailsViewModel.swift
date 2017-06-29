@@ -20,11 +20,15 @@ struct TickerDetailsViewModel {
     }
     
     private func unwrapValue(_ value: Double?) -> String {
+        let unwrappedValue: String
+        
         if let value = value {
-            return "\(value)"
+            unwrappedValue = "\(value)"
         } else {
-            return "-"
+            unwrappedValue = "-"
         }
+        
+        return unwrappedValue
     }
     
 }
