@@ -7,7 +7,12 @@ final class TickersViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    private let tickersNamesToRefresh: [Ticker.Name] = [.btcpln, .ethpln, .ltcpln, .lskpln]
+    private let tickersNamesToRefresh: [Ticker.Name] = [
+        .btcpln, .ethpln, .ltcpln, .lskpln,
+        .btceur, .etheur, .ltceur, .lskeur,
+        .btcusd, .ethusd, .ltcusd, .lskusd,
+        .ltcbtc, .ethbtc, .lskbtc
+    ]
     
     private var viewModels = Variable<[TickerViewModel]>([])
     
@@ -74,6 +79,7 @@ final class TickersViewController: UIViewController {
                 },
                 onDisposed: { [weak self] in
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    
                     self?.tickersTableView.refreshControl?.endRefreshing()
                 }
             )
