@@ -20,6 +20,9 @@
 		8C5CF6FD1F044CC300B0C8E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; };
 		8C7783911F044DCF005454D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
 		8C7783921F044DCF005454D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; };
+		8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */; };
+		8C91772D1F057962008E67C7 /* TickerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */; };
+		8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185011EFE4CAC0083DA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
+		8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewController.swift; path = Details/TickerDetailsViewController.swift; sourceTree = "<group>"; };
+		8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewModel.swift; path = Details/TickerDetailsViewModel.swift; sourceTree = "<group>"; };
+		8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewModelTests.swift; path = Details/TickerDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CC185001EFE4CAC0083DA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +133,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		8C9177291F0578FC008E67C7 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */,
+				8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		8C9177301F058DEF008E67C7 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
 		8CC184EF1EFE4CAC0083DA30 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +172,7 @@
 		8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXGroup;
 			children = (
+				8C9177291F0578FC008E67C7 /* Details */,
 				8CDAD4041F01926600EB2EC9 /* Main */,
 				8CC7DDA81EFFEDD500050A7F /* Supporting Files */,
 				8C5815911EFF96A20083E122 /* Model */,
@@ -163,6 +187,7 @@
 		8CC1850F1EFE4CAC0083DA30 /* BitBay-TickerTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C9177301F058DEF008E67C7 /* Details */,
 				8C1CF6EF1F042A2400E6F0D4 /* Main */,
 				8C5815981EFF97340083E122 /* Model */,
 				8CC185121EFE4CAC0083DA30 /* Info.plist */,
@@ -336,9 +361,11 @@
 			files = (
 				8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */,
 				8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */,
+				8C91772D1F057962008E67C7 /* TickerDetailsViewModel.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */,
 				8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */,
+				8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */,
+				8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */,
 				8C5815971EFF97030083E122 /* TickerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

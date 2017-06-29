@@ -31,13 +31,13 @@ final class TickerViewModelTests: XCTestCase {
     
     // MARK: - Tests
     
+    func testName() {
+        XCTAssertEqual("BTC/PLN", viewModel.name)
+    }
+    
     func testLast() {
         XCTAssertEqual("3.3 PLN", viewModel.last)
         XCTAssertEqual("- PLN", viewModelWithEmptyTicker.last)
-    }
-    
-    func testName() {
-        XCTAssertEqual("BTC/PLN", viewModel.name)
     }
     
 }

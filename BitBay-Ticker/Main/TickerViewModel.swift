@@ -2,6 +2,10 @@ struct TickerViewModel {
     
     let model: Ticker
     
+    var name: String {
+        return "\(model.baseCurrency)/\(model.counterCurrency)"
+    }
+    
     var last: String {
         let lastValueString: String
         
@@ -12,10 +16,6 @@ struct TickerViewModel {
         }
         
         return "\(lastValueString) \(model.counterCurrency)"
-    }
-    
-    var name: String {
-        return "\(model.baseCurrency)/\(model.counterCurrency)"
     }
     
 }
