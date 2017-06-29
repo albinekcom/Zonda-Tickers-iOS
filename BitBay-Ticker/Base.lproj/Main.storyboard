@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--BitBay Tickers-->
+        <!--All Tickers-->
         <scene sceneID="9u4-Y5-Nze">
             <objects>
                 <viewController id="kpR-Ch-BbL" customClass="TickersViewController" customModule="BitBay_Ticker" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                             <constraint firstItem="5qc-6D-ftx" firstAttribute="top" secondItem="IfD-X8-ToY" secondAttribute="bottom" id="dLu-Or-0Ym"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="BitBay Tickers" id="J0R-aB-vjc"/>
+                    <navigationItem key="navigationItem" title="All Tickers" id="J0R-aB-vjc"/>
                     <connections>
                         <outlet property="tickersTableView" destination="IfD-X8-ToY" id="owD-GI-GFM"/>
                     </connections>

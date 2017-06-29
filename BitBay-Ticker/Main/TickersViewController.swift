@@ -24,6 +24,7 @@ final class TickersViewController: UIViewController {
         setupViewModels()
         setupRefreshControl()
         setupTickersTableView()
+        setupNavigationLogo()
         
         refresh()
     }
@@ -56,6 +57,10 @@ final class TickersViewController: UIViewController {
     
     private func setupTickersTableView() {
         tickersTableView.tableFooterView = UIView()
+    }
+    
+    private func setupNavigationLogo() {
+        navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "NavigationLogo"))
     }
     
     private func refresh() {
