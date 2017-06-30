@@ -29,6 +29,7 @@
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
 		8CC7DDA51EFFED9C00050A7F /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */; };
 		8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */; };
+		8CE06BD51F061B2C00EBD7B9 /* TickerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */; };
 		ADDFE86648DC8970E0982986 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91937493DCBCD003EA208242 /* AVFoundation.framework */; };
 		D58F77DA1A05C67A5C4878E3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBC3E3BB96755C9DFA32131 /* CoreVideo.framework */; };
 		E7A3C37842C31C334C420719 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6DBCB5CEC98873275BFD9D /* SystemConfiguration.framework */; };
@@ -72,6 +73,8 @@
 		8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = "BitBay-Ticker/External/Frameworks/BuddyBuildSDK.framework"; sourceTree = "<group>"; };
 		8CC7DDA91EFFEDD500050A7F /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickersViewController.swift; path = Main/TickersViewController.swift; sourceTree = "<group>"; };
+		8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerFactoryTests.swift; path = Model/TickerFactoryTests.swift; sourceTree = "<group>"; };
+		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "BitBay-Ticker.entitlements"; path = "../BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
 		91937493DCBCD003EA208242 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B087561A567A814D6F909055 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		BF13BF0B80336B95A6FA66B6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5815961EFF97030083E122 /* TickerTests.swift */,
+				8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -200,6 +204,7 @@
 			children = (
 				8CC185071EFE4CAC0083DA30 /* Info.plist */,
 				8CC7DDA91EFFEDD500050A7F /* Bridging-Header.h */,
+				8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -284,6 +289,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = AXTXBRU9S7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					8CC1850B1EFE4CAC0083DA30 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -373,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CE06BD51F061B2C00EBD7B9 /* TickerFactoryTests.swift in Sources */,
 				8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */,
 				8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */,
 				8C5815971EFF97030083E122 /* TickerTests.swift in Sources */,
