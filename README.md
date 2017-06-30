@@ -21,3 +21,5 @@ $ cd BitBay-Ticker-iOS
 $ carthage update
 $ open BitBay-Ticker.xcodeproj
 ```
+
+<a href="https://itunes.apple.com/us/app/bitbay-ticker/id1253576340?ls=1&mt=8"><img src="http://imgh.us/download_on_the_app_store.svg" alt="Download on the App Store"></a>
