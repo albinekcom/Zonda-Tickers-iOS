@@ -4,7 +4,11 @@ import UIKit
 
 final class TickerDetailsViewController: UIViewController {
     
-    @IBOutlet private weak var tickerDetailsTableView: UITableView!
+    @IBOutlet private weak var tickerDetailsTableView: UITableView! {
+        didSet {
+            tickerDetailsTableView.tableFooterView = UIView()
+        }
+    }
     
     var viewModel = TickerDetailsViewModel(model: Ticker(name: .btceur, jsonDictionary: [:])) {
         didSet {
@@ -22,16 +26,11 @@ final class TickerDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         setupViewModels()
-        setupTickersTableView()
         
         title = viewModel.name
     }
     
     // MARK: - Setting
-    
-    private func setupTickersTableView() {
-        tickerDetailsTableView.tableFooterView = UIView()
-    }
     
     private func setupViewModels() {
         viewModelValues

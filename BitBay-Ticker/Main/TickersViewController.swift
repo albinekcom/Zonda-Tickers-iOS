@@ -4,21 +4,34 @@ import UIKit
 
 final class TickersViewController: UIViewController {
     
-    @IBOutlet private weak var addBarButtonItem: UIBarButtonItem!
-    @IBOutlet private weak var editBarButtonItem: UIBarButtonItem! {
+    @IBOutlet private var addBarButtonItem: UIBarButtonItem!
+    
+    @IBOutlet private var editBarButtonItem: UIBarButtonItem! {
         didSet {
             editBarButtonItem
                 .rx
                 .tap
                 .subscribe(
                     onNext: { [weak self] (_) in
-//                        self?.refresh()
-                        print("Tapped")
+                        guard let strongSelf = self else { return }
+                        
+                        strongSelf.tickersTableView.setEditing(!strongSelf.tickersTableView.isEditing, animated: true)
+                        
+                        if strongSelf.tickersTableView.isEditing {
+                            strongSelf.navigationItem.leftBarButtonItem = nil
+                            strongSelf.editBarButtonItem.style = .done
+                            strongSelf.tickersTableView.refreshControl = nil
+                        } else {
+                            strongSelf.navigationItem.leftBarButtonItem = strongSelf.addBarButtonItem
+                            strongSelf.editBarButtonItem.style = .plain
+                            strongSelf.setupRefreshControl()
+                        }
                     }
                 )
                 .disposed(by: disposeBag)
         }
     }
+    
     @IBOutlet private weak var tickersTableView: UITableView! {
         didSet {
             tickersTableView.tableFooterView = UIView()
@@ -59,6 +72,7 @@ final class TickersViewController: UIViewController {
     // MARK: - Setting
     
     private func setupNavigation() {
+        navigationItem.title = ""
         navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "NavigationLogo"))
         navigationController?.navigationBar.tintColor = UIColor(red: 20/255.0, green: 140/255.0, blue: 190/255.0, alpha: 1.0)
     }
@@ -107,6 +121,8 @@ final class TickersViewController: UIViewController {
     private func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         tickersTableView.isUserInteractionEnabled = false
+        addBarButtonItem.isEnabled = false
+        editBarButtonItem.isEnabled = false
         
         Observable
             .zip(
@@ -122,6 +138,8 @@ final class TickersViewController: UIViewController {
                 onDisposed: { [weak self] in
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self?.tickersTableView.isUserInteractionEnabled = true
+                    self?.addBarButtonItem.isEnabled = true
+                    self?.editBarButtonItem.isEnabled = true
                     
                     self?.tickersTableView.refreshControl?.endRefreshing()
                 }
