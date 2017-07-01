@@ -1,4 +1,7 @@
 import Foundation
+import RxDataSources
+import RxCocoa
+import RxSwift
 
 struct TickerViewModel {
     

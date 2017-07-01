@@ -63,13 +63,8 @@
                             <constraint firstItem="5qc-6D-ftx" firstAttribute="top" secondItem="IfD-X8-ToY" secondAttribute="bottom" id="dLu-Or-0Ym"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="m24-50-Azc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="PBD-V5-qdB" userLabel="Add Bar Button"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="yFW-GL-SaJ" userLabel="Edit Bar Button"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="m24-50-Azc"/>
                     <connections>
-                        <outlet property="addBarButtonItem" destination="PBD-V5-qdB" id="TeI-qS-JrI"/>
-                        <outlet property="editBarButtonItem" destination="yFW-GL-SaJ" id="xav-4u-OK4"/>
                         <outlet property="tickersTableView" destination="IfD-X8-ToY" id="owD-GI-GFM"/>
                     </connections>
                 </viewController>

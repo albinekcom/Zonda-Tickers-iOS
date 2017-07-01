@@ -30,6 +30,8 @@
 		8CC7DDA51EFFED9C00050A7F /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */; };
 		8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */; };
 		8CDFA6F11F06F618003669A1 /* TickerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFA6F01F06F618003669A1 /* TickerStore.swift */; };
+		8CDFD4711F0786F9009F1E19 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */; };
+		8CDFD4731F0820D0009F1E19 /* SectionOfTickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD4721F0820D0009F1E19 /* SectionOfTickerViewModel.swift */; };
 		8CE06BD51F061B2C00EBD7B9 /* TickerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */; };
 		ADDFE86648DC8970E0982986 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91937493DCBCD003EA208242 /* AVFoundation.framework */; };
 		D58F77DA1A05C67A5C4878E3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBC3E3BB96755C9DFA32131 /* CoreVideo.framework */; };
@@ -75,6 +77,8 @@
 		8CC7DDA91EFFEDD500050A7F /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickersViewController.swift; path = Main/TickersViewController.swift; sourceTree = "<group>"; };
 		8CDFA6F01F06F618003669A1 /* TickerStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerStore.swift; path = Model/TickerStore.swift; sourceTree = "<group>"; };
+		8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		8CDFD4721F0820D0009F1E19 /* SectionOfTickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionOfTickerViewModel.swift; path = Main/SectionOfTickerViewModel.swift; sourceTree = "<group>"; };
 		8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerFactoryTests.swift; path = Model/TickerFactoryTests.swift; sourceTree = "<group>"; };
 		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "BitBay-Ticker.entitlements"; path = "../BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
 		91937493DCBCD003EA208242 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -94,10 +98,11 @@
 				F96D43DF325E879ABE52A926 /* QuartzCore.framework in Frameworks */,
 				ADDFE86648DC8970E0982986 /* AVFoundation.framework in Frameworks */,
 				22D4B494C269AB2CBA0F7950 /* CoreMedia.framework in Frameworks */,
+				D58F77DA1A05C67A5C4878E3 /* CoreVideo.framework in Frameworks */,
+				8CDFD4711F0786F9009F1E19 /* RxDataSources.framework in Frameworks */,
+				8C5CF6FC1F044CBD00B0C8E1 /* RxCocoa.framework in Frameworks */,
 				8C5CF6FD1F044CC300B0C8E1 /* RxSwift.framework in Frameworks */,
 				8CC7DDA51EFFED9C00050A7F /* BuddyBuildSDK.framework in Frameworks */,
-				8C5CF6FC1F044CBD00B0C8E1 /* RxCocoa.framework in Frameworks */,
-				D58F77DA1A05C67A5C4878E3 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +222,7 @@
 			children = (
 				8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */,
 				8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */,
+				8CDFD4721F0820D0009F1E19 /* SectionOfTickerViewModel.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 		C24AC6780E9338DA000950BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */,
 				8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */,
 				8C2F173E1F02A56E006FD66F /* RxSwift.framework */,
 				8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */,
@@ -355,11 +362,13 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 			);
 			name = "Run Script For Carthage";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -378,6 +387,7 @@
 				8CDFA6F11F06F618003669A1 /* TickerStore.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */,
+				8CDFD4731F0820D0009F1E19 /* SectionOfTickerViewModel.swift in Sources */,
 				8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */,
 				8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */,
 			);
