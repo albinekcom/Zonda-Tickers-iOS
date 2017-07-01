@@ -1,9 +1,29 @@
 import RxCocoa
 import RxSwift
+import UIKit
 
 final class TickersViewController: UIViewController {
     
-    @IBOutlet private weak var tickersTableView: UITableView!
+    @IBOutlet private weak var addBarButtonItem: UIBarButtonItem!
+    @IBOutlet private weak var editBarButtonItem: UIBarButtonItem! {
+        didSet {
+            editBarButtonItem
+                .rx
+                .tap
+                .subscribe(
+                    onNext: { [weak self] (_) in
+//                        self?.refresh()
+                        print("Tapped")
+                    }
+                )
+                .disposed(by: disposeBag)
+        }
+    }
+    @IBOutlet private weak var tickersTableView: UITableView! {
+        didSet {
+            tickersTableView.tableFooterView = UIView()
+        }
+    }
     
     private let disposeBag = DisposeBag()
     
@@ -22,7 +42,6 @@ final class TickersViewController: UIViewController {
         super.viewDidLoad()
         
         setupTickers()
-        setupTickersTableView()
         setupNavigation()
         setupRefreshControl()
         
@@ -38,10 +57,6 @@ final class TickersViewController: UIViewController {
     }
     
     // MARK: - Setting
-    
-    private func setupTickersTableView() {
-        tickersTableView.tableFooterView = UIView()
-    }
     
     private func setupNavigation() {
         navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "NavigationLogo"))
@@ -84,8 +99,8 @@ final class TickersViewController: UIViewController {
         guard let refreshControl = tickersTableView.refreshControl else { return }
         
         tickersTableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.height)
-        refreshControl.beginRefreshing()
         
+        refreshControl.beginRefreshing()
         refresh()
     }
     

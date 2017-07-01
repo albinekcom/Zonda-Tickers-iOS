@@ -1,3 +1,5 @@
+import Foundation
+
 struct TickerViewModel {
     
     let model: Ticker

@@ -29,6 +29,7 @@
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
 		8CC7DDA51EFFED9C00050A7F /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */; };
 		8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */; };
+		8CDFA6F11F06F618003669A1 /* TickerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFA6F01F06F618003669A1 /* TickerStore.swift */; };
 		8CE06BD51F061B2C00EBD7B9 /* TickerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */; };
 		ADDFE86648DC8970E0982986 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91937493DCBCD003EA208242 /* AVFoundation.framework */; };
 		D58F77DA1A05C67A5C4878E3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBC3E3BB96755C9DFA32131 /* CoreVideo.framework */; };
@@ -73,6 +74,7 @@
 		8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = "BitBay-Ticker/External/Frameworks/BuddyBuildSDK.framework"; sourceTree = "<group>"; };
 		8CC7DDA91EFFEDD500050A7F /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickersViewController.swift; path = Main/TickersViewController.swift; sourceTree = "<group>"; };
+		8CDFA6F01F06F618003669A1 /* TickerStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerStore.swift; path = Model/TickerStore.swift; sourceTree = "<group>"; };
 		8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerFactoryTests.swift; path = Model/TickerFactoryTests.swift; sourceTree = "<group>"; };
 		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "BitBay-Ticker.entitlements"; path = "../BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
 		91937493DCBCD003EA208242 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +124,7 @@
 		8C5815911EFF96A20083E122 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8CDFA6F01F06F618003669A1 /* TickerStore.swift */,
 				8C5815941EFF96CB0083E122 /* Ticker.swift */,
 				8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */,
 			);
@@ -372,6 +375,7 @@
 				8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */,
 				8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */,
 				8C91772D1F057962008E67C7 /* TickerDetailsViewModel.swift in Sources */,
+				8CDFA6F11F06F618003669A1 /* TickerStore.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */,
 				8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */,
