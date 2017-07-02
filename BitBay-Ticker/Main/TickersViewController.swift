@@ -162,11 +162,11 @@ final class TickersViewController: UIViewController {
     // MARK: - Refreshing
     
     private func refreshAtStartup() {
-        guard let refreshControl = tickersTableView.refreshControl else { return }
-        
-        tickersTableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.height)
-        
-        refresh()
+        if let refreshControl = tickersTableView.refreshControl {
+            tickersTableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.height)
+            
+            refresh()
+        }
     }
     
     private func refresh() {
@@ -178,9 +178,7 @@ final class TickersViewController: UIViewController {
     // MARK: - Navigating
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let selectedIndexPath = tickersTableView.indexPathForSelectedRow else { return }
-        
-        if let tickerDetailsViewController = segue.destination as? TickerDetailsViewController {
+        if let selectedIndexPath = tickersTableView.indexPathForSelectedRow, let tickerDetailsViewController = segue.destination as? TickerDetailsViewController {
             let selectedTicker = tickerStore.tickers.value[selectedIndexPath.row]
             tickerDetailsViewController.viewModel = TickerDetailsViewModel(model: selectedTicker)
         }

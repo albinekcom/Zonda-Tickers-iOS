@@ -24,6 +24,7 @@
 		8C9146C61F090A5800221180 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BF81F09078B002F0B5D /* RxSwiftExt.framework */; };
 		8C9146C71F090A5C00221180 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BF61F09066A002F0B5D /* RxTest.framework */; };
 		8C9146C91F0911B900221180 /* TickerStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146C81F0911B900221180 /* TickerStoreTests.swift */; };
+		8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */; };
 		8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */; };
 		8C91772D1F057962008E67C7 /* TickerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */; };
 		8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */; };
@@ -79,6 +80,7 @@
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
 		8C9146C81F0911B900221180 /* TickerStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerStoreTests.swift; path = Model/TickerStoreTests.swift; sourceTree = "<group>"; };
+		8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersViewControllerUITests.swift; sourceTree = "<group>"; };
 		8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewController.swift; path = Details/TickerDetailsViewController.swift; sourceTree = "<group>"; };
 		8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewModel.swift; path = Details/TickerDetailsViewModel.swift; sourceTree = "<group>"; };
 		8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewModelTests.swift; path = Details/TickerDetailsViewModelTests.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		8CDFD47B1F084106009F1E19 /* BitBay-TickerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */,
 				8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */,
 				8CDFD47E1F084106009F1E19 /* Info.plist */,
 			);
@@ -516,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */,
 				8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
