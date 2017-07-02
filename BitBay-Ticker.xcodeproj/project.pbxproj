@@ -11,7 +11,6 @@
 		2813002B72BE0497CDBCD3DB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF13BF0B80336B95A6FA66B6 /* CoreTelephony.framework */; };
 		5128D05AE6867DE011AC6A7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B087561A567A814D6F909055 /* CoreText.framework */; };
 		7657910227263AEC49DE266B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */; };
-		8C0B9BF51F09041F002F0B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */; };
 		8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
 		8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
 		8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */; };
@@ -24,6 +23,7 @@
 		8C9146C41F09098200221180 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */; };
 		8C9146C61F090A5800221180 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BF81F09078B002F0B5D /* RxSwiftExt.framework */; };
 		8C9146C71F090A5C00221180 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BF61F09066A002F0B5D /* RxTest.framework */; };
+		8C9146C91F0911B900221180 /* TickerStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146C81F0911B900221180 /* TickerStoreTests.swift */; };
 		8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */; };
 		8C91772D1F057962008E67C7 /* TickerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */; };
 		8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */; };
@@ -78,6 +78,7 @@
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
+		8C9146C81F0911B900221180 /* TickerStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerStoreTests.swift; path = Model/TickerStoreTests.swift; sourceTree = "<group>"; };
 		8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewController.swift; path = Details/TickerDetailsViewController.swift; sourceTree = "<group>"; };
 		8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewModel.swift; path = Details/TickerDetailsViewModel.swift; sourceTree = "<group>"; };
 		8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewModelTests.swift; path = Details/TickerDetailsViewModelTests.swift; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 			children = (
 				8C5815961EFF97030083E122 /* TickerTests.swift */,
 				8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */,
+				8C9146C81F0911B900221180 /* TickerStoreTests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -426,7 +428,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C0B9BF51F09041F002F0B5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CE06BD51F061B2C00EBD7B9 /* TickerFactoryTests.swift in Sources */,
+				8C9146C91F0911B900221180 /* TickerStoreTests.swift in Sources */,
 				8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */,
 				8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */,
 				8CDFD4751F084048009F1E19 /* SectionOfTickerViewModelTests.swift in Sources */,

@@ -172,7 +172,7 @@ final class TickersViewController: UIViewController {
     private func refresh() {
         isRefreshing.value = true
         
-        tickerStore.refresh()
+        tickerStore.refreshTickers()
     }
     
     // MARK: - Navigating

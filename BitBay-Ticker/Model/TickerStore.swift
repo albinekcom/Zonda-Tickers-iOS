@@ -16,7 +16,7 @@ final class TickerStore {
     
     var availableTickersToAdd: [Ticker.Name] = []
     
-    func refresh() {
+    func refreshTickers() {
         Observable
             .zip(
                 allAvailableTickersNames.map { (tickerName) in
