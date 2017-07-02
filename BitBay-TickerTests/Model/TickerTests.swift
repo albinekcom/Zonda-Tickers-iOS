@@ -4,7 +4,7 @@ import XCTest
 final class TickerTests: XCTestCase {
     
     func testInitWithName() {
-        let ticker = Ticker(name: .btcpln, jsonDictionary: [:])
+        let ticker = Ticker(name: .btcpln, jsonDictionary: nil)
         
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)
         XCTAssertEqual("BTC", ticker.baseCurrency)

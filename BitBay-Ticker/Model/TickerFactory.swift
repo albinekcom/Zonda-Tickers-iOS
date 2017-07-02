@@ -15,19 +15,13 @@ struct TickerFactory {
             }
             .flatMap { (request) -> Observable<(HTTPURLResponse, Data)> in
                 #if DEBUG
-                    return Observable.just((HTTPURLResponse(), "{\"max\":9610,\"min\":9360,\"last\":9400,\"bid\":9400,\"ask\":9420.99,\"vwap\":9479.85,\"average\":9400,\"volume\":552.72541447}".data(using: .utf8)!))
+                    return Observable.just((HTTPURLResponse(), "{\"max\":1.1,\"min\":2.2,\"last\":3.3,\"bid\":4.4,\"ask\":5.5,\"vwap\":6.6,\"average\":7.7,\"volume\":8.8}".data(using: .utf8)!))
                 #else
                     return URLSession.shared.rx.response(request: request)
                 #endif
             }
-            .map { (_, data) -> [String: Any] in
-                guard
-                    let jsonObject = try? JSONSerialization.jsonObject(with: data),
-                    let result = jsonObject as? [String: Any] else {
-                        return [:]
-                }
-                
-                return result
+            .map { (_, data) -> [String: Any]? in
+                return (try? JSONSerialization.jsonObject(with: data)) as? [String: Any]
             }
             .map { (jsonDictionary) -> Ticker in
                 return Ticker(name: tickerName, jsonDictionary: jsonDictionary)
