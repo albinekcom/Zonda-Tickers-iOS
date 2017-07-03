@@ -51,6 +51,22 @@ final class TickersViewController: UIViewController {
     }
     
     private func setupBarButtonItems() {
+        addBarButtonItem
+            .rx
+            .tap
+            .subscribe(
+                onNext: { [weak self] (_) in
+                    guard let strongSelf = self else { return }
+                    
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let addTickerViewController = mainStoryboard.instantiateViewController(withIdentifier: "AddTickerViewController")
+                    let navigationController = UINavigationController(rootViewController: addTickerViewController)
+                    
+                    strongSelf.present(navigationController, animated: true)
+                }
+            )
+            .disposed(by: disposeBag)
+        
         editBarButtonItem
             .rx
             .tap
@@ -141,6 +157,29 @@ final class TickersViewController: UIViewController {
                 return [SectionOfTickerViewModel(items: tickersViewModels)]
             }
             .bind(to: tickersTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        tickersTableView
+            .rx
+            .itemDeleted
+            .subscribe(
+                onNext: { [weak self] (indexPath) in
+                    self?.tickerStore.tickers.value.remove(at: indexPath.row)
+                }
+            )
+            .disposed(by: disposeBag)
+        
+        tickersTableView
+            .rx
+            .itemMoved
+            .subscribe(
+                onNext: { [weak self] (indexPath) in
+                    guard let strongSelf = self else { return }
+                    
+                    let movedTicker = strongSelf.tickerStore.tickers.value.remove(at: indexPath.sourceIndex.row)
+                    strongSelf.tickerStore.tickers.value.insert(movedTicker, at: indexPath.destinationIndex.row)
+                }
+            )
             .disposed(by: disposeBag)
     }
     

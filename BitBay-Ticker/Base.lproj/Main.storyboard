@@ -9,10 +9,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Add Ticker View Controller-->
+        <scene sceneID="pNo-Ad-Ir9">
+            <objects>
+                <viewController storyboardIdentifier="AddTickerViewController" id="JHN-Id-3ZJ" customClass="AddTickerViewController" customModule="BitBay_Ticker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Emb-S9-yjr"/>
+                        <viewControllerLayoutGuide type="bottom" id="rI9-vk-xXP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vdq-DB-dJe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbe-zH-q1H">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nbe-zH-q1H" firstAttribute="centerX" secondItem="vdq-DB-dJe" secondAttribute="centerX" id="2ss-aL-vSp"/>
+                            <constraint firstItem="nbe-zH-q1H" firstAttribute="centerY" secondItem="vdq-DB-dJe" secondAttribute="centerY" id="MwW-Iv-ZGS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4eZ-PN-ZxY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="uRF-Pj-R1P"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelBarButtonItem" destination="uRF-Pj-R1P" id="X8L-p5-Ikt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rGT-ms-AxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2335" y="-705"/>
+        </scene>
+        <!--Main Tickers View Controller-->
         <scene sceneID="9u4-Y5-Nze">
             <objects>
-                <viewController id="kpR-Ch-BbL" customClass="TickersViewController" customModule="BitBay_Ticker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kpR-Ch-BbL" userLabel="Main Tickers View Controller" customClass="TickersViewController" customModule="BitBay_Ticker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lj0-pD-1oz"/>
                         <viewControllerLayoutGuide type="bottom" id="5qc-6D-ftx"/>
