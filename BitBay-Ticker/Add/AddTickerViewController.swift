@@ -19,28 +19,43 @@ final class AddTickerViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var addTickerTableView: UITableView!
+    @IBOutlet weak var addTickerTableView: UITableView! {
+        didSet {
+            addTickerTableView.tableFooterView = UIView()
+        }
+    }
     
     private let disposeBag = DisposeBag()
     
-    var tickerStore = TickerStore()
+    var tickerStore: TickerStore?
     
     // MARK: - Managing View
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigation()
         setupAddTickerTableView()
     }
     
     // MARK: - Setting
     
+    private func setupNavigation() {
+        navigationController?.navigationBar.tintColor = UIColor(red: 20/255.0, green: 140/255.0, blue: 190/255.0, alpha: 1.0)
+    }
+    
     private func setupAddTickerTableView() {
-        let data = Observable<[String]>.just(["first element", "second element", "third element"])
+        guard let tickerStore = tickerStore else { return }
         
-        data
-            .bind(to: addTickerTableView.rx.items(cellIdentifier: "Add Ticker Table View Cell")) { (_, model, cell) in
-                cell.textLabel?.text = model
+        Observable<[Ticker.Name]>
+            .of(tickerStore.availableTickersNamesToAdd)
+            .map { (names) in
+                return names.map { (name) in
+                    return AddTickerViewModel(tickerName: name)
+                }
+            }
+            .bind(to: addTickerTableView.rx.items(cellIdentifier: "AddTickerTableViewCell")) { (_, model, cell) in
+                cell.textLabel?.text = model.name
             }
             .disposed(by: disposeBag)
         
@@ -49,6 +64,10 @@ final class AddTickerViewController: UIViewController {
             .itemSelected
             .subscribe(
                 onNext: { [weak self] (indexPath) in
+                    let tickerName = tickerStore.availableTickersNamesToAdd[indexPath.row]
+                    
+                    tickerStore.addTicker(named: tickerName)
+                    
                     self?.dismiss(animated: true)
                 }
             )

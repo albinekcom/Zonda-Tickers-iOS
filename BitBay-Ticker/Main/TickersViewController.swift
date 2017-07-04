@@ -59,10 +59,13 @@ final class TickersViewController: UIViewController {
                     guard let strongSelf = self else { return }
                     
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let addTickerViewController = mainStoryboard.instantiateViewController(withIdentifier: "AddTickerViewController")
-                    let navigationController = UINavigationController(rootViewController: addTickerViewController)
                     
-                    strongSelf.present(navigationController, animated: true)
+                    if let addTickerViewController = mainStoryboard.instantiateViewController(withIdentifier: "AddTickerViewController") as? AddTickerViewController {
+                        addTickerViewController.tickerStore = strongSelf.tickerStore
+                        let navigationController = UINavigationController(rootViewController: addTickerViewController)
+                        
+                        strongSelf.present(navigationController, animated: true)
+                    }
                 }
             )
             .disposed(by: disposeBag)
@@ -144,7 +147,7 @@ final class TickersViewController: UIViewController {
             return true
         }
         
-        tickerStore.tickers
+        tickerStore.userTickers
             .asObservable()
             .map { (tickers) in
                 tickers.map { (ticker) in
@@ -164,7 +167,7 @@ final class TickersViewController: UIViewController {
             .itemDeleted
             .subscribe(
                 onNext: { [weak self] (indexPath) in
-                    self?.tickerStore.tickers.value.remove(at: indexPath.row)
+                    self?.tickerStore.userTickers.value.remove(at: indexPath.row)
                 }
             )
             .disposed(by: disposeBag)
@@ -176,8 +179,8 @@ final class TickersViewController: UIViewController {
                 onNext: { [weak self] (itemMovedEvent) in
                     guard let strongSelf = self else { return }
                     
-                    let movedTicker = strongSelf.tickerStore.tickers.value.remove(at: itemMovedEvent.sourceIndex.row)
-                    strongSelf.tickerStore.tickers.value.insert(movedTicker, at: itemMovedEvent.destinationIndex.row)
+                    let movedTicker = strongSelf.tickerStore.userTickers.value.remove(at: itemMovedEvent.sourceIndex.row)
+                    strongSelf.tickerStore.userTickers.value.insert(movedTicker, at: itemMovedEvent.destinationIndex.row)
                 }
             )
             .disposed(by: disposeBag)
@@ -209,16 +212,20 @@ final class TickersViewController: UIViewController {
     }
     
     private func refresh() {
-        isRefreshing.value = true
-        
-        tickerStore.refreshTickers()
+        if tickerStore.userTickers.value.count > 0 {
+            isRefreshing.value = true
+            
+            tickerStore.refreshTickers()
+        } else {
+            isRefreshing.value = false
+        }
     }
     
     // MARK: - Navigating
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selectedIndexPath = tickersTableView.indexPathForSelectedRow, let tickerDetailsViewController = segue.destination as? TickerDetailsViewController {
-            let selectedTicker = tickerStore.tickers.value[selectedIndexPath.row]
+            let selectedTicker = tickerStore.userTickers.value[selectedIndexPath.row]
             tickerDetailsViewController.viewModel = TickerDetailsViewModel(model: selectedTicker)
         }
     }

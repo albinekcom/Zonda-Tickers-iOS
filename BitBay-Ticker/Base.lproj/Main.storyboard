@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Ticker View Controller-->
+        <!--Add Ticker-->
         <scene sceneID="pNo-Ad-Ir9">
             <objects>
                 <viewController storyboardIdentifier="AddTickerViewController" id="JHN-Id-3ZJ" customClass="AddTickerViewController" customModule="BitBay_Ticker" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Add Ticker Table View Cell" textLabel="av5-Ty-vL2" rowHeight="64" style="IBUITableViewCellStyleDefault" id="9tG-wW-K9y" userLabel="Add Ticker Table View Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddTickerTableViewCell" textLabel="av5-Ty-vL2" rowHeight="64" style="IBUITableViewCellStyleDefault" id="9tG-wW-K9y" userLabel="Add Ticker Table View Cell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9tG-wW-K9y" id="cBi-Fa-Kjx">
@@ -53,8 +53,8 @@
                             <constraint firstItem="pAr-zm-3Gn" firstAttribute="leading" secondItem="vdq-DB-dJe" secondAttribute="leading" id="smg-xm-drn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4eZ-PN-ZxY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="uRF-Pj-R1P"/>
+                    <navigationItem key="navigationItem" title="Add Ticker" id="4eZ-PN-ZxY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uRF-Pj-R1P"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addTickerTableView" destination="pAr-zm-3Gn" id="eap-ZZ-ech"/>

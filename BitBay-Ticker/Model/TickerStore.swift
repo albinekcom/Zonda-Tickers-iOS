@@ -5,7 +5,7 @@ final class TickerStore {
     
     private let disposeBag = DisposeBag()
     
-    var tickers = Variable<[Ticker]>([])
+    var userTickers = Variable<[Ticker]>([])
     
     private let allAvailableTickersNames: [Ticker.Name] = [
         .btcpln, .ethpln, .ltcpln, .lskpln,
@@ -14,21 +14,37 @@ final class TickerStore {
         .ltcbtc, .ethbtc, .lskbtc
     ]
     
-    var availableTickersToAdd: [Ticker.Name] = []
-    
     func refreshTickers() {
         Observable
             .zip(
-                allAvailableTickersNames.map { (tickerName) in
-                    return TickerFactory.makeObservableTicker(named: tickerName)
+                userTickers.value.map { (ticker) in
+                    return TickerFactory.makeObservableTicker(named: ticker.name)
                 }
             )
             .subscribe(
                 onNext: { [weak self] (tickers) in
-                    self?.tickers.value = tickers
+                    self?.userTickers.value = tickers
                 }
             )
             .disposed(by: disposeBag)
+    }
+    
+    var availableTickersNamesToAdd: [Ticker.Name] {
+        let userTickerNames = userTickers.value.map {
+            return $0.name
+        }
+        
+        let duplicates = allAvailableTickersNames.filter(userTickerNames.contains)
+        
+        return allAvailableTickersNames.filter {
+            return !duplicates.contains($0)
+        }
+    }
+    
+    func addTicker(named tickerName: Ticker.Name) {
+        let ticker = Ticker(name: tickerName, jsonDictionary: nil)
+        
+        userTickers.value.append(ticker)
     }
 
 }
