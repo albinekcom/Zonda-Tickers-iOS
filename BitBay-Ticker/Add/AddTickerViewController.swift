@@ -19,7 +19,7 @@ final class AddTickerViewController: UIViewController {
         }
     }
     
-    private weak var addTickerTableView: UITableView!
+    @IBOutlet weak var addTickerTableView: UITableView!
     
     private let disposeBag = DisposeBag()
     
@@ -30,7 +30,7 @@ final class AddTickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setupAddTickerTableView()
+        setupAddTickerTableView()
     }
     
     // MARK: - Setting
@@ -39,7 +39,7 @@ final class AddTickerViewController: UIViewController {
         let data = Observable<[String]>.just(["first element", "second element", "third element"])
         
         data
-            .bind(to: addTickerTableView.rx.items(cellIdentifier: "AddTickerTableViewCell")) { (_, model, cell) in
+            .bind(to: addTickerTableView.rx.items(cellIdentifier: "Add Ticker Table View Cell")) { (_, model, cell) in
                 cell.textLabel?.text = model
             }
             .disposed(by: disposeBag)
@@ -48,8 +48,8 @@ final class AddTickerViewController: UIViewController {
             .rx
             .itemSelected
             .subscribe(
-                onNext: { (indexPath) in
-                    print("Selected \(indexPath)")
+                onNext: { [weak self] (indexPath) in
+                    self?.dismiss(animated: true)
                 }
             )
             .disposed(by: disposeBag)
