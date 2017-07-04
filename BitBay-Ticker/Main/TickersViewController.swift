@@ -136,11 +136,11 @@ final class TickersViewController: UIViewController {
             return cell
         }
         
-        dataSource.canEditRowAtIndexPath = { _ in
+        dataSource.canEditRowAtIndexPath = { (_) in
             return true
         }
         
-        dataSource.canMoveRowAtIndexPath = { _ in
+        dataSource.canMoveRowAtIndexPath = { (_) in
             return true
         }
         
@@ -173,11 +173,11 @@ final class TickersViewController: UIViewController {
             .rx
             .itemMoved
             .subscribe(
-                onNext: { [weak self] (indexPath) in
+                onNext: { [weak self] (itemMovedEvent) in
                     guard let strongSelf = self else { return }
                     
-                    let movedTicker = strongSelf.tickerStore.tickers.value.remove(at: indexPath.sourceIndex.row)
-                    strongSelf.tickerStore.tickers.value.insert(movedTicker, at: indexPath.destinationIndex.row)
+                    let movedTicker = strongSelf.tickerStore.tickers.value.remove(at: itemMovedEvent.sourceIndex.row)
+                    strongSelf.tickerStore.tickers.value.insert(movedTicker, at: itemMovedEvent.destinationIndex.row)
                 }
             )
             .disposed(by: disposeBag)
