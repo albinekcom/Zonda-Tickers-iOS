@@ -45,7 +45,7 @@ final class TickersViewController: UIViewController {
     private func setupNavigation() {
         navigationItem.title = ""
         navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "NavigationLogo"))
-        navigationController?.navigationBar.tintColor = UIColor(red: 20/255.0, green: 140/255.0, blue: 190/255.0, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = .primary
         
         setupBarButtonItems()
     }
