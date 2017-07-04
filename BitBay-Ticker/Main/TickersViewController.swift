@@ -154,6 +154,7 @@ final class TickersViewController: UIViewController {
                     return TickerViewModel(model: ticker)
                 }
             }
+            .observeOn(MainScheduler.instance)
             .map { [weak self] (tickersViewModels) in
                 self?.isRefreshing.value = false
                 

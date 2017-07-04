@@ -54,7 +54,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Ticker" id="4eZ-PN-ZxY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uRF-Pj-R1P"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="uRF-Pj-R1P"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addTickerTableView" destination="pAr-zm-3Gn" id="eap-ZZ-ech"/>

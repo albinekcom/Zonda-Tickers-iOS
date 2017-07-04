@@ -2,6 +2,12 @@ struct PlistFile {
     
     let name: String
     
+    var isUserDataCreated: Bool {
+        guard let destinationPath = destinationPath else { return false }
+        
+        return FileManager.default.fileExists(atPath: destinationPath)
+    }
+    
     var dictionary: [String: Any]? {
         guard let destinationPath = destinationPath else { return nil }
         

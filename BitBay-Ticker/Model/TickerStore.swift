@@ -16,6 +16,10 @@ final class TickerStore {
         .ltcbtc, .ethbtc, .lskbtc
     ]
     
+    private let defaultTickersNames: [Ticker.Name] = [
+        .btcpln, .ethpln, .ltcpln, .lskpln
+    ]
+    
     func refreshTickers() {
         Observable
             .zip(
@@ -49,7 +53,7 @@ final class TickerStore {
         userTickers.value.append(ticker)
     }
     
-    // MARK: - Saving / Loading Data
+    // MARK: - User Data
     
     private let userDataPlistName = "user_data"
     
@@ -63,7 +67,19 @@ final class TickerStore {
         ]
     }
     
+    // MARK: - Loading
+    
     func loadUserData() {
+        if PlistFile(name: userDataPlistName).isUserDataCreated {
+            loadUserDataFromFile()
+        } else {
+            userTickers.value = defaultTickersNames.map { (tickerName) in
+                return Ticker(name: tickerName, jsonDictionary: nil)
+            }
+        }
+    }
+    
+    private func loadUserDataFromFile() {
         let loadedUserDataDictionary = PlistFile(name: userDataPlistName).dictionary
         
         guard let allTickers = loadedUserDataDictionary?["tickers"] as? [[String: Any]] else { return }
@@ -77,6 +93,8 @@ final class TickerStore {
         
         userTickers.value = loadedTickers
     }
+    
+    // MARK: - Saving
     
     func saveUserData() {
         _ = PlistFile(name: userDataPlistName).save(dictionary: userDataDictionary)
