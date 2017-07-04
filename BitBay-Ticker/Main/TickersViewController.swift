@@ -12,7 +12,7 @@ final class TickersViewController: UIViewController {
     }
     
     private var isRefreshing = Variable<Bool>(false)
-    private let tickerStore = TickerStore()
+    private let tickerStore = TickerStore.shared
     private let disposeBag = DisposeBag()
     
     private let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
@@ -212,12 +212,12 @@ final class TickersViewController: UIViewController {
     }
     
     private func refresh() {
-        if tickerStore.userTickers.value.count > 0 {
+        if tickerStore.userTickers.value.isEmpty {
+            isRefreshing.value = false
+        } else {
             isRefreshing.value = true
             
             tickerStore.refreshTickers()
-        } else {
-            isRefreshing.value = false
         }
     }
     

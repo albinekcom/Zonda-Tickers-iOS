@@ -3,6 +3,8 @@ import RxSwift
 
 final class TickerStore {
     
+    static let shared = TickerStore()
+    
     private let disposeBag = DisposeBag()
     
     var userTickers = Variable<[Ticker]>([])
@@ -45,6 +47,39 @@ final class TickerStore {
         let ticker = Ticker(name: tickerName, jsonDictionary: nil)
         
         userTickers.value.append(ticker)
+    }
+    
+    // MARK: - Saving / Loading Data
+    
+    private let userDataPlistName = "user_data"
+    
+    private var userDataDictionary: [String: Any] {
+        let allUserTickersDictionary = userTickers.value.map {
+            return $0.dictionary
+        }
+        
+        return [
+            "tickers": allUserTickersDictionary
+        ]
+    }
+    
+    func loadUserData() {
+        let loadedUserDataDictionary = PlistFile(name: userDataPlistName).dictionary
+        
+        guard let allTickers = loadedUserDataDictionary?["tickers"] as? [[String: Any]] else { return }
+        
+        var loadedTickers = [Ticker]()
+        
+        allTickers.forEach {
+            let loadedTicker = Ticker(fromDictionary: $0)
+            loadedTickers.append(loadedTicker)
+        }
+        
+        userTickers.value = loadedTickers
+    }
+    
+    func saveUserData() {
+        _ = PlistFile(name: userDataPlistName).save(dictionary: userDataDictionary)
     }
 
 }

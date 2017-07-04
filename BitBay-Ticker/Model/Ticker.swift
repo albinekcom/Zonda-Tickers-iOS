@@ -37,7 +37,7 @@ struct Ticker {
     let average: Double?
     let volume: Double?
     
-    public init(name: Name, jsonDictionary: [String: Any]?) {
+    init(name: Name, jsonDictionary: [String: Any]?) {
         baseCurrency = String(name.rawValue.uppercased().characters.dropLast(3))
         counterCurrency = String(name.rawValue.uppercased().characters.dropFirst(3))
         
@@ -51,6 +51,28 @@ struct Ticker {
         vwap = jsonDictionary?["vwap"] as? Double
         average = jsonDictionary?["average"] as? Double
         volume = jsonDictionary?["volume"] as? Double
+    }
+    
+    // MARK: - Loading from saved Plist
+    
+    var dictionary: [String: Any] {
+        return [
+            "name": name.rawValue as Any,
+            "max": max as Any,
+            "min": min as Any,
+            "last": last as Any,
+            "bid": bid as Any,
+            "ask": ask as Any,
+            "vwap": vwap as Any,
+            "average": average as Any,
+            "volume": volume as Any
+        ]
+    }
+    
+    init(fromDictionary dictionary: [String: Any]) {
+        let nameString = dictionary["name"] as! String
+        
+        self.init(name: Name(rawValue: nameString)!, jsonDictionary: dictionary)
     }
     
 }

@@ -14,6 +14,7 @@
 		8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
 		8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
 		8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */; };
+		8C377D2A1F0BF2FA00D76B74 /* PlistFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D291F0BF2FA00D76B74 /* PlistFile.swift */; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
 		8C5CF6FC1F044CBD00B0C8E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
@@ -79,6 +80,7 @@
 		8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerViewModel.swift; path = Main/TickerViewModel.swift; sourceTree = "<group>"; };
 		8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerViewModelTests.swift; path = Main/TickerViewModelTests.swift; sourceTree = "<group>"; };
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		8C377D291F0BF2FA00D76B74 /* PlistFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistFile.swift; path = Utilities/PlistFile.swift; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
 		8C7824B01F0ABA08000EA87A /* AddTickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTickerViewController.swift; path = Add/AddTickerViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		8C377D281F0BF2DD00D76B74 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8C377D291F0BF2FA00D76B74 /* PlistFile.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		8C5815911EFF96A20083E122 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +244,7 @@
 		8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXGroup;
 			children = (
+				8C377D281F0BF2DD00D76B74 /* Utilities */,
 				8C7824AF1F0AB9E4000EA87A /* Add */,
 				8C9177291F0578FC008E67C7 /* Details */,
 				8CDAD4041F01926600EB2EC9 /* Main */,
@@ -514,6 +525,7 @@
 				8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */,
 				8C7824B11F0ABA08000EA87A /* AddTickerViewController.swift in Sources */,
 				8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */,
+				8C377D2A1F0BF2FA00D76B74 /* PlistFile.swift in Sources */,
 				8C7824B31F0ABA21000EA87A /* AddTickerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
