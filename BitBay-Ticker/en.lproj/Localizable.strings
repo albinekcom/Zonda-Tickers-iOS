@@ -1,0 +1,14 @@
+// Ticker Details
+
+"ticker.details.last" = "Last";
+"ticker.details.max" = "Max";
+"ticker.details.min" = "Min";
+"ticker.details.bid" = "Bid";
+"ticker.details.ask" = "Ask";
+"ticker.details.vwap" = "Weighted Average";
+"ticker.details.average" = "Average";
+"ticker.details.volume" = "Volume";
+
+// Add Ticker
+
+"add.ticker.title" = "Add Ticker";

@@ -36,6 +36,8 @@ final class AddTickerViewController: UIViewController {
         
         setupNavigation()
         setupAddTickerTableView()
+        
+        title = NSLocalizedString("add.ticker.title", comment: "")
     }
     
     // MARK: - Setting

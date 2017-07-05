@@ -1,0 +1,14 @@
+// Ticker Details
+
+"ticker.details.last" = "Ostatnia";
+"ticker.details.max" = "Najwyższa";
+"ticker.details.min" = "Najniższa";
+"ticker.details.bid" = "Kupno";
+"ticker.details.ask" = "Sprzedaż";
+"ticker.details.vwap" = "Średnia Ważona";
+"ticker.details.average" = "Średnia";
+"ticker.details.volume" = "Wolumen";
+
+// Add Ticker
+
+"add.ticker.title" = "Dodaj Ticker";
