@@ -11,6 +11,7 @@
 		2813002B72BE0497CDBCD3DB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF13BF0B80336B95A6FA66B6 /* CoreTelephony.framework */; };
 		5128D05AE6867DE011AC6A7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B087561A567A814D6F909055 /* CoreText.framework */; };
 		7657910227263AEC49DE266B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */; };
+		8C03CE8C1F0F605100038281 /* AddTickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C03CE8B1F0F605100038281 /* AddTickerViewModelTests.swift */; };
 		8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
 		8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
 		8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */; };
@@ -74,6 +75,7 @@
 		0C6FBCC098A756FF3056C13A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		33A699178FC3E6814FE15A91 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7E6DBCB5CEC98873275BFD9D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8C03CE8B1F0F605100038281 /* AddTickerViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTickerViewModelTests.swift; path = Add/AddTickerViewModelTests.swift; sourceTree = "<group>"; };
 		8C0B9BF61F09066A002F0B5D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		8C0B9BF81F09078B002F0B5D /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 		8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C03CE8A1F0F603900038281 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				8C03CE8B1F0F605100038281 /* AddTickerViewModelTests.swift */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
 		8C1CF6EF1F042A2400E6F0D4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +286,7 @@
 		8CC1850F1EFE4CAC0083DA30 /* BitBay-TickerTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C03CE8A1F0F603900038281 /* Add */,
 				8C9177301F058DEF008E67C7 /* Details */,
 				8C1CF6EF1F042A2400E6F0D4 /* Main */,
 				8C5815981EFF97340083E122 /* Model */,
@@ -555,6 +566,7 @@
 				8CE06BD51F061B2C00EBD7B9 /* TickerFactoryTests.swift in Sources */,
 				8C9146C91F0911B900221180 /* TickerStoreTests.swift in Sources */,
 				8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */,
+				8C03CE8C1F0F605100038281 /* AddTickerViewModelTests.swift in Sources */,
 				8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */,
 				8CDFD4751F084048009F1E19 /* SectionOfTickerViewModelTests.swift in Sources */,
 				8C5815971EFF97030083E122 /* TickerTests.swift in Sources */,
