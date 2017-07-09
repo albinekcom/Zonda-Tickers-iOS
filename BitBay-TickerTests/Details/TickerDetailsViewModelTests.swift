@@ -23,10 +23,10 @@ final class TickerDetailsViewModelTests: XCTestCase {
         super.setUp()
         
         let emptyTicker = Ticker(name: .btcpln, jsonDictionary: [:])
-        viewModelWithEmptyTicker = TickerDetailsViewModel(model: emptyTicker)
+        viewModelWithEmptyTicker = TickerDetailsViewModel(ticker: emptyTicker)
         
         let ticker = Ticker(name: .btcpln, jsonDictionary: tickerJSONDictionary)
-        viewModel = TickerDetailsViewModel(model: ticker)
+        viewModel = TickerDetailsViewModel(ticker: ticker)
     }
     
     // MARK: - Tests

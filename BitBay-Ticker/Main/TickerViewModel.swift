@@ -1,23 +1,26 @@
 import Foundation
 
-struct TickerViewModel {
+struct TickerViewModel: BaseTickerNameViewModel {
     
-    let model: Ticker
+    var tickerName: Ticker.Name
     
-    var name: String {
-        return "\(model.baseCurrency)/\(model.counterCurrency)"
+    let ticker: Ticker
+    
+    init(ticker: Ticker) {
+        self.ticker = ticker
+        self.tickerName = ticker.name
     }
     
     var last: String {
         let lastValueString: String
         
-        if let last = model.last {
+        if let last = ticker.last {
             lastValueString = "\(last)"
         } else {
             lastValueString = "-"
         }
         
-        return "\(lastValueString) \(model.counterCurrency)"
+        return "\(lastValueString) \(ticker.counterCurrency)"
     }
     
 }

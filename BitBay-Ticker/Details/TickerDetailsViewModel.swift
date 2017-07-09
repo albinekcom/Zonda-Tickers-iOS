@@ -1,23 +1,26 @@
 import Foundation
 
-struct TickerDetailsViewModel {
+struct TickerDetailsViewModel: BaseTickerNameViewModel {
     
-    let model: Ticker
-
-    var name: String {
-        return "\(model.baseCurrency)/\(model.counterCurrency)"
+    var tickerName: Ticker.Name
+    
+    let ticker: Ticker
+    
+    init(ticker: Ticker) {
+        self.ticker = ticker
+        self.tickerName = ticker.name
     }
     
     var values: [TickerDetailViewModelValue] {
         return [
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.last", comment: ""), value: "\(unwrapValue(model.last)) \(model.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.max", comment: ""), value: "\(unwrapValue(model.max)) \(model.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.min", comment: ""), value: "\(unwrapValue(model.min)) \(model.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.bid", comment: ""), value: "\(unwrapValue(model.bid)) \(model.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.ask", comment: ""), value: "\(unwrapValue(model.ask)) \(model.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.vwap", comment: ""), value: "\(unwrapValue(model.vwap)) \(model.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.average", comment: ""), value: "\(unwrapValue(model.average)) \(model.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.volume", comment: ""), value: unwrapValue(model.volume))
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.last", comment: ""), value: "\(unwrapValue(ticker.last)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.max", comment: ""), value: "\(unwrapValue(ticker.max)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.min", comment: ""), value: "\(unwrapValue(ticker.min)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.bid", comment: ""), value: "\(unwrapValue(ticker.bid)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.ask", comment: ""), value: "\(unwrapValue(ticker.ask)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.vwap", comment: ""), value: "\(unwrapValue(ticker.vwap)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.average", comment: ""), value: "\(unwrapValue(ticker.average)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.volume", comment: ""), value: unwrapValue(ticker.volume))
         ]
     }
     

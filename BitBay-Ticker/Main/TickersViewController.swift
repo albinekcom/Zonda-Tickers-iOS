@@ -151,7 +151,7 @@ final class TickersViewController: UIViewController {
             .asObservable()
             .map { (tickers) in
                 tickers.map { (ticker) in
-                    return TickerViewModel(model: ticker)
+                    return TickerViewModel(ticker: ticker)
                 }
             }
             .observeOn(MainScheduler.instance)
@@ -227,7 +227,7 @@ final class TickersViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selectedIndexPath = tickersTableView.indexPathForSelectedRow, let tickerDetailsViewController = segue.destination as? TickerDetailsViewController {
             let selectedTicker = tickerStore.userTickers.value[selectedIndexPath.row]
-            tickerDetailsViewController.viewModel = TickerDetailsViewModel(model: selectedTicker)
+            tickerDetailsViewController.viewModel = TickerDetailsViewModel(ticker: selectedTicker)
         }
     }
     

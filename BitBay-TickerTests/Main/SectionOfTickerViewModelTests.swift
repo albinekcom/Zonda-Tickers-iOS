@@ -7,7 +7,7 @@ final class SectionOfTickerViewModelTests: XCTestCase {
     
     func testInitWithOriginal() {
         let ticker = Ticker(name: .btcpln, jsonDictionary: nil)
-        let tickerViewModel = TickerViewModel(model: ticker)
+        let tickerViewModel = TickerViewModel(ticker: ticker)
         
         let sectionOfTickerViewModel = SectionOfTickerViewModel(items: [tickerViewModel])
         let sectionOfTickerViewModel2 = SectionOfTickerViewModel(original: sectionOfTickerViewModel, items: [tickerViewModel])
