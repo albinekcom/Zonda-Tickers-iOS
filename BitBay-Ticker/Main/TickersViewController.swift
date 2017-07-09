@@ -149,15 +149,22 @@ final class TickersViewController: UIViewController {
         
         tickerStore.userTickers
             .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { [weak self] (indexPath) in
+                    self?.isRefreshing.value = false
+                }
+            )
+            .disposed(by: disposeBag)
+        
+        tickerStore.userTickers
+            .asObservable()
             .map { (tickers) in
                 tickers.map { (ticker) in
                     return TickerViewModel(ticker: ticker)
                 }
             }
-            .observeOn(MainScheduler.instance)
-            .map { [weak self] (tickersViewModels) in
-                self?.isRefreshing.value = false
-                
+            .map { (tickersViewModels) in
                 return [SectionOfTickerViewModel(items: tickersViewModels)]
             }
             .bind(to: tickersTableView.rx.items(dataSource: dataSource))
