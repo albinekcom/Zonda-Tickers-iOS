@@ -51,6 +51,8 @@ final class TickerStore {
         let ticker = Ticker(name: tickerName, jsonDictionary: nil)
         
         userTickers.value.append(ticker)
+        
+        refreshTickers()
     }
     
     // MARK: - User Data
