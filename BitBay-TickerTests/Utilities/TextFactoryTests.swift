@@ -5,10 +5,11 @@ final class TextFactoryTests: XCTestCase {
     
     func testMakeLastUpdateDateText() {
         let updateDate = Date(timeIntervalSinceReferenceDate: 0)
+        let timeZone = TimeZone(abbreviation: "UTC")
         
-        let lastUpdateText = TextFactory.makeLastUpdateDateText(updateDate: updateDate)
+        let lastUpdateText = TextFactory.makeLastUpdateDateText(updateDate: updateDate, timeZone: timeZone)
         
-        XCTAssertEqual("Last Updated on January 1, 2001 at 1:00 AM", lastUpdateText)
+        XCTAssertEqual("Last Updated on January 1, 2001 at 12:00 AM", lastUpdateText)
     }
     
 }
