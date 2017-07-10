@@ -6,8 +6,8 @@
 // Ticker Details
 
 "ticker.details.last" = "Last";
-"ticker.details.max" = "Max";
-"ticker.details.min" = "Min";
+"ticker.details.max" = "Maximum";
+"ticker.details.min" = "Minimum";
 "ticker.details.bid" = "Bid";
 "ticker.details.ask" = "Ask";
 "ticker.details.vwap" = "Weighted Average";

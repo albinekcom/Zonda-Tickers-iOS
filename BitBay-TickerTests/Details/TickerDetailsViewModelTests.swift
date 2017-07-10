@@ -40,9 +40,9 @@ final class TickerDetailsViewModelTests: XCTestCase {
         
         XCTAssertEqual("Last", viewModelWithEmptyTicker.values[0].title)
         XCTAssertEqual("- PLN", viewModelWithEmptyTicker.values[0].value)
-        XCTAssertEqual("Max", viewModelWithEmptyTicker.values[1].title)
+        XCTAssertEqual("Maximum", viewModelWithEmptyTicker.values[1].title)
         XCTAssertEqual("- PLN", viewModelWithEmptyTicker.values[1].value)
-        XCTAssertEqual("Min", viewModelWithEmptyTicker.values[2].title)
+        XCTAssertEqual("Minimum", viewModelWithEmptyTicker.values[2].title)
         XCTAssertEqual("- PLN", viewModelWithEmptyTicker.values[2].value)
         XCTAssertEqual("Bid", viewModelWithEmptyTicker.values[3].title)
         XCTAssertEqual("- PLN", viewModelWithEmptyTicker.values[3].value)
@@ -61,9 +61,9 @@ final class TickerDetailsViewModelTests: XCTestCase {
         
         XCTAssertEqual("Last", viewModel.values[0].title)
         XCTAssertEqual("3.3 PLN", viewModel.values[0].value)
-        XCTAssertEqual("Max", viewModel.values[1].title)
+        XCTAssertEqual("Maximum", viewModel.values[1].title)
         XCTAssertEqual("1.1 PLN", viewModel.values[1].value)
-        XCTAssertEqual("Min", viewModel.values[2].title)
+        XCTAssertEqual("Minimum", viewModel.values[2].title)
         XCTAssertEqual("2.2 PLN", viewModel.values[2].value)
         XCTAssertEqual("Bid", viewModel.values[3].title)
         XCTAssertEqual("4.4 PLN", viewModel.values[3].value)
