@@ -20,16 +20,21 @@ final class TickerStore {
         .btcpln, .ethpln, .ltcpln, .lskpln
     ]
     
-    func refreshTickers() {
+    func refreshTickers(completion: ((Error?) -> Void)?) {
         Observable
             .zip(
                 userTickers.value.map { (ticker) in
                     return TickerFactory.makeObservableTicker(named: ticker.name)
                 }
             )
+            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] (tickers) in
                     self?.userTickers.value = tickers
+                    completion?(nil)
+                },
+                onError: { (error) in
+                    completion?(error)
                 }
             )
             .disposed(by: disposeBag)
@@ -52,7 +57,7 @@ final class TickerStore {
         
         userTickers.value.append(ticker)
         
-        refreshTickers()
+        refreshTickers(completion: nil)
     }
     
     // MARK: - User Data

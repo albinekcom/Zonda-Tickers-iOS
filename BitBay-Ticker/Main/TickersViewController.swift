@@ -112,7 +112,6 @@ final class TickersViewController: UIViewController {
             .subscribe(
                 onNext: { [weak self] (value) in
                     UIApplication.shared.isNetworkActivityIndicatorVisible = value
-                    self?.tickersTableView.isUserInteractionEnabled = !value
                     self?.navigationItem.leftBarButtonItem?.isEnabled = !value
                     self?.navigationItem.rightBarButtonItem?.isEnabled = !value
                     
@@ -146,16 +145,6 @@ final class TickersViewController: UIViewController {
         dataSource.canMoveRowAtIndexPath = { (_) in
             return true
         }
-        
-        tickerStore.userTickers
-            .asObservable()
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { [weak self] (indexPath) in
-                    self?.isRefreshing.value = false
-                }
-            )
-            .disposed(by: disposeBag)
         
         tickerStore.userTickers
             .asObservable()
@@ -225,7 +214,22 @@ final class TickersViewController: UIViewController {
         } else {
             isRefreshing.value = true
             
-            tickerStore.refreshTickers()
+            tickerStore.refreshTickers() { [weak self] (error) in
+                guard let error = error else {
+                    self?.isRefreshing.value = false
+                    
+                    return
+                }
+                
+                let alertController = UIAlertController(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
+                alertController.addAction(cancelAction)
+                
+                self?.present(alertController, animated: true) { [weak self] in
+                    self?.isRefreshing.value = false
+                }
+            }
         }
     }
     
