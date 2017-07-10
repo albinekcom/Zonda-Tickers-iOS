@@ -9,6 +9,8 @@ final class TickerStore {
     
     var userTickers = Variable<[Ticker]>([])
     
+    var lastUpdateDate = Variable<Date?>(nil)
+    
     private let allAvailableTickersNames: [Ticker.Name] = [
         .btcpln, .ethpln, .ltcpln, .lskpln,
         .btceur, .etheur, .ltceur, .lskeur,
@@ -69,9 +71,15 @@ final class TickerStore {
             return $0.dictionary
         }
         
-        return [
-            "tickers": allUserTickersDictionary
-        ]
+        var userDataDictionary = [String: Any]()
+        
+        userDataDictionary["tickers"] = allUserTickersDictionary
+        
+        if let lastUpdateDate = lastUpdateDate.value {
+            userDataDictionary["lastUpdateTimeIntervalSinceReferenceDate"] = lastUpdateDate.timeIntervalSinceReferenceDate
+        }
+        
+        return userDataDictionary
     }
     
     // MARK: - Loading
@@ -88,6 +96,10 @@ final class TickerStore {
     
     private func loadUserDataFromFile() {
         let loadedUserDataDictionary = PlistFile(name: userDataPlistName).dictionary
+        
+        if let lastUpdateTimeIntervalSinceReferenceDate = loadedUserDataDictionary?["lastUpdateTimeIntervalSinceReferenceDate"] as? TimeInterval {
+            lastUpdateDate.value = Date(timeIntervalSinceReferenceDate: lastUpdateTimeIntervalSinceReferenceDate)
+        }
         
         guard let allTickers = loadedUserDataDictionary?["tickers"] as? [[String: Any]] else { return }
         

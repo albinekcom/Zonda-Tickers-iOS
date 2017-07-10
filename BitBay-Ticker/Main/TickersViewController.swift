@@ -196,6 +196,18 @@ final class TickersViewController: UIViewController {
             .disposed(by: disposeBag)
         
         tickersTableView.refreshControl = refreshControl
+        
+        tickerStore.lastUpdateDate
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] (lastDate) in
+                    guard let lastDate = lastDate else { return }
+                    
+                    let lastUpdateText = TextFactory.makeLastUpdateDateText(updateDate: lastDate)
+                    self?.tickersTableView.refreshControl?.attributedTitle = NSAttributedString(string: lastUpdateText, attributes: [NSForegroundColorAttributeName: UIColor.refreshControl])
+                }
+            )
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Refreshing
@@ -217,6 +229,7 @@ final class TickersViewController: UIViewController {
             tickerStore.refreshTickers() { [weak self] (error) in
                 guard let error = error else {
                     self?.isRefreshing.value = false
+                    self?.tickerStore.lastUpdateDate.value = Date(timeIntervalSinceNow: 0)
                     
                     return
                 }
