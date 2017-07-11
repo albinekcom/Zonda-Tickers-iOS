@@ -7,6 +7,8 @@
 
 BitBay Ticker for iOS devices.
 
+![Demo](Assets/Demo.gif "Demo")
+
 ## Technical aspects
 
 This application uses [RxSwift](https://github.com/ReactiveX/RxSwift).
