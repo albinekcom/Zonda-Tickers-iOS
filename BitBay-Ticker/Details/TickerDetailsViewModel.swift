@@ -13,27 +13,35 @@ struct TickerDetailsViewModel: BaseTickerNameViewModel {
     
     var values: [TickerDetailViewModelValue] {
         return [
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.last", comment: ""), value: "\(unwrapValue(ticker.last)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.max", comment: ""), value: "\(unwrapValue(ticker.max)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.min", comment: ""), value: "\(unwrapValue(ticker.min)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.bid", comment: ""), value: "\(unwrapValue(ticker.bid)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.ask", comment: ""), value: "\(unwrapValue(ticker.ask)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.vwap", comment: ""), value: "\(unwrapValue(ticker.vwap)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.average", comment: ""), value: "\(unwrapValue(ticker.average)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.last", comment: ""), value: "\(unwrapCurrencyValue(ticker.last)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.max", comment: ""), value: "\(unwrapCurrencyValue(ticker.max)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.min", comment: ""), value: "\(unwrapCurrencyValue(ticker.min)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.bid", comment: ""), value: "\(unwrapCurrencyValue(ticker.bid)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.ask", comment: ""), value: "\(unwrapCurrencyValue(ticker.ask)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.vwap", comment: ""), value: "\(unwrapCurrencyValue(ticker.vwap)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.average", comment: ""), value: "\(unwrapCurrencyValue(ticker.average)) \(ticker.counterCurrency)"),
             TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.volume", comment: ""), value: unwrapValue(ticker.volume))
         ]
     }
     
-    private func unwrapValue(_ value: Double?) -> String {
-        let unwrappedValue: String
+    private func unwrapCurrencyValue(_ value: Double?) -> String {
+        guard let value = value else { return "-" }
         
-        if let value = value {
-            unwrappedValue = "\(value)"
+        let valueString: String
+        
+        if ticker.counterCurrency == "BTC" {
+            valueString = "\(value)"
         } else {
-            unwrappedValue = "-"
+            valueString = String(format: "%.2f", value)
         }
         
-        return unwrappedValue
+        return "\(valueString)"
+    }
+    
+    private func unwrapValue(_ value: Double?) -> String {
+        guard let value = value else { return "-" }
+        
+        return "\(value)"
     }
     
 }

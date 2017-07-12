@@ -12,12 +12,14 @@ struct TickerViewModel: BaseTickerNameViewModel {
     }
     
     var last: String {
+        guard let last = ticker.last else { return "- \(ticker.counterCurrency)" }
+        
         let lastValueString: String
         
-        if let last = ticker.last {
+        if ticker.counterCurrency == "BTC" {
             lastValueString = "\(last)"
         } else {
-            lastValueString = "-"
+            lastValueString = String(format: "%.2f", last)
         }
         
         return "\(lastValueString) \(ticker.counterCurrency)"

@@ -36,7 +36,7 @@ final class TickerViewModelTests: XCTestCase {
     }
     
     func testLast() {
-        XCTAssertEqual("3.3 PLN", viewModel.last)
+        XCTAssertEqual("3.30 PLN", viewModel.last)
         XCTAssertEqual("- PLN", viewModelWithEmptyTicker.last)
     }
     
