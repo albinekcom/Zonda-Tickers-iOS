@@ -3,6 +3,8 @@ import NotificationCenter
 
 final class TodayViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Managing View
     
     override func viewDidLoad() {
