@@ -3,6 +3,11 @@ import RxSwift
 
 final class TickerStore {
     
+    struct Key {
+        static let tickers = "tickers"
+        static let lastUpdateTimeIntervalSinceReferenceDate = "lastUpdateTimeIntervalSinceReferenceDate"
+    }
+    
     static let shared = TickerStore()
     
     private let disposeBag = DisposeBag()
@@ -64,7 +69,7 @@ final class TickerStore {
     
     // MARK: - User Data
     
-    private let userDataPlistName = "user_data"
+    static let userDataPlistName = "user_data"
     
     private var userDataDictionary: [String: Any] {
         let allUserTickersDictionary = userTickers.value.map {
@@ -73,10 +78,10 @@ final class TickerStore {
         
         var userDataDictionary = [String: Any]()
         
-        userDataDictionary["tickers"] = allUserTickersDictionary
+        userDataDictionary[Key.tickers] = allUserTickersDictionary
         
         if let lastUpdateDate = lastUpdateDate.value {
-            userDataDictionary["lastUpdateTimeIntervalSinceReferenceDate"] = lastUpdateDate.timeIntervalSinceReferenceDate
+            userDataDictionary[Key.lastUpdateTimeIntervalSinceReferenceDate] = lastUpdateDate.timeIntervalSinceReferenceDate
         }
         
         return userDataDictionary
@@ -85,7 +90,7 @@ final class TickerStore {
     // MARK: - Loading
     
     func loadUserData() {
-        if PlistFile(name: userDataPlistName).isUserDataCreated {
+        if PlistFile(name: TickerStore.userDataPlistName).isUserDataCreated {
             loadUserDataFromFile()
         } else {
             userTickers.value = defaultTickersNames.map { (tickerName) in
@@ -95,13 +100,13 @@ final class TickerStore {
     }
     
     private func loadUserDataFromFile() {
-        let loadedUserDataDictionary = PlistFile(name: userDataPlistName).dictionary
+        let loadedUserDataDictionary = PlistFile(name: TickerStore.userDataPlistName).dictionary
         
-        if let lastUpdateTimeIntervalSinceReferenceDate = loadedUserDataDictionary?["lastUpdateTimeIntervalSinceReferenceDate"] as? TimeInterval {
+        if let lastUpdateTimeIntervalSinceReferenceDate = loadedUserDataDictionary?[Key.lastUpdateTimeIntervalSinceReferenceDate] as? TimeInterval {
             lastUpdateDate.value = Date(timeIntervalSinceReferenceDate: lastUpdateTimeIntervalSinceReferenceDate)
         }
         
-        guard let allTickers = loadedUserDataDictionary?["tickers"] as? [[String: Any]] else { return }
+        guard let allTickers = loadedUserDataDictionary?[Key.tickers] as? [[String: Any]] else { return }
         
         var loadedTickers = [Ticker]()
         
@@ -116,7 +121,7 @@ final class TickerStore {
     // MARK: - Saving
     
     func saveUserData() {
-        _ = PlistFile(name: userDataPlistName).save(dictionary: userDataDictionary)
+        _ = PlistFile(name: TickerStore.userDataPlistName).save(dictionary: userDataDictionary)
     }
 
 }
