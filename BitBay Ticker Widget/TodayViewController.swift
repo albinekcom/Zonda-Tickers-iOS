@@ -9,24 +9,33 @@ final class TodayViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    fileprivate let tickerStore = TickerStore()
+    
     // MARK: - Managing View
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
+        
+        tickerStore.loadUserData()
     }
     
     // MARK: - Setting
     
     private func setupTableView() {
-        let data = Observable<[(String, String)]>.just([("first element", "Detail 1"), ("second element", "Detail 2"), ("third element", "Detail 3")])
-        
-        data.bind(to: tableView.rx.items(cellIdentifier: "Widget Cell")) { (index, model, cell) in
-            cell.textLabel?.text = model.0
-            cell.detailTextLabel?.text = model.1
-        }
-        .disposed(by: disposeBag)
+        tickerStore.userTickers
+            .asObservable()
+            .map { (tickers) in
+                tickers.map { (ticker) in
+                    return TickerViewModel(ticker: ticker)
+                }
+            }
+            .bind(to: tableView.rx.items(cellIdentifier: "Widget Cell")) { (index, model, cell) in
+                cell.textLabel?.text = model.name
+                cell.detailTextLabel?.text = model.last
+            }
+            .disposed(by: disposeBag)
     }
     
 }
@@ -34,11 +43,7 @@ final class TodayViewController: UIViewController {
 extension TodayViewController: NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
+        tickerStore.refreshTickers(completion: nil)
         
         completionHandler(NCUpdateResult.newData)
     }

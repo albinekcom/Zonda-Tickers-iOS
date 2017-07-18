@@ -11,6 +11,12 @@
 		2813002B72BE0497CDBCD3DB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF13BF0B80336B95A6FA66B6 /* CoreTelephony.framework */; };
 		5128D05AE6867DE011AC6A7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B087561A567A814D6F909055 /* CoreText.framework */; };
 		7657910227263AEC49DE266B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */; };
+		8C033B631F1E797C000FF38E /* TickerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFA6F01F06F618003669A1 /* TickerStore.swift */; };
+		8C033B641F1E797F000FF38E /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
+		8C033B651F1E7982000FF38E /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
+		8C033B671F1E79D1000FF38E /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
+		8C033B681F1E7A50000FF38E /* BaseTickerNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2CA9BC1F1215A30088F757 /* BaseTickerNameViewModel.swift */; };
+		8C033B691F1E7A5A000FF38E /* PlistFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D291F0BF2FA00D76B74 /* PlistFile.swift */; };
 		8C03CE8C1F0F605100038281 /* AddTickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C03CE8B1F0F605100038281 /* AddTickerViewModelTests.swift */; };
 		8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
 		8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
@@ -694,7 +700,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C033B691F1E7A5A000FF38E /* PlistFile.swift in Sources */,
+				8C033B651F1E7982000FF38E /* TickerFactory.swift in Sources */,
 				8CFB35151F1808F900475DC1 /* TodayViewController.swift in Sources */,
+				8C033B641F1E797F000FF38E /* Ticker.swift in Sources */,
+				8C033B671F1E79D1000FF38E /* TickerViewModel.swift in Sources */,
+				8C033B681F1E7A50000FF38E /* BaseTickerNameViewModel.swift in Sources */,
+				8C033B631F1E797C000FF38E /* TickerStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

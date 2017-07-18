@@ -1,3 +1,5 @@
+import Foundation
+
 struct PlistFile {
     
     let name: String
