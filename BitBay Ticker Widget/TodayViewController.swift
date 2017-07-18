@@ -11,14 +11,22 @@ final class TodayViewController: UIViewController {
     
     fileprivate let tickerStore = TickerStore()
     
+    fileprivate let cellHeight = CGFloat(44)
+    
     // MARK: - Managing View
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         setupTableView()
-        
         tickerStore.loadUserData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tickerStore.refreshTickers(completion: nil)
     }
     
     // MARK: - Setting
@@ -45,7 +53,15 @@ extension TodayViewController: NCWidgetProviding {
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         tickerStore.refreshTickers(completion: nil)
         
-        completionHandler(NCUpdateResult.newData)
+        completionHandler(.newData)
+    }
+    
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        let expanded = activeDisplayMode == .expanded
+        
+        let height = CGFloat(tickerStore.userTickers.value.count) * cellHeight
+        
+        preferredContentSize = expanded ? CGSize(width: maxSize.width, height: height) : maxSize
     }
     
 }
