@@ -51,9 +51,17 @@ final class TodayViewController: UIViewController {
 extension TodayViewController: NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        tickerStore.refreshTickers(completion: nil)
-        
-        completionHandler(.newData)
+        tickerStore.refreshTickers { (error) in
+            let updateResult: NCUpdateResult
+            
+            if let _ = error {
+                updateResult = .failed
+            } else {
+                updateResult = .newData
+            }
+            
+            completionHandler(updateResult)
+        }
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
