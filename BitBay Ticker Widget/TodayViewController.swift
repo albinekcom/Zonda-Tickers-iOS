@@ -9,7 +9,7 @@ final class TodayViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    fileprivate let tickerStore = TickerStore()
+    fileprivate let tickerStore = TickerStore.shared
     
     fileprivate let cellHeight = CGFloat(44)
     
