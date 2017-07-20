@@ -26,6 +26,8 @@
 		8C377D2C1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */; };
 		8C4114561F207E730047DF5E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4114551F207E730047DF5E /* Currency.swift */; };
 		8C4114581F207F7B0047DF5E /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4114571F207F7B0047DF5E /* CurrencyTests.swift */; };
+		8C4980541F2135FF001994C7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980521F2135FF001994C7 /* Crashlytics.framework */; };
+		8C4980561F2135FF001994C7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980531F2135FF001994C7 /* Fabric.framework */; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
 		8C5CF6FC1F044CBD00B0C8E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
@@ -128,6 +130,8 @@
 		8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ApplicationColors.swift"; path = "Utilities/UIColor+ApplicationColors.swift"; sourceTree = "<group>"; };
 		8C4114551F207E730047DF5E /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Utilities/Currency.swift; sourceTree = "<group>"; };
 		8C4114571F207F7B0047DF5E /* CurrencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrencyTests.swift; path = Utilities/CurrencyTests.swift; sourceTree = "<group>"; };
+		8C4980521F2135FF001994C7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "BitBay-Ticker/External/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
+		8C4980531F2135FF001994C7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "BitBay-Ticker/External/Frameworks/Fabric.framework"; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
 		8C7824B01F0ABA08000EA87A /* AddTickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTickerViewController.swift; path = Add/AddTickerViewController.swift; sourceTree = "<group>"; };
@@ -178,10 +182,12 @@
 			files = (
 				7657910227263AEC49DE266B /* AssetsLibrary.framework in Frameworks */,
 				5128D05AE6867DE011AC6A7F /* CoreText.framework in Frameworks */,
+				8C4980541F2135FF001994C7 /* Crashlytics.framework in Frameworks */,
 				2813002B72BE0497CDBCD3DB /* CoreTelephony.framework in Frameworks */,
 				E7A3C37842C31C334C420719 /* SystemConfiguration.framework in Frameworks */,
 				F96D43DF325E879ABE52A926 /* QuartzCore.framework in Frameworks */,
 				ADDFE86648DC8970E0982986 /* AVFoundation.framework in Frameworks */,
+				8C4980561F2135FF001994C7 /* Fabric.framework in Frameworks */,
 				22D4B494C269AB2CBA0F7950 /* CoreMedia.framework in Frameworks */,
 				D58F77DA1A05C67A5C4878E3 /* CoreVideo.framework in Frameworks */,
 				8CDFD4711F0786F9009F1E19 /* RxDataSources.framework in Frameworks */,
@@ -412,6 +418,8 @@
 		C24AC6780E9338DA000950BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C4980521F2135FF001994C7 /* Crashlytics.framework */,
+				8C4980531F2135FF001994C7 /* Fabric.framework */,
 				8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */,
 				8C0B9BF81F09078B002F0B5D /* RxSwiftExt.framework */,
 				8C0B9BF61F09066A002F0B5D /* RxTest.framework */,
@@ -444,6 +452,7 @@
 				8CC184F61EFE4CAC0083DA30 /* Resources */,
 				8C1CF6F21F04351400E6F0D4 /* Run Script For Carthage */,
 				8CFB35201F1808F900475DC1 /* Embed App Extensions */,
+				8C4980581F213635001994C7 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -627,6 +636,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		8C4980581F213635001994C7 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/BitBay-Ticker/External/Frameworks/Fabric.framework/run\" 0134994a56db3edb1ef431d7880b341d0702dbfc 80c67cfba17125c6665d7986b0aafee069ecdca6248852b7bfc566a178851c7e";
 		};
 		8C9146C51F0909B800221180 /* Run Script For Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -992,6 +1015,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/BitBay-Ticker/External/Frameworks",
 				);
 				INFOPLIST_FILE = "BitBay Ticker Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1009,6 +1033,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/BitBay-Ticker/External/Frameworks",
 				);
 				INFOPLIST_FILE = "BitBay Ticker Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

@@ -1,3 +1,5 @@
+import Crashlytics
+import Fabric
 import UIKit
 
 @UIApplicationMain
@@ -11,6 +13,7 @@ extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         BuddyBuildSDK.setup()
+        Fabric.with([Crashlytics.self])
         
         TickerStore.shared.loadUserData()
         
