@@ -26,7 +26,7 @@ struct TextFactory {
             numberFormatter.maximumFractionDigits = 2
         } else {
             numberFormatter.minimumFractionDigits = 0
-            numberFormatter.maximumFractionDigits = 100
+            numberFormatter.maximumFractionDigits = 10
         }
         
         let valueString: String
