@@ -165,6 +165,7 @@ final class TickersViewController: UIViewController {
             .subscribe(
                 onNext: { [weak self] (indexPath) in
                     self?.tickerStore.userTickers.value.remove(at: indexPath.row)
+                    self?.tickerStore.saveUserData()
                 }
             )
             .disposed(by: disposeBag)

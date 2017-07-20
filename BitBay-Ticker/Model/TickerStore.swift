@@ -38,6 +38,7 @@ final class TickerStore {
             .subscribe(
                 onNext: { [weak self] (tickers) in
                     self?.userTickers.value = tickers
+                    self?.saveUserData()
                     completion?(nil)
                 },
                 onError: { (error) in
