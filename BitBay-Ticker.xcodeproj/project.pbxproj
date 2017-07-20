@@ -38,7 +38,6 @@
 		8C7824B11F0ABA08000EA87A /* AddTickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7824B01F0ABA08000EA87A /* AddTickerViewController.swift */; };
 		8C7824B31F0ABA21000EA87A /* AddTickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7824B21F0ABA21000EA87A /* AddTickerViewModel.swift */; };
 		8C9146C41F09098200221180 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */; };
-		8C9146C61F090A5800221180 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BF81F09078B002F0B5D /* RxSwiftExt.framework */; };
 		8C9146C71F090A5C00221180 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BF61F09066A002F0B5D /* RxTest.framework */; };
 		8C9146C91F0911B900221180 /* TickerStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146C81F0911B900221180 /* TickerStoreTests.swift */; };
 		8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */; };
@@ -119,7 +118,6 @@
 		7E6DBCB5CEC98873275BFD9D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8C03CE8B1F0F605100038281 /* AddTickerViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTickerViewModelTests.swift; path = Add/AddTickerViewModelTests.swift; sourceTree = "<group>"; };
 		8C0B9BF61F09066A002F0B5D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
-		8C0B9BF81F09078B002F0B5D /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 		8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerFactory.swift; path = Model/TickerFactory.swift; sourceTree = "<group>"; };
 		8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				8C7783911F044DCF005454D0 /* RxCocoa.framework in Frameworks */,
 				8C9146C71F090A5C00221180 /* RxTest.framework in Frameworks */,
 				8C7783921F044DCF005454D0 /* RxSwift.framework in Frameworks */,
-				8C9146C61F090A5800221180 /* RxSwiftExt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +419,6 @@
 				8C4980521F2135FF001994C7 /* Crashlytics.framework */,
 				8C4980531F2135FF001994C7 /* Fabric.framework */,
 				8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */,
-				8C0B9BF81F09078B002F0B5D /* RxSwiftExt.framework */,
 				8C0B9BF61F09066A002F0B5D /* RxTest.framework */,
 				8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */,
 				8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */,
@@ -663,7 +659,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
 			);
 			name = "Run Script For Carthage";
 			outputPaths = (
@@ -672,7 +667,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwiftExt.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
