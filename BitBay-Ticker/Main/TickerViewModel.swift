@@ -12,17 +12,7 @@ struct TickerViewModel: BaseTickerNameViewModel {
     }
     
     var last: String {
-        guard let last = ticker.last else { return "- \(ticker.counterCurrency)" }
-        
-        let lastValueString: String
-        
-        if ticker.counterCurrency.isFiat {
-            lastValueString = String(format: "%.2f", last)
-        } else {
-            lastValueString = "\(last)"
-        }
-        
-        return "\(lastValueString) \(ticker.counterCurrency)"
+        return "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.last, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"
     }
     
 }

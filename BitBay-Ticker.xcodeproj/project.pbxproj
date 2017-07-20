@@ -22,6 +22,7 @@
 		8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
 		8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */; };
 		8C2CA9BD1F1215A30088F757 /* BaseTickerNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2CA9BC1F1215A30088F757 /* BaseTickerNameViewModel.swift */; };
+		8C2ECC591F2143EA00C15106 /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9D45F1F13FD0E00502695 /* TextFactory.swift */; };
 		8C377D2A1F0BF2FA00D76B74 /* PlistFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D291F0BF2FA00D76B74 /* PlistFile.swift */; };
 		8C377D2C1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */; };
 		8C4114561F207E730047DF5E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4114551F207E730047DF5E /* Currency.swift */; };
@@ -733,6 +734,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C033B691F1E7A5A000FF38E /* PlistFile.swift in Sources */,
+				8C2ECC591F2143EA00C15106 /* TextFactory.swift in Sources */,
 				8C033B651F1E7982000FF38E /* TickerFactory.swift in Sources */,
 				8CFB35151F1808F900475DC1 /* TodayViewController.swift in Sources */,
 				8C033B641F1E797F000FF38E /* Ticker.swift in Sources */,

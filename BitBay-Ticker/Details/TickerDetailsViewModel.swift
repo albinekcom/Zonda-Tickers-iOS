@@ -13,35 +13,15 @@ struct TickerDetailsViewModel: BaseTickerNameViewModel {
     
     var values: [TickerDetailViewModelValue] {
         return [
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.last", comment: ""), value: "\(unwrapCurrencyValue(ticker.last)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.max", comment: ""), value: "\(unwrapCurrencyValue(ticker.max)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.min", comment: ""), value: "\(unwrapCurrencyValue(ticker.min)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.bid", comment: ""), value: "\(unwrapCurrencyValue(ticker.bid)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.ask", comment: ""), value: "\(unwrapCurrencyValue(ticker.ask)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.vwap", comment: ""), value: "\(unwrapCurrencyValue(ticker.vwap)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.average", comment: ""), value: "\(unwrapCurrencyValue(ticker.average)) \(ticker.counterCurrency)"),
-            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.volume", comment: ""), value: unwrapValue(ticker.volume))
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.last", comment: ""), value: "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.last, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.max", comment: ""), value: "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.max, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.min", comment: ""), value: "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.min, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.bid", comment: ""), value: "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.bid, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.ask", comment: ""), value: "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.ask, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.vwap", comment: ""), value: "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.vwap, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.average", comment: ""), value: "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.average, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"),
+            TickerDetailViewModelValue(title: NSLocalizedString("ticker.details.volume", comment: ""), value: TextFactory.makeFormattedCurrencyValueString(for: ticker.volume, isFiat: false))
         ]
-    }
-    
-    private func unwrapCurrencyValue(_ value: Double?) -> String {
-        guard let value = value else { return "-" }
-        
-        let valueString: String
-        
-        if ticker.counterCurrency.isFiat {
-            valueString = String(format: "%.2f", value)
-        } else {
-            valueString = "\(value)"
-        }
-        
-        return "\(valueString)"
-    }
-    
-    private func unwrapValue(_ value: Double?) -> String {
-        guard let value = value else { return "-" }
-        
-        return "\(value)"
     }
     
 }
