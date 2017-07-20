@@ -15,8 +15,8 @@ final class TickerFactoryTests: XCTestCase {
         
         XCTAssertNotNil(ticker)
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)
-        XCTAssertEqual("BTC", ticker.baseCurrency)
-        XCTAssertEqual("PLN", ticker.counterCurrency)
+        XCTAssertEqual(Currency.btc, ticker.baseCurrency)
+        XCTAssertEqual(Currency.pln, ticker.counterCurrency)
         XCTAssertEqual(1.1, ticker.max)
         XCTAssertEqual(2.2, ticker.min)
         XCTAssertEqual(3.3, ticker.last)

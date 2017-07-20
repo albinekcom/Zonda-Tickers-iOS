@@ -29,10 +29,10 @@ struct TickerDetailsViewModel: BaseTickerNameViewModel {
         
         let valueString: String
         
-        if ticker.counterCurrency == "BTC" {
-            valueString = "\(value)"
-        } else {
+        if ticker.counterCurrency.isFiat {
             valueString = String(format: "%.2f", value)
+        } else {
+            valueString = "\(value)"
         }
         
         return "\(valueString)"

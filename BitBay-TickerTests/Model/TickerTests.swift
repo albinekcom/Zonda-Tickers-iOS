@@ -7,8 +7,8 @@ final class TickerTests: XCTestCase {
         let ticker = Ticker(name: .btcpln, jsonDictionary: nil)
         
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)
-        XCTAssertEqual("BTC", ticker.baseCurrency)
-        XCTAssertEqual("PLN", ticker.counterCurrency)
+        XCTAssertEqual(Currency.btc, ticker.baseCurrency)
+        XCTAssertEqual(Currency.pln, ticker.counterCurrency)
         XCTAssertNil(ticker.max)
         XCTAssertNil(ticker.min)
         XCTAssertNil(ticker.last)
@@ -34,8 +34,8 @@ final class TickerTests: XCTestCase {
         let ticker = Ticker(name: .btcpln, jsonDictionary: jsonDictionary)
         
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)
-        XCTAssertEqual("BTC", ticker.baseCurrency)
-        XCTAssertEqual("PLN", ticker.counterCurrency)
+        XCTAssertEqual(Currency.btc, ticker.baseCurrency)
+        XCTAssertEqual(Currency.pln, ticker.counterCurrency)
         XCTAssertEqual(1.1, ticker.max)
         XCTAssertEqual(2.2, ticker.min)
         XCTAssertEqual(3.3, ticker.last)
@@ -62,8 +62,8 @@ final class TickerTests: XCTestCase {
         let ticker = Ticker(fromDictionary: inputDictionary)
         
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)
-        XCTAssertEqual("BTC", ticker.baseCurrency)
-        XCTAssertEqual("PLN", ticker.counterCurrency)
+        XCTAssertEqual(Currency.btc, ticker.baseCurrency)
+        XCTAssertEqual(Currency.pln, ticker.counterCurrency)
         XCTAssertEqual(1.1, ticker.max)
         XCTAssertEqual(2.2, ticker.min)
         XCTAssertEqual(3.3, ticker.last)

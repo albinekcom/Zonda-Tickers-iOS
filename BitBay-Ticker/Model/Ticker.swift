@@ -23,8 +23,8 @@ struct Ticker {
         case lskbtc
     }
     
-    let baseCurrency: String
-    let counterCurrency: String
+    let baseCurrency: Currency
+    let counterCurrency: Currency
     
     let name: Name
     
@@ -38,8 +38,8 @@ struct Ticker {
     let volume: Double?
     
     init(name: Name, jsonDictionary: [String: Any]?) {
-        baseCurrency = String(name.rawValue.uppercased().characters.dropLast(3))
-        counterCurrency = String(name.rawValue.uppercased().characters.dropFirst(3))
+        baseCurrency = Currency(rawValue: String(name.rawValue.characters.dropLast(3)))!
+        counterCurrency = Currency(rawValue: String(name.rawValue.characters.dropFirst(3)))!
         
         self.name = name
         

@@ -16,10 +16,10 @@ struct TickerViewModel: BaseTickerNameViewModel {
         
         let lastValueString: String
         
-        if ticker.counterCurrency == "BTC" {
-            lastValueString = "\(last)"
-        } else {
+        if ticker.counterCurrency.isFiat {
             lastValueString = String(format: "%.2f", last)
+        } else {
+            lastValueString = "\(last)"
         }
         
         return "\(lastValueString) \(ticker.counterCurrency)"

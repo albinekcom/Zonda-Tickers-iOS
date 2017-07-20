@@ -2,14 +2,14 @@ import Foundation
 
 enum Currency: String {
     
-    case pln = "PLN"
-    case usd = "USD"
-    case eur = "EUR"
+    case pln
+    case usd
+    case eur
     
-    case btc = "BTC"
-    case eth = "ETH"
-    case ltc = "LTC"
-    case lsk = "LSK"
+    case btc
+    case eth
+    case ltc
+    case lsk
     
     static var fiatCurrencies: [Currency] {
         return [.pln, .usd, .eur]
@@ -17,6 +17,14 @@ enum Currency: String {
     
     var isFiat: Bool {
         return Currency.fiatCurrencies.contains(self)
+    }
+    
+}
+
+extension Currency: CustomStringConvertible {
+    
+    var description: String {
+        return rawValue.uppercased()
     }
     
 }

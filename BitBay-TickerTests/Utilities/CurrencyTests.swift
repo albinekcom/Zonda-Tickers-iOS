@@ -3,17 +3,6 @@ import XCTest
 
 final class CurrencyTests: XCTestCase {
     
-    func testEnumRawValues() {
-        XCTAssertEqual("PLN", Currency.pln.rawValue)
-        XCTAssertEqual("USD", Currency.usd.rawValue)
-        XCTAssertEqual("EUR", Currency.eur.rawValue)
-        
-        XCTAssertEqual("BTC", Currency.btc.rawValue)
-        XCTAssertEqual("ETH", Currency.eth.rawValue)
-        XCTAssertEqual("LTC", Currency.ltc.rawValue)
-        XCTAssertEqual("LSK", Currency.lsk.rawValue)
-    }
-    
     func testFiatCurrencies() {
         XCTAssertEqual([Currency.pln, Currency.usd, Currency.eur], Currency.fiatCurrencies)
     }
@@ -27,6 +16,17 @@ final class CurrencyTests: XCTestCase {
         XCTAssertFalse(Currency.eth.isFiat)
         XCTAssertFalse(Currency.ltc.isFiat)
         XCTAssertFalse(Currency.lsk.isFiat)
+    }
+    
+    func testDescription() {
+        XCTAssertEqual("PLN", Currency.pln.description)
+        XCTAssertEqual("USD", Currency.usd.description)
+        XCTAssertEqual("EUR", Currency.eur.description)
+        
+        XCTAssertEqual("BTC", Currency.btc.description)
+        XCTAssertEqual("ETH", Currency.eth.description)
+        XCTAssertEqual("LTC", Currency.ltc.description)
+        XCTAssertEqual("LSK", Currency.lsk.description)
     }
     
 }

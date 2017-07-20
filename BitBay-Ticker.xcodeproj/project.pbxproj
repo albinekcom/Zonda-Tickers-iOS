@@ -42,6 +42,7 @@
 		8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */; };
 		8C91772D1F057962008E67C7 /* TickerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */; };
 		8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */; };
+		8CBA7E9F1F20890700444EA4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4114551F207E730047DF5E /* Currency.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185011EFE4CAC0083DA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */; };
@@ -712,6 +713,7 @@
 				8C033B651F1E7982000FF38E /* TickerFactory.swift in Sources */,
 				8CFB35151F1808F900475DC1 /* TodayViewController.swift in Sources */,
 				8C033B641F1E797F000FF38E /* Ticker.swift in Sources */,
+				8CBA7E9F1F20890700444EA4 /* Currency.swift in Sources */,
 				8C033B671F1E79D1000FF38E /* TickerViewModel.swift in Sources */,
 				8C033B681F1E7A50000FF38E /* BaseTickerNameViewModel.swift in Sources */,
 				8C033B631F1E797C000FF38E /* TickerStore.swift in Sources */,
