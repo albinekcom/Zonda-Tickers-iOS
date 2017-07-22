@@ -20,12 +20,12 @@ final class TodayViewController: UIViewController {
         
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         setupTableView()
-        tickerStore.loadUserData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        tickerStore.loadUserData()
         tickerStore.refreshTickers(completion: nil)
     }
     
@@ -51,6 +51,7 @@ final class TodayViewController: UIViewController {
 extension TodayViewController: NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
+        tickerStore.loadUserData()
         tickerStore.refreshTickers { (error) in
             let updateResult: NCUpdateResult
             
