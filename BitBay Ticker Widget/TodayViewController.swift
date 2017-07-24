@@ -46,6 +46,12 @@ final class TodayViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    @objc private func launchApplication() {
+        guard let applicationURL = URL(string: "BitBay-Ticker://") else { return }
+        
+        extensionContext?.open(applicationURL)
+    }
+    
 }
 
 extension TodayViewController: NCWidgetProviding {
