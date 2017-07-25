@@ -44,9 +44,19 @@ final class TodayViewController: UIViewController {
                 cell.detailTextLabel?.text = model.last
             }
             .disposed(by: disposeBag)
+        
+        tableView
+            .rx
+            .itemSelected
+            .subscribe(
+                onNext: { [weak self] (_) in
+                    self?.launchApplication()
+                }
+            )
+            .disposed(by: disposeBag)
     }
     
-    @objc private func launchApplication() {
+    private func launchApplication() {
         guard let applicationURL = URL(string: "BitBay-Ticker://") else { return }
         
         extensionContext?.open(applicationURL)
