@@ -23,15 +23,7 @@ struct PlistFile {
     }
     
     private var destinationPath: String? {
-        let destinationPath: String?
-        
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            destinationPath = (dir.path as NSString).appendingPathComponent("\(name).plist")
-        } else {
-            destinationPath = nil
-        }
-        
-        return destinationPath
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("\(name).plist").path
     }
     
 }
