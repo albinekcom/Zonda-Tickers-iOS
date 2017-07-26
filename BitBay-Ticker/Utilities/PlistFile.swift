@@ -25,8 +25,8 @@ struct PlistFile {
     private var destinationPath: String? {
         let destinationPath: String?
         
-        if let dir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
-            destinationPath = (dir as NSString).appendingPathComponent("\(name).plist")
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            destinationPath = (dir.path as NSString).appendingPathComponent("\(name).plist")
         } else {
             destinationPath = nil
         }
