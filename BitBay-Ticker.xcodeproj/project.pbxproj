@@ -15,17 +15,13 @@
 		8C033B641F1E797F000FF38E /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C033B651F1E7982000FF38E /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
 		8C033B671F1E79D1000FF38E /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
-		8C033B681F1E7A50000FF38E /* BaseTickerNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2CA9BC1F1215A30088F757 /* BaseTickerNameViewModel.swift */; };
 		8C033B691F1E7A5A000FF38E /* PlistFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D291F0BF2FA00D76B74 /* PlistFile.swift */; };
 		8C03CE8C1F0F605100038281 /* AddTickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C03CE8B1F0F605100038281 /* AddTickerViewModelTests.swift */; };
 		8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
 		8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
 		8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */; };
-		8C2CA9BD1F1215A30088F757 /* BaseTickerNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2CA9BC1F1215A30088F757 /* BaseTickerNameViewModel.swift */; };
-		8C2ECC591F2143EA00C15106 /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9D45F1F13FD0E00502695 /* TextFactory.swift */; };
 		8C377D2A1F0BF2FA00D76B74 /* PlistFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D291F0BF2FA00D76B74 /* PlistFile.swift */; };
 		8C377D2C1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */; };
-		8C4114561F207E730047DF5E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4114551F207E730047DF5E /* Currency.swift */; };
 		8C4114581F207F7B0047DF5E /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4114571F207F7B0047DF5E /* CurrencyTests.swift */; };
 		8C4980541F2135FF001994C7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980521F2135FF001994C7 /* Crashlytics.framework */; };
 		8C4980561F2135FF001994C7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980531F2135FF001994C7 /* Fabric.framework */; };
@@ -44,7 +40,6 @@
 		8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */; };
 		8C91772D1F057962008E67C7 /* TickerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91772C1F057962008E67C7 /* TickerDetailsViewModel.swift */; };
 		8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9177311F058E29008E67C7 /* TickerDetailsViewModelTests.swift */; };
-		8CBA7E9F1F20890700444EA4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4114551F207E730047DF5E /* Currency.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185011EFE4CAC0083DA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC184FF1EFE4CAC0083DA30 /* Main.storyboard */; };
@@ -60,7 +55,12 @@
 		8CDFD4751F084048009F1E19 /* SectionOfTickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD4741F084048009F1E19 /* SectionOfTickerViewModelTests.swift */; };
 		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
 		8CE06BD51F061B2C00EBD7B9 /* TickerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */; };
-		8CF9D4601F13FD0E00502695 /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9D45F1F13FD0E00502695 /* TextFactory.swift */; };
+		8CF8CF751F29B70F0084C5CA /* BaseTickerNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8CF721F29B70F0084C5CA /* BaseTickerNameViewModel.swift */; };
+		8CF8CF761F29B70F0084C5CA /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8CF731F29B70F0084C5CA /* Currency.swift */; };
+		8CF8CF771F29B70F0084C5CA /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8CF741F29B70F0084C5CA /* TextFactory.swift */; };
+		8CF8CF781F29B7160084C5CA /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8CF731F29B70F0084C5CA /* Currency.swift */; };
+		8CF8CF791F29B71C0084C5CA /* BaseTickerNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8CF721F29B70F0084C5CA /* BaseTickerNameViewModel.swift */; };
+		8CF8CF7A1F29B7200084C5CA /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8CF741F29B70F0084C5CA /* TextFactory.swift */; };
 		8CF9D4631F13FD7000502695 /* TextFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9D4621F13FD7000502695 /* TextFactoryTests.swift */; };
 		8CFB35121F1808F900475DC1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFB35111F1808F900475DC1 /* NotificationCenter.framework */; };
 		8CFB35151F1808F900475DC1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB35141F1808F900475DC1 /* TodayViewController.swift */; };
@@ -123,11 +123,9 @@
 		8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerViewModel.swift; path = Main/TickerViewModel.swift; sourceTree = "<group>"; };
 		8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerViewModelTests.swift; path = Main/TickerViewModelTests.swift; sourceTree = "<group>"; };
-		8C2CA9BC1F1215A30088F757 /* BaseTickerNameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTickerNameViewModel.swift; path = Utilities/BaseTickerNameViewModel.swift; sourceTree = "<group>"; };
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8C377D291F0BF2FA00D76B74 /* PlistFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistFile.swift; path = Utilities/PlistFile.swift; sourceTree = "<group>"; };
 		8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ApplicationColors.swift"; path = "Utilities/UIColor+ApplicationColors.swift"; sourceTree = "<group>"; };
-		8C4114551F207E730047DF5E /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Utilities/Currency.swift; sourceTree = "<group>"; };
 		8C4114571F207F7B0047DF5E /* CurrencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrencyTests.swift; path = Utilities/CurrencyTests.swift; sourceTree = "<group>"; };
 		8C4980521F2135FF001994C7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "BitBay-Ticker/External/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
 		8C4980531F2135FF001994C7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "BitBay-Ticker/External/Frameworks/Fabric.framework"; sourceTree = "<group>"; };
@@ -162,7 +160,9 @@
 		8CDFD47E1F084106009F1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CE06BD41F061B2C00EBD7B9 /* TickerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerFactoryTests.swift; path = Model/TickerFactoryTests.swift; sourceTree = "<group>"; };
 		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "BitBay-Ticker.entitlements"; path = "../BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
-		8CF9D45F1F13FD0E00502695 /* TextFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFactory.swift; path = Utilities/TextFactory.swift; sourceTree = "<group>"; };
+		8CF8CF721F29B70F0084C5CA /* BaseTickerNameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTickerNameViewModel.swift; path = Common/BaseTickerNameViewModel.swift; sourceTree = "<group>"; };
+		8CF8CF731F29B70F0084C5CA /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Common/Currency.swift; sourceTree = "<group>"; };
+		8CF8CF741F29B70F0084C5CA /* TextFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFactory.swift; path = Common/TextFactory.swift; sourceTree = "<group>"; };
 		8CF9D4621F13FD7000502695 /* TextFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFactoryTests.swift; path = Utilities/TextFactoryTests.swift; sourceTree = "<group>"; };
 		8CFB35101F1808F900475DC1 /* BitBay Ticker Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BitBay Ticker Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFB35111F1808F900475DC1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -249,9 +249,6 @@
 			children = (
 				8C377D291F0BF2FA00D76B74 /* PlistFile.swift */,
 				8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */,
-				8C2CA9BC1F1215A30088F757 /* BaseTickerNameViewModel.swift */,
-				8CF9D45F1F13FD0E00502695 /* TextFactory.swift */,
-				8C4114551F207E730047DF5E /* Currency.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -336,6 +333,7 @@
 		8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXGroup;
 			children = (
+				8CF8CF711F29B5DE0084C5CA /* Common */,
 				8C377D281F0BF2DD00D76B74 /* Utilities */,
 				8C7824AF1F0AB9E4000EA87A /* Add */,
 				8C9177291F0578FC008E67C7 /* Details */,
@@ -392,6 +390,16 @@
 				8CDFD47E1F084106009F1E19 /* Info.plist */,
 			);
 			path = "BitBay-TickerUITests";
+			sourceTree = "<group>";
+		};
+		8CF8CF711F29B5DE0084C5CA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8CF8CF721F29B70F0084C5CA /* BaseTickerNameViewModel.swift */,
+				8CF8CF731F29B70F0084C5CA /* Currency.swift */,
+				8CF8CF741F29B70F0084C5CA /* TextFactory.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		8CF9D4611F13FD4F00502695 /* Utilities */ = {
@@ -679,20 +687,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF8CF751F29B70F0084C5CA /* BaseTickerNameViewModel.swift in Sources */,
 				8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */,
 				8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */,
 				8C377D2C1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift in Sources */,
 				8C91772D1F057962008E67C7 /* TickerDetailsViewModel.swift in Sources */,
-				8C4114561F207E730047DF5E /* Currency.swift in Sources */,
 				8CDFA6F11F06F618003669A1 /* TickerStore.swift in Sources */,
+				8CF8CF761F29B70F0084C5CA /* Currency.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */,
+				8CF8CF771F29B70F0084C5CA /* TextFactory.swift in Sources */,
 				8CDFD4731F0820D0009F1E19 /* SectionOfTickerViewModel.swift in Sources */,
 				8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */,
-				8CF9D4601F13FD0E00502695 /* TextFactory.swift in Sources */,
 				8C7824B11F0ABA08000EA87A /* AddTickerViewController.swift in Sources */,
 				8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */,
-				8C2CA9BD1F1215A30088F757 /* BaseTickerNameViewModel.swift in Sources */,
 				8C377D2A1F0BF2FA00D76B74 /* PlistFile.swift in Sources */,
 				8C7824B31F0ABA21000EA87A /* AddTickerViewModel.swift in Sources */,
 			);
@@ -728,13 +736,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C033B691F1E7A5A000FF38E /* PlistFile.swift in Sources */,
-				8C2ECC591F2143EA00C15106 /* TextFactory.swift in Sources */,
+				8CF8CF7A1F29B7200084C5CA /* TextFactory.swift in Sources */,
 				8C033B651F1E7982000FF38E /* TickerFactory.swift in Sources */,
+				8CF8CF791F29B71C0084C5CA /* BaseTickerNameViewModel.swift in Sources */,
 				8CFB35151F1808F900475DC1 /* TodayViewController.swift in Sources */,
 				8C033B641F1E797F000FF38E /* Ticker.swift in Sources */,
-				8CBA7E9F1F20890700444EA4 /* Currency.swift in Sources */,
 				8C033B671F1E79D1000FF38E /* TickerViewModel.swift in Sources */,
-				8C033B681F1E7A50000FF38E /* BaseTickerNameViewModel.swift in Sources */,
+				8CF8CF781F29B7160084C5CA /* Currency.swift in Sources */,
 				8C033B631F1E797C000FF38E /* TickerStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
