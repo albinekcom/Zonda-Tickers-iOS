@@ -23,6 +23,18 @@ struct Ticker {
         case lskbtc
     }
     
+    struct Key {
+        static let name = "name"
+        static let max = "max"
+        static let min = "min"
+        static let last = "last"
+        static let bid = "bid"
+        static let ask = "ask"
+        static let vwap = "vwap"
+        static let average = "average"
+        static let volume = "volume"
+    }
+    
     let baseCurrency: Currency
     let counterCurrency: Currency
     
@@ -43,34 +55,34 @@ struct Ticker {
         
         self.name = name
         
-        max = jsonDictionary?["max"] as? Double
-        min = jsonDictionary?["min"] as? Double
-        last = jsonDictionary?["last"] as? Double
-        bid = jsonDictionary?["bid"] as? Double
-        ask = jsonDictionary?["ask"] as? Double
-        vwap = jsonDictionary?["vwap"] as? Double
-        average = jsonDictionary?["average"] as? Double
-        volume = jsonDictionary?["volume"] as? Double
+        max = jsonDictionary?[Key.max] as? Double
+        min = jsonDictionary?[Key.min] as? Double
+        last = jsonDictionary?[Key.last] as? Double
+        bid = jsonDictionary?[Key.bid] as? Double
+        ask = jsonDictionary?[Key.ask] as? Double
+        vwap = jsonDictionary?[Key.vwap] as? Double
+        average = jsonDictionary?[Key.average] as? Double
+        volume = jsonDictionary?[Key.volume] as? Double
     }
     
     // MARK: - Loading from saved Plist
     
     var dictionary: [String: Any] {
         return [
-            "name": name.rawValue as Any,
-            "max": max as Any,
-            "min": min as Any,
-            "last": last as Any,
-            "bid": bid as Any,
-            "ask": ask as Any,
-            "vwap": vwap as Any,
-            "average": average as Any,
-            "volume": volume as Any
+            Key.name: name.rawValue as Any,
+            Key.max: max as Any,
+            Key.min: min as Any,
+            Key.last: last as Any,
+            Key.bid: bid as Any,
+            Key.ask: ask as Any,
+            Key.vwap: vwap as Any,
+            Key.average: average as Any,
+            Key.volume: volume as Any
         ]
     }
     
     init(fromDictionary dictionary: [String: Any]) {
-        let nameString = dictionary["name"] as! String
+        let nameString = dictionary[Key.name] as! String
         
         self.init(name: Name(rawValue: nameString)!, jsonDictionary: dictionary)
     }

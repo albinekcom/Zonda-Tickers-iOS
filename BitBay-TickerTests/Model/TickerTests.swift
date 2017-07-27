@@ -3,6 +3,18 @@ import XCTest
 
 final class TickerTests: XCTestCase {
     
+    func testKeys() {
+        XCTAssertEqual("name", Ticker.Key.name)
+        XCTAssertEqual("max", Ticker.Key.max)
+        XCTAssertEqual("min", Ticker.Key.min)
+        XCTAssertEqual("last", Ticker.Key.last)
+        XCTAssertEqual("bid", Ticker.Key.bid)
+        XCTAssertEqual("ask", Ticker.Key.ask)
+        XCTAssertEqual("vwap", Ticker.Key.vwap)
+        XCTAssertEqual("average", Ticker.Key.average)
+        XCTAssertEqual("volume", Ticker.Key.volume)
+    }
+    
     func testInitWithName() {
         let ticker = Ticker(name: .btcpln, jsonDictionary: nil)
         
