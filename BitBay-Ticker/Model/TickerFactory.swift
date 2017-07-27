@@ -4,7 +4,7 @@ import RxSwift
 
 struct TickerFactory {
     
-    static func makeObservableTicker(named tickerName: Ticker.Name) -> Observable<Ticker> {
+    static func makeObservableTicker(named tickerName: Ticker.Name) -> Observable<Ticker?> {
         return Observable
             .just(tickerName)
             .map { (tickerName) -> URL in
@@ -15,7 +15,9 @@ struct TickerFactory {
             }
             .flatMap { (request) -> Observable<(HTTPURLResponse, Data)> in
                 #if DEBUG
-                    return Observable.just((HTTPURLResponse(), "{\"max\":1.1,\"min\":2.2,\"last\":3.3,\"bid\":4.4,\"ask\":5.5,\"vwap\":6.6,\"average\":7.7,\"volume\":8.8}".data(using: .utf8)!))
+                    guard let mockedData = "{\"max\":1.1,\"min\":2.2,\"last\":3.3,\"bid\":4.4,\"ask\":5.5,\"vwap\":6.6,\"average\":7.7,\"volume\":8.8}".data(using: .utf8) else { return Observable.just((HTTPURLResponse(), Data())) }
+                    
+                    return Observable.just((HTTPURLResponse(), mockedData))
                 #else
                     return URLSession.shared.rx.response(request: request)
                 #endif
@@ -23,7 +25,7 @@ struct TickerFactory {
             .map { (_, data) -> [String: Any]? in
                 return (try? JSONSerialization.jsonObject(with: data)) as? [String: Any]
             }
-            .map { (jsonDictionary) -> Ticker in
+            .map { (jsonDictionary) -> Ticker? in
                 return Ticker(name: tickerName, jsonDictionary: jsonDictionary)
         }
     }

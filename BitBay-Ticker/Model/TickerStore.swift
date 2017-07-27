@@ -37,7 +37,7 @@ final class TickerStore {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] (tickers) in
-                    self?.userTickers.value = tickers
+                    self?.userTickers.value = tickers.flatMap { $0 }
                     self?.saveUserData()
                     completion?(nil)
                 },
@@ -61,9 +61,9 @@ final class TickerStore {
     }
     
     func addTicker(named tickerName: Ticker.Name) {
-        let ticker = Ticker(name: tickerName, jsonDictionary: nil)
-        
-        userTickers.value.append(ticker)
+        if let ticker = Ticker(name: tickerName, jsonDictionary: nil) {
+            userTickers.value.append(ticker)
+        }
         
         refreshTickers(completion: nil)
     }
@@ -94,9 +94,12 @@ final class TickerStore {
         if PlistFile(name: TickerStore.userDataPlistName).isUserDataCreated {
             loadUserDataFromFile()
         } else {
-            userTickers.value = defaultTickersNames.map { (tickerName) in
-                return Ticker(name: tickerName, jsonDictionary: nil)
-            }
+            userTickers.value =
+                defaultTickersNames
+                    .map { (tickerName) in
+                        return Ticker(name: tickerName, jsonDictionary: nil)
+                    }
+                    .flatMap { return $0 }
         }
     }
     
@@ -112,8 +115,9 @@ final class TickerStore {
         var loadedTickers = [Ticker]()
         
         allTickers.forEach {
-            let loadedTicker = Ticker(fromDictionary: $0)
-            loadedTickers.append(loadedTicker)
+            if let loadedTicker = Ticker(fromDictionary: $0) {
+                loadedTickers.append(loadedTicker)
+            }
         }
         
         userTickers.value = loadedTickers

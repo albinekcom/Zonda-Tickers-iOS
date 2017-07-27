@@ -10,9 +10,11 @@ final class TickerDetailsViewController: UIViewController {
         }
     }
     
-    var viewModel = TickerDetailsViewModel(ticker: Ticker(name: .btceur, jsonDictionary: [:])) {
+    var viewModel: TickerDetailsViewModel? {
         didSet {
-            viewModelValues.value = viewModel.values
+            if let viewModel = viewModel {
+                viewModelValues.value = viewModel.values
+            }
         }
     }
     
@@ -27,7 +29,7 @@ final class TickerDetailsViewController: UIViewController {
         
         setupViewModels()
         
-        title = viewModel.name
+        title = viewModel?.name
     }
     
     // MARK: - Setting

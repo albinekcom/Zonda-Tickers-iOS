@@ -39,7 +39,6 @@ struct Ticker {
     let counterCurrency: Currency
     
     let name: Name
-    
     let max: Double?
     let min: Double?
     let last: Double?
@@ -49,9 +48,12 @@ struct Ticker {
     let average: Double?
     let volume: Double?
     
-    init(name: Name, jsonDictionary: [String: Any]?) {
-        baseCurrency = Currency(rawValue: String(name.rawValue.characters.dropLast(3)))!
-        counterCurrency = Currency(rawValue: String(name.rawValue.characters.dropFirst(3)))!
+    init?(name: Name, jsonDictionary: [String: Any]?) {
+        guard let baseCurrency = Currency(rawValue: String(name.rawValue.characters.dropLast(3))) else { return nil }
+        self.baseCurrency = baseCurrency
+        
+        guard let counterCurrency = Currency(rawValue: String(name.rawValue.characters.dropFirst(3))) else { return nil }
+        self.counterCurrency = counterCurrency
         
         self.name = name
         
@@ -81,10 +83,11 @@ struct Ticker {
         ]
     }
     
-    init(fromDictionary dictionary: [String: Any]) {
-        let nameString = dictionary[Key.name] as! String
+    init?(fromDictionary dictionary: [String: Any]) {
+        guard let nameString = dictionary[Key.name] as? String else { return nil }
+        guard let name = Name(rawValue: nameString) else { return nil }
         
-        self.init(name: Name(rawValue: nameString)!, jsonDictionary: dictionary)
+        self.init(name: name, jsonDictionary: dictionary)
     }
     
 }

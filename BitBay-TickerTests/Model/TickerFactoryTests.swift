@@ -11,7 +11,7 @@ final class TickerFactoryTests: XCTestCase {
         
         XCTAssertEqual(1, results.count)
         
-        let ticker = results.first!
+        let ticker = results.first!!
         
         XCTAssertNotNil(ticker)
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)

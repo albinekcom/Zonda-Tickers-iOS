@@ -2,7 +2,7 @@ import Foundation
 
 struct TickerDetailsViewModel: BaseTickerNameViewModel {
     
-    var tickerName: Ticker.Name
+    let tickerName: Ticker.Name
     
     let ticker: Ticker
     

@@ -2,7 +2,7 @@ import Foundation
 
 protocol BaseTickerNameViewModel {
     
-    var tickerName: Ticker.Name { get set }
+    var tickerName: Ticker.Name { get }
     
     var name: String { get }
     var baseCurrency: String { get }

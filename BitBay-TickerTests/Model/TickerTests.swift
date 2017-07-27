@@ -16,7 +16,7 @@ final class TickerTests: XCTestCase {
     }
     
     func testInitWithName() {
-        let ticker = Ticker(name: .btcpln, jsonDictionary: nil)
+        let ticker = Ticker(name: .btcpln, jsonDictionary: nil)!
         
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)
         XCTAssertEqual(Currency.btc, ticker.baseCurrency)
@@ -43,7 +43,7 @@ final class TickerTests: XCTestCase {
             "volume": 8.8
         ]
         
-        let ticker = Ticker(name: .btcpln, jsonDictionary: jsonDictionary)
+        let ticker = Ticker(name: .btcpln, jsonDictionary: jsonDictionary)!
         
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)
         XCTAssertEqual(Currency.btc, ticker.baseCurrency)
@@ -71,7 +71,7 @@ final class TickerTests: XCTestCase {
             "name": "btcpln"
         ]
         
-        let ticker = Ticker(fromDictionary: inputDictionary)
+        let ticker = Ticker(fromDictionary: inputDictionary)!
         
         XCTAssertEqual(Ticker.Name.btcpln, ticker.name)
         XCTAssertEqual(Currency.btc, ticker.baseCurrency)
@@ -98,7 +98,7 @@ final class TickerTests: XCTestCase {
             "volume": 8.8
         ]
         
-        let ticker = Ticker(name: .btcpln, jsonDictionary: jsonDictionary)
+        let ticker = Ticker(name: .btcpln, jsonDictionary: jsonDictionary)!
         
         let expectedDictionary: [String: Any] = [
             "max": 1.1,

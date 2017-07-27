@@ -22,10 +22,10 @@ final class TickerViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let emptyTicker = Ticker(name: .btcpln, jsonDictionary: [:])
+        let emptyTicker = Ticker(name: .btcpln, jsonDictionary: [:])!
         viewModelWithEmptyTicker = TickerViewModel(ticker: emptyTicker)
         
-        let ticker = Ticker(name: .btcpln, jsonDictionary: tickerJSONDictionary)
+        let ticker = Ticker(name: .btcpln, jsonDictionary: tickerJSONDictionary)!
         viewModel = TickerViewModel(ticker: ticker)
     }
     
