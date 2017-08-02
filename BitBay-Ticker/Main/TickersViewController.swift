@@ -14,6 +14,9 @@ final class TickersViewController: UIViewController {
     private var isRefreshing = Variable<Bool>(false)
     private let tickerStore = TickerStore.shared
     private let disposeBag = DisposeBag()
+    private var disposeBagForTableView: DisposeBag!
+    
+    private var copiedUserTickers = [Ticker]()
     
     private let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
     private let editBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: nil)
@@ -25,7 +28,6 @@ final class TickersViewController: UIViewController {
         super.viewDidLoad()
         
         setupIsRefreshing()
-        setupTickersTableView()
         setupNavigation()
         setupRefreshControl()
         
@@ -35,9 +37,21 @@ final class TickersViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        disposeBagForTableView = DisposeBag()
+        
         if let indexPathForSelectedRow = tickersTableView.indexPathForSelectedRow {
             tickersTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
+        
+        copiedUserTickers = tickerStore.userTickers.value
+        
+        setupTickersTableView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        disposeBagForTableView = nil
     }
     
     // MARK: - Setting
@@ -127,9 +141,11 @@ final class TickersViewController: UIViewController {
     }
     
     private func setupTickersTableView() {
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionOfTickerViewModel>()
+        let animatedDataSource = RxTableViewSectionedAnimatedDataSource<SectionOfTickerViewModel>()
         
-        dataSource.configureCell = { (_, tableView, indexPath, item) in
+        animatedDataSource.animationConfiguration = AnimationConfiguration(insertAnimation: .top, reloadAnimation: .fade, deleteAnimation: .left)
+        
+        animatedDataSource.configureCell = { (_, tableView, indexPath, item) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "TickerTableViewCell", for: indexPath)
             
             cell.textLabel?.text = item.name
@@ -138,50 +154,38 @@ final class TickersViewController: UIViewController {
             return cell
         }
         
-        dataSource.canEditRowAtIndexPath = { (_) in
+        animatedDataSource.canEditRowAtIndexPath = { _ in
             return true
         }
         
-        dataSource.canMoveRowAtIndexPath = { (_) in
+        animatedDataSource.canMoveRowAtIndexPath = { _ in
             return true
         }
         
-        tickerStore.userTickers
-            .asObservable()
-            .map { (tickers) in
-                tickers.map { (ticker) in
-                    return TickerViewModel(ticker: ticker)
-                }
-            }
-            .map { (tickersViewModels) in
-                return [SectionOfTickerViewModel(items: tickersViewModels)]
-            }
-            .bind(to: tickersTableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
+        let vieModels = copiedUserTickers.map {
+            return TickerViewModel(ticker: $0)
+        }
         
-        tickersTableView
-            .rx
-            .itemDeleted
-            .subscribe(
-                onNext: { [weak self] (indexPath) in
-                    self?.tickerStore.userTickers.value.remove(at: indexPath.row)
-                    self?.tickerStore.saveUserData()
-                }
-            )
-            .disposed(by: disposeBag)
+        let sections = [SectionOfTickerViewModel(items: vieModels)]
         
-        tickersTableView
-            .rx
-            .itemMoved
-            .subscribe(
-                onNext: { [weak self] (itemMovedEvent) in
-                    guard let strongSelf = self else { return }
-                    
-                    let movedTicker = strongSelf.tickerStore.userTickers.value.remove(at: itemMovedEvent.sourceIndex.row)
-                    strongSelf.tickerStore.userTickers.value.insert(movedTicker, at: itemMovedEvent.destinationIndex.row)
-                }
-            )
-            .disposed(by: disposeBag)
+        let initialState = SectionedTableViewState(sections: sections)
+        
+        let deleteCommand = tickersTableView.rx.itemDeleted.asObservable().map(TableViewEditingCommand.DeleteItem)
+        
+        let movedCommand = tickersTableView.rx.itemMoved.map(TableViewEditingCommand.MoveItem)
+        
+        Observable.of(deleteCommand, movedCommand)
+            .merge()
+            .scan(initialState) { (state: SectionedTableViewState, command: TableViewEditingCommand) -> SectionedTableViewState in
+                return state.execute(command: command)
+            }
+            .startWith(initialState)
+            .map {
+                $0.sections
+            }
+            .shareReplay(1)
+            .bind(to: tickersTableView.rx.items(dataSource: animatedDataSource))
+            .addDisposableTo(disposeBagForTableView)
     }
     
     private func setupRefreshControl() {
@@ -222,7 +226,7 @@ final class TickersViewController: UIViewController {
     }
     
     private func refresh() {
-        if tickerStore.userTickers.value.isEmpty {
+        if copiedUserTickers.isEmpty {
             isRefreshing.value = false
         } else {
             isRefreshing.value = true
@@ -251,7 +255,7 @@ final class TickersViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selectedIndexPath = tickersTableView.indexPathForSelectedRow, let tickerDetailsViewController = segue.destination as? TickerDetailsViewController {
-            let selectedTicker = tickerStore.userTickers.value[selectedIndexPath.row]
+            let selectedTicker = copiedUserTickers[selectedIndexPath.row]
             tickerDetailsViewController.viewModel = TickerDetailsViewModel(ticker: selectedTicker)
         }
     }

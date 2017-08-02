@@ -1,3 +1,4 @@
+import RxDataSources
 import Foundation
 
 struct TickerViewModel: BaseTickerNameViewModel {
@@ -15,4 +16,18 @@ struct TickerViewModel: BaseTickerNameViewModel {
         return "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.last, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"
     }
     
+}
+
+extension TickerViewModel: IdentifiableType, Equatable {
+    
+    typealias Identity = String
+    
+    var identity: String {
+        return ticker.name.rawValue
+    }
+    
+}
+
+func == (lhs: TickerViewModel, rhs: TickerViewModel) -> Bool {
+    return lhs.tickerName == rhs.tickerName
 }

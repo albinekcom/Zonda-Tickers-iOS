@@ -60,6 +60,15 @@ final class TickerStore {
         }
     }
     
+    func swap(sourceRow: Int, destinationRow: Int) {
+        let movedTicker = userTickers.value.remove(at: sourceRow)
+        userTickers.value.insert(movedTicker, at: destinationRow)
+    }
+    
+    func removeTicker(at row: Int) {
+        userTickers.value.remove(at: row)
+    }
+    
     func addTicker(named tickerName: Ticker.Name) {
         if let ticker = Ticker(name: tickerName, jsonDictionary: nil) {
             userTickers.value.append(ticker)

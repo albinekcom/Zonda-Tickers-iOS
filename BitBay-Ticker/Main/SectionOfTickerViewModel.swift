@@ -3,18 +3,30 @@ import RxDataSources
 
 struct SectionOfTickerViewModel {
     
-    var items: [Item]
+    var items: [TickerViewModel]
     
 }
 
-extension SectionOfTickerViewModel: SectionModelType {
+extension SectionOfTickerViewModel: AnimatableSectionModelType {
     
     typealias Item = TickerViewModel
     
-    init(original: SectionOfTickerViewModel, items: [Item]) {
-        self = original
+    typealias Identity = String
+    
+    var identity: String {
+        return "Main Section"
+    }
         
+    init(original: SectionOfTickerViewModel, items: [TickerViewModel]) {
+        self = original
         self.items = items
     }
     
 }
+
+extension SectionOfTickerViewModel: Equatable { }
+
+func == (lhs: SectionOfTickerViewModel, rhs: SectionOfTickerViewModel) -> Bool {
+    return lhs.identity == rhs.identity
+}
+
