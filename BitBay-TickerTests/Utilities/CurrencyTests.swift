@@ -16,6 +16,7 @@ final class CurrencyTests: XCTestCase {
         XCTAssertFalse(Currency.eth.isFiat)
         XCTAssertFalse(Currency.ltc.isFiat)
         XCTAssertFalse(Currency.lsk.isFiat)
+        XCTAssertFalse(Currency.bcc.isFiat)
     }
     
     func testDescription() {
@@ -27,6 +28,7 @@ final class CurrencyTests: XCTestCase {
         XCTAssertEqual("ETH", Currency.eth.description)
         XCTAssertEqual("LTC", Currency.ltc.description)
         XCTAssertEqual("LSK", Currency.lsk.description)
+        XCTAssertEqual("BCC", Currency.bcc.description)
     }
     
 }

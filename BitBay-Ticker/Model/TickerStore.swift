@@ -17,14 +17,14 @@ final class TickerStore {
     var lastUpdateDate = Variable<Date?>(nil)
     
     private let allAvailableTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln,
-        .btceur, .etheur, .ltceur, .lskeur,
-        .btcusd, .ethusd, .ltcusd, .lskusd,
-        .ltcbtc, .ethbtc, .lskbtc
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln,
+        .btceur, .etheur, .ltceur, .lskeur, .bcceur,
+        .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd,
+        .ltcbtc, .ethbtc, .lskbtc,
     ]
     
     private let defaultTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln
     ]
     
     func refreshTickers(completion: ((Error?) -> Void)?) {

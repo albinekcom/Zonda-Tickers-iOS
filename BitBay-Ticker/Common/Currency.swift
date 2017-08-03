@@ -10,6 +10,7 @@ enum Currency: String {
     case eth
     case ltc
     case lsk
+    case bcc
     
     static var fiatCurrencies: [Currency] {
         return [.pln, .usd, .eur]

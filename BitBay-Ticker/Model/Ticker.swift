@@ -21,6 +21,11 @@ struct Ticker {
         case lskusd
         case lskeur
         case lskbtc
+        
+        case bccpln
+        case bccusd
+        case bcceur
+        case bccbtc
     }
     
     struct Key {
