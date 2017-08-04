@@ -2,13 +2,24 @@ import UIKit
 
 struct TextFactory {
     
-    private static let dateFormatter = DateFormatter()
-    private static let numberFormatter = NumberFormatter()
-    
-    static func makeLastUpdateDateText(updateDate: Date, timeZone: TimeZone? = nil) -> String {
+    private static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .short
+
+        return dateFormatter
+    }()
+    
+    private static let numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.locale = .current
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.groupingSeparator = " "
         
+        return numberFormatter
+    }()
+    
+    static func makeLastUpdateDateText(updateDate: Date, timeZone: TimeZone? = nil) -> String {
         if let timeZone = timeZone {
             dateFormatter.timeZone = timeZone
         }
@@ -17,10 +28,6 @@ struct TextFactory {
     }
     
     static func makeFormattedCurrencyValueString(for value: Double?, isFiat: Bool) -> String {
-        numberFormatter.locale = .current
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.generatesDecimalNumbers = true
-        
         if isFiat {
             numberFormatter.minimumFractionDigits = 2
             numberFormatter.maximumFractionDigits = 2
