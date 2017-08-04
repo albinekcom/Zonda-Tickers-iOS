@@ -32,6 +32,7 @@ final class TickersViewController: UIViewController {
         setupRefreshControl()
         
         setupTickersTableView()
+        setupRefreshingTickersTableView()
         
         refreshAtStartup()
     }
@@ -125,6 +126,16 @@ final class TickersViewController: UIViewController {
                         self?.tickersTableView.refreshControl?.endRefreshing()
                     }
 
+                }
+            )
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupRefreshingTickersTableView() {
+        tickerStore.refreshingSubject
+            .subscribe(
+                onNext: { [weak self] (_) in
+                    self?.setupTickersTableView()
                 }
             )
             .disposed(by: disposeBag)
@@ -229,8 +240,6 @@ final class TickersViewController: UIViewController {
                 guard let error = error else {
                     self?.isRefreshing.value = false
                     self?.tickerStore.lastUpdateDate.value = Date(timeIntervalSinceNow: 0)
-                    
-                    self?.setupTickersTableView()
                     
                     return
                 }

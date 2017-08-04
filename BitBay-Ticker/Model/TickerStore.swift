@@ -16,6 +16,8 @@ final class TickerStore {
     
     var lastUpdateDate = Variable<Date?>(nil)
     
+    let refreshingSubject = PublishSubject<Bool>()
+    
     private let allAvailableTickersNames: [Ticker.Name] = [
         .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln,
         .btceur, .etheur, .ltceur, .lskeur, .bcceur,
@@ -39,9 +41,11 @@ final class TickerStore {
                 onNext: { [weak self] (tickers) in
                     self?.userTickers.value = tickers.flatMap { $0 }
                     self?.saveUserData()
+                    self?.refreshingSubject.on(.next(true))
                     completion?(nil)
                 },
-                onError: { (error) in
+                onError: { [weak self] (error) in
+                    self?.refreshingSubject.on(.next(false))
                     completion?(error)
                 }
             )
