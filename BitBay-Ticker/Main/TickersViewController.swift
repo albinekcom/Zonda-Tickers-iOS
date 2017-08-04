@@ -31,27 +31,17 @@ final class TickersViewController: UIViewController {
         setupNavigation()
         setupRefreshControl()
         
+        setupTickersTableView()
+        
         refreshAtStartup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        disposeBagForTableView = DisposeBag()
-        
         if let indexPathForSelectedRow = tickersTableView.indexPathForSelectedRow {
             tickersTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
-        
-        copiedUserTickers = tickerStore.userTickers.value
-        
-        setupTickersTableView()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        disposeBagForTableView = nil
     }
     
     // MARK: - Setting
@@ -141,6 +131,10 @@ final class TickersViewController: UIViewController {
     }
     
     private func setupTickersTableView() {
+        copiedUserTickers = tickerStore.userTickers.value
+        
+        disposeBagForTableView = DisposeBag()
+        
         let animatedDataSource = RxTableViewSectionedAnimatedDataSource<SectionOfTickerViewModel>()
         
         animatedDataSource.animationConfiguration = AnimationConfiguration(insertAnimation: .top, reloadAnimation: .fade, deleteAnimation: .left)
@@ -231,10 +225,12 @@ final class TickersViewController: UIViewController {
         } else {
             isRefreshing.value = true
             
-            tickerStore.refreshTickers() { [weak self] (error) in
+            tickerStore.refreshTickers { [weak self] (error) in
                 guard let error = error else {
                     self?.isRefreshing.value = false
                     self?.tickerStore.lastUpdateDate.value = Date(timeIntervalSinceNow: 0)
+                    
+                    self?.setupTickersTableView()
                     
                     return
                 }
