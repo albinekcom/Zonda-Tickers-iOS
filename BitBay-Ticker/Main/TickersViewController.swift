@@ -33,6 +33,7 @@ final class TickersViewController: UIViewController {
         
         setupTickersTableView()
         setupRefreshingTickersTableView()
+        setupUserTickers()
         
         refreshAtStartup()
     }
@@ -46,6 +47,17 @@ final class TickersViewController: UIViewController {
     }
     
     // MARK: - Setting
+    
+    private func setupUserTickers() {
+        tickerStore.userTickers
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] (_) in
+                    self?.tickerStore.saveUserData()
+                }
+            )
+            .disposed(by: disposeBag)
+    }
     
     private func setupNavigation() {
         navigationItem.title = ""
