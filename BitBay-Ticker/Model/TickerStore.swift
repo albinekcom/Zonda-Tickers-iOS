@@ -40,7 +40,6 @@ final class TickerStore {
             .subscribe(
                 onNext: { [weak self] (tickers) in
                     self?.userTickers.value = tickers.flatMap { $0 }
-                    self?.saveUserData()
                     self?.refreshingSubject.on(.next(true))
                     completion?(nil)
                 },
