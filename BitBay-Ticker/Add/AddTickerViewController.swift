@@ -40,6 +40,12 @@ final class AddTickerViewController: UIViewController {
         title = NSLocalizedString("add.ticker.title", comment: "")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        AnalyticsService.shared.trackAddTickerView()
+    }
+    
     // MARK: - Setting
     
     private func setupNavigation() {

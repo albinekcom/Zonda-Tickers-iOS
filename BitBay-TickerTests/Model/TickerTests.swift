@@ -115,4 +115,12 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(expectedDictionary as NSDictionary, ticker.dictionary as NSDictionary)
     }
     
+    func testPrettyName() {
+        let ticker1 = Ticker(name: .btcpln, jsonDictionary: nil)!
+        XCTAssertEqual("BTC/PLN", ticker1.prettyName)
+        
+        let ticker2 = Ticker(name: .etheur, jsonDictionary: nil)!
+        XCTAssertEqual("ETH/EUR", ticker2.prettyName)
+    }
+    
 }

@@ -39,8 +39,13 @@ final class TickerStore {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] (tickers) in
-                    self?.userTickers.value = tickers.flatMap { $0 }
+                    let tickers = tickers.flatMap { $0 }
+                    self?.userTickers.value = tickers
                     self?.refreshingSubject.on(.next(true))
+                    
+                    let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: tickers)
+                    AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters)
+                    
                     completion?(nil)
                 },
                 onError: { [weak self] (error) in
@@ -69,12 +74,18 @@ final class TickerStore {
     }
     
     func removeTicker(at row: Int) {
-        userTickers.value.remove(at: row)
+        let removedTicker = userTickers.value.remove(at: row)
+        
+        let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: removedTicker)
+        AnalyticsService.shared.trackRemovedTicker(parameters: analyticsParameters)
     }
     
     func addTicker(named tickerName: Ticker.Name) {
         if let ticker = Ticker(name: tickerName, jsonDictionary: nil) {
             userTickers.value.append(ticker)
+            
+            let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
+            AnalyticsService.shared.trackAddedTicker(parameters: analyticsParameters)
         }
         
         refreshTickers(completion: nil)

@@ -44,6 +44,8 @@ final class TickersViewController: UIViewController {
         if let indexPathForSelectedRow = tickersTableView.indexPathForSelectedRow {
             tickersTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
+        
+        AnalyticsService.shared.trackTickersView()
     }
     
     // MARK: - Setting
@@ -99,6 +101,10 @@ final class TickersViewController: UIViewController {
                     
                     strongSelf.tickersTableView.setEditing(!strongSelf.tickersTableView.isEditing, animated: true)
                     strongSelf.tickersTableView.refreshControl = nil
+                    
+                    if strongSelf.tickersTableView.isEditing {
+                        AnalyticsService.shared.trackEditTickersView()
+                    }
                 }
             )
             .disposed(by: disposeBag)

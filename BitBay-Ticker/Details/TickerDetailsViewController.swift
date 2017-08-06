@@ -32,6 +32,15 @@ final class TickerDetailsViewController: UIViewController {
         title = viewModel?.name
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let ticker = viewModel?.ticker {
+            let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
+            AnalyticsService.shared.trackTickerDetailsView(parameters: analyticsParameters)
+        }
+    }
+    
     // MARK: - Setting
     
     private func setupViewModels() {

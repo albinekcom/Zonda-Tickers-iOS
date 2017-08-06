@@ -96,3 +96,14 @@ struct Ticker {
     }
     
 }
+
+extension Ticker {
+    
+    var prettyName: String {
+        let baseCurrencyString = baseCurrency.rawValue.uppercased()
+        let counterCurrencyString = counterCurrency.rawValue.uppercased()
+        
+        return "\(baseCurrencyString)/\(counterCurrencyString)"
+    }
+    
+}
