@@ -43,7 +43,7 @@ final class AddTickerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        AnalyticsService.shared.trackAddTickerView()
+        AnalyticsService.trackAddTickerView()
     }
     
     // MARK: - Setting

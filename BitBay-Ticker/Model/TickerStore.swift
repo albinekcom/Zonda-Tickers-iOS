@@ -44,7 +44,7 @@ final class TickerStore {
                     self?.refreshingSubject.on(.next(true))
                     
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: tickers)
-                    AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters)
+                    AnalyticsService.trackRefreshedTickers(parameters: analyticsParameters)
                     
                     completion?(nil)
                 },
@@ -77,7 +77,7 @@ final class TickerStore {
         let removedTicker = userTickers.value.remove(at: row)
         
         let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: removedTicker)
-        AnalyticsService.shared.trackRemovedTicker(parameters: analyticsParameters)
+        AnalyticsService.trackRemovedTicker(parameters: analyticsParameters)
     }
     
     func addTicker(named tickerName: Ticker.Name) {
@@ -85,7 +85,7 @@ final class TickerStore {
             userTickers.value.append(ticker)
             
             let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
-            AnalyticsService.shared.trackAddedTicker(parameters: analyticsParameters)
+            AnalyticsService.trackAddedTicker(parameters: analyticsParameters)
         }
         
         refreshTickers(completion: nil)

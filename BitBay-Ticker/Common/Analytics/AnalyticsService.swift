@@ -1,62 +1,56 @@
+import Crashlytics
 import Foundation
 
-final class AnalyticsService {
-    
-    enum TrackType: String {
-        case state
-        case action
-    }
-    
-    static let shared = AnalyticsService()
+struct AnalyticsService {
     
     #if DEBUG
-        private let isEnabled = false
-        private let isLoggingEnabled = true
+        private static let isEnabled = false
+        private static let isLoggingEnabled = true
     #else
-        private let isEnabled = true
-        private let isLoggingEnabled = false
+        private static let isEnabled = true
+        private static let isLoggingEnabled = false
     #endif
     
-    private func track(type: TrackType, title: String, parameters: [String: Any]? = nil) {
+    private static func track(name: String, parameters: [String: String]? = nil) {
         if isEnabled {
-            // TODO: Fill this method using external analytics service
+            Answers.logCustomEvent(withName: name, customAttributes: parameters)
         }
         
         if isLoggingEnabled {
-            print("[TRACKED] (\(type.rawValue.uppercased())) \"\(title)\" | Parameters: \(String(describing: parameters))")
+            print("[TRACKED] \"\(name)\" | Parameters: \(String(describing: parameters))")
         }
     }
     
     // MARK: - States
     
-    func trackAddTickerView() {
-        track(type: .state, title: "Add Ticker View")
+    static func trackAddTickerView() {
+        track(name: "Add Ticker View")
     }
     
-    func trackTickersView() {
-        track(type: .state, title: "Tickers View")
+    static func trackTickersView() {
+        track(name: "Tickers View")
     }
     
-    func trackTickerDetailsView(parameters: [String: Any]) {
-        track(type: .state, title: "Tickers View", parameters: parameters)
+    static func trackTickerDetailsView(parameters: [String: String]) {
+        track(name: "Tickers View", parameters: parameters)
     }
     
-    func trackEditTickersView() {
-        track(type: .state, title: "Edit Tickers View")
+    static func trackEditTickersView() {
+        track(name: "Edit Tickers View")
     }
     
     // MARK: - Actions
     
-    func trackAddedTicker(parameters: [String: Any]) {
-        track(type: .action, title: "Added Ticker", parameters: parameters)
+    static func trackAddedTicker(parameters: [String: String]) {
+        track(name: "Added Ticker", parameters: parameters)
     }
     
-    func trackRemovedTicker(parameters: [String: Any]) {
-        track(type: .action, title: "Removed Ticker", parameters: parameters)
+    static func trackRemovedTicker(parameters: [String: String]) {
+        track(name: "Removed Ticker", parameters: parameters)
     }
     
-    func trackRefreshedTickers(parameters: [String: Any]) {
-        track(type: .action, title: "Refreshed Tickers", parameters: parameters)
+    static func trackRefreshedTickers(parameters: [String: String]) {
+        track(name: "Refreshed Tickers", parameters: parameters)
     }
     
 }

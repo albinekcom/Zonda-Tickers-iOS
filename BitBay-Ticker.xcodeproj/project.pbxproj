@@ -55,6 +55,8 @@
 		8CC5ED401F1AA80700153E94 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
 		8CC5ED421F1AA80700153E94 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; };
 		8CC7DDA51EFFED9C00050A7F /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */; };
+		8CD82F6A1F3AD1AD003E7122 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980531F2135FF001994C7 /* Fabric.framework */; };
+		8CD82F6B1F3AD1B1003E7122 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980521F2135FF001994C7 /* Crashlytics.framework */; };
 		8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */; };
 		8CDFA6F11F06F618003669A1 /* TickerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFA6F01F06F618003669A1 /* TickerStore.swift */; };
 		8CDFD4711F0786F9009F1E19 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */; };
@@ -229,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFB35121F1808F900475DC1 /* NotificationCenter.framework in Frameworks */,
+				8CD82F6B1F3AD1B1003E7122 /* Crashlytics.framework in Frameworks */,
 				8CC5ED401F1AA80700153E94 /* RxCocoa.framework in Frameworks */,
 				8CC5ED421F1AA80700153E94 /* RxSwift.framework in Frameworks */,
+				8CD82F6A1F3AD1AD003E7122 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

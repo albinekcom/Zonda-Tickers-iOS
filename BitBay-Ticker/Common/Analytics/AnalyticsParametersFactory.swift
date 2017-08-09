@@ -6,10 +6,12 @@ struct AnalyticsParametersFactory {
         return ["Ticker": ticker.prettyName]
     }
     
-    static func makeParameters(from tickers: [Ticker]) -> [String: [String]] {
+    static func makeParameters(from tickers: [Ticker]) -> [String: String] {
         let tickersPrettyNames = tickers.map { $0.prettyName }
-        
-        return ["Tickers": tickersPrettyNames]
+            
+        let compoundedTickersPrettyNames = tickersPrettyNames.joined(separator: "|")
+    
+        return ["Tickers": compoundedTickersPrettyNames]
     }
-
+    
 }

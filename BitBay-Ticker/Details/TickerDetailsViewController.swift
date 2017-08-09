@@ -37,7 +37,7 @@ final class TickerDetailsViewController: UIViewController {
         
         if let ticker = viewModel?.ticker {
             let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
-            AnalyticsService.shared.trackTickerDetailsView(parameters: analyticsParameters)
+            AnalyticsService.trackTickerDetailsView(parameters: analyticsParameters)
         }
     }
     

@@ -45,7 +45,7 @@ final class TickersViewController: UIViewController {
             tickersTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
         
-        AnalyticsService.shared.trackTickersView()
+        AnalyticsService.trackTickersView()
     }
     
     // MARK: - Setting
@@ -103,7 +103,7 @@ final class TickersViewController: UIViewController {
                     strongSelf.tickersTableView.refreshControl = nil
                     
                     if strongSelf.tickersTableView.isEditing {
-                        AnalyticsService.shared.trackEditTickersView()
+                        AnalyticsService.trackEditTickersView()
                     }
                 }
             )
