@@ -18,8 +18,6 @@ final class TodayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-        
         setupUserTickers()
         setupTableView()
     }
@@ -95,11 +93,9 @@ extension TodayViewController: NCWidgetProviding {
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        let expanded = activeDisplayMode == .expanded
-        
         let height = CGFloat(tickerStore.userTickers.value.count) * cellHeight
         
-        preferredContentSize = expanded ? CGSize(width: maxSize.width, height: height) : maxSize
+        preferredContentSize = activeDisplayMode == .expanded ? CGSize(width: maxSize.width, height: height) : maxSize
     }
     
 }
