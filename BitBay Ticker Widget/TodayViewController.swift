@@ -19,6 +19,8 @@ final class TodayViewController: UIViewController {
         super.viewDidLoad()
         
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        
+        setupUserTickers()
         setupTableView()
     }
     
@@ -30,6 +32,17 @@ final class TodayViewController: UIViewController {
     }
     
     // MARK: - Setting
+    
+    private func setupUserTickers() {
+        tickerStore.userTickers
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] (_) in
+                    self?.tickerStore.saveUserData()
+                }
+            )
+            .disposed(by: disposeBag)
+    }
     
     private func setupTableView() {
         tickerStore.userTickers
