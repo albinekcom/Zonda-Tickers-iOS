@@ -80,15 +80,7 @@ extension TodayViewController: NCWidgetProviding {
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         tickerStore.loadUserData()
         tickerStore.refreshTickers { (error) in
-            let updateResult: NCUpdateResult
-            
-            if let _ = error {
-                updateResult = .failed
-            } else {
-                updateResult = .newData
-            }
-            
-            completionHandler(updateResult)
+            completionHandler((error == nil) ? .newData : .failed)
         }
     }
     
