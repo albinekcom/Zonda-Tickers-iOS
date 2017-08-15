@@ -115,7 +115,7 @@ final class TickerStore {
     // MARK: - Loading
     
     func loadUserData() {
-        if let sharedUserDefaults = UserDefaults(suiteName: TickerStore.sharedDefaultsIdentifier), let values = sharedUserDefaults.value(forKey: TickerStore.userDataPlistName) as? [String: Any] {
+        if let sharedUserDefaults = UserDefaults(suiteName: TickerStore.sharedDefaultsIdentifier), let data = sharedUserDefaults.value(forKey: TickerStore.userDataPlistName) as? Data, let values = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String: Any] {
             loadUserData(from: values)
         } else if PlistFile(name: TickerStore.userDataPlistName).isUserDataCreated, let values = PlistFile(name: TickerStore.userDataPlistName).dictionary {
             loadUserData(from: values)
@@ -152,7 +152,9 @@ final class TickerStore {
     func saveUserData() {
         let sharedUserDefaults = UserDefaults(suiteName: TickerStore.sharedDefaultsIdentifier)
         
-        sharedUserDefaults?.set(userDataDictionary, forKey: TickerStore.userDataPlistName)
+        let encodedUserDataDictionary = NSKeyedArchiver.archivedData(withRootObject: userDataDictionary)
+        sharedUserDefaults?.set(encodedUserDataDictionary, forKey: TickerStore.userDataPlistName)
+        sharedUserDefaults?.synchronize()
     }
     
 }
