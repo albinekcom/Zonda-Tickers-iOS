@@ -94,6 +94,7 @@ final class TickerStore {
     // MARK: - User Data
     
     static let userDataPlistName = "user_data"
+    static let sharedDefaultsIdentifier = "group.com.albinek.ios.BitBay-Ticker.shared.defaults"
     
     private var userDataDictionary: [String: Any] {
         let allUserTickersDictionary = userTickers.value.map {
@@ -114,8 +115,10 @@ final class TickerStore {
     // MARK: - Loading
     
     func loadUserData() {
-        if PlistFile(name: TickerStore.userDataPlistName).isUserDataCreated {
-            loadUserDataFromFile()
+        if let sharedUserDefaults = UserDefaults(suiteName: TickerStore.sharedDefaultsIdentifier), let values = sharedUserDefaults.value(forKey: TickerStore.userDataPlistName) as? [String: Any] {
+            loadUserData(from: values)
+        } else if PlistFile(name: TickerStore.userDataPlistName).isUserDataCreated, let values = PlistFile(name: TickerStore.userDataPlistName).dictionary {
+            loadUserData(from: values)
         } else {
             userTickers.value =
                 defaultTickersNames
@@ -126,14 +129,12 @@ final class TickerStore {
         }
     }
     
-    private func loadUserDataFromFile() {
-        let loadedUserDataDictionary = PlistFile(name: TickerStore.userDataPlistName).dictionary
-        
-        if let lastUpdateTimeIntervalSinceReferenceDate = loadedUserDataDictionary?[Key.lastUpdateTimeIntervalSinceReferenceDate] as? TimeInterval {
+    private func loadUserData(from dictionary: [String: Any]) {
+        if let lastUpdateTimeIntervalSinceReferenceDate = dictionary[Key.lastUpdateTimeIntervalSinceReferenceDate] as? TimeInterval {
             lastUpdateDate.value = Date(timeIntervalSinceReferenceDate: lastUpdateTimeIntervalSinceReferenceDate)
         }
         
-        guard let allTickers = loadedUserDataDictionary?[Key.tickers] as? [[String: Any]] else { return }
+        guard let allTickers = dictionary[Key.tickers] as? [[String: Any]] else { return }
         
         var loadedTickers = [Ticker]()
         
@@ -149,7 +150,9 @@ final class TickerStore {
     // MARK: - Saving
     
     func saveUserData() {
-        _ = PlistFile(name: TickerStore.userDataPlistName).save(dictionary: userDataDictionary)
+        let sharedUserDefaults = UserDefaults(suiteName: TickerStore.sharedDefaultsIdentifier)
+        
+        sharedUserDefaults?.set(userDataDictionary, forKey: TickerStore.userDataPlistName)
     }
-
+    
 }

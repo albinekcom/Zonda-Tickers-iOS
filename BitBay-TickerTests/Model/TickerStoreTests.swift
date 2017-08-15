@@ -10,8 +10,12 @@ final class TickerStoreTests: XCTestCase {
         XCTAssertEqual("lastUpdateTimeIntervalSinceReferenceDate", TickerStore.Key.lastUpdateTimeIntervalSinceReferenceDate)
     }
     
-    func testuserDataPlistName() {
+    func testUserDataPlistName() {
         XCTAssertEqual("user_data", TickerStore.userDataPlistName)
+    }
+    
+    func testSharedDefaultsIdentifier() {
+        XCTAssertEqual("group.com.albinek.ios.BitBay-Ticker.shared.defaults", TickerStore.sharedDefaultsIdentifier)
     }
     
 }
