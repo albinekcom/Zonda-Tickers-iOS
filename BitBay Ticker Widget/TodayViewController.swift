@@ -18,8 +18,10 @@ final class TodayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUserTickers()
+        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        
         setupTableView()
+        setupRefreshingTickerStore()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,9 +33,8 @@ final class TodayViewController: UIViewController {
     
     // MARK: - Setting
     
-    private func setupUserTickers() {
-        tickerStore.userTickers
-            .asObservable()
+    private func setupRefreshingTickerStore() {
+        tickerStore.refreshingSubject
             .subscribe(
                 onNext: { [weak self] (_) in
                     self?.tickerStore.saveUserData()
