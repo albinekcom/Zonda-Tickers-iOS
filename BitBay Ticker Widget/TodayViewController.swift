@@ -86,6 +86,8 @@ extension TodayViewController: NCWidgetProviding {
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        tickerStore.loadUserData()
+        
         let height = CGFloat(tickerStore.userTickers.value.count) * cellHeight
         
         preferredContentSize = activeDisplayMode == .expanded ? CGSize(width: maxSize.width, height: height) : maxSize
