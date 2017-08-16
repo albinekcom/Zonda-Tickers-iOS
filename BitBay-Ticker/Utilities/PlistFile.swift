@@ -4,26 +4,10 @@ struct PlistFile {
     
     let name: String
     
-    var isUserDataCreated: Bool {
-        guard let destinationPath = destinationPath else { return false }
-        
-        return FileManager.default.fileExists(atPath: destinationPath)
-    }
-    
     var dictionary: [String: Any]? {
-        guard let destinationPath = destinationPath else { return nil }
+        guard let destinationPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("\(name).plist").path else { return nil }
         
         return NSDictionary(contentsOfFile: destinationPath) as? [String: Any]
-    }
-    
-    func save(dictionary: [String: Any]) -> Bool {
-        guard let destinationPath = destinationPath else { return false }
-        
-        return NSDictionary(dictionary: dictionary).write(toFile: destinationPath, atomically: true)
-    }
-    
-    private var destinationPath: String? {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("\(name).plist").path
     }
     
 }
