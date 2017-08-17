@@ -7,7 +7,7 @@ struct AnalyticsParametersFactory {
     }
     
     static func makeParameters(from tickers: [Ticker]) -> [String: String] {
-        let tickersPrettyNames = tickers.map { $0.prettyName }
+        let tickersPrettyNames = tickers.map{ $0.prettyName }.sorted()
             
         let compoundedTickersPrettyNames = tickersPrettyNames.joined(separator: "|")
     

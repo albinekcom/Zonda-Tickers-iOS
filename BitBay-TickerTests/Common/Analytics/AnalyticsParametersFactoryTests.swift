@@ -12,11 +12,11 @@ final class AnalyticsParametersFactoryTests: XCTestCase {
     }
     
     func testMakeParametersFromTickers() {
-        let tickers = [Ticker(name: .btcpln, jsonDictionary: nil)!, Ticker(name: .etheur, jsonDictionary: nil)!]
+        let tickers = [Ticker(name: .btcpln, jsonDictionary: nil)!, Ticker(name: .etheur, jsonDictionary: nil)!, Ticker(name: .btcusd, jsonDictionary: nil)!]
         
         let parameters = AnalyticsParametersFactory.makeParameters(from: tickers)
         
-        XCTAssertEqual(["Tickers": "BTC/PLN|ETH/EUR"], parameters)
+        XCTAssertEqual(["Tickers": "BTC/PLN|BTC/USD|ETH/EUR"], parameters)
     }
     
 }
