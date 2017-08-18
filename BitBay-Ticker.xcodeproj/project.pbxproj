@@ -40,6 +40,8 @@
 		8C7783921F044DCF005454D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; };
 		8C7824B11F0ABA08000EA87A /* AddTickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7824B01F0ABA08000EA87A /* AddTickerViewController.swift */; };
 		8C7824B31F0ABA21000EA87A /* AddTickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7824B21F0ABA21000EA87A /* AddTickerViewModel.swift */; };
+		8C8C1D501F4784C000FAB4B0 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8C1D4F1F4784C000FAB4B0 /* TrendView.swift */; };
+		8C8C1D511F4784C000FAB4B0 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8C1D4F1F4784C000FAB4B0 /* TrendView.swift */; };
 		8C9146C41F09098200221180 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */; };
 		8C9146C71F090A5C00221180 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BF61F09066A002F0B5D /* RxTest.framework */; };
 		8C9146C91F0911B900221180 /* TickerStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146C81F0911B900221180 /* TickerStoreTests.swift */; };
@@ -146,6 +148,7 @@
 		8C73CF831F325635002A127F /* SectionedTableViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionedTableViewState.swift; path = Main/SectionedTableViewState.swift; sourceTree = "<group>"; };
 		8C7824B01F0ABA08000EA87A /* AddTickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTickerViewController.swift; path = Add/AddTickerViewController.swift; sourceTree = "<group>"; };
 		8C7824B21F0ABA21000EA87A /* AddTickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTickerViewModel.swift; path = Add/AddTickerViewModel.swift; sourceTree = "<group>"; };
+		8C8C1D4F1F4784C000FAB4B0 /* TrendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrendView.swift; path = Main/TrendView.swift; sourceTree = "<group>"; };
 		8C9146C81F0911B900221180 /* TickerStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerStoreTests.swift; path = Model/TickerStoreTests.swift; sourceTree = "<group>"; };
 		8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersViewControllerUITests.swift; sourceTree = "<group>"; };
 		8C91772A1F057930008E67C7 /* TickerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerDetailsViewController.swift; path = Details/TickerDetailsViewController.swift; sourceTree = "<group>"; };
@@ -412,6 +415,7 @@
 				8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */,
 				8CDFD4721F0820D0009F1E19 /* SectionOfTickerViewModel.swift */,
 				8C73CF831F325635002A127F /* SectionedTableViewState.swift */,
+				8C8C1D4F1F4784C000FAB4B0 /* TrendView.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -734,6 +738,7 @@
 			files = (
 				8CF8CF751F29B70F0084C5CA /* BaseTickerNameViewModel.swift in Sources */,
 				8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */,
+				8C8C1D501F4784C000FAB4B0 /* TrendView.swift in Sources */,
 				8C6527F11F3664DD0024E382 /* AnalyticsParametersFactory.swift in Sources */,
 				8C6527EB1F3664A80024E382 /* AnalyticsService.swift in Sources */,
 				8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */,
@@ -794,6 +799,7 @@
 				8C6527EC1F3664A80024E382 /* AnalyticsService.swift in Sources */,
 				8C033B671F1E79D1000FF38E /* TickerViewModel.swift in Sources */,
 				8CF8CF781F29B7160084C5CA /* Currency.swift in Sources */,
+				8C8C1D511F4784C000FAB4B0 /* TrendView.swift in Sources */,
 				8C033B631F1E797C000FF38E /* TickerStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
