@@ -2,16 +2,59 @@ import UIKit
 
 final class TrendView: UIView {
     
-    var value: Double?
+    var value: Double? {
+        didSet {
+            valueLabel.text = TrendViewValueStringFactory.makeValueString(from: value)
+            
+            guard let value = value else {
+                backgroundColor = UIColor.positiveTrend
+                
+                return
+            }
+            
+            switch value.sign {
+            case .plus:
+                backgroundColor = UIColor.positiveTrend
+            case .minus:
+                backgroundColor = UIColor.negativeTrend
+            }
+        }
+    }
+    
+    private let valueLabel = UILabel()
     
     // MARK: - Initializing
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    // MARK: - Setting
+    
+    private func setup() {
+        setupValueLabel()
+        setupBackground()
+        
+        addSubview(valueLabel)
+    }
+    
+    func setupValueLabel() {
+        valueLabel.textColor = UIColor.trendText
+        valueLabel.textAlignment = .center
+    }
+    
+    func setupBackground() {
+        layer.cornerRadius = 4.0
+    }
+    
+    // MARK: - Layouting
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        valueLabel.frame = bounds
     }
     
 }
