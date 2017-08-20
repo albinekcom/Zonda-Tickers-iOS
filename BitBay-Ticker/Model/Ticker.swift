@@ -106,4 +106,22 @@ extension Ticker {
         return "\(baseCurrencyString)/\(counterCurrencyString)"
     }
     
+    var difference: Double? {
+        guard let last = last, let vwap = vwap else { return nil }
+        
+        return last - vwap
+    }
+    
+    var differenceRatio: Double? {
+        guard let difference = difference, let vwap = vwap else { return nil }
+        
+        return difference / vwap
+    }
+    
+    var differenceRatioInPercantage: Double? {
+        guard let differenceRatio = differenceRatio else { return nil }
+        
+        return differenceRatio * 100
+    }
+    
 }
