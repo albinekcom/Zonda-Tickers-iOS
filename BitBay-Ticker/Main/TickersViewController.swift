@@ -1,3 +1,4 @@
+import StoreKit
 import RxDataSources
 import RxCocoa
 import RxSwift
@@ -21,6 +22,8 @@ final class TickersViewController: UIViewController {
     private let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
     private let editBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: nil)
     private var doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+    
+    private let reviewController = ReviewController(userDefaults: UserDefaults(suiteName: TickerStore.sharedDefaultsIdentifier))
     
     // MARK: - Managing View
     
@@ -218,7 +221,7 @@ final class TickersViewController: UIViewController {
             .controlEvent(.valueChanged)
             .subscribe(
                 onNext: { [weak self] (_) in
-                    self?.refresh()
+                    self?.refresh(isInvokedByUser: true)
                 }
             )
             .disposed(by: disposeBag)
@@ -244,24 +247,21 @@ final class TickersViewController: UIViewController {
         if let refreshControl = tickersTableView.refreshControl {
             tickersTableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.height)
             
-            refresh()
+            refresh(isInvokedByUser: false)
         }
     }
     
-    private func refresh() {
+    private func refresh(isInvokedByUser: Bool) {
         if copiedUserTickers.isEmpty {
             isRefreshing.value = false
-        } else {
-            isRefreshing.value = true
             
-            tickerStore.refreshTickers { [weak self] (error) in
-                guard let error = error else {
-                    self?.isRefreshing.value = false
-                    self?.tickerStore.lastUpdateDate.value = Date(timeIntervalSinceNow: 0)
-                    
-                    return
-                }
-                
+            return
+        }
+        
+        isRefreshing.value = true
+        
+        tickerStore.refreshTickers { [weak self] (error) in
+            if let error = error {
                 let alertController = UIAlertController(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
                 
                 let cancelAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
@@ -269,6 +269,18 @@ final class TickersViewController: UIViewController {
                 
                 self?.present(alertController, animated: true) { [weak self] in
                     self?.isRefreshing.value = false
+                }
+            } else {
+                self?.isRefreshing.value = false
+                self?.tickerStore.lastUpdateDate.value = Date(timeIntervalSinceNow: 0)
+                
+                if isInvokedByUser {
+                    self?.reviewController.incrementSuccessfulRefreshCount()
+                    
+                    if self?.reviewController.shouldDisplayReviewController == true {
+                        self?.reviewController.clearSuccessfulRefreshCount()
+                        self?.reviewController.displayReviewController()
+                    }
                 }
             }
         }

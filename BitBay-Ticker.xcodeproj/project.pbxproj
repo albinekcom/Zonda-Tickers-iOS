@@ -29,6 +29,8 @@
 		8C3E784B1F489FDD000E7F4D /* TrendViewValueStringFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E784A1F489FDD000E7F4D /* TrendViewValueStringFactory.swift */; };
 		8C3E784C1F489FDD000E7F4D /* TrendViewValueStringFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E784A1F489FDD000E7F4D /* TrendViewValueStringFactory.swift */; };
 		8C3E784F1F48A016000E7F4D /* TrendViewValueStringFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E784E1F48A016000E7F4D /* TrendViewValueStringFactoryTests.swift */; };
+		8C48D44B1F4C850700C4F700 /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C48D44A1F4C850700C4F700 /* ReviewController.swift */; };
+		8C48D44D1F4C94CB00C4F700 /* ReviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C48D44C1F4C94CB00C4F700 /* ReviewControllerTests.swift */; };
 		8C4980541F2135FF001994C7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980521F2135FF001994C7 /* Crashlytics.framework */; };
 		8C4980561F2135FF001994C7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980531F2135FF001994C7 /* Fabric.framework */; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
@@ -145,6 +147,8 @@
 		8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ApplicationColors.swift"; path = "Utilities/UIColor+ApplicationColors.swift"; sourceTree = "<group>"; };
 		8C3E784A1F489FDD000E7F4D /* TrendViewValueStringFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrendViewValueStringFactory.swift; path = Main/Trend/TrendViewValueStringFactory.swift; sourceTree = "<group>"; };
 		8C3E784E1F48A016000E7F4D /* TrendViewValueStringFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrendViewValueStringFactoryTests.swift; path = Main/Trend/TrendViewValueStringFactoryTests.swift; sourceTree = "<group>"; };
+		8C48D44A1F4C850700C4F700 /* ReviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewController.swift; path = Main/ReviewController.swift; sourceTree = "<group>"; };
+		8C48D44C1F4C94CB00C4F700 /* ReviewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewControllerTests.swift; path = Main/ReviewControllerTests.swift; sourceTree = "<group>"; };
 		8C4980521F2135FF001994C7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "BitBay-Ticker/External/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
 		8C4980531F2135FF001994C7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "BitBay-Ticker/External/Frameworks/Fabric.framework"; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				8C3E784D1F489FFE000E7F4D /* Trend */,
 				8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */,
 				8CDFD4741F084048009F1E19 /* SectionOfTickerViewModelTests.swift */,
+				8C48D44C1F4C94CB00C4F700 /* ReviewControllerTests.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				8CDFD4721F0820D0009F1E19 /* SectionOfTickerViewModel.swift */,
 				8C73CF831F325635002A127F /* SectionedTableViewState.swift */,
 				8C8C1D4F1F4784C000FAB4B0 /* TrendView.swift */,
+				8C48D44A1F4C850700C4F700 /* ReviewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -761,6 +767,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF8CF751F29B70F0084C5CA /* BaseTickerNameViewModel.swift in Sources */,
+				8C48D44B1F4C850700C4F700 /* ReviewController.swift in Sources */,
 				8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */,
 				8C3E784B1F489FDD000E7F4D /* TrendViewValueStringFactory.swift in Sources */,
 				8C8C1D501F4784C000FAB4B0 /* TrendView.swift in Sources */,
@@ -795,6 +802,7 @@
 				8C03CE8C1F0F605100038281 /* AddTickerViewModelTests.swift in Sources */,
 				8C2573151F36E7A0007471AA /* TextFactoryTests.swift in Sources */,
 				8C3E784F1F48A016000E7F4D /* TrendViewValueStringFactoryTests.swift in Sources */,
+				8C48D44D1F4C94CB00C4F700 /* ReviewControllerTests.swift in Sources */,
 				8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */,
 				8CDFD4751F084048009F1E19 /* SectionOfTickerViewModelTests.swift in Sources */,
 				8C5815971EFF97030083E122 /* TickerTests.swift in Sources */,
