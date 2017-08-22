@@ -16,6 +16,10 @@ struct TickerViewModel: BaseTickerNameViewModel {
         return "\(TextFactory.makeFormattedCurrencyValueString(for: ticker.last, isFiat: ticker.counterCurrency.isFiat)) \(ticker.counterCurrency)"
     }
     
+    var differenceRatioInPercantage: Double? {
+        return ticker.differenceRatioInPercantage
+    }
+    
 }
 
 extension TickerViewModel: IdentifiableType, Equatable {

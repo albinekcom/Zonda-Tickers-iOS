@@ -188,8 +188,14 @@ final class TickersViewController: UIViewController {
         animatedDataSource.configureCell = { (_, tableView, indexPath, item) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "TickerTableViewCell", for: indexPath)
             
-            cell.textLabel?.text = item.name
-            cell.detailTextLabel?.text = item.last
+//            cell.textLabel?.text = item.name
+//            cell.detailTextLabel?.text = item.last
+            
+            if let tcell = cell as? TickerTableViewCell {
+                tcell.titleLabel.text = item.name
+                tcell.subtitleLabel.text = item.last
+                tcell.trendView.value = item.differenceRatioInPercantage
+            }
             
             return cell
         }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bHa-5d-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bHa-5d-yGl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -85,34 +86,53 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TickerTableViewCell" textLabel="8Dh-cM-yhH" detailTextLabel="5dk-Ps-yjS" style="IBUITableViewCellStyleValue1" id="05u-Mk-SOK" userLabel="Ticker Table View Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TickerTableViewCell" id="05u-Mk-SOK" userLabel="Ticker Table View Cell" customClass="TickerTableViewCell" customModule="BitBay_Ticker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05u-Mk-SOK" id="fro-Bd-tfq">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Dh-cM-yhH">
-                                                    <rect key="frame" x="15" y="17" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PF-oe-i6g" userLabel="Subtitle">
+                                                    <rect key="frame" x="178" y="17" width="81" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5dk-Ps-yjS">
-                                                    <rect key="frame" x="296" y="17" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sII-fh-8bL" customClass="TrendView" customModule="BitBay_Ticker" customModuleProvider="target">
+                                                    <rect key="frame" x="267" y="10" width="68" height="34"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="CzW-E8-mIu"/>
+                                                        <constraint firstAttribute="width" constant="68" id="Iid-VJ-Coe"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMP-2Y-7q6" userLabel="Title">
+                                                    <rect key="frame" x="8" y="17" width="32.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sII-fh-8bL" firstAttribute="leading" secondItem="9PF-oe-i6g" secondAttribute="trailing" constant="8" id="9qD-1Y-cwB"/>
+                                                <constraint firstItem="qMP-2Y-7q6" firstAttribute="top" secondItem="fro-Bd-tfq" secondAttribute="topMargin" constant="9" id="OkD-5R-F2Z"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="qMP-2Y-7q6" secondAttribute="leading" id="Wz8-Ia-wlC"/>
+                                                <constraint firstItem="sII-fh-8bL" firstAttribute="top" secondItem="fro-Bd-tfq" secondAttribute="topMargin" constant="2" id="iqz-BJ-rxV"/>
+                                                <constraint firstItem="9PF-oe-i6g" firstAttribute="top" secondItem="fro-Bd-tfq" secondAttribute="topMargin" constant="9" id="wne-J2-tex"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="tickerCell" label="Ticker Last Value">
                                             <accessibilityTraits key="traits" button="YES"/>
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="sII-fh-8bL" secondAttribute="trailing" constant="40" id="mGh-nZ-6Z6"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="subtitleLabel" destination="9PF-oe-i6g" id="1xn-kB-7zS"/>
+                                            <outlet property="titleLabel" destination="qMP-2Y-7q6" id="i0p-TU-SRe"/>
+                                            <outlet property="trendView" destination="sII-fh-8bL" id="boF-MA-grj"/>
                                             <segue destination="Fyh-Ph-PHh" kind="show" id="8Rh-PI-edj"/>
                                         </connections>
                                     </tableViewCell>
