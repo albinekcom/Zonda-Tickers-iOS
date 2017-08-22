@@ -16,7 +16,7 @@ final class AnalyticsParametersFactoryTests: XCTestCase {
         
         let parameters = AnalyticsParametersFactory.makeParameters(from: tickers)
         
-        XCTAssertEqual(["Tickers": "BTC/PLN|BTC/USD|ETH/EUR"], parameters)
+        XCTAssertEqual(["Tickers": "BTC/PLN|ETH/EUR|BTC/USD"], parameters)
     }
     
 }

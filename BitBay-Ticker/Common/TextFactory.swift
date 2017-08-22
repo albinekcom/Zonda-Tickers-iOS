@@ -38,7 +38,7 @@ struct TextFactory {
         
         let valueString: String
         
-        if let string = numberFormatter.string(for: value) {
+        if let value = value, let string = numberFormatter.string(for: value) {
             valueString = string
         } else {
             valueString = "-"
