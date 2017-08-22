@@ -25,6 +25,8 @@ final class TickersViewController: UIViewController {
     
     private let reviewController = ReviewController(userDefaults: UserDefaults(suiteName: TickerStore.sharedDefaultsIdentifier))
     
+    private var timer: Timer?
+    
     // MARK: - Managing View
     
     override func viewDidLoad() {
@@ -48,7 +50,15 @@ final class TickersViewController: UIViewController {
             tickersTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
         
+        scheduleAutoRefreshingTimer()
+        
         AnalyticsService.trackTickersView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        removeAutoRefreshingTimer()
     }
     
     // MARK: - Setting
@@ -252,6 +262,8 @@ final class TickersViewController: UIViewController {
     }
     
     private func refresh(isInvokedByUser: Bool) {
+        removeAutoRefreshingTimer()
+        
         if copiedUserTickers.isEmpty {
             isRefreshing.value = false
             
@@ -260,7 +272,7 @@ final class TickersViewController: UIViewController {
         
         isRefreshing.value = true
         
-        tickerStore.refreshTickers { [weak self] (error) in
+        tickerStore.refreshTickers(isInvokedByUser: isInvokedByUser) { [weak self] (error) in
             if let error = error {
                 let alertController = UIAlertController(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
                 
@@ -270,6 +282,8 @@ final class TickersViewController: UIViewController {
                 self?.present(alertController, animated: true) { [weak self] in
                     self?.isRefreshing.value = false
                 }
+                
+                self?.removeAutoRefreshingTimer()
             } else {
                 self?.isRefreshing.value = false
                 self?.tickerStore.lastUpdateDate.value = Date(timeIntervalSinceNow: 0)
@@ -282,6 +296,8 @@ final class TickersViewController: UIViewController {
                         self?.reviewController.displayReviewController()
                     }
                 }
+                
+                self?.scheduleAutoRefreshingTimer()
             }
         }
     }
@@ -293,6 +309,22 @@ final class TickersViewController: UIViewController {
             let selectedTicker = copiedUserTickers[selectedIndexPath.row]
             tickerDetailsViewController.viewModel = TickerDetailsViewModel(ticker: selectedTicker)
         }
+    }
+    
+    // MARK: - Autorefreshing
+    
+    func scheduleAutoRefreshingTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(automaticRefresh), userInfo: nil, repeats: true)
+    }
+    
+    func removeAutoRefreshingTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func automaticRefresh() {
+        refresh(isInvokedByUser: false)
     }
     
 }

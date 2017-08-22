@@ -57,4 +57,8 @@ struct AnalyticsService {
         track(name: "Refreshed Tickers", parameters: parameters)
     }
     
+    static func trackRefreshedTickersInvokedByUser(parameters: [String: String]) {
+        track(name: "Refreshed Tickers Invoked By User", parameters: parameters)
+    }
+    
 }

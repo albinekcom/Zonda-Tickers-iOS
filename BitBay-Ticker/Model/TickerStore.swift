@@ -29,7 +29,7 @@ final class TickerStore {
         .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln
     ]
     
-    func refreshTickers(completion: ((Error?) -> Void)?) {
+    func refreshTickers(isInvokedByUser: Bool, completion: ((Error?) -> Void)?) {
         Observable
             .zip(
                 userTickers.value.map { (ticker) in
@@ -44,7 +44,12 @@ final class TickerStore {
                     self?.refreshingSubject.on(.next(true))
                     
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: tickers)
-                    AnalyticsService.trackRefreshedTickers(parameters: analyticsParameters)
+                    
+                    if isInvokedByUser {
+                        AnalyticsService.trackRefreshedTickersInvokedByUser(parameters: analyticsParameters)
+                    } else {
+                        AnalyticsService.trackRefreshedTickers(parameters: analyticsParameters)
+                    }
                     
                     completion?(nil)
                 },
@@ -88,7 +93,7 @@ final class TickerStore {
             AnalyticsService.trackAddedTicker(parameters: analyticsParameters)
         }
         
-        refreshTickers(completion: nil)
+        refreshTickers(isInvokedByUser: false, completion: nil)
     }
     
     // MARK: - User Data
