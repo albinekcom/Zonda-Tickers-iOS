@@ -118,6 +118,8 @@ final class TickersViewController: UIViewController {
                     if strongSelf.tickersTableView.isEditing {
                         AnalyticsService.trackEditTickersView()
                     }
+                    
+                    strongSelf.removeAutoRefreshingTimer()
                 }
             )
             .disposed(by: disposeBag)
@@ -134,6 +136,8 @@ final class TickersViewController: UIViewController {
                     
                     strongSelf.tickersTableView.setEditing(!strongSelf.tickersTableView.isEditing, animated: true)
                     strongSelf.setupRefreshControl()
+                    
+                    strongSelf.scheduleAutoRefreshingTimer()
                 }
             )
             .disposed(by: disposeBag)
