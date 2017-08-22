@@ -42,6 +42,7 @@ final class ReviewController {
     func displayReviewController() {
         if #available(iOS 10.3, *) {
             SKStoreReviewController.requestReview()
+            AnalyticsService.trackRequestedRatingView()
         }
     }
     

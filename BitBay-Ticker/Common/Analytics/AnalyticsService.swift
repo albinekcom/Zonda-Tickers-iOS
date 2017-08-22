@@ -39,6 +39,10 @@ struct AnalyticsService {
         track(name: "Edit Tickers View")
     }
     
+    static func trackRequestedRatingView() {
+        track(name: "Requested Rating View")
+    }
+    
     // MARK: - Actions
     
     static func trackAddedTicker(parameters: [String: String]) {
