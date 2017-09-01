@@ -32,7 +32,7 @@ struct AnalyticsService {
     }
     
     static func trackTickerDetailsView(parameters: [String: String]) {
-        track(name: "Tickers View", parameters: parameters)
+        track(name: "Ticker Details View", parameters: parameters)
     }
     
     static func trackEditTickersView() {
