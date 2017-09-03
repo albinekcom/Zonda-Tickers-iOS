@@ -1,0 +1,20 @@
+// Common
+
+"ok" = "ठीक";
+"error" = "त्रुटि";
+"last.updated.on" = "अंतिम बार अद्यतन किया गया";
+
+// Ticker Details
+
+"ticker.details.last" = "अंतिम";
+"ticker.details.max" = "ज्यादा से ज्यादा";
+"ticker.details.min" = "न्यूनतम";
+"ticker.details.bid" = "बोली";
+"ticker.details.ask" = "पूछना";
+"ticker.details.vwap" = "भारित औसत";
+"ticker.details.average" = "औसत";
+"ticker.details.volume" = "आयतन";
+
+// Add Ticker
+
+"add.ticker.title" = "टिकर जोड़ें";

@@ -180,6 +180,7 @@
 		8CC3A5611F4249EB00F954B8 /* BitBay Ticker Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay Ticker Widget.entitlements"; sourceTree = "<group>"; };
 		8CC7DDA41EFFED9C00050A7F /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = "BitBay-Ticker/External/Frameworks/BuddyBuildSDK.framework"; sourceTree = "<group>"; };
 		8CC7DDA91EFFEDD500050A7F /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8CD60C561F5BD34200ABDB23 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDAD4021F01921B00EB2EC9 /* TickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickersViewController.swift; path = Main/TickersViewController.swift; sourceTree = "<group>"; };
 		8CDFA6F01F06F618003669A1 /* TickerStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerStore.swift; path = Model/TickerStore.swift; sourceTree = "<group>"; };
 		8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -654,6 +655,7 @@
 				en,
 				Base,
 				pl,
+				hi,
 			);
 			mainGroup = 8CC184EF1EFE4CAC0083DA30;
 			productRefGroup = 8CC184F91EFE4CAC0083DA30 /* Products */;
@@ -872,6 +874,7 @@
 			children = (
 				8CBD947B1F0D7D1400CA4250 /* en */,
 				8CBD947D1F0D7D2500CA4250 /* pl */,
+				8CD60C561F5BD34200ABDB23 /* hi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
