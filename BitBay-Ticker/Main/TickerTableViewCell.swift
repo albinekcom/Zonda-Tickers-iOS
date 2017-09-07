@@ -10,7 +10,13 @@ final class TickerTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        backgroundColor = selected ? .selectedCell : .unselectedCell
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        backgroundColor = highlighted ? .selectedCell : .unselectedCell
     }
 
 }

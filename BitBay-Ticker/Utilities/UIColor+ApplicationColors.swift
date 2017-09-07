@@ -22,4 +22,12 @@ extension UIColor {
         return .white
     }
     
+    static var selectedCell: UIColor {
+        return UIColor(red: 217/255.0, green: 217/255.0, blue: 217/255.0, alpha: 1)
+    }
+    
+    static var unselectedCell: UIColor {
+        return .white
+    }
+    
 }
