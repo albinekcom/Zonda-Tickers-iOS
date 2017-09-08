@@ -8,15 +8,23 @@ final class TickerTableViewCell: UITableViewCell {
     @IBOutlet weak var trendView: TrendView!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
+        let trendViewBackgroundColor = trendView.backgroundColor
+        
         super.setSelected(selected, animated: animated)
-
-        backgroundColor = selected ? .selectedCell : .unselectedCell
+        
+        if selected {
+            trendView.backgroundColor = trendViewBackgroundColor
+        }
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        let trendViewBackgroundColor = trendView.backgroundColor
+        
         super.setHighlighted(highlighted, animated: animated)
         
-        backgroundColor = highlighted ? .selectedCell : .unselectedCell
+        if highlighted {
+            trendView.backgroundColor = trendViewBackgroundColor
+        }
     }
 
 }

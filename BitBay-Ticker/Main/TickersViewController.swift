@@ -192,7 +192,6 @@ final class TickersViewController: UIViewController {
                 tickerTableViewCell.titleLabel.text = item.name
                 tickerTableViewCell.subtitleLabel.text = item.last
                 tickerTableViewCell.trendView.value = item.differenceRatioInPercantage
-                tickerTableViewCell.selectionStyle = .none
             }
             
             return cell
