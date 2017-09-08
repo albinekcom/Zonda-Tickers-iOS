@@ -35,6 +35,8 @@
 		8C48D4501F4CB46F00C4F700 /* TickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C48D44E1F4CB46F00C4F700 /* TickerTableViewCell.swift */; };
 		8C4980541F2135FF001994C7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980521F2135FF001994C7 /* Crashlytics.framework */; };
 		8C4980561F2135FF001994C7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980531F2135FF001994C7 /* Fabric.framework */; };
+		8C4CEF281F62681300C15D4F /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4CEF271F62681300C15D4F /* Differentiator.framework */; };
+		8C4CEF291F62683E00C15D4F /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4CEF271F62681300C15D4F /* Differentiator.framework */; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
 		8C5CF6FC1F044CBD00B0C8E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
@@ -154,6 +156,7 @@
 		8C48D44E1F4CB46F00C4F700 /* TickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTableViewCell.swift; path = Main/TickerTableViewCell.swift; sourceTree = "<group>"; };
 		8C4980521F2135FF001994C7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "BitBay-Ticker/External/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
 		8C4980531F2135FF001994C7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "BitBay-Ticker/External/Frameworks/Fabric.framework"; sourceTree = "<group>"; };
+		8C4CEF271F62681300C15D4F /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
 		8C6527EA1F3664A80024E382 /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsService.swift; path = Common/Analytics/AnalyticsService.swift; sourceTree = "<group>"; };
@@ -215,6 +218,7 @@
 				2813002B72BE0497CDBCD3DB /* CoreTelephony.framework in Frameworks */,
 				E7A3C37842C31C334C420719 /* SystemConfiguration.framework in Frameworks */,
 				F96D43DF325E879ABE52A926 /* QuartzCore.framework in Frameworks */,
+				8C4CEF281F62681300C15D4F /* Differentiator.framework in Frameworks */,
 				ADDFE86648DC8970E0982986 /* AVFoundation.framework in Frameworks */,
 				8C4980561F2135FF001994C7 /* Fabric.framework in Frameworks */,
 				22D4B494C269AB2CBA0F7950 /* CoreMedia.framework in Frameworks */,
@@ -251,6 +255,7 @@
 				8CFB35121F1808F900475DC1 /* NotificationCenter.framework in Frameworks */,
 				8CD82F6B1F3AD1B1003E7122 /* Crashlytics.framework in Frameworks */,
 				8CC5ED401F1AA80700153E94 /* RxCocoa.framework in Frameworks */,
+				8C4CEF291F62683E00C15D4F /* Differentiator.framework in Frameworks */,
 				8CC5ED421F1AA80700153E94 /* RxSwift.framework in Frameworks */,
 				8CD82F6A1F3AD1AD003E7122 /* Fabric.framework in Frameworks */,
 			);
@@ -500,6 +505,7 @@
 		C24AC6780E9338DA000950BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C4CEF271F62681300C15D4F /* Differentiator.framework */,
 				8C4980521F2135FF001994C7 /* Crashlytics.framework */,
 				8C4980531F2135FF001994C7 /* Fabric.framework */,
 				8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */,
@@ -716,12 +722,14 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 			);
 			name = "Run Script For Carthage";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
