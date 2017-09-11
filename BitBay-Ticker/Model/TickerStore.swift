@@ -8,6 +8,12 @@ final class TickerStore {
         static let lastUpdateTimeIntervalSinceReferenceDate = "lastUpdateTimeIntervalSinceReferenceDate"
     }
     
+    enum RefreshingType: String {
+        case user = "User"
+        case automatic = "Automatic"
+        case widget = "Widget"
+    }
+    
     static let shared = TickerStore()
     
     private let disposeBag = DisposeBag()

@@ -18,4 +18,10 @@ final class TickerStoreTests: XCTestCase {
         XCTAssertEqual("group.com.albinek.ios.BitBay-Ticker.shared.defaults", TickerStore.sharedDefaultsIdentifier)
     }
     
+    func testRefreshingType() {
+        XCTAssertEqual("Automatic", TickerStore.RefreshingType.automatic.rawValue)
+        XCTAssertEqual("User", TickerStore.RefreshingType.user.rawValue)
+        XCTAssertEqual("Widget", TickerStore.RefreshingType.widget.rawValue)
+    }
+    
 }

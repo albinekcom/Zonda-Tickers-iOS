@@ -19,4 +19,10 @@ final class AnalyticsParametersFactoryTests: XCTestCase {
         XCTAssertEqual(["Tickers": "BTC/PLN|ETH/EUR|BTC/USD"], parameters)
     }
     
+    func testMakeParametersFromRefreshingType() {
+        XCTAssertEqual(["Refreshing Type": "Automatic"], AnalyticsParametersFactory.makeParameters(from: .automatic))
+        XCTAssertEqual(["Refreshing Type": "User"], AnalyticsParametersFactory.makeParameters(from: .user))
+        XCTAssertEqual(["Refreshing Type": "Widget"], AnalyticsParametersFactory.makeParameters(from: .widget))
+    }
+    
 }

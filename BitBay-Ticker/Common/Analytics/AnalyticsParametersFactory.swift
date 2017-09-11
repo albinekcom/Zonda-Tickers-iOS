@@ -14,4 +14,8 @@ struct AnalyticsParametersFactory {
         return ["Tickers": compoundedTickersPrettyNames]
     }
     
+    static func makeParameters(from refreshingType: TickerStore.RefreshingType) -> [String: String] {
+        return ["Refreshing Type": refreshingType.rawValue]
+    }
+    
 }
