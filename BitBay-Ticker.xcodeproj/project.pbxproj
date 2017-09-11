@@ -37,6 +37,9 @@
 		8C4980561F2135FF001994C7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980531F2135FF001994C7 /* Fabric.framework */; };
 		8C4CEF281F62681300C15D4F /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4CEF271F62681300C15D4F /* Differentiator.framework */; };
 		8C4CEF291F62683E00C15D4F /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4CEF271F62681300C15D4F /* Differentiator.framework */; };
+		8C5690861F66661100C8F580 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690851F66661100C8F580 /* Dictionary+Merge.swift */; };
+		8C5690871F66661100C8F580 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690851F66661100C8F580 /* Dictionary+Merge.swift */; };
+		8C56908A1F66667B00C8F580 /* Dictionary+MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690891F66667B00C8F580 /* Dictionary+MergeTests.swift */; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
 		8C5CF6FC1F044CBD00B0C8E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
@@ -157,6 +160,8 @@
 		8C4980521F2135FF001994C7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "BitBay-Ticker/External/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
 		8C4980531F2135FF001994C7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "BitBay-Ticker/External/Frameworks/Fabric.framework"; sourceTree = "<group>"; };
 		8C4CEF271F62681300C15D4F /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		8C5690851F66661100C8F580 /* Dictionary+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+Merge.swift"; path = "Utilities/Dictionary+Merge.swift"; sourceTree = "<group>"; };
+		8C5690891F66667B00C8F580 /* Dictionary+MergeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+MergeTests.swift"; path = "Utilities/Dictionary+MergeTests.swift"; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
 		8C5815961EFF97030083E122 /* TickerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTests.swift; path = Model/TickerTests.swift; sourceTree = "<group>"; };
 		8C6527EA1F3664A80024E382 /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsService.swift; path = Common/Analytics/AnalyticsService.swift; sourceTree = "<group>"; };
@@ -297,6 +302,7 @@
 			children = (
 				8C377D291F0BF2FA00D76B74 /* PlistFile.swift */,
 				8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */,
+				8C5690851F66661100C8F580 /* Dictionary+Merge.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -315,6 +321,14 @@
 				8C3E784E1F48A016000E7F4D /* TrendViewValueStringFactoryTests.swift */,
 			);
 			name = Trend;
+			sourceTree = "<group>";
+		};
+		8C5690881F66665500C8F580 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8C5690891F66667B00C8F580 /* Dictionary+MergeTests.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		8C5815911EFF96A20083E122 /* Model */ = {
@@ -425,6 +439,7 @@
 		8CC1850F1EFE4CAC0083DA30 /* BitBay-TickerTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C5690881F66665500C8F580 /* Utilities */,
 				8CF9D4611F13FD4F00502695 /* Common */,
 				8C03CE8A1F0F603900038281 /* Add */,
 				8C9177301F058DEF008E67C7 /* Details */,
@@ -798,6 +813,7 @@
 				8CF8CF771F29B70F0084C5CA /* TextFactory.swift in Sources */,
 				8CDFD4731F0820D0009F1E19 /* SectionOfTickerViewModel.swift in Sources */,
 				8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */,
+				8C5690861F66661100C8F580 /* Dictionary+Merge.swift in Sources */,
 				8C7824B11F0ABA08000EA87A /* AddTickerViewController.swift in Sources */,
 				8C91772B1F057930008E67C7 /* TickerDetailsViewController.swift in Sources */,
 				8C377D2A1F0BF2FA00D76B74 /* PlistFile.swift in Sources */,
@@ -821,6 +837,7 @@
 				8C9177321F058E29008E67C7 /* TickerDetailsViewModelTests.swift in Sources */,
 				8CDFD4751F084048009F1E19 /* SectionOfTickerViewModelTests.swift in Sources */,
 				8C5815971EFF97030083E122 /* TickerTests.swift in Sources */,
+				8C56908A1F66667B00C8F580 /* Dictionary+MergeTests.swift in Sources */,
 				8C2573131F36E7A0007471AA /* AnalyticsParametersFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -840,6 +857,7 @@
 			files = (
 				8C033B691F1E7A5A000FF38E /* PlistFile.swift in Sources */,
 				8CF8CF7A1F29B7200084C5CA /* TextFactory.swift in Sources */,
+				8C5690871F66661100C8F580 /* Dictionary+Merge.swift in Sources */,
 				8C3E784C1F489FDD000E7F4D /* TrendViewValueStringFactory.swift in Sources */,
 				8C3E78481F4898B7000E7F4D /* UIColor+ApplicationColors.swift in Sources */,
 				8C6527F21F3664DD0024E382 /* AnalyticsParametersFactory.swift in Sources */,
