@@ -22,7 +22,7 @@ Clone this repository, execute `carthage update` and open `BitBay-Ticker.xcodepr
 ```bash
 $ git clone https://github.com/albinekcom/BitBay-Ticker-iOS.git
 $ cd BitBay-Ticker-iOS
-$ carthage update
+$ carthage update --platform iOS
 $ open BitBay-Ticker.xcodeproj
 ```
 
