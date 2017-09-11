@@ -28,7 +28,7 @@ final class TodayViewController: UIViewController {
         super.viewDidAppear(animated)
         
         tickerStore.loadUserData()
-        tickerStore.refreshTickers(isInvokedByUser: false, completion: nil)
+        tickerStore.refreshTickers(refreshingType: .widget)
     }
     
     // MARK: - Setting
@@ -80,7 +80,7 @@ extension TodayViewController: NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         tickerStore.loadUserData()
-        tickerStore.refreshTickers(isInvokedByUser: false) { (error) in
+        tickerStore.refreshTickers(refreshingType: .widget) { (error) in
             completionHandler((error == nil) ? .newData : .failed)
         }
     }

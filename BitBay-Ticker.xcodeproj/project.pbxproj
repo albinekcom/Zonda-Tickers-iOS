@@ -17,6 +17,7 @@
 		8C033B671F1E79D1000FF38E /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
 		8C033B691F1E7A5A000FF38E /* PlistFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C377D291F0BF2FA00D76B74 /* PlistFile.swift */; };
 		8C03CE8C1F0F605100038281 /* AddTickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C03CE8B1F0F605100038281 /* AddTickerViewModelTests.swift */; };
+		8C0BE0A21F66928B0025F2D3 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690851F66661100C8F580 /* Dictionary+Merge.swift */; };
 		8C1CF6E91F0425AB00E6F0D4 /* TickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6E81F0425AB00E6F0D4 /* TickerFactory.swift */; };
 		8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6ED1F0427D700E6F0D4 /* TickerViewModel.swift */; };
 		8C1CF6F11F042A3C00E6F0D4 /* TickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CF6F01F042A3C00E6F0D4 /* TickerViewModelTests.swift */; };
@@ -38,7 +39,6 @@
 		8C4CEF281F62681300C15D4F /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4CEF271F62681300C15D4F /* Differentiator.framework */; };
 		8C4CEF291F62683E00C15D4F /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4CEF271F62681300C15D4F /* Differentiator.framework */; };
 		8C5690861F66661100C8F580 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690851F66661100C8F580 /* Dictionary+Merge.swift */; };
-		8C5690871F66661100C8F580 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690851F66661100C8F580 /* Dictionary+Merge.swift */; };
 		8C56908A1F66667B00C8F580 /* Dictionary+MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690891F66667B00C8F580 /* Dictionary+MergeTests.swift */; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
 		8C5815971EFF97030083E122 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815961EFF97030083E122 /* TickerTests.swift */; };
@@ -857,7 +857,7 @@
 			files = (
 				8C033B691F1E7A5A000FF38E /* PlistFile.swift in Sources */,
 				8CF8CF7A1F29B7200084C5CA /* TextFactory.swift in Sources */,
-				8C5690871F66661100C8F580 /* Dictionary+Merge.swift in Sources */,
+				8C0BE0A21F66928B0025F2D3 /* Dictionary+Merge.swift in Sources */,
 				8C3E784C1F489FDD000E7F4D /* TrendViewValueStringFactory.swift in Sources */,
 				8C3E78481F4898B7000E7F4D /* UIColor+ApplicationColors.swift in Sources */,
 				8C6527F21F3664DD0024E382 /* AnalyticsParametersFactory.swift in Sources */,

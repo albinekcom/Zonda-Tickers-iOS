@@ -238,7 +238,7 @@ final class TickersViewController: UIViewController {
             .controlEvent(.valueChanged)
             .subscribe(
                 onNext: { [weak self] (_) in
-                    self?.refresh(isInvokedByUser: true)
+                    self?.refresh(refreshingType: .user)
                 }
             )
             .disposed(by: disposeBag)
@@ -264,11 +264,11 @@ final class TickersViewController: UIViewController {
         if let refreshControl = tickersTableView.refreshControl {
             tickersTableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.height)
             
-            refresh(isInvokedByUser: false)
+            refresh(refreshingType: .automatic)
         }
     }
     
-    private func refresh(isInvokedByUser: Bool) {
+    private func refresh(refreshingType: TickerStore.RefreshingType) {
         removeAutoRefreshingTimer()
         
         if copiedUserTickers.isEmpty {
@@ -279,7 +279,7 @@ final class TickersViewController: UIViewController {
         
         isRefreshing.value = true
         
-        tickerStore.refreshTickers(isInvokedByUser: isInvokedByUser) { [weak self] (error) in
+        tickerStore.refreshTickers(refreshingType: refreshingType) { [weak self] (error) in
             if let error = error {
                 let alertController = UIAlertController(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
                 
@@ -331,7 +331,7 @@ final class TickersViewController: UIViewController {
     }
     
     func automaticRefresh() {
-        refresh(isInvokedByUser: false)
+        refresh(refreshingType: .automatic)
     }
     
 }
