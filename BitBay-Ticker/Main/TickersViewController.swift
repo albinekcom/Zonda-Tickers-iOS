@@ -295,7 +295,7 @@ final class TickersViewController: UIViewController {
                 self?.isRefreshing.value = false
                 self?.tickerStore.lastUpdateDate.value = Date(timeIntervalSinceNow: 0)
                 
-                if isInvokedByUser {
+                if refreshingType == .user {
                     self?.reviewController.incrementSuccessfulRefreshCount()
                     
                     if self?.reviewController.shouldDisplayReviewController == true {
