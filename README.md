@@ -17,7 +17,7 @@ This application uses [RxSwift](https://github.com/ReactiveX/RxSwift).
 
 ## Usage
 
-Clone this repository, execute `carthage update` and open `BitBay-Ticker.xcodeproj`.
+Clone this repository, execute `carthage update --platform iOS` and open `BitBay-Ticker.xcodeproj`.
 
 ```bash
 $ git clone https://github.com/albinekcom/BitBay-Ticker-iOS.git
