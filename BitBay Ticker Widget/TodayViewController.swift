@@ -52,8 +52,11 @@ final class TodayViewController: UIViewController {
                 }
             }
             .bind(to: tableView.rx.items(cellIdentifier: "Widget Cell")) { (index, model, cell) in
-                cell.textLabel?.text = model.name
-                cell.detailTextLabel?.text = model.last
+                guard let tickerTableViewCell = cell as? TickerTableViewCell else { return }
+                
+                tickerTableViewCell.titleLabel.text = model.name
+                tickerTableViewCell.subtitleLabel.text = model.last
+                tickerTableViewCell.trendView.value = model.differenceRatioInPercantage
             }
             .disposed(by: disposeBag)
         
