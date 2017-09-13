@@ -7,16 +7,16 @@ final class TrendView: UIView {
             valueLabel.text = TrendViewValueStringFactory.makeValueString(from: value)
             
             guard let value = value else {
-                backgroundColor = UIColor.positiveTrend
+                backgroundColor = .positiveTrend
                 
                 return
             }
             
             switch value.sign {
             case .plus:
-                backgroundColor = UIColor.positiveTrend
+                backgroundColor = .positiveTrend
             case .minus:
-                backgroundColor = UIColor.negativeTrend
+                backgroundColor = .negativeTrend
             }
         }
     }
@@ -41,7 +41,7 @@ final class TrendView: UIView {
     }
     
     func setupValueLabel() {
-        valueLabel.textColor = UIColor.trendText
+        valueLabel.textColor = .trendText
         valueLabel.textAlignment = .center
     }
     
