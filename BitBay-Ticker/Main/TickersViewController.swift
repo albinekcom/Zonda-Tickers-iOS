@@ -229,6 +229,8 @@ final class TickersViewController: UIViewController {
             .shareReplay(1)
             .bind(to: tickersTableView.rx.items(dataSource: animatedDataSource))
             .addDisposableTo(disposeBagForTableView)
+        
+        tickersTableView.delegate = self
     }
     
     private func setupRefreshControl() {
@@ -332,6 +334,18 @@ final class TickersViewController: UIViewController {
     
     func automaticRefresh() {
         refresh(refreshingType: .automatic)
+    }
+    
+}
+
+extension TickersViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {        
+        removeAutoRefreshingTimer()
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        scheduleAutoRefreshingTimer()
     }
     
 }
