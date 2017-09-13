@@ -102,13 +102,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Text" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PF-oe-i6g" userLabel="Subtitle">
-                                                    <rect key="frame" x="88" y="17" width="171" height="21"/>
+                                                    <rect key="frame" x="95" y="17" width="164" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMP-2Y-7q6" userLabel="Title">
-                                                    <rect key="frame" x="8" y="17" width="72" height="21"/>
+                                                    <rect key="frame" x="15" y="17" width="72" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="72" id="hdN-70-zT4"/>
                                                     </constraints>
@@ -119,11 +119,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sII-fh-8bL" firstAttribute="leading" secondItem="9PF-oe-i6g" secondAttribute="trailing" constant="8" id="9qD-1Y-cwB"/>
-                                                <constraint firstItem="qMP-2Y-7q6" firstAttribute="top" secondItem="fro-Bd-tfq" secondAttribute="topMargin" constant="9" id="OkD-5R-F2Z"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="qMP-2Y-7q6" secondAttribute="leading" id="Wz8-Ia-wlC"/>
+                                                <constraint firstItem="qMP-2Y-7q6" firstAttribute="centerY" secondItem="fro-Bd-tfq" secondAttribute="centerY" id="ED7-gF-Ha5"/>
+                                                <constraint firstItem="sII-fh-8bL" firstAttribute="centerY" secondItem="fro-Bd-tfq" secondAttribute="centerY" id="RGH-bL-9GA"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="qMP-2Y-7q6" secondAttribute="leading" constant="-7" id="Wz8-Ia-wlC"/>
                                                 <constraint firstItem="9PF-oe-i6g" firstAttribute="leading" secondItem="qMP-2Y-7q6" secondAttribute="trailing" constant="8" id="eFl-7P-445"/>
-                                                <constraint firstItem="sII-fh-8bL" firstAttribute="top" secondItem="fro-Bd-tfq" secondAttribute="topMargin" constant="2" id="iqz-BJ-rxV"/>
-                                                <constraint firstItem="9PF-oe-i6g" firstAttribute="top" secondItem="fro-Bd-tfq" secondAttribute="topMargin" constant="9" id="wne-J2-tex"/>
+                                                <constraint firstItem="9PF-oe-i6g" firstAttribute="centerY" secondItem="fro-Bd-tfq" secondAttribute="centerY" id="ugG-rO-xQO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="tickerCell" label="Ticker Last Value">
