@@ -340,7 +340,7 @@ final class TickersViewController: UIViewController {
 
 extension TickersViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {        
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         removeAutoRefreshingTimer()
     }
     
