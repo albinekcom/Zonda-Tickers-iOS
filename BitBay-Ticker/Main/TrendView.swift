@@ -23,6 +23,16 @@ final class TrendView: UIView {
     
     private let valueLabel = UILabel()
     
+    // MARK: - Hack for disabling chaning background color to clear during reordering
+    
+    override var backgroundColor: UIColor? {
+        didSet {
+            if UIColor.clear.isEqual(backgroundColor) {
+                backgroundColor = oldValue
+            }
+        }
+    }
+    
     // MARK: - Initializing
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,7 +45,7 @@ final class TrendView: UIView {
     
     private func setup() {
         setupValueLabel()
-        setupBackground()
+        setupLayer()
         
         addSubview(valueLabel)
     }
@@ -45,7 +55,7 @@ final class TrendView: UIView {
         valueLabel.textAlignment = .center
     }
     
-    func setupBackground() {
+    func setupLayer() {
         layer.cornerRadius = 4.0
     }
     
