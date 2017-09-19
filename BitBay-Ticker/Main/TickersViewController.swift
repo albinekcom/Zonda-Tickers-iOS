@@ -197,11 +197,11 @@ final class TickersViewController: UIViewController {
             return cell
         }
         
-        animatedDataSource.canEditRowAtIndexPath = { _ in
+        animatedDataSource.canEditRowAtIndexPath = { (_, _) -> Bool in
             return true
         }
         
-        animatedDataSource.canMoveRowAtIndexPath = { _ in
+        animatedDataSource.canMoveRowAtIndexPath = { (_, _) -> Bool in
             return true
         }
         
@@ -254,7 +254,7 @@ final class TickersViewController: UIViewController {
                     guard let lastDate = lastDate else { return }
                     
                     let lastUpdateText = TextFactory.makeLastUpdateDateText(updateDate: lastDate)
-                    self?.tickersTableView.refreshControl?.attributedTitle = NSAttributedString(string: lastUpdateText, attributes: [NSForegroundColorAttributeName: UIColor.refreshControl])
+                    self?.tickersTableView.refreshControl?.attributedTitle = NSAttributedString(string: lastUpdateText, attributes: [NSAttributedStringKey.foregroundColor: UIColor.refreshControl])
                 }
             )
             .disposed(by: disposeBag)
@@ -332,7 +332,7 @@ final class TickersViewController: UIViewController {
         timer = nil
     }
     
-    func automaticRefresh() {
+    @objc func automaticRefresh() {
         refresh(refreshingType: .automatic)
     }
     

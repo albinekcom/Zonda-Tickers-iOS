@@ -1,2 +1,2 @@
-github "ReactiveX/RxSwift"
-github "RxSwiftCommunity/RxDataSources"
+github "ReactiveX/RxSwift" "swift4.0"
+github "RxSwiftCommunity/RxDataSources" "swift4.0"
