@@ -26,6 +26,16 @@ struct Ticker {
         case bccusd
         case bcceur
         case bccbtc
+        
+        case dashpln
+        case dashusd
+        case dasheur
+        case dashbtc
+        
+        case gamepln
+        case gameusd
+        case gameeur
+        case gamebtc
     }
     
     struct Key {

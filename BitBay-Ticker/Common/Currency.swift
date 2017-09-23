@@ -11,6 +11,8 @@ enum Currency: String {
     case ltc
     case lsk
     case bcc
+    case dash
+    case game
     
     static var fiatCurrencies: [Currency] {
         return [.pln, .usd, .eur]
