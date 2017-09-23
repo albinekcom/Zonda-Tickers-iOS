@@ -36,6 +36,20 @@ struct Ticker {
         case gameusd
         case gameeur
         case gamebtc
+        
+        var baseCurrencyNameLength: Int {
+            switch self {
+            case .dashpln, .dashusd, .dasheur, .dashbtc,
+                 .gamepln, .gameusd, .gameeur, .gamebtc:
+                return 4
+            default:
+                return 3
+            }
+        }
+        
+        var counterCurrencyNameLength: Int {
+            return 3
+        }
     }
     
     struct Key {
@@ -64,10 +78,10 @@ struct Ticker {
     let volume: Double?
     
     init?(name: Name, jsonDictionary: [String: Any]?) {
-        guard let baseCurrency = Currency(rawValue: String(name.rawValue.characters.dropLast(3))) else { return nil }
+        guard let baseCurrency = Currency(rawValue: String(name.rawValue.characters.dropLast(name.counterCurrencyNameLength))) else { return nil }
         self.baseCurrency = baseCurrency
         
-        guard let counterCurrency = Currency(rawValue: String(name.rawValue.characters.dropFirst(3))) else { return nil }
+        guard let counterCurrency = Currency(rawValue: String(name.rawValue.characters.dropFirst(name.baseCurrencyNameLength))) else { return nil }
         self.counterCurrency = counterCurrency
         
         self.name = name
