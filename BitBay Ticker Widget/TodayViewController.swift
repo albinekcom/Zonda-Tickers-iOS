@@ -24,10 +24,15 @@ final class TodayViewController: UIViewController {
         setupRefreshingTickerStore()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tickerStore.loadUserData()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        tickerStore.loadUserData()
         tickerStore.refreshTickers(refreshingType: .widget)
     }
     
