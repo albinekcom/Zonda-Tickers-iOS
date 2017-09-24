@@ -15,7 +15,7 @@ struct TickerFactory {
             }
             .flatMap { (request) -> Observable<(response: HTTPURLResponse, data: Data)> in
                 #if DEBUG
-                    guard let mockedData = "{\"max\":1.1,\"min\":2.2,\"last\":1231231233.3,\"bid\":4.4,\"ask\":5.5,\"vwap\":6.6,\"average\":7.7,\"volume\":8.8}".data(using: .utf8) else { return Observable.just((response: HTTPURLResponse(), data: Data())) }
+                    guard let mockedData = "{\"max\":1.1,\"min\":2.2,\"last\":3.3,\"bid\":4.4,\"ask\":5.5,\"vwap\":6.6,\"average\":7.7,\"volume\":8.8}".data(using: .utf8) else { return Observable.just((response: HTTPURLResponse(), data: Data())) }
                     
                     return Observable.just((response: HTTPURLResponse(), data: mockedData))
                 #else
