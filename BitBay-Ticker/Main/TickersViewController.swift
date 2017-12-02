@@ -188,7 +188,6 @@ final class TickersViewController: UIViewController {
                 if let tickerTableViewCell = cell as? TickerTableViewCell {
                     tickerTableViewCell.titleLabel.text = item.name
                     tickerTableViewCell.subtitleLabel.text = item.last
-                    tickerTableViewCell.trendView.value = item.differenceRatioInPercantage
                 }
                         
                 return cell

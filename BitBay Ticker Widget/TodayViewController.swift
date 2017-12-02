@@ -55,7 +55,6 @@ final class TodayViewController: UIViewController {
                 
                 tickerTableViewCell.titleLabel.text = model.name
                 tickerTableViewCell.subtitleLabel.text = model.last
-                tickerTableViewCell.trendView.value = model.differenceRatioInPercantage
             }
             .disposed(by: disposeBag)
         

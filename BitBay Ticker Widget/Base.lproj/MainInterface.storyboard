@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,21 +34,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYS-kr-a19">
-                                                    <rect key="frame" x="170" y="7" width="59" height="29.5"/>
+                                                    <rect key="frame" x="245" y="11.5" width="59" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kK8-XQ-NP3" customClass="TrendView" customModule="BitBay_Ticker_Widget" customModuleProvider="target">
-                                                    <rect key="frame" x="237" y="5" width="68" height="34"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="Kdu-On-6d5"/>
-                                                        <constraint firstAttribute="width" constant="68" id="YeO-lq-aec"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAA-oG-86V">
-                                                    <rect key="frame" x="15" y="11.5" width="147" height="21"/>
+                                                    <rect key="frame" x="22" y="11.5" width="80" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="aeV-e8-Fpa"/>
                                                     </constraints>
@@ -59,19 +51,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="iAA-oG-86V" firstAttribute="centerY" secondItem="rrd-cP-yJH" secondAttribute="centerY" id="F2x-zb-07W"/>
-                                                <constraint firstItem="kK8-XQ-NP3" firstAttribute="centerY" secondItem="rrd-cP-yJH" secondAttribute="centerY" id="OSs-BE-nQo"/>
+                                                <constraint firstAttribute="trailing" secondItem="GYS-kr-a19" secondAttribute="trailing" constant="16" id="Lnd-33-oQs"/>
                                                 <constraint firstItem="GYS-kr-a19" firstAttribute="centerY" secondItem="rrd-cP-yJH" secondAttribute="centerY" id="axa-wR-PQA"/>
-                                                <constraint firstItem="kK8-XQ-NP3" firstAttribute="leading" secondItem="GYS-kr-a19" secondAttribute="trailing" constant="8" id="hCs-32-Enr"/>
-                                                <constraint firstItem="GYS-kr-a19" firstAttribute="top" secondItem="rrd-cP-yJH" secondAttribute="topMargin" constant="-1" id="kci-no-GP9"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="iAA-oG-86V" secondAttribute="leading" constant="-7" id="n3w-9N-StO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="kK8-XQ-NP3" secondAttribute="trailing" constant="7" id="ou9-Rm-qa0"/>
-                                                <constraint firstItem="GYS-kr-a19" firstAttribute="leading" secondItem="iAA-oG-86V" secondAttribute="trailing" constant="8" id="phC-ap-zUq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="subtitleLabel" destination="GYS-kr-a19" id="2sg-py-gEC"/>
                                             <outlet property="titleLabel" destination="iAA-oG-86V" id="XPc-0L-kJO"/>
-                                            <outlet property="trendView" destination="kK8-XQ-NP3" id="PNh-Zd-K6g"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

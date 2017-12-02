@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bHa-5d-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bHa-5d-yGl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -93,22 +93,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sII-fh-8bL" customClass="TrendView" customModule="BitBay_Ticker" customModuleProvider="target">
-                                                    <rect key="frame" x="267" y="10" width="68" height="34"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="CzW-E8-mIu"/>
-                                                        <constraint firstAttribute="width" constant="68" id="Iid-VJ-Coe"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Text" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PF-oe-i6g" userLabel="Subtitle">
-                                                    <rect key="frame" x="178.5" y="17" width="80.5" height="21"/>
+                                                    <rect key="frame" x="254.5" y="17" width="80.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMP-2Y-7q6" userLabel="Title">
-                                                    <rect key="frame" x="15" y="17" width="155.5" height="21"/>
+                                                    <rect key="frame" x="22" y="17" width="80" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="scx-Nf-xwy"/>
                                                     </constraints>
@@ -118,11 +110,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sII-fh-8bL" firstAttribute="leading" secondItem="9PF-oe-i6g" secondAttribute="trailing" constant="8" id="9qD-1Y-cwB"/>
                                                 <constraint firstItem="qMP-2Y-7q6" firstAttribute="centerY" secondItem="fro-Bd-tfq" secondAttribute="centerY" id="ED7-gF-Ha5"/>
-                                                <constraint firstItem="sII-fh-8bL" firstAttribute="centerY" secondItem="fro-Bd-tfq" secondAttribute="centerY" id="RGH-bL-9GA"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="qMP-2Y-7q6" secondAttribute="leading" constant="-7" id="Wz8-Ia-wlC"/>
-                                                <constraint firstItem="9PF-oe-i6g" firstAttribute="leading" secondItem="qMP-2Y-7q6" secondAttribute="trailing" constant="8" id="eFl-7P-445"/>
                                                 <constraint firstItem="9PF-oe-i6g" firstAttribute="centerY" secondItem="fro-Bd-tfq" secondAttribute="centerY" id="ugG-rO-xQO"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -131,12 +120,11 @@
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="sII-fh-8bL" secondAttribute="trailing" constant="40" id="mGh-nZ-6Z6"/>
+                                            <constraint firstAttribute="trailing" secondItem="9PF-oe-i6g" secondAttribute="trailing" constant="40" id="Q6T-wb-fjo"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="subtitleLabel" destination="9PF-oe-i6g" id="1xn-kB-7zS"/>
                                             <outlet property="titleLabel" destination="qMP-2Y-7q6" id="i0p-TU-SRe"/>
-                                            <outlet property="trendView" destination="sII-fh-8bL" id="boF-MA-grj"/>
                                             <segue destination="Fyh-Ph-PHh" kind="show" id="8Rh-PI-edj"/>
                                         </connections>
                                     </tableViewCell>
