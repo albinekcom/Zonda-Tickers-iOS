@@ -21,7 +21,7 @@ final class TickerDetailsViewControllerUITests: XCTestCase {
         
         application.navigationBars["LTC/PLN"].buttons["Tickers"].tap()
         
-        XCTAssertEqual(4, application.tables.cells.count)
+        XCTAssertGreaterThanOrEqual(1, application.tables.cells.count)
     }
     
 }

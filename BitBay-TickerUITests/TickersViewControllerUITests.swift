@@ -24,7 +24,7 @@ final class TickersViewControllerUITests: XCTestCase {
         
         application.navigationBars["Add Ticker"].buttons["Cancel"].tap()
         
-        XCTAssertEqual(4, application.tables.cells.count)
+        XCTAssertGreaterThanOrEqual(1, application.tables.cells.count)
     }
     
 }
