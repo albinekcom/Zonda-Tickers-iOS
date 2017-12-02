@@ -83,10 +83,10 @@ struct Ticker {
     let volume: Double?
     
     init?(name: Name, jsonDictionary: [String: Any]?) {
-        guard let baseCurrency = Currency(rawValue: String(name.rawValue.characters.dropLast(name.counterCurrencyNameLength))) else { return nil }
+        guard let baseCurrency = Currency(rawValue: String(name.rawValue.dropLast(name.counterCurrencyNameLength))) else { return nil }
         self.baseCurrency = baseCurrency
         
-        guard let counterCurrency = Currency(rawValue: String(name.rawValue.characters.dropFirst(name.baseCurrencyNameLength))) else { return nil }
+        guard let counterCurrency = Currency(rawValue: String(name.rawValue.dropFirst(name.baseCurrencyNameLength))) else { return nil }
         self.counterCurrency = counterCurrency
         
         self.name = name

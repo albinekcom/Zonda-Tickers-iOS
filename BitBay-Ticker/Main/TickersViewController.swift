@@ -181,21 +181,21 @@ final class TickersViewController: UIViewController {
         
         disposeBagForTableView = DisposeBag()
         
-        let animatedDataSource = RxTableViewSectionedAnimatedDataSource<SectionOfTickerViewModel>()
+        let animatedDataSource = RxTableViewSectionedAnimatedDataSource<SectionOfTickerViewModel>(
+            configureCell: { (_, tableView, indexPath, item) in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TickerTableViewCell", for: indexPath)
+                
+                if let tickerTableViewCell = cell as? TickerTableViewCell {
+                    tickerTableViewCell.titleLabel.text = item.name
+                    tickerTableViewCell.subtitleLabel.text = item.last
+                    tickerTableViewCell.trendView.value = item.differenceRatioInPercantage
+                }
+                        
+                return cell
+            }
+        )
         
         animatedDataSource.animationConfiguration = AnimationConfiguration(insertAnimation: .top, reloadAnimation: .fade, deleteAnimation: .left)
-        
-        animatedDataSource.configureCell = { (_, tableView, indexPath, item) in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TickerTableViewCell", for: indexPath)
-            
-            if let tickerTableViewCell = cell as? TickerTableViewCell {
-                tickerTableViewCell.titleLabel.text = item.name
-                tickerTableViewCell.subtitleLabel.text = item.last
-                tickerTableViewCell.trendView.value = item.differenceRatioInPercantage
-            }
-            
-            return cell
-        }
         
         animatedDataSource.canEditRowAtIndexPath = { (_, _) -> Bool in
             return true
@@ -226,9 +226,9 @@ final class TickersViewController: UIViewController {
             .map {
                 $0.sections
             }
-            .shareReplay(1)
+            .share(replay: 1)
             .bind(to: tickersTableView.rx.items(dataSource: animatedDataSource))
-            .addDisposableTo(disposeBagForTableView)
+            .disposed(by: disposeBagForTableView)
         
         tickersTableView.delegate = self
     }

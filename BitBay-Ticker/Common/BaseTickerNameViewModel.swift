@@ -17,11 +17,11 @@ extension BaseTickerNameViewModel {
     }
     
     var baseCurrency: String {
-        return String(tickerName.rawValue.uppercased().characters.dropLast(tickerName.counterCurrencyNameLength))
+        return String(tickerName.rawValue.uppercased().dropLast(tickerName.counterCurrencyNameLength))
     }
     
     var counterCurrency: String {
-        return String(tickerName.rawValue.uppercased().characters.dropFirst(tickerName.baseCurrencyNameLength))
+        return String(tickerName.rawValue.uppercased().dropFirst(tickerName.baseCurrencyNameLength))
     }
     
 }

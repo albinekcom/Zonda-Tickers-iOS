@@ -1,2 +1,2 @@
-github "ReactiveX/RxSwift" "b30319edaceea1650a9af8dcba1f0f5da144b196"
-github "RxSwiftCommunity/RxDataSources" "3fd24a694ba808e020f980d008385ac007d9f3c7"
+github "ReactiveX/RxSwift" "4.0.0"
+github "RxSwiftCommunity/RxDataSources" "3.0.2"
