@@ -50,6 +50,10 @@ final class AddTickerViewController: UIViewController {
     
     private func setupNavigation() {
         navigationController?.navigationBar.tintColor = .primary
+        
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
     }
     
     private func setupAddTickerTableView() {

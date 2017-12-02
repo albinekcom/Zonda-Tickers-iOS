@@ -27,6 +27,7 @@ final class TickerDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigation()
         setupViewModels()
         
         title = viewModel?.name
@@ -42,6 +43,12 @@ final class TickerDetailsViewController: UIViewController {
     }
     
     // MARK: - Setting
+    
+    private func setupNavigation() {
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+    }
     
     private func setupViewModels() {
         viewModelValues
