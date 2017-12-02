@@ -32,8 +32,6 @@ final class TickersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = NSLocalizedString("tickers.title", comment: "")
-        
         setupIsRefreshing()
         setupNavigation()
         setupRefreshControl()
@@ -83,8 +81,9 @@ final class TickersViewController: UIViewController {
         
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
+            title = NSLocalizedString("tickers.title", comment: "")
         } else {
-            navigationItem.title = ""
+            title = ""
         }
         
         setupBarButtonItems()
