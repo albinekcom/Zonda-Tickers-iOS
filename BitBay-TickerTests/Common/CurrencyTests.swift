@@ -34,7 +34,7 @@ final class CurrencyTests: XCTestCase {
         XCTAssertEqual("BCC", Currency.bcc.description)
         XCTAssertEqual("DASH", Currency.dash.description)
         XCTAssertEqual("GAME", Currency.game.description)
-        XCTAssertEqual("BTG", Currency.game.description)
+        XCTAssertEqual("BTG", Currency.btg.description)
     }
     
 }
