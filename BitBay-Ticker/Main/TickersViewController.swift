@@ -1,7 +1,7 @@
-import StoreKit
 import RxDataSources
 import RxCocoa
 import RxSwift
+import StoreKit
 import UIKit
 
 final class TickersViewController: UIViewController {
@@ -31,6 +31,8 @@ final class TickersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = NSLocalizedString("tickers.title", comment: "")
         
         setupIsRefreshing()
         setupNavigation()
@@ -75,9 +77,15 @@ final class TickersViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        navigationItem.title = ""
         navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "NavigationLogo"))
+        
         navigationController?.navigationBar.tintColor = .primary
+        
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            navigationItem.title = ""
+        }
         
         setupBarButtonItems()
     }
@@ -262,10 +270,8 @@ final class TickersViewController: UIViewController {
     // MARK: - Refreshing
     
     private func refreshAtStartup() {
-        if let refreshControl = tickersTableView.refreshControl {
-            tickersTableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.height)
-            
-            refresh(refreshingType: .automatic)
+        DispatchQueue.main.async { [weak self] in
+            self?.refresh(refreshingType: .automatic)
         }
     }
     
@@ -331,7 +337,7 @@ final class TickersViewController: UIViewController {
         timer = nil
     }
     
-    @objc func automaticRefresh() {
+    @objc private func automaticRefresh() {
         refresh(refreshingType: .automatic)
     }
     

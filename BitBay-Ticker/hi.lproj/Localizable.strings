@@ -4,6 +4,10 @@
 "error" = "त्रुटि";
 "last.updated.on" = "अंतिम बार अद्यतन किया गया";
 
+// Tickers
+
+"tickers.title" = "टिकर";
+
 // Ticker Details
 
 "ticker.details.last" = "अंतिम";

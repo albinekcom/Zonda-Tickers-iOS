@@ -4,6 +4,10 @@
 "error" = "Błąd";
 "last.updated.on" = "Ostatnia aktualizacja";
 
+// Tickers
+
+"tickers.title" = "Tickery";
+
 // Ticker Details
 
 "ticker.details.last" = "Ostatnia";
