@@ -17,12 +17,14 @@ final class TickersViewControllerUITests: XCTestCase {
     func testTappingButtons() {
         let application = XCUIApplication()
         
-        let bitbayTickerTickersviewNavigationBar = application.navigationBars["BitBay_Ticker.TickersView"]
-        bitbayTickerTickersviewNavigationBar.buttons["Edit"].tap()
-        bitbayTickerTickersviewNavigationBar.buttons["Done"].tap()
-        bitbayTickerTickersviewNavigationBar.buttons["Add"].tap()
+        let tickersNavigationBar = application.navigationBars["Tickers"]
+        tickersNavigationBar.buttons["Edit"].tap()
+        tickersNavigationBar.buttons["Done"].tap()
+        tickersNavigationBar.buttons["Add"].tap()
         
-        // TODO: Put some assertions here
+        application.navigationBars["Add Ticker"].buttons["Cancel"].tap()
+        
+        XCTAssertEqual(4, application.tables.cells.count)
     }
     
 }

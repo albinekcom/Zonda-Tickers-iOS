@@ -17,10 +17,11 @@ final class TickerDetailsViewControllerUITests: XCTestCase {
     func testGoingToDetails() {
         let application = XCUIApplication()
         
-        let cells = application.tables.cells
-        cells.element(boundBy: 0).tap()
+        application.tables.cells.containing(.staticText, identifier:"LTC/PLN").element.doubleTap()
         
-        // TODO: Put some assertions here
+        application.navigationBars["LTC/PLN"].buttons["Tickers"].tap()
+        
+        XCTAssertEqual(4, application.tables.cells.count)
     }
     
 }
