@@ -28,7 +28,7 @@ struct TickerFactory {
             }
             .map { (jsonDictionary) -> Ticker? in
                 return Ticker(name: tickerName, jsonDictionary: jsonDictionary)
-        }
+            }
     }
     
 }

@@ -9,9 +9,9 @@ final class TodayViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    fileprivate let tickerStore = TickerStore.shared
+    private let tickerStore = TickerStore.shared
     
-    fileprivate let cellHeight = CGFloat(44)
+    private let cellHeight = CGFloat(44)
     
     // MARK: - Managing View
     
@@ -51,10 +51,8 @@ final class TodayViewController: UIViewController {
                 }
             }
             .bind(to: tableView.rx.items(cellIdentifier: "Widget Cell")) { (index, model, cell) in
-                guard let tickerTableViewCell = cell as? TickerTableViewCell else { return }
-                
-                tickerTableViewCell.titleLabel.text = model.name
-                tickerTableViewCell.subtitleLabel.text = model.last
+                cell.textLabel?.text = model.name
+                cell.detailTextLabel?.text = model.last
             }
             .disposed(by: disposeBag)
         

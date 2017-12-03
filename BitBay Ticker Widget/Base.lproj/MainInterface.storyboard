@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,40 +25,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Widget Cell" rowHeight="44" id="v0q-6u-hnY" customClass="TickerTableViewCell" customModule="BitBay_Ticker_Widget" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Widget Cell" textLabel="ZWI-XH-HkB" detailTextLabel="SiS-lA-fah" rowHeight="44" style="IBUITableViewCellStyleValue1" id="v0q-6u-hnY" customClass="TickerTableViewCell" customModule="BitBay_Ticker_Widget" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v0q-6u-hnY" id="rrd-cP-yJH">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYS-kr-a19">
-                                                    <rect key="frame" x="245" y="11.5" width="59" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZWI-XH-HkB">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAA-oG-86V">
-                                                    <rect key="frame" x="22" y="11.5" width="80" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="aeV-e8-Fpa"/>
-                                                    </constraints>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SiS-lA-fah">
+                                                    <rect key="frame" x="246" y="12" width="59" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="iAA-oG-86V" firstAttribute="centerY" secondItem="rrd-cP-yJH" secondAttribute="centerY" id="F2x-zb-07W"/>
-                                                <constraint firstAttribute="trailing" secondItem="GYS-kr-a19" secondAttribute="trailing" constant="16" id="Lnd-33-oQs"/>
-                                                <constraint firstItem="GYS-kr-a19" firstAttribute="centerY" secondItem="rrd-cP-yJH" secondAttribute="centerY" id="axa-wR-PQA"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="iAA-oG-86V" secondAttribute="leading" constant="-7" id="n3w-9N-StO"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="subtitleLabel" destination="GYS-kr-a19" id="2sg-py-gEC"/>
-                                            <outlet property="titleLabel" destination="iAA-oG-86V" id="XPc-0L-kJO"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
