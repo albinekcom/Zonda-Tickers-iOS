@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -86,45 +85,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TickerTableViewCell" id="05u-Mk-SOK" userLabel="Ticker Table View Cell" customClass="TickerTableViewCell" customModule="BitBay_Ticker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TickerTableViewCell" textLabel="dZu-1Y-bxG" detailTextLabel="uBv-Ie-Gk6" style="IBUITableViewCellStyleValue1" id="05u-Mk-SOK" userLabel="Ticker Table View Cell" customClass="TickerTableViewCell" customModule="BitBay_Ticker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05u-Mk-SOK" id="fro-Bd-tfq">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Text" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PF-oe-i6g" userLabel="Subtitle">
-                                                    <rect key="frame" x="254.5" y="17" width="80.5" height="21"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dZu-1Y-bxG">
+                                                    <rect key="frame" x="15" y="17" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMP-2Y-7q6" userLabel="Title">
-                                                    <rect key="frame" x="22" y="17" width="80" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="scx-Nf-xwy"/>
-                                                    </constraints>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uBv-Ie-Gk6">
+                                                    <rect key="frame" x="281" y="17" width="59" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="qMP-2Y-7q6" firstAttribute="centerY" secondItem="fro-Bd-tfq" secondAttribute="centerY" id="ED7-gF-Ha5"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="qMP-2Y-7q6" secondAttribute="leading" constant="-7" id="Wz8-Ia-wlC"/>
-                                                <constraint firstItem="9PF-oe-i6g" firstAttribute="centerY" secondItem="fro-Bd-tfq" secondAttribute="centerY" id="ugG-rO-xQO"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="tickerCell" label="Ticker Last Value">
                                             <accessibilityTraits key="traits" button="YES"/>
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="9PF-oe-i6g" secondAttribute="trailing" constant="40" id="Q6T-wb-fjo"/>
-                                        </constraints>
                                         <connections>
-                                            <outlet property="subtitleLabel" destination="9PF-oe-i6g" id="1xn-kB-7zS"/>
-                                            <outlet property="titleLabel" destination="qMP-2Y-7q6" id="i0p-TU-SRe"/>
                                             <segue destination="Fyh-Ph-PHh" kind="show" id="8Rh-PI-edj"/>
                                         </connections>
                                     </tableViewCell>

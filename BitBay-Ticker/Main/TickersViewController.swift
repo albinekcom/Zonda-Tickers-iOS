@@ -192,10 +192,8 @@ final class TickersViewController: UIViewController {
             configureCell: { (_, tableView, indexPath, item) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TickerTableViewCell", for: indexPath)
                 
-                if let tickerTableViewCell = cell as? TickerTableViewCell {
-                    tickerTableViewCell.titleLabel.text = item.name
-                    tickerTableViewCell.subtitleLabel.text = item.last
-                }
+                cell.textLabel?.text = item.name
+                cell.detailTextLabel?.text = item.last
                         
                 return cell
             }
