@@ -24,12 +24,6 @@ final class TodayViewController: UIViewController {
         setupRefreshingTickerStore()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tickerStore.loadUserData()
-    }
-    
     // MARK: - Setting
     
     private func setupRefreshingTickerStore() {
@@ -78,7 +72,6 @@ final class TodayViewController: UIViewController {
 extension TodayViewController: NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        tickerStore.loadUserData()
         tickerStore.refreshTickers(refreshingType: .widget) { (error) in
             completionHandler((error == nil) ? .newData : .failed)
         }

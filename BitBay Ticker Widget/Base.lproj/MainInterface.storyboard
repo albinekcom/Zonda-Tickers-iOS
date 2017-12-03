@@ -21,25 +21,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pi8-se-z9f">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gL8-ud-Zgs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Widget Cell" textLabel="ZWI-XH-HkB" detailTextLabel="SiS-lA-fah" rowHeight="44" style="IBUITableViewCellStyleValue1" id="v0q-6u-hnY" customClass="TickerTableViewCell" customModule="BitBay_Ticker_Widget" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Widget Cell" textLabel="DwA-Yt-mcW" detailTextLabel="P4Z-Qr-2dH" rowHeight="44" style="IBUITableViewCellStyleValue1" id="5CD-yi-nyB">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v0q-6u-hnY" id="rrd-cP-yJH">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5CD-yi-nyB" id="7aS-SP-EWx">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZWI-XH-HkB">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DwA-Yt-mcW">
                                                     <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SiS-lA-fah">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P4Z-Qr-2dH">
                                                     <rect key="frame" x="246" y="12" width="59" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -53,10 +53,10 @@
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="Pi8-se-z9f" secondAttribute="bottom" id="6Qk-Ba-hh7"/>
-                            <constraint firstItem="Pi8-se-z9f" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="scB-n4-6yW"/>
-                            <constraint firstItem="Pi8-se-z9f" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="vNA-Le-wcN"/>
-                            <constraint firstAttribute="trailing" secondItem="Pi8-se-z9f" secondAttribute="trailing" id="vwR-cx-Exu"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="gL8-ud-Zgs" secondAttribute="bottom" id="HUE-Es-r3e"/>
+                            <constraint firstItem="gL8-ud-Zgs" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="P3t-sR-1nL"/>
+                            <constraint firstAttribute="trailing" secondItem="gL8-ud-Zgs" secondAttribute="trailing" id="pEX-V6-d8j"/>
+                            <constraint firstItem="gL8-ud-Zgs" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="r94-kI-d71"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -66,7 +66,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="110"/>
                     <connections>
-                        <outlet property="tableView" destination="Pi8-se-z9f" id="wxM-G7-Ell"/>
+                        <outlet property="tableView" destination="gL8-ud-Zgs" id="3D4-mb-jqk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
