@@ -3,7 +3,7 @@
 # BitBay Ticker (iOS)
 
 ![Swift 4](https://img.shields.io/badge/Swift-4-orange.svg)
-[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=594f628d23de5b000180a9ce&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/594f628d23de5b000180a9ce/build/latest?branch=master)
+[![Build Status](https://travis-ci.org/albinekcom/BitBay-Ticker-iOS.svg?branch=master)](https://travis-ci.org/albinekcom/BitBay-Ticker-iOS)
 
 BitBay Ticker for iOS devices.
 
