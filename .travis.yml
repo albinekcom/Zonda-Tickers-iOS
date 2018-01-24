@@ -12,3 +12,6 @@ before_install:
 
 script:
   - xcodebuild test -project BitBay-Ticker-iOS.xcodeproj -scheme BitBay-Ticker -destination "platform=iOS Simulator,name=iPhone 8" -sdk iphonesimulator11.0 CODE_SIGNING_REQUIRED=NO
+
+notifications:
+  email: false
