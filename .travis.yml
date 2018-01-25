@@ -11,7 +11,7 @@ before_install:
   - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
 
 script:
-  - xcodebuild test -project BitBay-Ticker-iOS.xcodeproj -scheme BitBay-Ticker -destination "platform=iOS Simulator,name=iPhone 8" -sdk iphonesimulator11.0 CODE_SIGNING_REQUIRED=NO
+  - xcodebuild test -project BitBay-Ticker.xcodeproj -scheme BitBay-Ticker -destination "platform=iOS Simulator,name=iPhone 8" -sdk iphonesimulator11.0 CODE_SIGNING_REQUIRED=NO
 
 notifications:
   email: false
