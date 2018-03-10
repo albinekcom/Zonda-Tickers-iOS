@@ -29,6 +29,7 @@ final class TickerStore {
         .btceur, .etheur, .ltceur, .lskeur, .bcceur, .dasheur, .gameeur, .btgeur,
         .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd, .dashusd, .gameusd, .btgusd,
         .ltcbtc, .ethbtc, .lskbtc, .bccbtc, .dashbtc, .gamebtc, .btgbtc,
+        .kzcbtc
     ]
     
     private let defaultTickersNames: [Ticker.Name] = [

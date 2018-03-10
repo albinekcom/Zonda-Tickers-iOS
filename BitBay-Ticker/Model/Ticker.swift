@@ -42,6 +42,8 @@ struct Ticker {
         case btgeur
         case btgbtc
         
+        case kzcbtc
+        
         var baseCurrencyNameLength: Int {
             switch self {
             case .btcpln, .btcusd, .btceur,
@@ -49,7 +51,8 @@ struct Ticker {
                  .ethpln, .ethusd, .etheur, .ethbtc,
                  .lskpln, .lskusd, .lskeur, .lskbtc,
                  .bccpln, .bccusd, .bcceur, .bccbtc,
-                 .btgpln, .btgusd, .btgeur, .btgbtc:
+                 .btgpln, .btgusd, .btgeur, .btgbtc,
+                 .kzcbtc:
                 return 3
                 
             case .dashpln, .dashusd, .dasheur, .dashbtc,
