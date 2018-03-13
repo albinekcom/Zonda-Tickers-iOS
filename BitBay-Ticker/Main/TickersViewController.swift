@@ -162,12 +162,9 @@ final class TickersViewController: UIViewController {
                     self?.navigationItem.leftBarButtonItem?.isEnabled = !value
                     self?.navigationItem.rightBarButtonItem?.isEnabled = !value
                     
-                    if value {
-                        self?.tickersTableView.refreshControl?.beginRefreshing()
-                    } else {
+                    if !value {
                         self?.tickersTableView.refreshControl?.endRefreshing()
                     }
-
                 }
             )
             .disposed(by: disposeBag)
