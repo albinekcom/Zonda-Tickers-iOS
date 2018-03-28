@@ -21,6 +21,8 @@ final class CurrencyTests: XCTestCase {
         XCTAssertFalse(Currency.game.isFiat)
         XCTAssertFalse(Currency.btg.isFiat)
         XCTAssertFalse(Currency.kzc.isFiat)
+        XCTAssertFalse(Currency.xrp.isFiat)
+        XCTAssertFalse(Currency.xin.isFiat)
     }
     
     func testDescription() {
@@ -37,6 +39,8 @@ final class CurrencyTests: XCTestCase {
         XCTAssertEqual("GAME", Currency.game.description)
         XCTAssertEqual("BTG", Currency.btg.description)
         XCTAssertEqual("KZC", Currency.kzc.description)
+        XCTAssertEqual("XRP", Currency.xrp.description)
+        XCTAssertEqual("XIN", Currency.xin.description)
     }
     
 }

@@ -29,11 +29,13 @@ final class TickerStore {
         .btceur, .etheur, .ltceur, .lskeur, .bcceur, .dasheur, .gameeur, .btgeur,
         .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd, .dashusd, .gameusd, .btgusd,
         .ltcbtc, .ethbtc, .lskbtc, .bccbtc, .dashbtc, .gamebtc, .btgbtc,
-        .kzcbtc
+        .kzcbtc,
+        .xrppln, .xrpusd, .xrpeur, .xrpbtc,
+        .xinbtc
     ]
     
     private let defaultTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .xrppln
     ]
     
     func refreshTickers(refreshingType: RefreshingType, completion: ((Error?) -> Void)? = nil) {

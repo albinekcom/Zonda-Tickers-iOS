@@ -44,6 +44,13 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.btgbtc.baseCurrencyNameLength)
         
         XCTAssertEqual(3, Ticker.Name.kzcbtc.baseCurrencyNameLength)
+            
+        XCTAssertEqual(3, Ticker.Name.xrppln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xrpusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xrpeur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xrpbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.xinbtc.baseCurrencyNameLength)
     }
     
     func testCounterCurrencyNameLength() {
@@ -87,6 +94,13 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.btgbtc.counterCurrencyNameLength)
         
         XCTAssertEqual(3, Ticker.Name.kzcbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.xrppln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xrpusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xrpeur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xrpbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.xinbtc.counterCurrencyNameLength)
     }
     
     func testKeys() {
