@@ -48,7 +48,7 @@ final class TickerStore {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] (tickers) in
-                    let tickers = tickers.flatMap { $0 }
+                    let tickers = tickers.compactMap { $0 }
                     self?.userTickers.value = tickers
                     self?.refreshingSubject.on(.next(true))
                     
@@ -137,7 +137,7 @@ final class TickerStore {
                     .map { (tickerName) in
                         return Ticker(name: tickerName, jsonDictionary: nil)
                     }
-                    .flatMap { return $0 }
+                    .compactMap { return $0 }
         }
     }
     
