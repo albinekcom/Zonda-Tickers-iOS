@@ -7,7 +7,7 @@ cache:
 
 before_install:
   - brew update
-  - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
+  - carthage update --platform iOS
 
 script:
   - xcodebuild test -project BitBay-Ticker.xcodeproj -scheme BitBay-Ticker -destination "platform=iOS Simulator,name=iPhone 8"
