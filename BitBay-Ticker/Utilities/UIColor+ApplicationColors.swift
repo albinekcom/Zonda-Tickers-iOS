@@ -3,19 +3,19 @@ import UIKit
 extension UIColor {
     
     static var primary: UIColor {
-        return UIColor(red: 20/255.0, green: 140/255.0, blue: 190/255.0, alpha: 1)
+        return UIColor(displayP3Red: 48/255, green: 143/255, blue: 212/255, alpha: 1)
     }
     
     static var refreshControl: UIColor {
-        return UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        return UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.5)
     }
     
     static var positiveTrend: UIColor {
-        return UIColor(red: 84/255.0, green: 215/255.0, blue: 105/255.0, alpha: 1)
+        return UIColor(displayP3Red: 84/255, green: 215/255, blue: 105/255, alpha: 1)
     }
     
     static var negativeTrend: UIColor {
-        return UIColor(red: 251/255.0, green: 61/255.0, blue: 56/255.0, alpha: 1)
+        return UIColor(displayP3Red: 251/255, green: 61/255, blue: 56/255, alpha: 1)
     }
     
     static var trendText: UIColor {
