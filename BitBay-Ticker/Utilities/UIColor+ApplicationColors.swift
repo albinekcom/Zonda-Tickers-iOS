@@ -3,7 +3,7 @@ import UIKit
 extension UIColor {
     
     static var primary: UIColor {
-        return UIColor(displayP3Red: 48/255, green: 143/255, blue: 212/255, alpha: 1)
+        return UIColor(displayP3Red: 41/255, green: 102/255, blue: 187/255, alpha: 1)
     }
     
     static var refreshControl: UIColor {
