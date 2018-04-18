@@ -2,6 +2,8 @@ import XCTest
 
 final class TickerDetailsViewControllerUITests: XCTestCase {
     
+    private var application: XCUIApplication!
+    
     // MARK: - Setting
         
     override func setUp() {
@@ -9,15 +11,17 @@ final class TickerDetailsViewControllerUITests: XCTestCase {
         
         continueAfterFailure = false
         
-        XCUIApplication().launch()
+        application = XCUIApplication()
+        setupSnapshot(application)
+        application.launch()
     }
     
     // MARK: - Tests
     
     func testGoingToDetails() {
-        let application = XCUIApplication()
-        
         application.tables.cells.containing(.staticText, identifier:"LTC/PLN").element.doubleTap()
+        
+        snapshot("03-details")
         
         application.navigationBars["LTC/PLN"].buttons["Tickers"].tap()
         
