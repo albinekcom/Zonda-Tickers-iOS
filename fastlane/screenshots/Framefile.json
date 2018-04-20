@@ -1,0 +1,28 @@
+{
+  "default": {
+    "keyword": {
+      "font": "./fonts/SFText-Heavy.otf",
+      "color": "#2966BB"
+    },
+
+    "title": {
+      "font": "./fonts/SFText-Regular.otf",
+      "color": "#545454"
+    },
+
+    "background": "./background.jpg",
+    "padding": 50,
+    "show_complete_frame": false
+  },
+
+  "data": [{
+      "filter": "Main"
+    },
+    {
+      "filter": "Edit"
+    },
+    {
+      "filter": "Details"
+    }
+  ]
+}

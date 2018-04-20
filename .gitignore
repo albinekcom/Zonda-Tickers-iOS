@@ -1,9 +1,18 @@
 xcuserdata/
 
+# Carthage
+
 Carthage/Checkouts
 Carthage/Build
 
+# Fastlane
+
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots
 fastlane/test_output
+
+# Fastlane - Screenshots
+
+fastlane/screenshots/en-US/*.png
+fastlane/screenshots/fonts/*.otf
+fastlane/screenshots/screenshots.html
