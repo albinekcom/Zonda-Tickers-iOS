@@ -1,4 +1,4 @@
-<img src="https://cdn.rawgit.com/albinekcom/29fe998ef7459a1e5096b496b090d68f/raw/985c665e888f0f25f904e7206b69bf37b3883d91/bitbay_ticker_logo.svg" alt="BitBay Ticker - logo">
+<img src="https://cdn.rawgit.com/albinekcom/29fe998ef7459a1e5096b496b090d68f/raw/7fbf69734ba866281984ec56dc0f68adace3c223/bitbay_ticker_logo.svg" alt="BitBay Ticker - logo">
 
 # BitBay Ticker (iOS)
 
