@@ -36,6 +36,8 @@
 		8C48D4501F4CB46F00C4F700 /* TickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C48D44E1F4CB46F00C4F700 /* TickerTableViewCell.swift */; };
 		8C4980541F2135FF001994C7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980521F2135FF001994C7 /* Crashlytics.framework */; };
 		8C4980561F2135FF001994C7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4980531F2135FF001994C7 /* Fabric.framework */; };
+		8C50D701208BC0490099541B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50D700208BC0490099541B /* Environment.swift */; };
+		8C50D702208BC0490099541B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50D700208BC0490099541B /* Environment.swift */; };
 		8C5690861F66661100C8F580 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690851F66661100C8F580 /* Dictionary+Merge.swift */; };
 		8C56908A1F66667B00C8F580 /* Dictionary+MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5690891F66667B00C8F580 /* Dictionary+MergeTests.swift */; };
 		8C5815951EFF96CB0083E122 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5815941EFF96CB0083E122 /* Ticker.swift */; };
@@ -159,6 +161,8 @@
 		8C48D44E1F4CB46F00C4F700 /* TickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickerTableViewCell.swift; path = Main/TickerTableViewCell.swift; sourceTree = "<group>"; };
 		8C4980521F2135FF001994C7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "BitBay-Ticker/External/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
 		8C4980531F2135FF001994C7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "BitBay-Ticker/External/Frameworks/Fabric.framework"; sourceTree = "<group>"; };
+		8C50D6FC208B3ECB0099541B /* SimulatorStatusMagiciOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimulatorStatusMagiciOS.framework; path = Carthage/Build/iOS/SimulatorStatusMagiciOS.framework; sourceTree = "<group>"; };
+		8C50D700208BC0490099541B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Utilities/Environment.swift; sourceTree = "<group>"; };
 		8C5690851F66661100C8F580 /* Dictionary+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+Merge.swift"; path = "Utilities/Dictionary+Merge.swift"; sourceTree = "<group>"; };
 		8C5690891F66667B00C8F580 /* Dictionary+MergeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+MergeTests.swift"; path = "Utilities/Dictionary+MergeTests.swift"; sourceTree = "<group>"; };
 		8C5815941EFF96CB0083E122 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Model/Ticker.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				8C377D291F0BF2FA00D76B74 /* PlistFile.swift */,
+				8C50D700208BC0490099541B /* Environment.swift */,
 				8C377D2B1F0C25AE00D76B74 /* UIColor+ApplicationColors.swift */,
 				8C5690851F66661100C8F580 /* Dictionary+Merge.swift */,
 			);
@@ -521,6 +526,7 @@
 		C24AC6780E9338DA000950BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C50D6FC208B3ECB0099541B /* SimulatorStatusMagiciOS.framework */,
 				8CC508D51FD2D59000F14AB2 /* Differentiator.framework */,
 				8C4980521F2135FF001994C7 /* Crashlytics.framework */,
 				8C4980531F2135FF001994C7 /* Fabric.framework */,
@@ -814,6 +820,7 @@
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8C1CF6EE1F0427D700E6F0D4 /* TickerViewModel.swift in Sources */,
 				8C73CF841F325635002A127F /* SectionedTableViewState.swift in Sources */,
+				8C50D701208BC0490099541B /* Environment.swift in Sources */,
 				8CF8CF771F29B70F0084C5CA /* TextFactory.swift in Sources */,
 				8CDFD4731F0820D0009F1E19 /* SectionOfTickerViewModel.swift in Sources */,
 				8CDAD4031F01921B00EB2EC9 /* TickersViewController.swift in Sources */,
@@ -864,6 +871,7 @@
 				8CF8CF7A1F29B7200084C5CA /* TextFactory.swift in Sources */,
 				8C0BE0A21F66928B0025F2D3 /* Dictionary+Merge.swift in Sources */,
 				8C3E784C1F489FDD000E7F4D /* TrendViewValueStringFactory.swift in Sources */,
+				8C50D702208BC0490099541B /* Environment.swift in Sources */,
 				8C3E78481F4898B7000E7F4D /* UIColor+ApplicationColors.swift in Sources */,
 				8C6527F21F3664DD0024E382 /* AnalyticsParametersFactory.swift in Sources */,
 				8C033B651F1E7982000FF38E /* TickerFactory.swift in Sources */,

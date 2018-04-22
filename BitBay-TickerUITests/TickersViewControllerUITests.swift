@@ -19,6 +19,8 @@ final class TickersViewControllerUITests: XCTestCase {
     // MARK: - Tests
     
     func testTappingButtons() {
+        sleep(3)
+        
         snapshot("01-main")
         
         let tickersNavigationBar = application.navigationBars["Tickers"]

@@ -3,13 +3,13 @@ import Foundation
 
 struct AnalyticsService {
     
-    #if DEBUG
-        private static let isEnabled = false
-        private static let isLoggingEnabled = true
-    #else
-        private static let isEnabled = true
-        private static let isLoggingEnabled = false
-    #endif
+    private static var isEnabled: Bool {
+        return !Environment.isDebug
+    }
+    
+    private static var isLoggingEnabled: Bool {
+        return Environment.isDebug
+    }
     
     private static func track(name: String, parameters: [String: String]? = nil) {
         if isEnabled {

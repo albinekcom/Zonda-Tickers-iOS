@@ -19,6 +19,8 @@ final class TickerDetailsViewControllerUITests: XCTestCase {
     // MARK: - Tests
     
     func testGoingToDetails() {
+        sleep(3)
+        
         application.tables.cells.containing(.staticText, identifier:"LTC/PLN").element.doubleTap()
         
         snapshot("03-details")
