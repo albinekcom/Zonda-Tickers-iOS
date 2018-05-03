@@ -129,8 +129,6 @@ final class TickerStore {
     func loadUserData() {
         if let sharedUserDefaults = UserDefaults(suiteName: TickerStore.sharedDefaultsIdentifier), let data = sharedUserDefaults.value(forKey: TickerStore.userDataPlistName) as? Data, let values = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String: Any] {
             loadUserData(from: values)
-        } else if let values = PlistFile(name: TickerStore.userDataPlistName).dictionary {
-            loadUserData(from: values)
         } else {
             userTickers.value =
                 defaultTickersNames
