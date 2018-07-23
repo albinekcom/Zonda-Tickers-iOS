@@ -43,6 +43,9 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.btgeur.baseCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.btgbtc.baseCurrencyNameLength)
         
+        XCTAssertEqual(3, Ticker.Name.kzcpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.kzcusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.kzceur.baseCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.kzcbtc.baseCurrencyNameLength)
             
         XCTAssertEqual(3, Ticker.Name.xrppln.baseCurrencyNameLength)
@@ -50,7 +53,35 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.xrpeur.baseCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.xrpbtc.baseCurrencyNameLength)
         
+        XCTAssertEqual(3, Ticker.Name.xinpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xinusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xineur.baseCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.xinbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.xmrpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xmrusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xmreur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xmrbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.zecpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zecusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zeceur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zecbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.gntpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.gntusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.gnteur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.gntbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.omgpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.omgusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.omgeur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.omgbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.ftopln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.ftousd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.ftoeur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.ftobtc.baseCurrencyNameLength)
     }
     
     func testCounterCurrencyNameLength() {
@@ -93,6 +124,9 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.btgeur.counterCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.btgbtc.counterCurrencyNameLength)
         
+        XCTAssertEqual(3, Ticker.Name.kzcpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.kzcusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.kzceur.counterCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.kzcbtc.counterCurrencyNameLength)
         
         XCTAssertEqual(3, Ticker.Name.xrppln.counterCurrencyNameLength)
@@ -100,7 +134,35 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.xrpeur.counterCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.xrpbtc.counterCurrencyNameLength)
         
+        XCTAssertEqual(3, Ticker.Name.xinpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xinusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xineur.counterCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.xinbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.xmrpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xmrusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xmreur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.xmrbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.zecpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zecusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zeceur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zecbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.gntpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.gntusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.gnteur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.gntbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.omgpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.omgusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.omgeur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.omgbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.ftopln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.ftousd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.ftoeur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.ftobtc.counterCurrencyNameLength)
     }
     
     func testKeys() {

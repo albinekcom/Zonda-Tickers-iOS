@@ -42,6 +42,9 @@ struct Ticker {
         case btgeur
         case btgbtc
         
+        case kzcpln
+        case kzcusd
+        case kzceur
         case kzcbtc
         
         case xrppln
@@ -49,7 +52,35 @@ struct Ticker {
         case xrpeur
         case xrpbtc
         
+        case xinpln
+        case xinusd
+        case xineur
         case xinbtc
+        
+        case xmrpln
+        case xmrusd
+        case xmreur
+        case xmrbtc
+        
+        case zecpln
+        case zecusd
+        case zeceur
+        case zecbtc
+        
+        case gntpln
+        case gntusd
+        case gnteur
+        case gntbtc
+        
+        case omgpln
+        case omgusd
+        case omgeur
+        case omgbtc
+        
+        case ftopln
+        case ftousd
+        case ftoeur
+        case ftobtc
         
         var baseCurrencyNameLength: Int {
             switch self {
@@ -59,9 +90,14 @@ struct Ticker {
                  .lskpln, .lskusd, .lskeur, .lskbtc,
                  .bccpln, .bccusd, .bcceur, .bccbtc,
                  .btgpln, .btgusd, .btgeur, .btgbtc,
-                 .kzcbtc,
+                 .kzcpln, .kzcusd, .kzceur, .kzcbtc,
                  .xrppln, .xrpusd, .xrpeur, .xrpbtc,
-                 .xinbtc:
+                 .xinpln, .xinusd, .xineur, .xinbtc,
+                 .xmrpln, .xmrusd, .xmreur, .xmrbtc,
+                 .zecpln, .zecusd, .zeceur, .zecbtc,
+                 .gntpln, .gntusd, .gnteur, .gntbtc,
+                 .omgpln, .omgusd, .omgeur, .omgbtc,
+                 .ftopln, .ftousd, .ftoeur, .ftobtc:
                 return 3
                 
             case .dashpln, .dashusd, .dasheur, .dashbtc,

@@ -25,17 +25,14 @@ final class TickerStore {
     let refreshingSubject = PublishSubject<Bool>()
     
     private let allAvailableTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln,
-        .btceur, .etheur, .ltceur, .lskeur, .bcceur, .dasheur, .gameeur, .btgeur,
-        .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd, .dashusd, .gameusd, .btgusd,
-        .ltcbtc, .ethbtc, .lskbtc, .bccbtc, .dashbtc, .gamebtc, .btgbtc,
-        .kzcbtc,
-        .xrppln, .xrpusd, .xrpeur, .xrpbtc,
-        .xinbtc
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln,
+        .btceur, .etheur, .ltceur, .lskeur, .bcceur, .dasheur, .gameeur, .btgeur, .kzceur, .xrpeur, .xineur, .xmreur, .zeceur, .gnteur, .omgeur, .ftoeur,
+        .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd, .dashusd, .gameusd, .btgusd, .kzcusd, .xrpusd, .xinusd, .xmrusd, .zecusd, .gntusd, .omgusd, .ftousd,
+                 .ethbtc, .ltcbtc, .lskbtc, .bccbtc, .dashbtc, .gamebtc, .btgbtc, .kzcbtc, .xrpbtc, .xinbtc, .xmrbtc, .zecbtc, .gntbtc, .omgbtc, .ftobtc
     ]
     
     private let defaultTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .xrppln
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln
     ]
     
     func refreshTickers(refreshingType: RefreshingType, completion: ((Error?) -> Void)? = nil) {
