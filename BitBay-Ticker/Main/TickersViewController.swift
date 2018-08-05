@@ -6,6 +6,8 @@ import UIKit
 
 final class TickersViewController: UIViewController {
     
+    var isAutoRefreshingEnabled = false
+    
     @IBOutlet private weak var tickersTableView: UITableView! {
         didSet {
             tickersTableView.tableFooterView = UIView()
@@ -321,14 +323,22 @@ final class TickersViewController: UIViewController {
     
     // MARK: - Autorefreshing
     
-    func scheduleAutoRefreshingTimer() {
+    func scheduleAutoRefreshingTimer(changeIsAutoRefreshingEnabledFlag: Bool = true) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(automaticRefresh), userInfo: nil, repeats: true)
+        
+        if changeIsAutoRefreshingEnabledFlag {
+            isAutoRefreshingEnabled = true
+        }
     }
     
-    func removeAutoRefreshingTimer() {
+    func removeAutoRefreshingTimer(changeIsAutoRefreshingEnabledFlag: Bool = true) {
         timer?.invalidate()
         timer = nil
+        
+        if changeIsAutoRefreshingEnabledFlag {
+            isAutoRefreshingEnabled = false
+        }
     }
     
     @objc private func automaticRefresh() {

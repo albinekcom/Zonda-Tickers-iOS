@@ -19,4 +19,20 @@ extension AppDelegate: UIApplicationDelegate {
         return true
     }
     
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        guard let tickersViewController = window?.rootViewController?.childViewControllers.first as? TickersViewController else { return }
+        
+        if tickersViewController.isAutoRefreshingEnabled {
+            tickersViewController.removeAutoRefreshingTimer(changeIsAutoRefreshingEnabledFlag: false)
+        }
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        guard let tickersViewController = window?.rootViewController?.childViewControllers.first as? TickersViewController else { return }
+        
+        if tickersViewController.isAutoRefreshingEnabled {
+            tickersViewController.scheduleAutoRefreshingTimer(changeIsAutoRefreshingEnabledFlag: false)
+        }
+    }
+    
 }
