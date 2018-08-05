@@ -23,6 +23,15 @@ final class CurrencyTests: XCTestCase {
         XCTAssertFalse(Currency.kzc.isFiat)
         XCTAssertFalse(Currency.xrp.isFiat)
         XCTAssertFalse(Currency.xin.isFiat)
+        XCTAssertFalse(Currency.xmr.isFiat)
+        XCTAssertFalse(Currency.zec.isFiat)
+        XCTAssertFalse(Currency.gnt.isFiat)
+        XCTAssertFalse(Currency.omg.isFiat)
+        XCTAssertFalse(Currency.fto.isFiat)
+        XCTAssertFalse(Currency.rep.isFiat)
+        XCTAssertFalse(Currency.bat.isFiat)
+        XCTAssertFalse(Currency.zrx.isFiat)
+        XCTAssertFalse(Currency.pay.isFiat)
     }
     
     func testDescription() {
@@ -41,6 +50,15 @@ final class CurrencyTests: XCTestCase {
         XCTAssertEqual("KZC", Currency.kzc.description)
         XCTAssertEqual("XRP", Currency.xrp.description)
         XCTAssertEqual("XIN", Currency.xin.description)
+        XCTAssertEqual("XMR", Currency.xmr.description)
+        XCTAssertEqual("ZEC", Currency.zec.description)
+        XCTAssertEqual("GNT", Currency.gnt.description)
+        XCTAssertEqual("OMG", Currency.omg.description)
+        XCTAssertEqual("FTO", Currency.fto.description)
+        XCTAssertEqual("REP", Currency.rep.description)
+        XCTAssertEqual("BAT", Currency.bat.description)
+        XCTAssertEqual("ZRX", Currency.zrx.description)
+        XCTAssertEqual("PAY", Currency.pay.description)
     }
     
 }

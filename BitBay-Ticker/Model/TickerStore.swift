@@ -25,14 +25,14 @@ final class TickerStore {
     let refreshingSubject = PublishSubject<Bool>()
     
     private let allAvailableTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln,
-        .btceur, .etheur, .ltceur, .lskeur, .bcceur, .dasheur, .gameeur, .btgeur, .kzceur, .xrpeur, .xineur, .xmreur, .zeceur, .gnteur, .omgeur, .ftoeur,
-        .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd, .dashusd, .gameusd, .btgusd, .kzcusd, .xrpusd, .xinusd, .xmrusd, .zecusd, .gntusd, .omgusd, .ftousd,
-                 .ethbtc, .ltcbtc, .lskbtc, .bccbtc, .dashbtc, .gamebtc, .btgbtc, .kzcbtc, .xrpbtc, .xinbtc, .xmrbtc, .zecbtc, .gntbtc, .omgbtc, .ftobtc
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln, .reppln, .batpln, .zrxpln, .paypln,
+        .btceur, .etheur, .ltceur, .lskeur, .bcceur, .dasheur, .gameeur, .btgeur, .kzceur, .xrpeur, .xineur, .xmreur, .zeceur, .gnteur, .omgeur, .ftoeur, .repeur, .batpln, .zrxpln, .paypln,
+        .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd, .dashusd, .gameusd, .btgusd, .kzcusd, .xrpusd, .xinusd, .xmrusd, .zecusd, .gntusd, .omgusd, .ftousd, .repusd, .batusd, .zrxusd, .payusd,
+                 .ethbtc, .ltcbtc, .lskbtc, .bccbtc, .dashbtc, .gamebtc, .btgbtc, .kzcbtc, .xrpbtc, .xinbtc, .xmrbtc, .zecbtc, .gntbtc, .omgbtc, .ftobtc, .repbtc, .batbtc, .zrxbtc, .paybtc
     ]
     
     private let defaultTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln, .reppln, .batpln, .zrxpln, .paypln
     ]
     
     func refreshTickers(refreshingType: RefreshingType, completion: ((Error?) -> Void)? = nil) {

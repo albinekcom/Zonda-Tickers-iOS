@@ -82,6 +82,26 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.ftousd.baseCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.ftoeur.baseCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.ftobtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.reppln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.repusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.repeur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.repbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.batpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.batusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.bateur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.batbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.zrxpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zrxusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zrxeur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zrxbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.paypln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.payusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.payeur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.paybtc.baseCurrencyNameLength)
     }
     
     func testCounterCurrencyNameLength() {
@@ -163,6 +183,26 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.ftousd.counterCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.ftoeur.counterCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.ftobtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.reppln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.repusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.repeur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.repbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.batpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.batusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.bateur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.batbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.zrxpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zrxusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zrxeur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.zrxbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.paypln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.payusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.payeur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.paybtc.counterCurrencyNameLength)
     }
     
     func testKeys() {
