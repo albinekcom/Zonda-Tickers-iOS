@@ -26,6 +26,7 @@ enum Currency: String {
     case bat
     case zrx
     case pay
+    case neu
     
     static var fiatCurrencies: [Currency] {
         return [.pln, .usd, .eur]

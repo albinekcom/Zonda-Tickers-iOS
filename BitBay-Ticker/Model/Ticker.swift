@@ -102,6 +102,11 @@ struct Ticker {
         case payeur
         case paybtc
         
+        case neupln
+        case neuusd
+        case neueur
+        case neubtc
+        
         var baseCurrencyNameLength: Int {
             switch self {
             case .btcpln, .btcusd, .btceur,
@@ -121,7 +126,8 @@ struct Ticker {
                  .reppln, .repusd, .repeur, .repbtc,
                  .batpln, .batusd, .bateur, .batbtc,
                  .zrxpln, .zrxusd, .zrxeur, .zrxbtc,
-                 .paypln, .payusd, .payeur, .paybtc:
+                 .paypln, .payusd, .payeur, .paybtc,
+                 .neupln, .neuusd, .neueur, .neubtc:
                 return 3
                 
             case .dashpln, .dashusd, .dasheur, .dashbtc,

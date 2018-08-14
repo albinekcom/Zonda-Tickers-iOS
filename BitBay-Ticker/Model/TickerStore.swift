@@ -25,14 +25,14 @@ final class TickerStore {
     let refreshingSubject = PublishSubject<Bool>()
     
     private let allAvailableTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln, .reppln, .batpln, .zrxpln, .paypln,
-        .btceur, .etheur, .ltceur, .lskeur, .bcceur, .dasheur, .gameeur, .btgeur, .kzceur, .xrpeur, .xineur, .xmreur, .zeceur, .gnteur, .omgeur, .ftoeur, .repeur, .batpln, .zrxpln, .paypln,
-        .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd, .dashusd, .gameusd, .btgusd, .kzcusd, .xrpusd, .xinusd, .xmrusd, .zecusd, .gntusd, .omgusd, .ftousd, .repusd, .batusd, .zrxusd, .payusd,
-                 .ethbtc, .ltcbtc, .lskbtc, .bccbtc, .dashbtc, .gamebtc, .btgbtc, .kzcbtc, .xrpbtc, .xinbtc, .xmrbtc, .zecbtc, .gntbtc, .omgbtc, .ftobtc, .repbtc, .batbtc, .zrxbtc, .paybtc
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln, .reppln, .batpln, .zrxpln, .paypln, .neupln,
+        .btceur, .etheur, .ltceur, .lskeur, .bcceur, .dasheur, .gameeur, .btgeur, .kzceur, .xrpeur, .xineur, .xmreur, .zeceur, .gnteur, .omgeur, .ftoeur, .repeur, .batpln, .zrxpln, .paypln, .neupln,
+        .btcusd, .ethusd, .ltcusd, .lskusd, .bccusd, .dashusd, .gameusd, .btgusd, .kzcusd, .xrpusd, .xinusd, .xmrusd, .zecusd, .gntusd, .omgusd, .ftousd, .repusd, .batusd, .zrxusd, .payusd, .neuusd,
+                 .ethbtc, .ltcbtc, .lskbtc, .bccbtc, .dashbtc, .gamebtc, .btgbtc, .kzcbtc, .xrpbtc, .xinbtc, .xmrbtc, .zecbtc, .gntbtc, .omgbtc, .ftobtc, .repbtc, .batbtc, .zrxbtc, .paybtc, .neubtc
     ]
     
     private let defaultTickersNames: [Ticker.Name] = [
-        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln, .reppln, .batpln, .zrxpln, .paypln
+        .btcpln, .ethpln, .ltcpln, .lskpln, .bccpln, .dashpln, .gamepln, .btgpln, .kzcpln, .xrppln, .xinpln, .xmrpln, .zecpln, .gntpln, .omgpln, .ftopln, .reppln, .batpln, .zrxpln, .paypln, .neupln
     ]
     
     func refreshTickers(refreshingType: RefreshingType, completion: ((Error?) -> Void)? = nil) {
