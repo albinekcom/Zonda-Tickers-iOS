@@ -29,4 +29,3 @@ extension SectionOfTickerViewModel: Equatable { }
 func == (lhs: SectionOfTickerViewModel, rhs: SectionOfTickerViewModel) -> Bool {
     return lhs.identity == rhs.identity
 }
-
