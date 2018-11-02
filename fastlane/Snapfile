@@ -1,6 +1,6 @@
 devices([
   "iPhone 8 Plus",
-  # "iPhone X",
+  # "iPhone XS",
   # "iPad Pro (12.9-inch)"
 ])
 

@@ -1,16 +1,11 @@
-language: objective-c
-osx_image: xcode10
+os:
+  - osx
 
-cache:
-  directories:
-    - Carthage
+osx_image:
+  - xcode10.1
 
 before_install:
-  - brew update
   - carthage update --platform iOS
 
 script:
-  - xcodebuild test -project BitBay-Ticker.xcodeproj -scheme BitBay-Ticker -destination "platform=iOS Simulator,name=iPhone 8"
-
-notifications:
-  email: false
+  - xcodebuild test -project BitBay-Ticker.xcodeproj -scheme BitBay-Ticker -destination "platform=iOS Simulator,name=iPhone XS"
