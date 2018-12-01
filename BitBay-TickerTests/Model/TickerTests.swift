@@ -107,6 +107,21 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.neuusd.baseCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.neueur.baseCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.neubtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.trxpln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.trxusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.trxeur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.trxbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(4, Ticker.Name.amltpln.baseCurrencyNameLength)
+        XCTAssertEqual(4, Ticker.Name.amltusd.baseCurrencyNameLength)
+        XCTAssertEqual(4, Ticker.Name.amlteur.baseCurrencyNameLength)
+        XCTAssertEqual(4, Ticker.Name.amltbtc.baseCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.exypln.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.exyusd.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.exyeur.baseCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.exybtc.baseCurrencyNameLength)
     }
     
     func testCounterCurrencyNameLength() {
@@ -213,6 +228,21 @@ final class TickerTests: XCTestCase {
         XCTAssertEqual(3, Ticker.Name.neuusd.counterCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.neueur.counterCurrencyNameLength)
         XCTAssertEqual(3, Ticker.Name.neubtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.trxpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.trxusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.trxeur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.trxbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.amltpln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.amltusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.amlteur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.amltbtc.counterCurrencyNameLength)
+        
+        XCTAssertEqual(3, Ticker.Name.exypln.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.exyusd.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.exyeur.counterCurrencyNameLength)
+        XCTAssertEqual(3, Ticker.Name.exybtc.counterCurrencyNameLength)
     }
     
     func testKeys() {
