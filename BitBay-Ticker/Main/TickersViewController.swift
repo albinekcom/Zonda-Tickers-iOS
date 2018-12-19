@@ -342,7 +342,7 @@ final class TickersViewController: UIViewController {
     }
     
     @objc private func automaticRefresh() {
-//        refresh(refreshingType: .automatic)
+        refresh(refreshingType: .automatic)
     }
     
 }

@@ -12,9 +12,9 @@ struct AnalyticsService {
     }
     
     private static func track(name: String, parameters: [String: String]? = nil) {
-//        if isEnabled {
+        if isEnabled {
             Analytics.logEvent(name, parameters: parameters)
-//        }
+        }
         
         if isLoggingEnabled {
             print("[TRACKED] \"\(name)\" | Parameters: \(String(describing: parameters))")
