@@ -49,11 +49,7 @@ final class TickerStore {
                     self?.userTickers.value = tickers
                     self?.refreshingSubject.on(.next(true))
                     
-                    let tickersAnalyticsParameters = AnalyticsParametersFactory.makeParameters(from: tickers)
-                    let refreshingTypeAnalyticsParameters = AnalyticsParametersFactory.makeParameters(from: refreshingType)
-                    let analyticsParameters = tickersAnalyticsParameters.merged(with: refreshingTypeAnalyticsParameters)
-                    
-                    AnalyticsService.trackRefreshedTickers(parameters: analyticsParameters)
+                    AnalyticsService.trackRefreshedTickers(parameters: AnalyticsParametersFactory.makeParameters(from: refreshingType))
                     
                     completion?(nil)
                 },

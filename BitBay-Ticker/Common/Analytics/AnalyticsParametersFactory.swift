@@ -6,16 +6,8 @@ struct AnalyticsParametersFactory {
         return ["Ticker": ticker.prettyName]
     }
     
-    static func makeParameters(from tickers: [Ticker]) -> [String: String] {
-        let tickersPrettyNames = tickers.map{ $0.prettyName }
-            
-        let compoundedTickersPrettyNames = tickersPrettyNames.joined(separator: "|")
-    
-        return ["Tickers": compoundedTickersPrettyNames]
-    }
-    
     static func makeParameters(from refreshingType: TickerStore.RefreshingType) -> [String: String] {
-        return ["Refreshing Type": refreshingType.rawValue]
+        return ["Refreshing_Type": refreshingType.rawValue]
     }
     
 }

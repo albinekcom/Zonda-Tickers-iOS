@@ -1,4 +1,4 @@
-import Crashlytics
+import FirebaseAnalytics
 import Foundation
 
 struct AnalyticsService {
@@ -12,9 +12,9 @@ struct AnalyticsService {
     }
     
     private static func track(name: String, parameters: [String: String]? = nil) {
-        if isEnabled {
-            Answers.logCustomEvent(withName: name, customAttributes: parameters)
-        }
+//        if isEnabled {
+            Analytics.logEvent(name, parameters: parameters)
+//        }
         
         if isLoggingEnabled {
             print("[TRACKED] \"\(name)\" | Parameters: \(String(describing: parameters))")
@@ -24,37 +24,37 @@ struct AnalyticsService {
     // MARK: - States
     
     static func trackAddTickerView() {
-        track(name: "Add Ticker View")
+        track(name: "Add_Ticker_View")
     }
     
     static func trackTickersView() {
-        track(name: "Tickers View")
+        track(name: "Tickers_View")
     }
     
     static func trackTickerDetailsView(parameters: [String: String]) {
-        track(name: "Ticker Details View", parameters: parameters)
+        track(name: "Ticker_Details_View", parameters: parameters)
     }
     
     static func trackEditTickersView() {
-        track(name: "Edit Tickers View")
+        track(name: "Edit_Tickers_View")
     }
     
     static func trackRequestedRatingView() {
-        track(name: "Requested Rating View")
+        track(name: "Requested_Rating_View")
     }
     
     // MARK: - Actions
     
     static func trackAddedTicker(parameters: [String: String]) {
-        track(name: "Added Ticker", parameters: parameters)
+        track(name: "Added_Ticker", parameters: parameters)
     }
     
     static func trackRemovedTicker(parameters: [String: String]) {
-        track(name: "Removed Ticker", parameters: parameters)
+        track(name: "Removed_Ticker", parameters: parameters)
     }
     
     static func trackRefreshedTickers(parameters: [String: String]) {
-        track(name: "Refreshed Tickers", parameters: parameters)
+        track(name: "Refreshed_Tickers", parameters: parameters)
     }
     
 }

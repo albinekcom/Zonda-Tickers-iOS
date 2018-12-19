@@ -1,5 +1,4 @@
-import Crashlytics
-import Fabric
+import Firebase
 import UIKit
 
 @UIApplicationMain
@@ -12,7 +11,7 @@ final class AppDelegate: UIResponder {
 extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        Fabric.with([Crashlytics.self])
+        FirebaseApp.configure()
         
         TickerStore.shared.loadUserData()
         
