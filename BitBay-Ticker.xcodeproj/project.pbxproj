@@ -55,13 +55,11 @@
 		8C7F0D3C21CA23EE002C6553 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3321CA23EE002C6553 /* FirebaseInstanceID.framework */; };
 		8C7F0D3D21CA23EE002C6553 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3421CA23EE002C6553 /* GoogleUtilities.framework */; };
 		8C7F0D3E21CA23EE002C6553 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3521CA23EE002C6553 /* nanopb.framework */; };
-		8C7F0D3F21CA23EE002C6553 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3621CA23EE002C6553 /* Firebase.framework */; };
 		8C7F0D4021CA23EE002C6553 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3721CA23EE002C6553 /* FirebaseCoreDiagnostics.framework */; };
 		8C7F0D4121CA23EE002C6553 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3821CA23EE002C6553 /* FIRAnalyticsConnector.framework */; };
 		8C7F0D4221CA23EE002C6553 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3921CA23EE002C6553 /* FirebaseAnalytics.framework */; };
 		8C7F0D4321CA23EE002C6553 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3A21CA23EE002C6553 /* FirebaseCore.framework */; };
 		8C7F0D4421CA23F4002C6553 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3821CA23EE002C6553 /* FIRAnalyticsConnector.framework */; };
-		8C7F0D4521CA23F4002C6553 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3621CA23EE002C6553 /* Firebase.framework */; };
 		8C7F0D4621CA23F4002C6553 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3921CA23EE002C6553 /* FirebaseAnalytics.framework */; };
 		8C7F0D4721CA23F4002C6553 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3A21CA23EE002C6553 /* FirebaseCore.framework */; };
 		8C7F0D4821CA23F4002C6553 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F0D3721CA23EE002C6553 /* FirebaseCoreDiagnostics.framework */; };
@@ -248,7 +246,6 @@
 				8C7F0D3C21CA23EE002C6553 /* FirebaseInstanceID.framework in Frameworks */,
 				8C7F0D3D21CA23EE002C6553 /* GoogleUtilities.framework in Frameworks */,
 				8C7F0D3E21CA23EE002C6553 /* nanopb.framework in Frameworks */,
-				8C7F0D3F21CA23EE002C6553 /* Firebase.framework in Frameworks */,
 				8C7F0D4021CA23EE002C6553 /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				8C7F0D4121CA23EE002C6553 /* FIRAnalyticsConnector.framework in Frameworks */,
 				8C7F0D4221CA23EE002C6553 /* FirebaseAnalytics.framework in Frameworks */,
@@ -291,7 +288,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C7F0D4421CA23F4002C6553 /* FIRAnalyticsConnector.framework in Frameworks */,
-				8C7F0D4521CA23F4002C6553 /* Firebase.framework in Frameworks */,
 				8C7F0D4621CA23F4002C6553 /* FirebaseAnalytics.framework in Frameworks */,
 				8C7F0D4721CA23F4002C6553 /* FirebaseCore.framework in Frameworks */,
 				8C7F0D4821CA23F4002C6553 /* FirebaseCoreDiagnostics.framework in Frameworks */,
