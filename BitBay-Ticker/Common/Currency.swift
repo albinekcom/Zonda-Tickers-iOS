@@ -32,6 +32,10 @@ enum Currency: String {
     case exy
     case bob
     case lml
+    case xlm
+    case xbx
+    case bcp
+    case bsv
     
     static var fiatCurrencies: [Currency] {
         return [.pln, .usd, .eur]
