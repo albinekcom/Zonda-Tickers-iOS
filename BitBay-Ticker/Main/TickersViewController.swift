@@ -257,7 +257,7 @@ final class TickersViewController: UIViewController {
                     guard let lastDate = lastDate else { return }
                     
                     let lastUpdateText = TextFactory.makeLastUpdateDateText(updateDate: lastDate)
-                    self?.tickersTableView.refreshControl?.attributedTitle = NSAttributedString(string: lastUpdateText, attributes: [NSAttributedStringKey.foregroundColor: UIColor.refreshControl])
+                    self?.tickersTableView.refreshControl?.attributedTitle = NSAttributedString(string: lastUpdateText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.refreshControl])
                 }
             )
             .disposed(by: disposeBag)
