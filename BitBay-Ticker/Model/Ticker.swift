@@ -4,18 +4,23 @@ struct Ticker {
     
     enum Name: String {
         case btcpln
+        case btcgbp
         case btcusd
         case btceur
+        case btcusdc
         
         case ltcpln
+        case ltcgbp
         case ltcusd
         case ltceur
         case ltcbtc
         
         case ethpln
+        case ethgbp
         case ethusd
         case etheur
         case ethbtc
+        case ethusdc
         
         case lskpln
         case lskusd
@@ -23,9 +28,11 @@ struct Ticker {
         case lskbtc
         
         case bccpln
+        case bccgbp
         case bccusd
         case bcceur
         case bccbtc
+        case bccusdc
         
         case dashpln
         case dashusd
@@ -48,6 +55,7 @@ struct Ticker {
         case kzcbtc
         
         case xrppln
+        case xrpgbp
         case xrpusd
         case xrpeur
         case xrpbtc
@@ -144,16 +152,18 @@ struct Ticker {
         case bsveur
         case bsvbtc
         
+        case usdcusd
+        
         var baseCurrencyNameLength: Int {
             switch self {
-            case .btcpln, .btcusd, .btceur,
-                 .ltcpln, .ltcusd, .ltceur, .ltcbtc,
-                 .ethpln, .ethusd, .etheur, .ethbtc,
+            case .btcpln, .btcgbp, .btcusd, .btceur, .btcusdc,
+                 .ltcpln, .ltcgbp, .ltcusd, .ltceur, .ltcbtc,
+                 .ethpln, .ethgbp, .ethusd, .etheur, .ethbtc, .ethusdc,
                  .lskpln, .lskusd, .lskeur, .lskbtc,
-                 .bccpln, .bccusd, .bcceur, .bccbtc,
+                 .bccpln, .bccgbp, .bccusd, .bcceur, .bccbtc, .bccusdc,
                  .btgpln, .btgusd, .btgeur, .btgbtc,
                  .kzcpln, .kzcusd, .kzceur, .kzcbtc,
-                 .xrppln, .xrpusd, .xrpeur, .xrpbtc,
+                 .xrppln, .xrpgbp, .xrpusd, .xrpeur, .xrpbtc,
                  .xinpln, .xinusd, .xineur, .xinbtc,
                  .xmrpln, .xmrusd, .xmreur, .xmrbtc,
                  .zecpln, .zecusd, .zeceur, .zecbtc,
@@ -177,13 +187,18 @@ struct Ticker {
                 
             case .dashpln, .dashusd, .dasheur, .dashbtc,
                  .gamepln, .gameusd, .gameeur, .gamebtc,
-                 .amltpln, .amltusd, .amlteur, .amltbtc:
+                 .amltpln, .amltusd, .amlteur, .amltbtc,
+                 .usdcusd:
                 return 4
             }
         }
         
         var counterCurrencyNameLength: Int {
-            return 3
+            if self == .btcusdc || self == .ethusdc || self == .bccusdc {
+                return 4
+            } else {
+                return 3
+            }
         }
     }
     
