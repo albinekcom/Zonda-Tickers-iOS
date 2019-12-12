@@ -1,4 +1,1 @@
-github "ReactiveX/RxSwift"
-github "RxSwiftCommunity/RxDataSources"
-
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"

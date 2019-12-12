@@ -2,13 +2,12 @@
 
 "ok" = "OK";
 "error" = "Error";
-"last.updated.on" = "Last Updated on";
 
-// Tickers
+// List
 
 "tickers.title" = "Tickers";
 
-// Ticker Details
+// Detail
 
 "ticker.details.last" = "Last";
 "ticker.details.max" = "Maximum";
@@ -19,6 +18,6 @@
 "ticker.details.average" = "Average";
 "ticker.details.volume" = "Volume";
 
-// Add Ticker
+// Add
 
 "add.ticker.title" = "Add Ticker";

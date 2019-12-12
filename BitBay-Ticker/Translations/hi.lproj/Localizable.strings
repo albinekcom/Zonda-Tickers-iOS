@@ -2,13 +2,12 @@
 
 "ok" = "ठीक";
 "error" = "त्रुटि";
-"last.updated.on" = "अंतिम बार अद्यतन किया गया";
 
-// Tickers
+// List
 
 "tickers.title" = "टिकर";
 
-// Ticker Details
+// Detail
 
 "ticker.details.last" = "अंतिम";
 "ticker.details.max" = "ज्यादा से ज्यादा";
@@ -19,6 +18,6 @@
 "ticker.details.average" = "औसत";
 "ticker.details.volume" = "आयतन";
 
-// Add Ticker
+// Add
 
 "add.ticker.title" = "टिकर जोड़ें";
