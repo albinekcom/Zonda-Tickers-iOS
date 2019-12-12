@@ -1,4 +1,3 @@
-import UIKit
 import SwiftUI
 
 final class SceneDelegate: UIResponder {
