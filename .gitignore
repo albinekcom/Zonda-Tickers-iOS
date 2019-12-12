@@ -16,3 +16,7 @@ fastlane/test_output
 fastlane/screenshots/en-US/*.png
 fastlane/screenshots/fonts/*.otf
 fastlane/screenshots/screenshots.html
+
+# Visual Studio Code
+
+.vscode/

@@ -13,7 +13,7 @@ BitBay Ticker for iOS devices.
 
 ## Technical aspects
 
-This application uses [RxSwift](https://github.com/ReactiveX/RxSwift).
+This application uses SwiftUI.
 
 ## Usage
 
