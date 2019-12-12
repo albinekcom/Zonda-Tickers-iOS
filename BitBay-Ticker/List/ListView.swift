@@ -18,9 +18,6 @@ struct ListView_Previews: PreviewProvider {
         Group {
            ListView()
               .environment(\.colorScheme, .light)
-
-           ListView()
-              .environment(\.colorScheme, .dark)
         }
     }
     
