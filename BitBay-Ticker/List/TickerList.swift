@@ -26,7 +26,7 @@ struct TickerList: View {
                     Button(action: {
                         self.isPresentingTickerAdderView = true
                     }) {
-                        Text("Add")
+                        Image(systemName: "plus.circle")
                     }.sheet(isPresented: $isPresentingTickerAdderView) {
                         TickerAdder().environmentObject(self.userData)
                     },

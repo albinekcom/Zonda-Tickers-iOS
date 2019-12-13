@@ -306,7 +306,6 @@
 				8CC184F41EFE4CAC0083DA30 /* Sources */,
 				8CC184F51EFE4CAC0083DA30 /* Frameworks */,
 				8CC184F61EFE4CAC0083DA30 /* Resources */,
-				8C1CF6F21F04351400E6F0D4 /* Run Script For Carthage */,
 				8CFB35201F1808F900475DC1 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -443,27 +442,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8C1CF6F21F04351400E6F0D4 /* Run Script For Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script For Carthage";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CC184F41EFE4CAC0083DA30 /* Sources */ = {
