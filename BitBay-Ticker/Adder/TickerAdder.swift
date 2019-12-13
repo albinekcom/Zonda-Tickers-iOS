@@ -2,26 +2,35 @@ import SwiftUI
 
 struct TickerAdder: View {
     
-    @EnvironmentObject private var userData: UserData
     @Binding var isPresented: Bool
+    
+    @EnvironmentObject private var userData: UserData
+    @State private var searchTerm: String = ""
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(userData.availableTickersIdentifiersToAdd) { tickerIdentifier in
-                    AdderRow(text: tickerIdentifier.title)
-                        .padding(.top)
-                        .padding(.bottom)
-                        .onTapGesture {
-                            self.userData.appendTicker(from: tickerIdentifier)
-                            self.isPresented.toggle()
-                        }
+            KeyboardHost {
+                List {
+                    TextField(NSLocalizedString("add.ticker.search.placeholder", comment: ""), text: $searchTerm)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .disableAutocorrection(true)
+                    ForEach(userData.availableTickersIdentifiersToAdd.filter {
+                        self.searchTerm.isEmpty ? true :
+                            $0.id.localizedCaseInsensitiveContains(self.searchTerm)
+                    }) { tickerIdentifier in
+                        AdderRow(text: tickerIdentifier.title)
+                            .padding(.top)
+                            .padding(.bottom)
+                            .onTapGesture {
+                                self.userData.appendTicker(from: tickerIdentifier)
+                                self.isPresented.toggle()
+                            }
+                    }
                 }
+                .navigationBarTitle(Text("add.ticker.title"), displayMode: .inline)
             }
-            .navigationBarTitle(Text("add.ticker.title"))
         }
     }
-    
 }
 
 #if DEBUG

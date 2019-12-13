@@ -21,3 +21,4 @@
 // Adder
 
 "add.ticker.title" = "Add Ticker";
+"add.ticker.search.placeholder" = "Search";
