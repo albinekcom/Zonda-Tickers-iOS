@@ -3,6 +3,7 @@ import Combine
 final class UserData: ObservableObject {
     
     @Published var tickers: [Ticker] = []
+    @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
     
     init() {
         setUpFakeTickers()

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C41BA2923A2D3740054297C /* BitBay_Ticker_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C41BA2823A2D3740054297C /* BitBay_Ticker_Tests.swift */; };
 		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C7783911F044DCF005454D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
@@ -25,6 +24,9 @@
 		8CCA6F2A23A389740048B1B8 /* TickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2923A389740048B1B8 /* TickerRow.swift */; };
 		8CCA6F2C23A389C00048B1B8 /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2B23A389C00048B1B8 /* DetailRow.swift */; };
 		8CCA6F2E23A38EB60048B1B8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2D23A38EB60048B1B8 /* UserData.swift */; };
+		8CCA6F3023A3A4FF0048B1B8 /* AdderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2F23A3A4FF0048B1B8 /* AdderRow.swift */; };
+		8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */; };
+		8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */; };
 		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 		8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
@@ -71,7 +73,6 @@
 		8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		8C41BA2823A2D3740054297C /* BitBay_Ticker_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitBay_Ticker_Tests.swift; sourceTree = "<group>"; };
 		8C6FB62923A2CBD400724C86 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		8C6FB62E23A2CCCA00724C86 /* TickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerList.swift; sourceTree = "<group>"; };
 		8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +101,9 @@
 		8CCA6F2923A389740048B1B8 /* TickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRow.swift; sourceTree = "<group>"; };
 		8CCA6F2B23A389C00048B1B8 /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
 		8CCA6F2D23A38EB60048B1B8 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		8CCA6F2F23A3A4FF0048B1B8 /* AdderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderRow.swift; sourceTree = "<group>"; };
+		8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifier.swift; sourceTree = "<group>"; };
+		8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifierTests.swift; sourceTree = "<group>"; };
 		8CD60C561F5BD34200ABDB23 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* BitBay-TickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BitBay-TickerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,7 +203,7 @@
 		8CC1850F1EFE4CAC0083DA30 /* BitBay-TickerTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C41BA2823A2D3740054297C /* BitBay_Ticker_Tests.swift */,
+				8CCA6F3323A3A9920048B1B8 /* Models */,
 				8CC185121EFE4CAC0083DA30 /* Info.plist */,
 			);
 			path = "BitBay-TickerTests";
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				8CCA6F2523A369220048B1B8 /* TickerAdder.swift */,
+				8CCA6F2F23A3A4FF0048B1B8 /* AdderRow.swift */,
 			);
 			path = Adder;
 			sourceTree = "<group>";
@@ -232,6 +237,14 @@
 				8CCA6F2B23A389C00048B1B8 /* DetailRow.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		8CCA6F3323A3A9920048B1B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8CDFD47B1F084106009F1E19 /* BitBay-TickerUITests */ = {
@@ -248,6 +261,7 @@
 		8CEE9B5523A2DBAA00D5B24B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */,
 				8CEE9B5623A2DBB700D5B24B /* Ticker.swift */,
 				8CEE9B5823A2DCCD00D5B24B /* Currency.swift */,
 				8CCA6F2D23A38EB60048B1B8 /* UserData.swift */,
@@ -485,10 +499,12 @@
 				8CEE9B5923A2DCCD00D5B24B /* Currency.swift in Sources */,
 				8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */,
 				8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */,
+				8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */,
 				8CCA6F2A23A389740048B1B8 /* TickerRow.swift in Sources */,
 				8CCA6F2C23A389C00048B1B8 /* DetailRow.swift in Sources */,
 				8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
+				8CCA6F3023A3A4FF0048B1B8 /* AdderRow.swift in Sources */,
 				8CCA6F2E23A38EB60048B1B8 /* UserData.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
 			);
@@ -498,7 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C41BA2923A2D3740054297C /* BitBay_Ticker_Tests.swift in Sources */,
+				8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
