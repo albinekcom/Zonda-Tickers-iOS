@@ -16,7 +16,7 @@ struct TickerDetail: View {
             DetailRow(title: Text("ticker.details.average"), value: "Value 7") // TODO: Use a correct property here
             DetailRow(title: Text("ticker.details.volume"), value: "Value 8") // TODO: Use a correct property here
         }
-        .navigationBarTitle(Text(ticker.id)) // TODO: Use a correct property here
+        .navigationBarTitle(Text(ticker.title))
     }
     
 }

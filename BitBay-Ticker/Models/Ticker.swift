@@ -8,4 +8,8 @@ struct Ticker: Hashable, Codable, Identifiable {
     let rate: Double
     let previousRate: Double
     
+    var title: String {
+        "\(firstCurrency.currency)/\(secondCurrency.currency)"
+    }
+    
 }

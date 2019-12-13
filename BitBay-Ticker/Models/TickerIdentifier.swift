@@ -4,11 +4,19 @@ struct TickerIdentifier: Hashable, Codable, Identifiable {
     
     let id: String
     
-    var firstCurrencyIdentifier: String? {
-        id.components(separatedBy: "-").first
+    var title: String {
+        "\(firstCurrencyIdentifier)/\(secondCurrencyIdentifier)"
     }
     
-    var secondCurrencyIdentifier: String? {
-        id.components(separatedBy: "-").last
+    var firstCurrencyIdentifier: String {
+        currencyIdentifier.first ?? ""
+    }
+    
+    var secondCurrencyIdentifier: String {
+        currencyIdentifier.last ?? ""
+    }
+    
+    private var currencyIdentifier: [String] {
+        id.components(separatedBy: "-")
     }
 }

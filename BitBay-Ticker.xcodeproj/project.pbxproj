@@ -9,11 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
-		8C7783911F044DCF005454D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
-		8C7783921F044DCF005454D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; };
 		8C7F0D4E21CA242C002C6553 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
-		8C9146C41F09098200221180 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */; };
-		8C9146C71F090A5C00221180 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B9BF61F09066A002F0B5D /* RxTest.framework */; };
 		8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
@@ -27,6 +23,7 @@
 		8CCA6F3023A3A4FF0048B1B8 /* AdderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2F23A3A4FF0048B1B8 /* AdderRow.swift */; };
 		8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */; };
 		8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */; };
+		8CD1D20D23A3E8240045E60A /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1D20C23A3E8240045E60A /* TickerTests.swift */; };
 		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 		8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
@@ -104,6 +101,7 @@
 		8CCA6F2F23A3A4FF0048B1B8 /* AdderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderRow.swift; sourceTree = "<group>"; };
 		8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifier.swift; sourceTree = "<group>"; };
 		8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifierTests.swift; sourceTree = "<group>"; };
+		8CD1D20C23A3E8240045E60A /* TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTests.swift; sourceTree = "<group>"; };
 		8CD60C561F5BD34200ABDB23 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* BitBay-TickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BitBay-TickerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,10 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C9146C41F09098200221180 /* RxBlocking.framework in Frameworks */,
-				8C7783911F044DCF005454D0 /* RxCocoa.framework in Frameworks */,
-				8C9146C71F090A5C00221180 /* RxTest.framework in Frameworks */,
-				8C7783921F044DCF005454D0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */,
+				8CD1D20C23A3E8240045E60A /* TickerTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,7 +325,6 @@
 				8CC185081EFE4CAC0083DA30 /* Sources */,
 				8CC185091EFE4CAC0083DA30 /* Frameworks */,
 				8CC1850A1EFE4CAC0083DA30 /* Resources */,
-				8C9146C51F0909B800221180 /* Run Script For Carthage */,
 			);
 			buildRules = (
 			);
@@ -469,25 +463,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		8C9146C51F0909B800221180 /* Run Script For Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script For Carthage";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -515,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierTests.swift in Sources */,
+				8CD1D20D23A3E8240045E60A /* TickerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,10 +720,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "BitBay-TickerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-TickerTests";
@@ -766,10 +738,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "BitBay-TickerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-TickerTests";
