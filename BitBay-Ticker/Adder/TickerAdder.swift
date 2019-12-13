@@ -2,8 +2,19 @@ import SwiftUI
 
 struct TickerAdder: View {
     
+    @EnvironmentObject private var userData: UserData
+    
     var body: some View {
-        Text("Add View")
+        NavigationView {
+            List {
+                ForEach(userData.availableTickersIdentifiersToAdd) { tickerIdentifier in
+                    AdderRow(text: tickerIdentifier.title)
+                        .padding(.top)
+                        .padding(.bottom)
+                }
+            }
+            .navigationBarTitle(Text("add.ticker.title"))
+        }
     }
     
 }

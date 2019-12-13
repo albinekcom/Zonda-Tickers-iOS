@@ -3,6 +3,7 @@ import SwiftUI
 struct TickerList: View {
     
     @EnvironmentObject private var userData: UserData
+    @State var isPresentingTickerAdderView = false
     
     var body: some View {
         NavigationView {
@@ -20,7 +21,17 @@ struct TickerList: View {
                 .onDelete(perform: delete)
             }
             .navigationBarTitle(Text("tickers.title"))
-            .navigationBarItems(trailing: EditButton())
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        self.isPresentingTickerAdderView = true
+                    }) {
+                        Text("Add")
+                    }.sheet(isPresented: $isPresentingTickerAdderView) {
+                        TickerAdder().environmentObject(self.userData)
+                    },
+                trailing: EditButton()
+            )
         }
     }
     

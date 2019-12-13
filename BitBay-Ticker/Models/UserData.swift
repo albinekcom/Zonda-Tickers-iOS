@@ -7,6 +7,7 @@ final class UserData: ObservableObject {
     
     init() {
         setUpFakeTickers()
+        setUpFakeAvailableTickersIdentifiersToAdd()
     }
     
     private func setUpFakeTickers() {
@@ -22,10 +23,15 @@ final class UserData: ObservableObject {
         let secondCurrency3 = Currency(currency: "ETH", minimumOffer: 0.01, scale: 2)
         let ticker3 = Ticker(id: "ETH-PLN", firstCurrency: firstCurrency3, secondCurrency: secondCurrency3, highestBid: 123, lowestAsk: 456, rate: 789, previousRate: 333.33)
         
-        tickers = []
         tickers.append(ticker1)
         tickers.append(ticker2)
         tickers.append(ticker3)
+    }
+    
+    private func setUpFakeAvailableTickersIdentifiersToAdd() {
+        availableTickersIdentifiersToAdd.append(TickerIdentifier(id: "LSK-PLN"))
+        availableTickersIdentifiersToAdd.append(TickerIdentifier(id: "XMR-EUR"))
+        availableTickersIdentifiersToAdd.append(TickerIdentifier(id: "TRX-GBP"))
     }
     
 }

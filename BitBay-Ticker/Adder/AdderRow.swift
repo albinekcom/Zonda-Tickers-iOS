@@ -10,7 +10,6 @@ struct AdderRow: View {
             Text(text)
             Spacer()
         }
-        .padding()
     }
     
 }
