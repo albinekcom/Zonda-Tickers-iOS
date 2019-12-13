@@ -3,7 +3,7 @@ import SwiftUI
 struct TickerList: View {
     
     @EnvironmentObject private var userData: UserData
-    @State var isPresentingTickerAdderView = false
+    @State private var isPresentingTickerAdder = false
     
     var body: some View {
         NavigationView {
@@ -24,11 +24,11 @@ struct TickerList: View {
             .navigationBarItems(
                 leading:
                     Button(action: {
-                        self.isPresentingTickerAdderView = true
+                        self.isPresentingTickerAdder.toggle()
                     }) {
-                        Image(systemName: "plus.circle")
-                    }.sheet(isPresented: $isPresentingTickerAdderView) {
-                        TickerAdder().environmentObject(self.userData)
+                        Image(systemName: "plus.circle") // TODO: Increase tapping
+                    }.sheet(isPresented: $isPresentingTickerAdder) {
+                        TickerAdder(isPresented: self.$isPresentingTickerAdder).environmentObject(self.userData)
                     },
                 trailing: EditButton()
             )

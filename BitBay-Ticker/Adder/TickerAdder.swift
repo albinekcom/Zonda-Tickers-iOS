@@ -3,6 +3,7 @@ import SwiftUI
 struct TickerAdder: View {
     
     @EnvironmentObject private var userData: UserData
+    @Binding var isPresented: Bool
     
     var body: some View {
         NavigationView {
@@ -11,6 +12,10 @@ struct TickerAdder: View {
                     AdderRow(text: tickerIdentifier.title)
                         .padding(.top)
                         .padding(.bottom)
+                        .onTapGesture {
+                            self.userData.appendTicker(from: tickerIdentifier)
+                            self.isPresented.toggle()
+                        }
                 }
             }
             .navigationBarTitle(Text("add.ticker.title"))
@@ -23,7 +28,7 @@ struct TickerAdder: View {
 struct TickerAdder_Previews: PreviewProvider {
     
     static var previews: some View {
-        TickerAdder()
+        TickerAdder(isPresented: .constant(true))
     }
     
 }

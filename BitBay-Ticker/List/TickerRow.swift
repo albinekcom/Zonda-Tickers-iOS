@@ -8,7 +8,7 @@ struct TickerRow: View {
         HStack {
             Text(ticker.title)
             Spacer()
-            Text("\(ticker.previousRate)")
+            Text("\(ticker.previousRate ?? 0)")
         }
     }
     

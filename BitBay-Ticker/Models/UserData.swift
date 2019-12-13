@@ -34,4 +34,10 @@ final class UserData: ObservableObject {
         availableTickersIdentifiersToAdd.append(TickerIdentifier(id: "TRX-GBP"))
     }
     
+    func appendTicker(from tickerIdentifier: TickerIdentifier) {
+        let ticker = Ticker(id: tickerIdentifier.id, firstCurrency: nil, secondCurrency: nil, highestBid: nil, lowestAsk: nil, rate: nil, previousRate: nil)
+        
+        tickers.append(ticker)
+    }
+    
 }
