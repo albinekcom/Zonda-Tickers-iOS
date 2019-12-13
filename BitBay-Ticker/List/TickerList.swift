@@ -5,9 +5,31 @@ struct TickerList: View {
     @EnvironmentObject private var userData: UserData
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("Hello, Ticker List!")
+        NavigationView {
+            List {
+                ForEach(userData.tickers) { ticker in
+                    NavigationLink(
+                        destination: TickerDetail(ticker: ticker).environmentObject(self.userData)
+                    ) {
+                        TickerRow(ticker: ticker)
+                            .padding(.top)
+                            .padding(.bottom)
+                    }
+                }
+                .onMove(perform: move)
+                .onDelete(perform: delete)
+            }
+            .navigationBarTitle(Text("tickers.title"))
+            .navigationBarItems(trailing: EditButton())
         }
+    }
+    
+    private func delete(at offsets: IndexSet) {
+        userData.tickers.remove(atOffsets: offsets)
+    }
+    
+    private func move(from source: IndexSet, to destination: Int) {
+        userData.tickers.move(fromOffsets: source, toOffset: destination)
     }
     
 }
@@ -16,10 +38,13 @@ struct TickerList: View {
 struct TickerList_Previews: PreviewProvider {
     
     static var previews: some View {
-        Group {
-           TickerList()
-              .environment(\.colorScheme, .light)
+        ForEach(["iPhone 11 Pro"], id: \.self) { deviceName in
+            TickerList()
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
         }
+        .environmentObject(UserData())
+        .environment(\.colorScheme, .dark)
     }
     
 }

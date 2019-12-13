@@ -147,8 +147,8 @@
 		8C6FB62D23A2CCBD00724C86 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				8CCA6F2923A389740048B1B8 /* TickerRow.swift */,
 				8C6FB62E23A2CCCA00724C86 /* TickerList.swift */,
+				8CCA6F2923A389740048B1B8 /* TickerRow.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 				8CEE9B5523A2DBAA00D5B24B /* Models */,
 				8C6FB62D23A2CCBD00724C86 /* List */,
 				8CCA6F2423A368FF0048B1B8 /* Detail */,
-				8CCA6F2323A368F90048B1B8 /* Add */,
+				8CCA6F2323A368F90048B1B8 /* Adder */,
 				8CC7DDA81EFFEDD500050A7F /* Supporting Files */,
 				8C6FB63223A2CE2200724C86 /* Translations */,
 				8CC185021EFE4CAC0083DA30 /* Assets.xcassets */,
@@ -217,12 +217,12 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8CCA6F2323A368F90048B1B8 /* Add */ = {
+		8CCA6F2323A368F90048B1B8 /* Adder */ = {
 			isa = PBXGroup;
 			children = (
 				8CCA6F2523A369220048B1B8 /* TickerAdder.swift */,
 			);
-			path = Add;
+			path = Adder;
 			sourceTree = "<group>";
 		};
 		8CCA6F2423A368FF0048B1B8 /* Detail */ = {

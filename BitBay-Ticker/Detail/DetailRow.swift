@@ -2,12 +2,12 @@ import SwiftUI
 
 struct DetailRow: View {
     
-    let title: String
+    let title: Text
     let value: String
     
     var body: some View {
         HStack {
-            Text(title)
+            title
             Spacer()
             Text(value)
         }.padding()
@@ -19,7 +19,7 @@ struct DetailRow: View {
 struct DetailRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        let title = "Test Title"
+        let title = Text("Test Title")
         let value = "Some Value"
         
         return Group {

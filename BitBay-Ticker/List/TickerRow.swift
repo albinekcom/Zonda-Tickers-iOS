@@ -9,7 +9,7 @@ struct TickerRow: View {
             Text("\(ticker.firstCurrency.currency)/\(ticker.secondCurrency.currency)")
             Spacer()
             Text("\(ticker.previousRate)")
-        }.padding()
+        }
     }
     
 }
