@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C41BA2923A2D3740054297C /* BitBay_Ticker_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C41BA2823A2D3740054297C /* BitBay_Ticker_Tests.swift */; };
-		8C6FB62F23A2CCCA00724C86 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* ListView.swift */; };
+		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C7783911F044DCF005454D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */; };
 		8C7783921F044DCF005454D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2F173E1F02A56E006FD66F /* RxSwift.framework */; };
@@ -20,6 +20,10 @@
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
+		8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2523A369220048B1B8 /* TickerAdder.swift */; };
+		8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2723A369340048B1B8 /* TickerDetail.swift */; };
+		8CCA6F2A23A389740048B1B8 /* TickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2923A389740048B1B8 /* TickerRow.swift */; };
+		8CCA6F2C23A389C00048B1B8 /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2B23A389C00048B1B8 /* DetailRow.swift */; };
 		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 		8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
@@ -68,7 +72,7 @@
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8C41BA2823A2D3740054297C /* BitBay_Ticker_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitBay_Ticker_Tests.swift; sourceTree = "<group>"; };
 		8C6FB62923A2CBD400724C86 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
-		8C6FB62E23A2CCCA00724C86 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		8C6FB62E23A2CCCA00724C86 /* TickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerList.swift; sourceTree = "<group>"; };
 		8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C7F0D3221CA23EE002C6553 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
 		8C7F0D3321CA23EE002C6553 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Carthage/Build/iOS/FirebaseInstanceID.framework; sourceTree = "<group>"; };
@@ -90,6 +94,10 @@
 		8CC1850C1EFE4CAC0083DA30 /* BitBay-TickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BitBay-TickerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC508D51FD2D59000F14AB2 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		8CCA6F2523A369220048B1B8 /* TickerAdder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerAdder.swift; sourceTree = "<group>"; };
+		8CCA6F2723A369340048B1B8 /* TickerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerDetail.swift; sourceTree = "<group>"; };
+		8CCA6F2923A389740048B1B8 /* TickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRow.swift; sourceTree = "<group>"; };
+		8CCA6F2B23A389C00048B1B8 /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
 		8CD60C561F5BD34200ABDB23 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* BitBay-TickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BitBay-TickerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +145,8 @@
 		8C6FB62D23A2CCBD00724C86 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				8C6FB62E23A2CCCA00724C86 /* ListView.swift */,
+				8CCA6F2923A389740048B1B8 /* TickerRow.swift */,
+				8C6FB62E23A2CCCA00724C86 /* TickerList.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -176,6 +185,8 @@
 			children = (
 				8CEE9B5523A2DBAA00D5B24B /* Model */,
 				8C6FB62D23A2CCBD00724C86 /* List */,
+				8CCA6F2423A368FF0048B1B8 /* Detail */,
+				8CCA6F2323A368F90048B1B8 /* Add */,
 				8CC7DDA81EFFEDD500050A7F /* Supporting Files */,
 				8C6FB63223A2CE2200724C86 /* Translations */,
 				8CC185021EFE4CAC0083DA30 /* Assets.xcassets */,
@@ -202,6 +213,23 @@
 				8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CCA6F2323A368F90048B1B8 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				8CCA6F2523A369220048B1B8 /* TickerAdder.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		8CCA6F2423A368FF0048B1B8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8CCA6F2723A369340048B1B8 /* TickerDetail.swift */,
+				8CCA6F2B23A389C00048B1B8 /* DetailRow.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		8CDFD47B1F084106009F1E19 /* BitBay-TickerUITests */ = {
@@ -450,8 +478,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C6FB62F23A2CCCA00724C86 /* ListView.swift in Sources */,
+				8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */,
 				8CEE9B5923A2DCCD00D5B24B /* Currency.swift in Sources */,
+				8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */,
+				8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */,
+				8CCA6F2A23A389740048B1B8 /* TickerRow.swift in Sources */,
+				8CCA6F2C23A389C00048B1B8 /* DetailRow.swift in Sources */,
 				8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
