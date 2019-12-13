@@ -2,6 +2,8 @@ import SwiftUI
 
 struct TickerList: View {
     
+    @EnvironmentObject private var userData: UserData
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Hello, Ticker List!")

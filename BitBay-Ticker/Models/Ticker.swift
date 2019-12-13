@@ -1,8 +1,8 @@
-struct Ticker {
+struct Ticker: Hashable, Codable, Identifiable {
     
     let id: String
-    let first: Currency
-    let second: Currency
+    let firstCurrency: Currency
+    let secondCurrency: Currency
     let highestBid: Double
     let lowestAsk: Double
     let rate: Double
