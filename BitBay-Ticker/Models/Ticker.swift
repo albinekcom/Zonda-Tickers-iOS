@@ -1,12 +1,12 @@
-struct Ticker: Hashable, Codable, Identifiable {
+struct Ticker: Hashable, Codable, Identifiable, Equatable {
     
     let id: String
-    let firstCurrency: Currency?
-    let secondCurrency: Currency?
-    let highestBid: Double?
-    let lowestAsk: Double?
-    let rate: Double?
-    let previousRate: Double?
+    var firstCurrency: Currency?
+    var secondCurrency: Currency?
+    var highestBid: Double?
+    var lowestAsk: Double?
+    var rate: Double?
+    var previousRate: Double?
     
     var title: String {
         "\(firstCurrencyIdentifier)/\(secondCurrencyIdentifier)"

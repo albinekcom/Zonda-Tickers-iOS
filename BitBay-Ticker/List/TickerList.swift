@@ -33,6 +33,7 @@ struct TickerList: View {
                     },
                 trailing: EditButton()
             )
+            .onAppear(perform: refreshAllTickers)
         }
     }
     
@@ -42,6 +43,10 @@ struct TickerList: View {
     
     private func move(from source: IndexSet, to destination: Int) {
         userData.tickers.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    private func refreshAllTickers() {
+        userData.refreshAllTickers()
     }
     
 }

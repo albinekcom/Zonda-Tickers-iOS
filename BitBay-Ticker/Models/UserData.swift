@@ -2,7 +2,8 @@ import Combine
 
 final class UserData: ObservableObject {
     
-    private let allAvailableTickerIdentifiersFetcher: AllAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
+    private let allAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
+    private let tickerValuesFetcher = TickerValuesFetcher()
     
     @Published var tickers: [Ticker] = []
     @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
@@ -11,12 +12,34 @@ final class UserData: ObservableObject {
         setUpFakeTickers()
     }
     
+    func refreshAllTickers() {
+        for ticker in tickers {
+            refresh(ticker: ticker)
+        }
+    }
+    
+    func refresh(ticker: Ticker) {
+        tickerValuesFetcher.fetchValues(for: ticker.id) { [weak self] tickerAPIResponse in
+            var refreshedTicker = ticker
+            
+            refreshedTicker.highestBid = Double(tickerAPIResponse?.highestBid ?? "")
+            refreshedTicker.lowestAsk = Double(tickerAPIResponse?.lowestAsk ?? "")
+            refreshedTicker.rate = Double(tickerAPIResponse?.rate ?? "")
+            refreshedTicker.previousRate = Double(tickerAPIResponse?.previousRate ?? "")
+            
+            if let index = self?.tickers.firstIndex(of: ticker) {
+                self?.tickers[index] = refreshedTicker
+            }
+        }
+        
+    }
+    
     func refreshAllAvailableTickersIdentifiersToAdd() {
-        allAvailableTickerIdentifiersFetcher.load { allAvailableTickersIdentifiers in
-            let userTickerIdentifiers = self.tickers.map { TickerIdentifier(id: $0.id) }
+        allAvailableTickerIdentifiersFetcher.fetch { [weak self] allAvailableTickersIdentifiers in
+            let userTickerIdentifiers = self?.tickers.map { TickerIdentifier(id: $0.id) } ?? []
             let all = allAvailableTickersIdentifiers ?? []
             
-            self.availableTickersIdentifiersToAdd = all.filter { userTickerIdentifiers.contains($0) == false }
+            self?.availableTickersIdentifiersToAdd = all.filter { userTickerIdentifiers.contains($0) == false }
         }
     }
     

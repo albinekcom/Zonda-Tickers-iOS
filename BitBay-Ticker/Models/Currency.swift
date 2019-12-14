@@ -1,4 +1,4 @@
-struct Currency: Hashable, Codable {
+struct Currency: Hashable, Codable, Equatable {
     
     let currency: String
     let minimumOffer: Double

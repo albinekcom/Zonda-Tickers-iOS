@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8C0688AD23A4DE75003C45A3 /* AllAvailableTickerIdentifiersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688AC23A4DE75003C45A3 /* AllAvailableTickerIdentifiersFetcher.swift */; };
+		8C0688AF23A4F385003C45A3 /* TickerValuesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688AE23A4F385003C45A3 /* TickerValuesFetcher.swift */; };
+		8C0688B123A53D31003C45A3 /* TickerFullAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B023A53D31003C45A3 /* TickerFullAPIResponse.swift */; };
+		8C0688B323A53D4F003C45A3 /* AvailableTickersAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B223A53D4F003C45A3 /* AvailableTickersAPIResponse.swift */; };
 		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C7F0D4E21CA242C002C6553 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
@@ -69,6 +72,9 @@
 		33A699178FC3E6814FE15A91 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7E6DBCB5CEC98873275BFD9D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8C0688AC23A4DE75003C45A3 /* AllAvailableTickerIdentifiersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAvailableTickerIdentifiersFetcher.swift; sourceTree = "<group>"; };
+		8C0688AE23A4F385003C45A3 /* TickerValuesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerValuesFetcher.swift; sourceTree = "<group>"; };
+		8C0688B023A53D31003C45A3 /* TickerFullAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerFullAPIResponse.swift; sourceTree = "<group>"; };
+		8C0688B223A53D4F003C45A3 /* AvailableTickersAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTickersAPIResponse.swift; sourceTree = "<group>"; };
 		8C0B9BF61F09066A002F0B5D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -149,7 +155,10 @@
 		8C0688AB23A4DE5E003C45A3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8C0688AE23A4F385003C45A3 /* TickerValuesFetcher.swift */,
+				8C0688B023A53D31003C45A3 /* TickerFullAPIResponse.swift */,
 				8C0688AC23A4DE75003C45A3 /* AllAvailableTickerIdentifiersFetcher.swift */,
+				8C0688B223A53D4F003C45A3 /* AvailableTickersAPIResponse.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -472,7 +481,9 @@
 			files = (
 				8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */,
 				8CEE9B5923A2DCCD00D5B24B /* Currency.swift in Sources */,
+				8C0688AF23A4F385003C45A3 /* TickerValuesFetcher.swift in Sources */,
 				8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */,
+				8C0688B123A53D31003C45A3 /* TickerFullAPIResponse.swift in Sources */,
 				8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */,
 				8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */,
 				8CCA6F2A23A389740048B1B8 /* TickerRow.swift in Sources */,
@@ -483,6 +494,7 @@
 				8CCA6F3023A3A4FF0048B1B8 /* AdderRow.swift in Sources */,
 				8CCA6F2E23A38EB60048B1B8 /* UserData.swift in Sources */,
 				8CD1D21023A42D940045E60A /* KeyboardHost.swift in Sources */,
+				8C0688B323A53D4F003C45A3 /* AvailableTickersAPIResponse.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

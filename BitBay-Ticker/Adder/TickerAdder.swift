@@ -16,7 +16,7 @@ struct TickerAdder: View {
                         .disableAutocorrection(true)
                     ForEach(userData.availableTickersIdentifiersToAdd.filter {
                         self.searchTerm.isEmpty ? true :
-                            $0.id.localizedCaseInsensitiveContains(self.searchTerm)
+                            $0.title.localizedCaseInsensitiveContains(self.searchTerm)
                     }) { tickerIdentifier in
                         AdderRow(text: tickerIdentifier.title)
                             .padding(.top)
