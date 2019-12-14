@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DetailRow: View {
+struct BasicRow: View {
     
     let title: Text
     let value: String
@@ -10,21 +10,21 @@ struct DetailRow: View {
             title
             Spacer()
             Text(value)
-        }.padding()
+        }
     }
     
 }
 
 #if DEBUG
-struct DetailRow_Previews: PreviewProvider {
+struct BaiscRow_Previews: PreviewProvider {
     
     static var previews: some View {
         let title = Text("Test Title")
-        let value = "Some Value"
+        let value = "$ Some Value"
         
         return Group {
-            DetailRow(title: title, value: value)
-            DetailRow(title: title, value: value)
+            BasicRow(title: title, value: value)
+            BasicRow(title: title, value: value)
         }
         .previewLayout(.fixed(width: 400, height: 70))
     }

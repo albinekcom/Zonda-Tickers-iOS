@@ -2,20 +2,19 @@ import SwiftUI
 
 struct TickerDetail: View {
     
-    @EnvironmentObject var userData: UserData
-    let ticker: Ticker
+    let viewModel: TickerDetailViewModel
     
     var body: some View {
         List {
-            DetailRow(title: Text("ticker.details.last"), value: "\(ticker.rate ?? 0)")
-            DetailRow(title: Text("ticker.details.max"), value: "\(ticker.highestRate ?? 0)")
-            DetailRow(title: Text("ticker.details.min"), value: "\(ticker.lowestRate ?? 0)")
-            DetailRow(title: Text("ticker.details.bid"), value: "\(ticker.highestBid ?? 0)")
-            DetailRow(title: Text("ticker.details.ask"), value: "\(ticker.lowestAsk ?? 0)")
-            DetailRow(title: Text("ticker.details.average"), value: "\(ticker.average ?? 0)")
-            DetailRow(title: Text("ticker.details.volume"), value: "\(ticker.volume ?? 0)")
+            BasicRow(title: viewModel.title(for: .rate), value: viewModel.value(for: .rate))
+            BasicRow(title: viewModel.title(for: .highestRate), value: viewModel.value(for: .highestRate))
+            BasicRow(title: viewModel.title(for: .lowestRate), value: viewModel.value(for: .lowestRate))
+            BasicRow(title: viewModel.title(for: .highestBid), value: viewModel.value(for: .highestBid))
+            BasicRow(title: viewModel.title(for: .lowestAsk), value: viewModel.value(for: .lowestAsk))
+            BasicRow(title: viewModel.title(for: .average), value: viewModel.value(for: .average))
+            BasicRow(title: viewModel.title(for: .volume), value: viewModel.value(for: .volume))
         }
-        .navigationBarTitle(Text(ticker.title))
+        .navigationBarTitle(viewModel.navigationBarTitle)
     }
     
 }
@@ -26,7 +25,7 @@ struct TickerDetail_Previews: PreviewProvider {
     static var previews: some View {
         let userData = UserData()
         
-        return TickerDetail(ticker: userData.tickers[0])
+        return TickerDetail(viewModel: TickerDetailViewModel(model: userData.tickers[0]))
             .environmentObject(userData)
             .environment(\.locale, .init(identifier: "en"))
     }

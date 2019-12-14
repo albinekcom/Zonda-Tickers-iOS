@@ -2,12 +2,12 @@ import SwiftUI
 
 struct AdderRow: View {
     
-    let text: String
+    let text: Text
     
     var body: some View {
         HStack {
             Image(systemName: "plus.circle.fill")
-            Text(text)
+            text
             Spacer()
         }
     }
@@ -19,7 +19,7 @@ struct AdderRow_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            AdderRow(text: "BTC-PLN")
+            AdderRow(text: Text("BTC-PLN"))
         }
         .previewLayout(.fixed(width: 400, height: 70))
     }

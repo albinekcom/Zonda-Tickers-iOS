@@ -25,10 +25,12 @@ final class UserData: ObservableObject {
         availableTickersIdentifiersToAdd.removeAll { $0 == tickerIdentifier }
     }
     
-    func appendTicker(from tickerIdentifier: TickerIdentifier) {
+    func appendAndRefreshTicker(from tickerIdentifier: TickerIdentifier) {
         let ticker = Ticker(id: tickerIdentifier.id)
         
         tickers.append(ticker)
+        
+        refresh(ticker: ticker)
     }
     
     // MARK: - Refreshing
@@ -37,7 +39,7 @@ final class UserData: ObservableObject {
         tickers.forEach { refresh(ticker: $0) }
     }
     
-    private func refresh(ticker: Ticker) {
+    func refresh(ticker: Ticker) {
         refreshValues(for: ticker)
         refreshStatistics(for: ticker)
     }

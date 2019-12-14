@@ -18,11 +18,10 @@ struct TickerAdder: View {
                         self.searchTerm.isEmpty ? true :
                             $0.title.localizedCaseInsensitiveContains(self.searchTerm)
                     }) { tickerIdentifier in
-                        AdderRow(text: tickerIdentifier.title)
-                            .padding(.top)
-                            .padding(.bottom)
+                        AdderRow(text: Text(tickerIdentifier.title))
+                            .padding()
                             .onTapGesture {
-                                self.userData.appendTicker(from: tickerIdentifier)
+                                self.userData.appendAndRefreshTicker(from: tickerIdentifier)
                                 self.userData.removeAvailableToAddTickerIdentifier(tickerIdentifier: tickerIdentifier)
                             }
                     }

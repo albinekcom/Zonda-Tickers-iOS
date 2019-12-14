@@ -10,9 +10,9 @@ struct TickerList: View {
             List {
                 ForEach(userData.tickers) { ticker in
                     NavigationLink(
-                        destination: TickerDetail(ticker: ticker).environmentObject(self.userData)
+                        destination: TickerDetail(viewModel: TickerDetailViewModel(model: ticker))
                     ) {
-                        TickerRow(ticker: ticker)
+                        BasicRow(title: Text(ticker.title), value: "\(ticker.rate ?? 0)")
                             .padding(.top)
                             .padding(.bottom)
                     }
@@ -27,7 +27,7 @@ struct TickerList: View {
                         self.userData.refreshAllAvailableTickersIdentifiersToAdd()
                         self.isPresentingTickerAdder.toggle()
                     }) {
-                        Image(systemName: "plus.circle") // TODO: Increase tapping
+                        Image(systemName: "plus.circle") // TODO: Increase tapping area
                     }.sheet(isPresented: $isPresentingTickerAdder) {
                         TickerAdder(isPresented: self.$isPresentingTickerAdder).environmentObject(self.userData)
                     },
