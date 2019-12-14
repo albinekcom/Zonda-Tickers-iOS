@@ -24,6 +24,7 @@ struct TickerList: View {
             .navigationBarItems(
                 leading:
                     Button(action: {
+                        self.userData.refreshAllAvailableTickersIdentifiersToAdd()
                         self.isPresentingTickerAdder.toggle()
                     }) {
                         Image(systemName: "plus.circle") // TODO: Increase tapping

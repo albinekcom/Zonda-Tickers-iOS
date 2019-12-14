@@ -23,11 +23,18 @@ struct TickerAdder: View {
                             .padding(.bottom)
                             .onTapGesture {
                                 self.userData.appendTicker(from: tickerIdentifier)
-                                self.isPresented.toggle()
+                                self.userData.removeAvailableToAddTickerIdentifier(tickerIdentifier: tickerIdentifier)
                             }
                     }
                 }
                 .navigationBarTitle(Text("add.ticker.title"), displayMode: .inline)
+                .navigationBarItems(
+                    trailing: Button(action: {
+                        self.isPresented.toggle()
+                    }) {
+                        Text("Done") // TODO: Use system button or add Localizable key here
+                    }
+                )
             }
         }
     }

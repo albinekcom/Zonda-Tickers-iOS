@@ -2,12 +2,32 @@ import Combine
 
 final class UserData: ObservableObject {
     
+    private let allAvailableTickerIdentifiersFetcher: AllAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
+    
     @Published var tickers: [Ticker] = []
     @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
     
     init() {
         setUpFakeTickers()
-        setUpFakeAvailableTickersIdentifiersToAdd()
+    }
+    
+    func refreshAllAvailableTickersIdentifiersToAdd() {
+        allAvailableTickerIdentifiersFetcher.load { allAvailableTickersIdentifiers in
+            let userTickerIdentifiers = self.tickers.map { TickerIdentifier(id: $0.id) }
+            let all = allAvailableTickersIdentifiers ?? []
+            
+            self.availableTickersIdentifiersToAdd = all.filter { userTickerIdentifiers.contains($0) == false }
+        }
+    }
+    
+    func removeAvailableToAddTickerIdentifier(tickerIdentifier: TickerIdentifier) {
+        availableTickersIdentifiersToAdd.removeAll { $0 == tickerIdentifier }
+    }
+    
+    func appendTicker(from tickerIdentifier: TickerIdentifier) {
+        let ticker = Ticker(id: tickerIdentifier.id, firstCurrency: nil, secondCurrency: nil, highestBid: nil, lowestAsk: nil, rate: nil, previousRate: nil)
+        
+        tickers.append(ticker)
     }
     
     private func setUpFakeTickers() {
@@ -26,18 +46,6 @@ final class UserData: ObservableObject {
         tickers.append(ticker1)
         tickers.append(ticker2)
         tickers.append(ticker3)
-    }
-    
-    private func setUpFakeAvailableTickersIdentifiersToAdd() {
-        availableTickersIdentifiersToAdd.append(TickerIdentifier(id: "LSK-PLN"))
-        availableTickersIdentifiersToAdd.append(TickerIdentifier(id: "XMR-EUR"))
-        availableTickersIdentifiersToAdd.append(TickerIdentifier(id: "TRX-GBP"))
-    }
-    
-    func appendTicker(from tickerIdentifier: TickerIdentifier) {
-        let ticker = Ticker(id: tickerIdentifier.id, firstCurrency: nil, secondCurrency: nil, highestBid: nil, lowestAsk: nil, rate: nil, previousRate: nil)
-        
-        tickers.append(ticker)
     }
     
 }
