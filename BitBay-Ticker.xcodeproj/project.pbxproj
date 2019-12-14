@@ -11,6 +11,7 @@
 		8C0688AF23A4F385003C45A3 /* TickerValuesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688AE23A4F385003C45A3 /* TickerValuesFetcher.swift */; };
 		8C0688B123A53D31003C45A3 /* TickerFullAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B023A53D31003C45A3 /* TickerFullAPIResponse.swift */; };
 		8C0688B323A53D4F003C45A3 /* AvailableTickersAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B223A53D4F003C45A3 /* AvailableTickersAPIResponse.swift */; };
+		8C0688B523A53F60003C45A3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B423A53F60003C45A3 /* Storage.swift */; };
 		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C7F0D4E21CA242C002C6553 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
@@ -75,6 +76,7 @@
 		8C0688AE23A4F385003C45A3 /* TickerValuesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerValuesFetcher.swift; sourceTree = "<group>"; };
 		8C0688B023A53D31003C45A3 /* TickerFullAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerFullAPIResponse.swift; sourceTree = "<group>"; };
 		8C0688B223A53D4F003C45A3 /* AvailableTickersAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTickersAPIResponse.swift; sourceTree = "<group>"; };
+		8C0688B423A53F60003C45A3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		8C0B9BF61F09066A002F0B5D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				8CD1D20F23A42D940045E60A /* KeyboardHost.swift */,
+				8C0688B423A53F60003C45A3 /* Storage.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				8C0688AF23A4F385003C45A3 /* TickerValuesFetcher.swift in Sources */,
 				8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */,
 				8C0688B123A53D31003C45A3 /* TickerFullAPIResponse.swift in Sources */,
+				8C0688B523A53F60003C45A3 /* Storage.swift in Sources */,
 				8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */,
 				8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */,
 				8CCA6F2A23A389740048B1B8 /* TickerRow.swift in Sources */,

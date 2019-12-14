@@ -1,5 +1,3 @@
-import Foundation
-
 struct TickerFullAPIResponse: Codable {
     
     struct TickerAPIResponse: Codable {

@@ -1,5 +1,3 @@
-import UIKit
-
 struct TickerIdentifier: Hashable, Codable, Identifiable, Equatable {
     
     let id: String
