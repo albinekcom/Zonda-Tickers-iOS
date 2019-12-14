@@ -5,11 +5,19 @@ final class UserData: ObservableObject {
     @Published var tickers: [Ticker] = []
     @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
     
+    var refreshingTimer: Timer?
+    
+    let timeBetweenRefreshesInSeconds: TimeInterval = 5
+    
     static let userDataTickersFileName = "user_data_tickers.json"
     
     private let allAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
     private let tickerValuesFetcher = TickerValuesFetcher()
     private let tickerStatisticsFetcher = TickerStatisticsFetcher()
+    
+    func setupRefreshingTimer() {
+        refreshingTimer = Timer.scheduledTimer(timeInterval: timeBetweenRefreshesInSeconds, target: self, selector: #selector(refreshAllTickers), userInfo: nil, repeats: true)
+    }
     
     // MARK: - Managing
     
@@ -18,27 +26,29 @@ final class UserData: ObservableObject {
     }
     
     func appendTicker(from tickerIdentifier: TickerIdentifier) {
-        let ticker = Ticker(id: tickerIdentifier.id, firstCurrency: nil, secondCurrency: nil, highestBid: nil, lowestAsk: nil, rate: nil)
+        let ticker = Ticker(id: tickerIdentifier.id)
         
         tickers.append(ticker)
     }
     
     // MARK: - Refreshing
     
-    func refreshAllTickers() {
-        for ticker in tickers {
-            refreshValues(for: ticker)
-            refreshStatistics(for: ticker)
-        }
+    @objc func refreshAllTickers() {
+        tickers.forEach { refresh(ticker: $0) }
     }
     
-    func refreshValues(for ticker: Ticker) {
-        tickerValuesFetcher.fetch(for: ticker.id) { [weak self] tickerAPIResponse in
+    private func refresh(ticker: Ticker) {
+        refreshValues(for: ticker)
+        refreshStatistics(for: ticker)
+    }
+    
+    private func refreshValues(for ticker: Ticker) {
+        tickerValuesFetcher.fetch(for: ticker.id) { [weak self] response in
             var refreshedTicker = ticker
             
-            refreshedTicker.highestBid = Double(tickerAPIResponse?.highestBid ?? "")
-            refreshedTicker.lowestAsk = Double(tickerAPIResponse?.lowestAsk ?? "")
-            refreshedTicker.rate = Double(tickerAPIResponse?.rate ?? "")
+            refreshedTicker.highestBid = response?.highestBid.doubleValue
+            refreshedTicker.lowestAsk = response?.lowestAsk.doubleValue
+            refreshedTicker.rate = response?.rate.doubleValue
             
             if let index = self?.tickers.firstIndex(of: ticker) {
                 self?.tickers[index] = refreshedTicker
@@ -46,14 +56,14 @@ final class UserData: ObservableObject {
         }
     }
     
-    func refreshStatistics(for ticker: Ticker) {
-        tickerStatisticsFetcher.fetch(for: ticker.id) { [weak self] tickerAPIResponse in
+    private func refreshStatistics(for ticker: Ticker) {
+        tickerStatisticsFetcher.fetch(for: ticker.id) { [weak self] response in
             var refreshedTicker = ticker
             
-            refreshedTicker.highestRate = Double(tickerAPIResponse?.h ?? "")
-            refreshedTicker.lowestRate = Double(tickerAPIResponse?.l ?? "")
-            refreshedTicker.volume = Double(tickerAPIResponse?.v ?? "")
-            refreshedTicker.average = Double(tickerAPIResponse?.r24h ?? "")
+            refreshedTicker.highestRate = response?.h.doubleValue
+            refreshedTicker.lowestRate = response?.l.doubleValue
+            refreshedTicker.volume = response?.v.doubleValue
+            refreshedTicker.average = response?.r24h.doubleValue
             
             if let index = self?.tickers.firstIndex(of: ticker) {
                 self?.tickers[index] = refreshedTicker
@@ -72,7 +82,11 @@ final class UserData: ObservableObject {
     
     // MARK: - Storing
     
-    func loadUserData() {
+    func loadUserData(completion: (() -> (Void))? = nil) {
+        defer {
+            completion?()
+        }
+        
         DispatchQueue.global(qos: .background).async {
             if Storage.fileExists(UserData.userDataTickersFileName, in: .documents) {
                 let tickersFromFile = Storage.retrieve(UserData.userDataTickersFileName, from: .documents, as: [Ticker].self)

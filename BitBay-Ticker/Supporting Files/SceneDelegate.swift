@@ -17,7 +17,10 @@ extension SceneDelegate: UIWindowSceneDelegate {
         window?.rootViewController = UIHostingController(rootView: TickerList().environmentObject(userData))
         window?.makeKeyAndVisible()
         
-        userData.loadUserData()
+        userData.loadUserData { [weak self] in
+            self?.userData.setupRefreshingTimer()
+            self?.userData.refreshAllTickers()
+        }
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {

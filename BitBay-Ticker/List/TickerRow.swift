@@ -18,9 +18,7 @@ struct TickerRow: View {
 struct TickerRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        let firstCurrency = Ticker.Currency(currency: "BTC", minimumOffer: 0.0001, scale: 3)
-        let secondCurrency = Ticker.Currency(currency: "PLN", minimumOffer: 0.01, scale: 2)
-        let ticker = Ticker(id: "BTC-PLN", firstCurrency: firstCurrency, secondCurrency: secondCurrency, highestBid: 123, lowestAsk: 456, rate: 789)
+        let ticker = Ticker(id: "BTC-PLN", rate: 789)
         
         return Group {
             TickerRow(ticker: ticker)

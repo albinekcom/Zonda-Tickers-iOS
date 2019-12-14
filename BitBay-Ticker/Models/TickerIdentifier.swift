@@ -1,4 +1,4 @@
-struct TickerIdentifier: Hashable, Codable, Identifiable, Equatable {
+struct TickerIdentifier: Codable, Equatable, Identifiable {
     
     let id: String
     

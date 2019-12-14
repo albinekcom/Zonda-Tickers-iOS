@@ -1,6 +1,6 @@
 import Foundation
 
-public class Storage {
+struct Storage {
     
     fileprivate init() { }
     

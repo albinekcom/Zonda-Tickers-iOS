@@ -1,6 +1,6 @@
-struct Ticker: Hashable, Codable, Identifiable, Equatable {
+struct Ticker: Codable, Equatable, Identifiable {
     
-    struct Currency: Hashable, Codable, Equatable {
+    struct Currency: Codable, Equatable {
         
         let currency: String
         let minimumOffer: Double
@@ -9,17 +9,16 @@ struct Ticker: Hashable, Codable, Identifiable, Equatable {
     }
     
     let id: String
-    var firstCurrency: Currency?
-    var secondCurrency: Currency?
-    var highestBid: Double?
-    var lowestAsk: Double?
     
-    var rate: Double?
-    
-    var highestRate: Double?
-    var lowestRate: Double?
-    var volume: Double?
-    var average: Double?
+    var firstCurrency: Currency? = nil
+    var secondCurrency: Currency? = nil
+    var highestBid: Double? = nil
+    var lowestAsk: Double? = nil
+    var rate: Double? = nil
+    var highestRate: Double? = nil
+    var lowestRate: Double? = nil
+    var volume: Double? = nil
+    var average: Double? = nil
     
     var title: String {
         "\(firstCurrencyIdentifier)/\(secondCurrencyIdentifier)"

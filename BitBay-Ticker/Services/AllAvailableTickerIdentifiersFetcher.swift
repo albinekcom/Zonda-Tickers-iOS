@@ -1,6 +1,6 @@
 import Foundation
 
-final class AllAvailableTickerIdentifiersFetcher {
+struct AllAvailableTickerIdentifiersFetcher {
     
     private let urlString = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
     

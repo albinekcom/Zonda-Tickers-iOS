@@ -1,6 +1,6 @@
 import Foundation
 
-final class TickerValuesFetcher {
+struct TickerValuesFetcher {
     
     private let endpointString = "https://api.bitbay.net/rest/trading/ticker/"
     
