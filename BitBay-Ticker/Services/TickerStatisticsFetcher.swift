@@ -1,10 +1,10 @@
 import Foundation
 
-final class TickerValuesFetcher {
+struct TickerStatisticsFetcher {
     
-    private let endpointString = "https://api.bitbay.net/rest/trading/ticker/"
+    private let endpointString = "https://api.bitbay.net/rest/trading/stats/"
     
-    func fetch(for pair: String, completion: @escaping (TickerValuesAPIResponse.TickerAPIResponse?) -> Void) {
+    func fetch(for pair: String, completion: @escaping (TickerStatisticsAPIResponse.StatisticsAPIResponse?) -> Void) {
         guard let url = URL(string: "\(endpointString)\(pair)") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -15,10 +15,10 @@ final class TickerValuesFetcher {
                     return
                 }
                 
-                let tickerFullAPIResponse = try JSONDecoder().decode(TickerValuesAPIResponse.self, from: data)
+                let tickerFullAPIResponse = try JSONDecoder().decode(TickerStatisticsAPIResponse.self, from: data)
                 
                 DispatchQueue.main.async {
-                    completion(tickerFullAPIResponse.ticker)
+                    completion(tickerFullAPIResponse.stats)
                 }
             } catch {
                 print("Failed to decode: \(error.localizedDescription)")
@@ -29,3 +29,4 @@ final class TickerValuesFetcher {
     }
     
 }
+

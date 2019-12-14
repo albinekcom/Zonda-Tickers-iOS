@@ -2,34 +2,63 @@ import Foundation
 
 final class UserData: ObservableObject {
     
-    private let allAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
-    private let tickerValuesFetcher = TickerValuesFetcher()
-    
     @Published var tickers: [Ticker] = []
     @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
     
     static let userDataTickersFileName = "user_data_tickers.json"
     
+    private let allAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
+    private let tickerValuesFetcher = TickerValuesFetcher()
+    private let tickerStatisticsFetcher = TickerStatisticsFetcher()
+    
+    // MARK: - Managing
+    
+    func removeAvailableToAddTickerIdentifier(tickerIdentifier: TickerIdentifier) {
+        availableTickersIdentifiersToAdd.removeAll { $0 == tickerIdentifier }
+    }
+    
+    func appendTicker(from tickerIdentifier: TickerIdentifier) {
+        let ticker = Ticker(id: tickerIdentifier.id, firstCurrency: nil, secondCurrency: nil, highestBid: nil, lowestAsk: nil, rate: nil)
+        
+        tickers.append(ticker)
+    }
+    
+    // MARK: - Refreshing
+    
     func refreshAllTickers() {
         for ticker in tickers {
-            refresh(ticker: ticker)
+            refreshValues(for: ticker)
+            refreshStatistics(for: ticker)
         }
     }
     
-    func refresh(ticker: Ticker) {
-        tickerValuesFetcher.fetchValues(for: ticker.id) { [weak self] tickerAPIResponse in
+    func refreshValues(for ticker: Ticker) {
+        tickerValuesFetcher.fetch(for: ticker.id) { [weak self] tickerAPIResponse in
             var refreshedTicker = ticker
             
             refreshedTicker.highestBid = Double(tickerAPIResponse?.highestBid ?? "")
             refreshedTicker.lowestAsk = Double(tickerAPIResponse?.lowestAsk ?? "")
             refreshedTicker.rate = Double(tickerAPIResponse?.rate ?? "")
-            refreshedTicker.previousRate = Double(tickerAPIResponse?.previousRate ?? "")
             
             if let index = self?.tickers.firstIndex(of: ticker) {
                 self?.tickers[index] = refreshedTicker
             }
         }
-        
+    }
+    
+    func refreshStatistics(for ticker: Ticker) {
+        tickerStatisticsFetcher.fetch(for: ticker.id) { [weak self] tickerAPIResponse in
+            var refreshedTicker = ticker
+            
+            refreshedTicker.highestRate = Double(tickerAPIResponse?.h ?? "")
+            refreshedTicker.lowestRate = Double(tickerAPIResponse?.l ?? "")
+            refreshedTicker.volume = Double(tickerAPIResponse?.v ?? "")
+            refreshedTicker.average = Double(tickerAPIResponse?.r24h ?? "")
+            
+            if let index = self?.tickers.firstIndex(of: ticker) {
+                self?.tickers[index] = refreshedTicker
+            }
+        }
     }
     
     func refreshAllAvailableTickersIdentifiersToAdd() {
@@ -39,16 +68,6 @@ final class UserData: ObservableObject {
             
             self?.availableTickersIdentifiersToAdd = all.filter { userTickerIdentifiers.contains($0) == false }
         }
-    }
-    
-    func removeAvailableToAddTickerIdentifier(tickerIdentifier: TickerIdentifier) {
-        availableTickersIdentifiersToAdd.removeAll { $0 == tickerIdentifier }
-    }
-    
-    func appendTicker(from tickerIdentifier: TickerIdentifier) {
-        let ticker = Ticker(id: tickerIdentifier.id, firstCurrency: nil, secondCurrency: nil, highestBid: nil, lowestAsk: nil, rate: nil, previousRate: nil)
-        
-        tickers.append(ticker)
     }
     
     // MARK: - Storing

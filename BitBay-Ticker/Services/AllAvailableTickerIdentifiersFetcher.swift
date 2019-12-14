@@ -2,7 +2,7 @@ import Foundation
 
 final class AllAvailableTickerIdentifiersFetcher {
     
-    let urlString = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
+    private let urlString = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
     
     func fetch(completion: @escaping ([TickerIdentifier]?) -> Void) {
         guard let url = URL(string: urlString) else { return }
@@ -18,8 +18,8 @@ final class AllAvailableTickerIdentifiersFetcher {
                 let availableTickersAPIResponse = try JSONDecoder().decode(AvailableTickersAPIResponse.self, from: data)
                 
                 DispatchQueue.main.async {
-                    let availableTickerStrings = availableTickersAPIResponse.data.availableTickers.map { $0.replacingOccurrences(of: "/", with: "-") }
-                    let availableTickerIdentifiers = availableTickerStrings.map { TickerIdentifier(id: $0) }
+                    let availableTickerStrings = availableTickersAPIResponse.data?.availableTickers?.map { $0.replacingOccurrences(of: "/", with: "-") }
+                    let availableTickerIdentifiers = availableTickerStrings?.compactMap { TickerIdentifier(id: $0) }
                     
                     completion(availableTickerIdentifiers)
                 }
