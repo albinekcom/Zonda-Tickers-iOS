@@ -2,7 +2,7 @@ import Foundation
 
 struct PrettyValueFormatter {
     
-    static var numberFormatter: NumberFormatter = {
+    private static var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.usesGroupingSeparator = true
@@ -17,14 +17,13 @@ struct PrettyValueFormatter {
             numberFormatter.minimumFractionDigits = scale
             numberFormatter.maximumFractionDigits = scale
         } else {
-            numberFormatter.minimumFractionDigits = 0
             numberFormatter.maximumFractionDigits = 10
         }
         
-        var output = ""
+        var output: String
         
         if let value = value, let prettyValue = numberFormatter.string(from: NSNumber(value: value)) {
-            output += prettyValue
+            output = prettyValue
         } else {
             output = "-"
         }
