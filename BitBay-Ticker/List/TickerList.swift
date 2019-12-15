@@ -1,3 +1,4 @@
+import StoreKit
 import SwiftUI
 
 struct TickerList: View {
@@ -34,6 +35,7 @@ struct TickerList: View {
                 trailing: EditButton()
             )
         }
+        .accentColor(.primary)
     }
     
     private func delete(at offsets: IndexSet) {

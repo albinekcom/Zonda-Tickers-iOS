@@ -36,6 +36,7 @@ struct TickerAdder: View {
                 )
             }
         }
+        .accentColor(.primary)
     }
 }
 
