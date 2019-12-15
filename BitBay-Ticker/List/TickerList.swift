@@ -21,18 +21,26 @@ struct TickerList: View {
                 .onMove(perform: move)
                 .onDelete(perform: delete)
             }
-            .navigationBarTitle(Text("tickers.title"))
+            .navigationBarTitle(Text("Tickers"))
             .navigationBarItems(
                 leading:
                     Button(action: {
                         self.userData.refreshAllAvailableTickersIdentifiersToAdd()
                         self.isPresentingTickerAdder.toggle()
                     }) {
-                        Image(systemName: "plus.circle") // TODO: Increase tapping area
-                    }.sheet(isPresented: $isPresentingTickerAdder) {
+                        HStack {
+                            Image(systemName: "plus")
+                                .font(Font.system(size: 22, weight: .light))
+                            Spacer()
+                        }
+                    }
+                    .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
+                    .sheet(isPresented: $isPresentingTickerAdder) {
                         TickerAdder(isPresented: self.$isPresentingTickerAdder).environmentObject(self.userData)
                     },
-                trailing: EditButton()
+                trailing:
+                    EditButton()
+                        .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
             )
         }
         .accentColor(.primary)

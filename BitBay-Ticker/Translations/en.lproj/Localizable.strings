@@ -1,19 +1,23 @@
+// Common
+
+"Close" = "Close";
+
 // List
 
-"tickers.title" = "Tickers";
+"Tickers" = "Tickers";
 
 // Detail
 
-"ticker.details.last" = "Last";
-"ticker.details.previous" = "Previous";
-"ticker.details.maximum" = "Maximum";
-"ticker.details.minimum" = "Minimum";
-"ticker.details.bid" = "Bid";
-"ticker.details.ask" = "Ask";
-"ticker.details.average" = "Average";
-"ticker.details.volume" = "Volume";
+"Last" = "Last";
+"Previous" = "Previous";
+"Maximum" = "Maximum";
+"Minimum" = "Minimum";
+"Bid" = "Bid";
+"Ask" = "Ask";
+"Average" = "Average";
+"Volume" = "Volume";
 
 // Adder
 
-"add.ticker.title" = "Add Ticker";
-"add.ticker.search.placeholder" = "Search";
+"Add Ticker" = "Add Ticker";
+"Search" = "Search";

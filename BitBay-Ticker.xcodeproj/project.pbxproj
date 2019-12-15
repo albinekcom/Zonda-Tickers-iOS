@@ -22,6 +22,7 @@
 		8C1F1D6823A652FF00D25D99 /* Color+ApplicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6723A652FF00D25D99 /* Color+ApplicationColors.swift */; };
 		8C1F1D6A23A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */; };
 		8C1F1D6D23A65A4000D25D99 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */; };
+		8C3EA62E23A6888000A501CD /* MimimumTouchTargetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */; };
 		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C7F0D4E21CA242C002C6553 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
@@ -97,6 +98,7 @@
 		8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
 		8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimimumTouchTargetSize.swift; sourceTree = "<group>"; };
 		8C6FB62923A2CBD400724C86 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		8C6FB62E23A2CCCA00724C86 /* TickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerList.swift; sourceTree = "<group>"; };
 		8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				8C0688BA23A56994003C45A3 /* String+Extensions.swift */,
 				8C1F1D6723A652FF00D25D99 /* Color+ApplicationColors.swift */,
 				8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */,
+				8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				8C1F1D6023A62C5D00D25D99 /* PrettyValueFormatter.swift in Sources */,
 				8C0688B323A53D4F003C45A3 /* AvailableTickersAPIResponse.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
+				8C3EA62E23A6888000A501CD /* MimimumTouchTargetSize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

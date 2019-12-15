@@ -10,7 +10,7 @@ struct TickerAdder: View {
     var body: some View {
         NavigationView {
             List {
-                TextField(NSLocalizedString("add.ticker.search.placeholder", comment: ""), text: $searchTerm)
+                TextField(NSLocalizedString("Search", comment: ""), text: $searchTerm)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
                 ForEach(userData.availableTickersIdentifiersToAdd.filter {
@@ -25,12 +25,13 @@ struct TickerAdder: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("add.ticker.title"), displayMode: .inline)
+            .navigationBarTitle(Text("Add Ticker"), displayMode: .inline)
             .navigationBarItems(
                 trailing: Button(action: {
                     self.isPresented.toggle()
                 }) {
-                    Text("Done") // TODO: Use system button or add Localizable key here
+                    Text("Close")
+                        .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
                 }
             )
             .modifier(AdaptsToSoftwareKeyboard())

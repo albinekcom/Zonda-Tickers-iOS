@@ -1,19 +1,23 @@
+// Common
+
+"Close" = "बंद करे";
+
 // List
 
-"tickers.title" = "टिकर";
+"Tickers" = "टिकर";
 
 // Detail
 
-"ticker.details.last" = "अंतिम";
-"ticker.details.previous" = "पिछला";
-"ticker.details.maximum" = "ज्यादा से ज्यादा";
-"ticker.details.minimum" = "न्यूनतम";
-"ticker.details.bid" = "बोली";
-"ticker.details.ask" = "पूछना";
-"ticker.details.average" = "औसत";
-"ticker.details.volume" = "आयतन";
+"Last" = "अंतिम";
+"Previous" = "पिछला";
+"Maximum" = "ज्यादा से ज्यादा";
+"Minimum" = "न्यूनतम";
+"Bid" = "बोली";
+"Ask" = "पूछना";
+"Average" = "औसत";
+"Volume" = "आयतन";
 
 // Adder
 
-"add.ticker.title" = "टिकर जोड़ें";
-"add.ticker.search.placeholder" = "खोज";
+"Add Ticker" = "टिकर जोड़ें";
+"Search" = "खोज";

@@ -22,28 +22,28 @@ struct TickerDetailViewModel {
     func title(for row: Row) -> Text {
         switch row {
         case .rate:
-            return Text("ticker.details.last")
+            return Text("Last")
             
         case .previousRate:
-            return Text("ticker.details.previous")
+            return Text("Previous")
             
         case .highestRate:
-            return Text("ticker.details.maximum")
+            return Text("Maximum")
             
         case .lowestRate:
-            return Text("ticker.details.minimum")
+            return Text("Minimum")
             
         case .highestBid:
-            return Text("ticker.details.bid")
+            return Text("Bid")
             
         case .lowestAsk:
-            return Text("ticker.details.ask")
+            return Text("Ask")
             
         case .average:
-            return Text("ticker.details.average")
+            return Text("Average")
             
         case .volume:
-            return Text("ticker.details.volume")
+            return Text("Volume")
         }
     }
     
