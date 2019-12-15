@@ -1,8 +1,3 @@
-// Common
-
-"ok" = "OK";
-"error" = "Error";
-
 // List
 
 "tickers.title" = "Tickers";
@@ -10,11 +5,11 @@
 // Detail
 
 "ticker.details.last" = "Last";
-"ticker.details.max" = "Maximum";
-"ticker.details.min" = "Minimum";
+"ticker.details.previous" = "Previous";
+"ticker.details.maximum" = "Maximum";
+"ticker.details.minimum" = "Minimum";
 "ticker.details.bid" = "Bid";
 "ticker.details.ask" = "Ask";
-"ticker.details.vwap" = "Weighted Average";
 "ticker.details.average" = "Average";
 "ticker.details.volume" = "Volume";
 

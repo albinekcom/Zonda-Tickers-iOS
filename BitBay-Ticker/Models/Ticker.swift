@@ -2,9 +2,9 @@ struct Ticker: Codable, Equatable, Identifiable {
     
     struct Currency: Codable, Equatable {
         
-        let currency: String
-        let minimumOffer: Double
-        let scale: Int
+        var currency: String? = nil
+        var minimumOffer: Double? = nil
+        var scale: Int? = nil
         
     }
     
@@ -15,6 +15,7 @@ struct Ticker: Codable, Equatable, Identifiable {
     var highestBid: Double? = nil
     var lowestAsk: Double? = nil
     var rate: Double? = nil
+    var previousRate: Double? = nil
     var highestRate: Double? = nil
     var lowestRate: Double? = nil
     var volume: Double? = nil

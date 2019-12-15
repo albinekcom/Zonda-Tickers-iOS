@@ -51,6 +51,15 @@ final class UserData: ObservableObject {
             refreshedTicker.highestBid = response?.highestBid.doubleValue
             refreshedTicker.lowestAsk = response?.lowestAsk.doubleValue
             refreshedTicker.rate = response?.rate.doubleValue
+            refreshedTicker.previousRate = response?.previousRate.doubleValue
+            
+            let firstCurrencyResponseFromAPI = response?.market?.first
+            let firstCurrency = Ticker.Currency(currency: firstCurrencyResponseFromAPI?.currency, minimumOffer: firstCurrencyResponseFromAPI?.minOffer.doubleValue, scale: firstCurrencyResponseFromAPI?.scale)
+            refreshedTicker.firstCurrency = firstCurrency
+            
+            let secondCurrencyResponseFromAPI = response?.market?.second
+            let secondCurrency = Ticker.Currency(currency: secondCurrencyResponseFromAPI?.currency, minimumOffer: secondCurrencyResponseFromAPI?.minOffer.doubleValue, scale: secondCurrencyResponseFromAPI?.scale)
+            refreshedTicker.secondCurrency = secondCurrency
             
             if let index = self?.tickers.firstIndex(of: ticker) {
                 self?.tickers[index] = refreshedTicker

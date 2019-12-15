@@ -1,8 +1,3 @@
-// Common
-
-"ok" = "ठीक";
-"error" = "त्रुटि";
-
 // List
 
 "tickers.title" = "टिकर";
@@ -10,11 +5,11 @@
 // Detail
 
 "ticker.details.last" = "अंतिम";
-"ticker.details.max" = "ज्यादा से ज्यादा";
-"ticker.details.min" = "न्यूनतम";
+"ticker.details.previous" = "पिछला";
+"ticker.details.maximum" = "ज्यादा से ज्यादा";
+"ticker.details.minimum" = "न्यूनतम";
 "ticker.details.bid" = "बोली";
 "ticker.details.ask" = "पूछना";
-"ticker.details.vwap" = "भारित औसत";
 "ticker.details.average" = "औसत";
 "ticker.details.volume" = "आयतन";
 

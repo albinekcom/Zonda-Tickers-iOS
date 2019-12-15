@@ -12,7 +12,7 @@ struct TickerList: View {
                     NavigationLink(
                         destination: TickerDetail(viewModel: TickerDetailViewModel(model: ticker))
                     ) {
-                        BasicRow(title: Text(ticker.title), value: "\(ticker.rate ?? 0)")
+                        BasicRow(title: Text(ticker.title), value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: ticker.secondCurrency?.currency))
                             .padding(.top)
                             .padding(.bottom)
                     }

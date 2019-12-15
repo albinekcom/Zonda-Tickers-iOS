@@ -4,6 +4,7 @@ struct TickerDetailViewModel {
     
     enum Row {
         case rate
+        case previousRate
         case highestRate
         case lowestRate
         case highestBid
@@ -23,11 +24,14 @@ struct TickerDetailViewModel {
         case .rate:
             return Text("ticker.details.last")
             
+        case .previousRate:
+            return Text("ticker.details.previous")
+            
         case .highestRate:
-            return Text("ticker.details.max")
+            return Text("ticker.details.maximum")
             
         case .lowestRate:
-            return Text("ticker.details.min")
+            return Text("ticker.details.minimum")
             
         case .highestBid:
             return Text("ticker.details.bid")
@@ -44,28 +48,38 @@ struct TickerDetailViewModel {
     }
     
     func value(for row: Row) -> String {
+        let value: Double?
+        let scale = model.secondCurrency?.scale
+        var currencyString = model.secondCurrency?.currency
+        
         switch row {
         case .rate:
-            return "\(model.rate ?? 0)" // TODO: Improve the final look of this string
+            value = model.rate
+            
+        case .previousRate:
+            value = model.previousRate
             
         case .highestRate:
-            return "\(model.highestRate ?? 0)" // TODO: Improve the final look of this string
+            value = model.highestRate
             
         case .lowestRate:
-            return "\(model.lowestRate ?? 0)" // TODO: Improve the final look of this string
+            value = model.lowestRate
             
         case .highestBid:
-            return "\(model.highestBid ?? 0)" // TODO: Improve the final look of this string
+            value = model.highestBid
             
         case .lowestAsk:
-            return "\(model.lowestAsk ?? 0)" // TODO: Improve the final look of this string
+            value = model.lowestAsk
             
         case .average:
-            return "\(model.average ?? 0)" // TODO: Improve the final look of this string
+            value = model.average
             
         case .volume:
-            return "\(model.volume ?? 0)" // TODO: Improve the final look of this string
+            value = model.volume
+            currencyString = nil
         }
+        
+        return PrettyValueFormatter.makePrettyString(value: value, scale: scale, currency: currencyString)
     }
     
 }
