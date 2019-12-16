@@ -1,4 +1,4 @@
-import Foundation
+import Firebase
 
 struct AnalyticsService {
     
@@ -45,7 +45,7 @@ struct AnalyticsService {
     
     private static func track(name: String, parameters: [String: String]? = nil) {
         if isEnabled {
-            // TODO: Invoke analytics service method here
+            Analytics.logEvent(name, parameters: parameters)
         }
         
         if showConsoleLogs {

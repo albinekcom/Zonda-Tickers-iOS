@@ -1,3 +1,4 @@
+import Firebase
 import SwiftUI
 
 final class SceneDelegate: UIResponder {
@@ -21,6 +22,8 @@ extension SceneDelegate: UIWindowSceneDelegate {
             self?.userData.setupRefreshingTimer()
             self?.userData.refreshAllTickers()
         }
+        
+        FirebaseApp.configure()
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {

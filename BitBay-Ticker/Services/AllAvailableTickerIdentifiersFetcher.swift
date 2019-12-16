@@ -18,8 +18,7 @@ struct AllAvailableTickerIdentifiersFetcher {
                 let availableTickersAPIResponse = try JSONDecoder().decode(AvailableTickersAPIResponse.self, from: data)
                 
                 DispatchQueue.main.async {
-                    let availableTickerStrings = availableTickersAPIResponse.data?.availableTickers?.map { $0.replacingOccurrences(of: "/", with: "-") }
-                    let availableTickerIdentifiers = availableTickerStrings?.compactMap { TickerIdentifier(id: $0) }
+                    let availableTickerIdentifiers = availableTickersAPIResponse.data?.availableTickers?.compactMap { TickerIdentifier(id: $0) }
                     
                     completion(availableTickerIdentifiers)
                 }
