@@ -44,6 +44,8 @@ struct TickerList: View {
             )
             .onAppear {
                 AnalyticsService.trackTickersView()
+                
+                ReviewPopUpController().displayReviewPopUpIfNeeded()
             }
         }
         .accentColor(.primary)

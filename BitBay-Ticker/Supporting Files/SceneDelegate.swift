@@ -24,6 +24,8 @@ extension SceneDelegate: UIWindowSceneDelegate {
         }
         
         FirebaseApp.configure()
+        
+        UserDefaultsManager().incrementApplicationLaunchCounter()
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {

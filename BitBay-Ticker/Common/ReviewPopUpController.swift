@@ -1,0 +1,23 @@
+import StoreKit
+
+struct ReviewPopUpController {
+    
+    private let displayRatingPopUpEveryXApplicationLaunchTimes = 3
+    private let userDefaultsManager: UserDefaultsManager
+    
+    init(userDefaultsManager: UserDefaultsManager = UserDefaultsManager()) {
+        self.userDefaultsManager = userDefaultsManager
+    }
+    
+    func displayReviewPopUpIfNeeded() {
+        guard shouldDisplayReviewPopUp else { return }
+        
+        userDefaultsManager.resetApplicationLaunchCounter()
+        SKStoreReviewController.requestReview()
+        AnalyticsService.trackRequestedRatingView()
+    }
+    
+    var shouldDisplayReviewPopUp: Bool {
+        userDefaultsManager.applicationLaunchCounter >= displayRatingPopUpEveryXApplicationLaunchTimes
+    }
+}
