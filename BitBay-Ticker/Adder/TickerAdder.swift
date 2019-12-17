@@ -39,7 +39,7 @@ struct TickerAdder: View {
                 AnalyticsService.trackAddTickerView()
             }
         }
-        .accentColor(.primary)
+        .accentColor(Color.applicationPrimary)
     }
 }
 

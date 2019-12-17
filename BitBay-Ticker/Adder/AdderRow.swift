@@ -7,7 +7,7 @@ struct AdderRow: View {
     var body: some View {
         HStack {
             Image(systemName: "plus.circle.fill")
-                .foregroundColor(.primary)
+                .foregroundColor(Color.applicationPrimary)
             text
             Spacer()
         }

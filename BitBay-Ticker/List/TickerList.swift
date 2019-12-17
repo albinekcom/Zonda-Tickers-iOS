@@ -5,6 +5,7 @@ struct TickerList: View {
     
     @EnvironmentObject private var userData: UserData
     @State private var isPresentingTickerAdder = false
+    @State private var showErrorBanner = false
     
     init() {
         UITableView.appearance().tableFooterView = UIView()
@@ -12,47 +13,54 @@ struct TickerList: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(userData.tickers) { ticker in
-                    NavigationLink(
-                        destination: TickerDetail(viewModel: TickerDetailViewModel(model: ticker))
-                    ) {
-                        BasicRow(title: Text(ticker.title), value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: ticker.secondCurrency?.currency))
-                            .padding(.top)
-                            .padding(.bottom)
-                    }
+            VStack {
+                if showErrorBanner {
+                    ErrorBanner(text: "Error")
+                        .transition(.move(edge: .top))
                 }
-                .onMove(perform: move)
-                .onDelete(perform: delete)
-            }
-            .navigationBarTitle(Text("Tickers"))
-            .navigationBarItems(
-                leading:
-                    Button(action: {
-                        self.userData.refreshAllAvailableTickersIdentifiersToAdd()
-                        self.isPresentingTickerAdder.toggle()
-                    }) {
-                        HStack {
-                            Image(systemName: "plus")
-                                .font(Font.system(size: 22, weight: .light))
-                            Spacer()
+                
+                List {
+                    ForEach(userData.tickers) { ticker in
+                        NavigationLink(
+                            destination: TickerDetail(viewModel: TickerDetailViewModel(model: ticker))
+                        ) {
+                            BasicRow(title: Text(ticker.title), value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: ticker.secondCurrency?.currency))
+                                .padding(.top)
+                                .padding(.bottom)
                         }
                     }
-                    .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
-                    .sheet(isPresented: $isPresentingTickerAdder) {
-                        TickerAdder(isPresented: self.$isPresentingTickerAdder).environmentObject(self.userData)
-                    },
-                trailing:
-                    EditButton()
+                    .onMove(perform: move)
+                    .onDelete(perform: delete)
+                }
+                .navigationBarTitle(Text("Tickers"))
+                .navigationBarItems(
+                    leading:
+                        Button(action: {
+                            self.userData.refreshAllAvailableTickersIdentifiersToAdd()
+                            self.isPresentingTickerAdder.toggle()
+                        }) {
+                            HStack {
+                                Image(systemName: "plus")
+                                    .font(Font.system(size: 22, weight: .light))
+                                Spacer()
+                            }
+                        }
                         .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
-            )
-            .onAppear {
-                AnalyticsService.trackTickersView()
-                
-                ReviewPopUpController().displayReviewPopUpIfNeeded()
+                        .sheet(isPresented: $isPresentingTickerAdder) {
+                            TickerAdder(isPresented: self.$isPresentingTickerAdder).environmentObject(self.userData)
+                        },
+                    trailing:
+                        EditButton()
+                            .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
+                )
+                .onAppear {
+                    AnalyticsService.trackTickersView()
+                    
+                    ReviewPopUpController().displayReviewPopUpIfNeeded()
+                }
             }
         }
-        .accentColor(.primary)
+        .accentColor(Color.applicationPrimary)
     }
     
     private func delete(at offsets: IndexSet) {
