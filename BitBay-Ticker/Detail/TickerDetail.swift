@@ -16,6 +16,10 @@ struct TickerDetail: View {
             BasicRow(title: viewModel.title(for: .volume), value: viewModel.value(for: .volume))
         }
         .navigationBarTitle(viewModel.navigationBarTitle)
+        .onAppear {
+            let parameters = AnalyticsParametersFactory.makeParameters(from: self.viewModel.model)
+            AnalyticsService.trackTickerDetailsView(parameters: parameters)
+        }
     }
     
 }

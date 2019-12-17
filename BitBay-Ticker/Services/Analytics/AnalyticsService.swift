@@ -2,8 +2,8 @@ import Firebase
 
 struct AnalyticsService {
     
-    static var isEnabled: Bool = true
-    static var showConsoleLogs: Bool = false
+    static var isTrackingEnabled: Bool = false
+    static var shouldPrintConsoleLog: Bool = true
     
     // MARK: - States
     
@@ -19,38 +19,51 @@ struct AnalyticsService {
         track(name: "Ticker_Details_View", parameters: parameters)
     }
     
-    static func trackEditTickersView() {
+    static func trackEditTickersView() { // TODO: Invoke this method at a proper place
         track(name: "Edit_Tickers_View")
     }
     
-    static func trackRequestedRatingView() {
+    static func trackRequestedRatingView() { // TODO: Invoke this method at a proper place
         track(name: "Requested_Rating_View")
     }
     
     // MARK: - Actions
     
-    static func trackAddedTicker(parameters: [String: String]) {
+    static func trackAddedTicker(parameters: [String: String]) { // TODO: Invoke this method at a proper place
         track(name: "Added_Ticker", parameters: parameters)
     }
     
-    static func trackRemovedTicker(parameters: [String: String]) {
+    static func trackRemovedTicker(parameters: [String: String]) { // TODO: Invoke this method at a proper place
         track(name: "Removed_Ticker", parameters: parameters)
     }
     
-    static func trackRefreshedTickers(parameters: [String: String]) {
+    static func trackRefreshedTickers(parameters: [String: String]) { // TODO: Invoke this method at a proper place
         track(name: "Refreshed_Tickers", parameters: parameters)
     }
     
     // MARK: - Tracking
     
     private static func track(name: String, parameters: [String: String]? = nil) {
-        if isEnabled {
-            Analytics.logEvent(name, parameters: parameters)
+        trackIfEnabled(name: name, parameters: parameters)
+        printConsoleLogIfEnabled(name: name, parameters: parameters)
+    }
+    
+    private static func trackIfEnabled(name: String, parameters: [String: String]? = nil) {
+        guard isTrackingEnabled else { return }
+        
+        Analytics.logEvent(name, parameters: parameters)
+    }
+    
+    private static func printConsoleLogIfEnabled(name: String, parameters: [String: String]? = nil) {
+        guard shouldPrintConsoleLog else { return }
+        
+        var description = "👣 [TRACKED] \"\(name)\""
+        
+        if let parameters = parameters {
+            description += " with parameters: \(String(describing: parameters))"
         }
         
-        if showConsoleLogs {
-            print("👣 [TRACKED] \"\(name)\" | Parameters: \(String(describing: parameters))")
-        }
+        print(description)
     }
     
 }

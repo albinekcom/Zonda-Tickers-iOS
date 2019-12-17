@@ -42,6 +42,9 @@ struct TickerList: View {
                     EditButton()
                         .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
             )
+            .onAppear {
+                AnalyticsService.trackTickersView()
+            }
         }
         .accentColor(.primary)
     }
