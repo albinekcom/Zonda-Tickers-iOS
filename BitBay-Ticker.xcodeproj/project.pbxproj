@@ -53,6 +53,7 @@
 		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
 		8CEB402523A94D75000928CE /* ReviewPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB402423A94D75000928CE /* ReviewPopUpController.swift */; };
 		8CEB402723A95DC0000928CE /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB402623A95DC0000928CE /* UserDefaultsManager.swift */; };
+		8CEB402923A962C5000928CE /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB402823A962C5000928CE /* Banner.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 		8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
 /* End PBXBuildFile section */
@@ -164,6 +165,7 @@
 		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
 		8CEB402423A94D75000928CE /* ReviewPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPopUpController.swift; sourceTree = "<group>"; };
 		8CEB402623A95DC0000928CE /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8CEB402823A962C5000928CE /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		8CED93082083C4EA00A068BD /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		8CEE9B5623A2DBB700D5B24B /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		8CFB35111F1808F900475DC1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				8C0688BF23A58146003C45A3 /* BasicRow.swift */,
+				8CEB402823A962C5000928CE /* Banner.swift */,
 			);
 			path = "Common Views";
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				8C1F1D6023A62C5D00D25D99 /* PrettyValueFormatter.swift in Sources */,
 				8CEB402723A95DC0000928CE /* UserDefaultsManager.swift in Sources */,
 				8C0688B323A53D4F003C45A3 /* AvailableTickersAPIResponse.swift in Sources */,
+				8CEB402923A962C5000928CE /* Banner.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
 				8C3EA62E23A6888000A501CD /* MimimumTouchTargetSize.swift in Sources */,
 			);

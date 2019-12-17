@@ -6,6 +6,10 @@ struct TickerList: View {
     @EnvironmentObject private var userData: UserData
     @State private var isPresentingTickerAdder = false
     
+    init() {
+        UITableView.appearance().tableFooterView = UIView()
+    }
+    
     var body: some View {
         NavigationView {
             List {
