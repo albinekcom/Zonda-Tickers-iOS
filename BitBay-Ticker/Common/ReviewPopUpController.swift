@@ -14,7 +14,7 @@ struct ReviewPopUpController {
         
         userDefaultsManager.resetApplicationLaunchCounter()
         SKStoreReviewController.requestReview()
-        AnalyticsService.trackRequestedRatingView()
+        AnalyticsService.shared.trackRequestedRatingView()
     }
     
     var shouldDisplayReviewPopUp: Bool {

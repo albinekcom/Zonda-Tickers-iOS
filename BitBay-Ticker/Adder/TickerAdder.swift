@@ -36,7 +36,7 @@ struct TickerAdder: View {
             )
             .modifier(AdaptsToSoftwareKeyboard())
             .onAppear {
-                AnalyticsService.trackAddTickerView()
+                AnalyticsService.shared.trackAddTickerView()
             }
         }
         .accentColor(Color.applicationPrimary)

@@ -54,7 +54,7 @@ struct TickerList: View {
                             .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
                 )
                 .onAppear {
-                    AnalyticsService.trackTickersView()
+                    AnalyticsService.shared.trackTickersView()
                     
                     ReviewPopUpController().displayReviewPopUpIfNeeded()
                 }

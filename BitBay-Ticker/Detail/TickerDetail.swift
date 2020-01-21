@@ -18,7 +18,7 @@ struct TickerDetail: View {
         .navigationBarTitle(viewModel.navigationBarTitle)
         .onAppear {
             let parameters = AnalyticsParametersFactory.makeParameters(from: self.viewModel.model)
-            AnalyticsService.trackTickerDetailsView(parameters: parameters)
+            AnalyticsService.shared.trackTickerDetailsView(parameters: parameters)
         }
     }
     
