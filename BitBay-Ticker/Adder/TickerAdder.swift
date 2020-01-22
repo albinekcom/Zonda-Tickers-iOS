@@ -18,22 +18,15 @@ struct TickerAdder: View {
                         $0.title.localizedCaseInsensitiveContains(self.searchTerm)
                 }) { tickerIdentifier in
                     AdderRow(text: Text(tickerIdentifier.title))
+                        .contentShape(Rectangle())
                         .padding()
                         .onTapGesture {
                             self.userData.appendAndRefreshTicker(from: tickerIdentifier)
                             self.userData.removeAvailableToAddTickerIdentifier(tickerIdentifier: tickerIdentifier)
-                    }
+                        }
                 }
             }
             .navigationBarTitle(Text("Add Ticker"), displayMode: .inline)
-            .navigationBarItems(
-                trailing: Button(action: {
-                    self.isPresented.toggle()
-                }) {
-                    Text("Close")
-                        .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
-                }
-            )
             .modifier(AdaptsToSoftwareKeyboard())
             .onAppear {
                 AnalyticsService.shared.trackAddTickerView()

@@ -19,6 +19,10 @@ final class UserData: ObservableObject {
         refreshingTimer = Timer.scheduledTimer(timeInterval: timeBetweenRefreshesInSeconds, target: self, selector: #selector(refreshAllTickers), userInfo: nil, repeats: true)
     }
     
+    func invalidRefreshingTimer() {
+        refreshingTimer?.invalidate()
+    }
+    
     // MARK: - Managing
     
     func removeAvailableToAddTickerIdentifier(tickerIdentifier: TickerIdentifier) {

@@ -10,10 +10,9 @@ struct ErrorBanner: View {
                 .foregroundColor(.white)
             Text(text)
                 .foregroundColor(.white)
+            Spacer()
         }
-        .frame(maxWidth: .infinity)
-        .padding(.top)
-        .padding(.bottom)
+        .padding()
         .background(Color.red)
     }
     
@@ -23,7 +22,6 @@ struct ErrorBanner_Previews: PreviewProvider {
     
     static var previews: some View {
         ErrorBanner(text: "There is a problem with connection.")
-            
     }
     
 }
