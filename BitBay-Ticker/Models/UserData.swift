@@ -68,6 +68,9 @@ final class UserData: ObservableObject {
             if let index = self?.tickers.firstIndex(of: ticker) {
                 self?.tickers[index] = refreshedTicker
             }
+            
+            let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
+            AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters)
         }
     }
     

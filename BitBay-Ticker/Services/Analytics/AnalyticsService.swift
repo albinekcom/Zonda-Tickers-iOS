@@ -29,21 +29,21 @@ struct AnalyticsService {
         track(name: "Edit_Tickers_View")
     }
     
-    func trackRequestedRatingView() { // TODO: Invoke this method at a proper place
+    func trackRequestedRatingView() {
         track(name: "Requested_Rating_View")
     }
     
     // MARK: - Actions
     
-    func trackAddedTicker(parameters: [String: String]) { // TODO: Invoke this method at a proper place
+    func trackAddedTicker(parameters: [String: String]) {
         track(name: "Added_Ticker", parameters: parameters)
     }
     
-    func trackRemovedTicker(parameters: [String: String]) { // TODO: Invoke this method at a proper place
+    func trackRemovedTicker(parameters: [String: String]) {
         track(name: "Removed_Ticker", parameters: parameters)
     }
     
-    func trackRefreshedTickers(parameters: [String: String]) { // TODO: Invoke this method at a proper place
+    func trackRefreshedTickers(parameters: [String: String]) {
         track(name: "Refreshed_Tickers", parameters: parameters)
     }
     

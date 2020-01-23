@@ -23,6 +23,8 @@ struct TickerAdder: View {
                         .onTapGesture {
                             self.userData.appendAndRefreshTicker(from: tickerIdentifier)
                             self.userData.removeAvailableToAddTickerIdentifier(tickerIdentifier: tickerIdentifier)
+                            
+                            AnalyticsService.shared.trackAddedTicker(parameters: AnalyticsParametersFactory.makeParameters(from: tickerIdentifier))
                         }
                 }
             }
