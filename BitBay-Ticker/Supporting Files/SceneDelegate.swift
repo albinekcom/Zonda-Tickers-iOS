@@ -14,7 +14,7 @@ extension SceneDelegate: UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UIHostingController(rootView: TickerList().environmentObject(userData))
+        window?.rootViewController = UIHostingController(rootView: Main().environmentObject(userData))
         window?.makeKeyAndVisible()
         
         userData.loadUserData { [weak self] in
