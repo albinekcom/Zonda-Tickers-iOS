@@ -7,10 +7,17 @@ struct TickerAdder: View {
     @EnvironmentObject private var userData: UserData
     @State private var searchTerm: String = ""
     
+    init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+        
+        UITableView.appearance().allowsSelection = false
+        UITableViewCell.appearance().selectionStyle = .none
+    }
+    
     var body: some View {
         NavigationView {
             List {
-                TextField(NSLocalizedString("Search", comment: ""), text: $searchTerm)
+                TextField(NSLocalizedString("Search", comment: ""), text: $searchTerm).modifier(ClearButton(text: $searchTerm))
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
                 ForEach(userData.availableTickersIdentifiersToAdd.filter {

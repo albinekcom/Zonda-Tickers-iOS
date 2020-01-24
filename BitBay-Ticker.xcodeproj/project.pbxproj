@@ -42,6 +42,7 @@
 		8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */; };
 		8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */; };
 		8CCE185423DAFC9900738D32 /* TickerIdentifierSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE185323DAFC9900738D32 /* TickerIdentifierSorter.swift */; };
+		8CCE185623DB0F8D00738D32 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE185523DB0F8D00738D32 /* ClearButton.swift */; };
 		8CD1D20D23A3E8240045E60A /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1D20C23A3E8240045E60A /* TickerTests.swift */; };
 		8CDBC62323A7F4EA00084B7F /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */; };
 		8CDBC62423A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */; };
@@ -153,6 +154,7 @@
 		8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifier.swift; sourceTree = "<group>"; };
 		8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifierTests.swift; sourceTree = "<group>"; };
 		8CCE185323DAFC9900738D32 /* TickerIdentifierSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifierSorter.swift; sourceTree = "<group>"; };
+		8CCE185523DB0F8D00738D32 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		8CD1D20C23A3E8240045E60A /* TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTests.swift; sourceTree = "<group>"; };
 		8CD60C561F5BD34200ABDB23 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				8C0688BF23A58146003C45A3 /* BasicRow.swift */,
 				8CEB402823A962C5000928CE /* ErrorBanner.swift */,
+				8CCE185523DB0F8D00738D32 /* ClearButton.swift */,
 			);
 			path = "Common Views";
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 			files = (
 				267BBC6523D9CF66000EF9AB /* Main.swift in Sources */,
 				8C1F1D6D23A65A4000D25D99 /* AnalyticsService.swift in Sources */,
+				8CCE185623DB0F8D00738D32 /* ClearButton.swift in Sources */,
 				8C0688BD23A57A78003C45A3 /* TickerDetailViewModel.swift in Sources */,
 				8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */,
 				8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */,
