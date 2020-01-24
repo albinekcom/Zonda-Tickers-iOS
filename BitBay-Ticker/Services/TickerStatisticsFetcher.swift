@@ -10,7 +10,9 @@ struct TickerStatisticsFetcher {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
                 guard let data = data else {
-                    completion(nil)
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
                     
                     return
                 }
@@ -23,7 +25,9 @@ struct TickerStatisticsFetcher {
             } catch {
                 print("Failed to decode: \(error.localizedDescription)")
                 
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             }
         }.resume()
     }

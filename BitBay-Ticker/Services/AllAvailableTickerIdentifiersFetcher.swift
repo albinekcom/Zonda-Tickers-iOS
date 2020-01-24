@@ -10,14 +10,24 @@ struct AllAvailableTickerIdentifiersFetcher {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
                 guard let data = data else {
-                    completion(nil)
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
                     
                     return
                 }
                 
                 let availableTickersAPIResponse = try JSONDecoder().decode(AvailableTickersAPIResponse.self, from: data)
                 
-                let availableTickerIdentifiers = availableTickersAPIResponse.data?.availableTickers?.compactMap { TickerIdentifier(id: $0) }
+                let fullNames = availableTickersAPIResponse.data?.fullNames
+                
+                let availableTickerIdentifiers = availableTickersAPIResponse.data?.availableTickers?.compactMap { (identifier) -> TickerIdentifier in
+                    var tickerIdentifier = TickerIdentifier(id: identifier)
+                    tickerIdentifier.firstCurrencyFullName = fullNames?[tickerIdentifier.firstCurrencyIdentifier]
+                    tickerIdentifier.secondCurrencyFullName = fullNames?[tickerIdentifier.secondCurrencyIdentifier]
+                    
+                    return tickerIdentifier
+                }
                 
                 let sortedAvailableTickerIdentifiers: [TickerIdentifier]?
                 
@@ -33,7 +43,9 @@ struct AllAvailableTickerIdentifiersFetcher {
             } catch {
                 print("Failed to decode: \(error.localizedDescription)")
                 
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             }
         }.resume()
     }

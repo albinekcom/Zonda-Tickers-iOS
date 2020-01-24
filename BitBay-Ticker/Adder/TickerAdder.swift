@@ -21,8 +21,7 @@ struct TickerAdder: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
                 ForEach(userData.availableTickersIdentifiersToAdd.filter {
-                    self.searchTerm.isEmpty ? true :
-                        $0.title.localizedCaseInsensitiveContains(self.searchTerm)
+                    self.searchTerm.isEmpty ? true : $0.tagsContain(searchTerm: self.searchTerm)
                 }) { tickerIdentifier in
                     AdderRow(text: Text(tickerIdentifier.title))
                         .contentShape(Rectangle())
