@@ -25,7 +25,7 @@ extension SceneDelegate: UIWindowSceneDelegate {
         UserDefaultsManager().incrementApplicationLaunchCounter()
     }
     
-    func sceneDidEnterBackground(_ scene: UIScene) {
+    func sceneWillResignActive(_ scene: UIScene) {
         userData.saveUserData()
     }
 }
