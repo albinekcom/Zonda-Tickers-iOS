@@ -17,10 +17,18 @@ struct AllAvailableTickerIdentifiersFetcher {
                 
                 let availableTickersAPIResponse = try JSONDecoder().decode(AvailableTickersAPIResponse.self, from: data)
                 
+                let availableTickerIdentifiers = availableTickersAPIResponse.data?.availableTickers?.compactMap { TickerIdentifier(id: $0) }
+                
+                let sortedAvailableTickerIdentifiers: [TickerIdentifier]?
+                
+                if let sortingOrder = availableTickersAPIResponse.data?.sortingOrder, let availableTickerIdentifiers = availableTickerIdentifiers {
+                    sortedAvailableTickerIdentifiers = TickerIdentifierSorter.sorted(tickerIdentifiers: availableTickerIdentifiers, sortingOrder: sortingOrder)
+                } else {
+                    sortedAvailableTickerIdentifiers = availableTickerIdentifiers
+                }
+                
                 DispatchQueue.main.async {
-                    let availableTickerIdentifiers = availableTickersAPIResponse.data?.availableTickers?.compactMap { TickerIdentifier(id: $0) }
-                    
-                    completion(availableTickerIdentifiers)
+                    completion(sortedAvailableTickerIdentifiers)
                 }
             } catch {
                 print("Failed to decode: \(error.localizedDescription)")

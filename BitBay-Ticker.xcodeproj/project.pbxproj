@@ -41,6 +41,7 @@
 		8CCA6F3023A3A4FF0048B1B8 /* AdderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2F23A3A4FF0048B1B8 /* AdderRow.swift */; };
 		8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */; };
 		8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */; };
+		8CCE185423DAFC9900738D32 /* TickerIdentifierSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE185323DAFC9900738D32 /* TickerIdentifierSorter.swift */; };
 		8CD1D20D23A3E8240045E60A /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1D20C23A3E8240045E60A /* TickerTests.swift */; };
 		8CDBC62323A7F4EA00084B7F /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */; };
 		8CDBC62423A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */; };
@@ -151,6 +152,7 @@
 		8CCA6F2F23A3A4FF0048B1B8 /* AdderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderRow.swift; sourceTree = "<group>"; };
 		8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifier.swift; sourceTree = "<group>"; };
 		8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifierTests.swift; sourceTree = "<group>"; };
+		8CCE185323DAFC9900738D32 /* TickerIdentifierSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifierSorter.swift; sourceTree = "<group>"; };
 		8CD1D20C23A3E8240045E60A /* TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTests.swift; sourceTree = "<group>"; };
 		8CD60C561F5BD34200ABDB23 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				8C1F1D6B23A65A2900D25D99 /* Analytics */,
+				8CCE185223DAFC7E00738D32 /* Helpers */,
 				8C0688AE23A4F385003C45A3 /* TickerValuesFetcher.swift */,
 				8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */,
 				8C0688AC23A4DE75003C45A3 /* AllAvailableTickerIdentifiersFetcher.swift */,
@@ -374,6 +377,14 @@
 				8CD1D20C23A3E8240045E60A /* TickerTests.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8CCE185223DAFC7E00738D32 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8CCE185323DAFC9900738D32 /* TickerIdentifierSorter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8CD1D20E23A42D7D0045E60A /* Utilities */ = {
@@ -647,6 +658,7 @@
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8C0688AD23A4DE75003C45A3 /* AllAvailableTickerIdentifiersFetcher.swift in Sources */,
 				8C0688C023A58146003C45A3 /* BasicRow.swift in Sources */,
+				8CCE185423DAFC9900738D32 /* TickerIdentifierSorter.swift in Sources */,
 				8CCA6F3023A3A4FF0048B1B8 /* AdderRow.swift in Sources */,
 				267BBC6B23D9D6B8000EF9AB /* AdderButtonView.swift in Sources */,
 				8CDBC63323A7F9A800084B7F /* AnalyticsParametersFactory.swift in Sources */,
