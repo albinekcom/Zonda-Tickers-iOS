@@ -32,10 +32,7 @@ struct TickerIdentifier: Codable, Equatable, Identifiable {
     }
     
     private var tags: [String] {
-        var tags: [String] = []
-        
-        let pair = "\(firstCurrencyIdentifier)/\(secondCurrencyIdentifier)"
-        tags.append(pair)
+        var tags: [String] = [title]
         
         if let firstCurrencyFullName = firstCurrencyFullName {
             tags.append(firstCurrencyFullName)

@@ -5,17 +5,25 @@ final class UserData: ObservableObject {
     @Published var tickers: [Ticker] = []
     @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
     
-    var refreshingTimer: Timer?
+    var isEditing: Bool = false {
+        didSet {
+            invalidRefreshingTimer()
+        }
+    }
     
-    let timeBetweenRefreshesInSeconds: TimeInterval = 5
+    static private let userDataTickersFileName: String = "user_data_tickers.json"
     
-    static let userDataTickersFileName = "user_data_tickers.json"
+    private let timeBetweenRefreshesInSeconds: TimeInterval = 5
     
-    private let allAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
-    private let tickerValuesFetcher = TickerValuesFetcher()
-    private let tickerStatisticsFetcher = TickerStatisticsFetcher()
+    private var refreshingTimer: Timer?
+    
+    private let allAvailableTickerIdentifiersFetcher: AllAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
+    private let tickerValuesFetcher: TickerValuesFetcher = TickerValuesFetcher()
+    private let tickerStatisticsFetcher: TickerStatisticsFetcher = TickerStatisticsFetcher()
     
     func setupRefreshingTimer() {
+        guard isEditing == false else { return }
+        
         refreshingTimer = Timer.scheduledTimer(timeInterval: timeBetweenRefreshesInSeconds, target: self, selector: #selector(refreshAllTickers), userInfo: nil, repeats: true)
     }
     

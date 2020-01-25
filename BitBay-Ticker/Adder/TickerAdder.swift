@@ -37,7 +37,12 @@ struct TickerAdder: View {
             .navigationBarTitle(Text("Add Ticker"), displayMode: .inline)
             .modifier(AdaptsToSoftwareKeyboard())
             .onAppear {
+                self.userData.invalidRefreshingTimer()
+                
                 AnalyticsService.shared.trackAddTickerView()
+            }
+            .onDisappear {
+                self.userData.setupRefreshingTimer()
             }
         }
         .accentColor(Color.applicationPrimary)
