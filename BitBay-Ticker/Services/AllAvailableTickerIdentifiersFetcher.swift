@@ -4,14 +4,17 @@ struct AllAvailableTickerIdentifiersFetcher {
     
     private let urlString = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
     
-    func fetch(completion: @escaping ([TickerIdentifier]?) -> Void) {
+    
+    func fetch(completion: @escaping (Result<[TickerIdentifier], Error>) -> Void) {
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
                 guard let data = data else {
-                    DispatchQueue.main.async {
-                        completion(nil)
+                    if let error = error {
+                        DispatchQueue.main.async {
+                            completion(.failure(error))
+                        }
                     }
                     
                     return
@@ -29,22 +32,22 @@ struct AllAvailableTickerIdentifiersFetcher {
                     return tickerIdentifier
                 }
                 
-                let sortedAvailableTickerIdentifiers: [TickerIdentifier]?
+                let sortedAvailableTickerIdentifiers: [TickerIdentifier]
                 
                 if let sortingOrder = availableTickersAPIResponse.data?.sortingOrder, let availableTickerIdentifiers = availableTickerIdentifiers {
                     sortedAvailableTickerIdentifiers = TickerIdentifierSorter.sorted(tickerIdentifiers: availableTickerIdentifiers, sortingOrder: sortingOrder)
                 } else {
-                    sortedAvailableTickerIdentifiers = availableTickerIdentifiers
+                    sortedAvailableTickerIdentifiers = availableTickerIdentifiers ?? []
                 }
                 
                 DispatchQueue.main.async {
-                    completion(sortedAvailableTickerIdentifiers)
+                    completion(.success(sortedAvailableTickerIdentifiers))
                 }
             } catch {
                 print("Failed to decode: \(error.localizedDescription)")
                 
                 DispatchQueue.main.async {
-                    completion(nil)
+                    completion(.failure(error))
                 }
             }
         }.resume()

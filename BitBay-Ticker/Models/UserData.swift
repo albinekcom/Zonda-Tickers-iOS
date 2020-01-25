@@ -73,52 +73,68 @@ final class UserData: ObservableObject {
     }
     
     private func refreshValues(for ticker: Ticker) {
-        tickerValuesFetcher.fetch(for: ticker.id) { [weak self] response in
-            var refreshedTicker = ticker
-            
-            refreshedTicker.highestBid = response?.highestBid.doubleValue
-            refreshedTicker.lowestAsk = response?.lowestAsk.doubleValue
-            refreshedTicker.rate = response?.rate.doubleValue
-            refreshedTicker.previousRate = response?.previousRate.doubleValue
-            
-            let firstCurrencyResponseFromAPI = response?.market?.first
-            let firstCurrency = Ticker.Currency(currency: firstCurrencyResponseFromAPI?.currency, minimumOffer: firstCurrencyResponseFromAPI?.minOffer.doubleValue, scale: firstCurrencyResponseFromAPI?.scale)
-            refreshedTicker.firstCurrency = firstCurrency
-            
-            let secondCurrencyResponseFromAPI = response?.market?.second
-            let secondCurrency = Ticker.Currency(currency: secondCurrencyResponseFromAPI?.currency, minimumOffer: secondCurrencyResponseFromAPI?.minOffer.doubleValue, scale: secondCurrencyResponseFromAPI?.scale)
-            refreshedTicker.secondCurrency = secondCurrency
-            
-            if let index = self?.tickers.firstIndex(of: ticker) {
-                self?.tickers[index] = refreshedTicker
+        tickerValuesFetcher.fetch(for: ticker.id) { [weak self] result in
+            switch result {
+                case .success(let response):
+                    var refreshedTicker = ticker
+                    
+                    refreshedTicker.highestBid = response?.highestBid.doubleValue
+                    refreshedTicker.lowestAsk = response?.lowestAsk.doubleValue
+                    refreshedTicker.rate = response?.rate.doubleValue
+                    refreshedTicker.previousRate = response?.previousRate.doubleValue
+                    
+                    let firstCurrencyResponseFromAPI = response?.market?.first
+                    let firstCurrency = Ticker.Currency(currency: firstCurrencyResponseFromAPI?.currency, minimumOffer: firstCurrencyResponseFromAPI?.minOffer.doubleValue, scale: firstCurrencyResponseFromAPI?.scale)
+                    refreshedTicker.firstCurrency = firstCurrency
+                    
+                    let secondCurrencyResponseFromAPI = response?.market?.second
+                    let secondCurrency = Ticker.Currency(currency: secondCurrencyResponseFromAPI?.currency, minimumOffer: secondCurrencyResponseFromAPI?.minOffer.doubleValue, scale: secondCurrencyResponseFromAPI?.scale)
+                    refreshedTicker.secondCurrency = secondCurrency
+                    
+                    if let index = self?.tickers.firstIndex(of: ticker) {
+                        self?.tickers[index] = refreshedTicker
+                    }
+                    
+                    let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
+                    AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters)
+                
+                case .failure:
+                    break // TODO: Insert something here
             }
-            
-            let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
-            AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters)
         }
     }
     
     private func refreshStatistics(for ticker: Ticker) {
-        tickerStatisticsFetcher.fetch(for: ticker.id) { [weak self] response in
+        tickerStatisticsFetcher.fetch(for: ticker.id) { [weak self] result in
             var refreshedTicker = ticker
             
-            refreshedTicker.highestRate = response?.h.doubleValue
-            refreshedTicker.lowestRate = response?.l.doubleValue
-            refreshedTicker.volume = response?.v.doubleValue
-            refreshedTicker.average = response?.r24h.doubleValue
-            
-            if let index = self?.tickers.firstIndex(of: ticker) {
-                self?.tickers[index] = refreshedTicker
+            switch result {
+                case .success(let response):
+                    refreshedTicker.highestRate = response?.h.doubleValue
+                    refreshedTicker.lowestRate = response?.l.doubleValue
+                    refreshedTicker.volume = response?.v.doubleValue
+                    refreshedTicker.average = response?.r24h.doubleValue
+                    
+                    if let index = self?.tickers.firstIndex(of: ticker) {
+                        self?.tickers[index] = refreshedTicker
+                    }
+                case .failure:
+                    break // TODO: Insert something here
             }
         }
     }
     
     func refreshAllAvailableTickersIdentifiersToAdd() {
-        allAvailableTickerIdentifiersFetcher.fetch { [weak self] allAvailableTickersIdentifiers in
-            let userTickerIdentifiers = self?.tickers.map { TickerIdentifier(id: $0.id) } ?? []
-            let all = allAvailableTickersIdentifiers ?? []
-            
-            self?.availableTickersIdentifiersToAdd = all.filter { userTickerIdentifiers.contains($0) == false }
+        allAvailableTickerIdentifiersFetcher.fetch { [weak self] result in
+            switch result {
+                case .success(let allAvailableTickersIdentifiers):
+                    let userTickerIdentifiers = self?.tickers.map { TickerIdentifier(id: $0.id) } ?? []
+                    
+                    self?.availableTickersIdentifiersToAdd = allAvailableTickersIdentifiers.filter { userTickerIdentifiers.contains($0) == false }
+                case .failure:
+                    self?.availableTickersIdentifiersToAdd = []
+                    break // TODO: Insert something here
+            }
         }
     }
     
