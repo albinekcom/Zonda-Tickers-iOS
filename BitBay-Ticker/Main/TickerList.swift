@@ -1,4 +1,3 @@
-import StoreKit
 import SwiftUI
 
 struct TickerList: View {
@@ -12,11 +11,10 @@ struct TickerList: View {
     
     var body: some View {
         VStack {
-            if showErrorBanner {
-                ErrorBanner(text: "Error")
+            if userData.fetchingError != nil { // HACK: Change it when hidden() method be improved
+                ErrorBanner(text: userData.fetchingError?.localizedDescription ?? "Error")
                     .transition(.move(edge: .top))
             }
-            
             List {
                 ForEach(userData.tickers) { ticker in
                     NavigationLink(

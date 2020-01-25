@@ -4,6 +4,7 @@ final class UserData: ObservableObject {
     
     @Published var tickers: [Ticker] = []
     @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
+    @Published var fetchingError: Error? = nil
     
     var isEditing: Bool = false { // HACK
         didSet {
@@ -99,8 +100,10 @@ final class UserData: ObservableObject {
                 
                     self?.refreshStatistics(for: refreshedTicker)
                 
-                case .failure:
-                    break // TODO: Insert something here
+                    self?.fetchingError = nil
+                
+                case .failure(let error):
+                    self?.fetchingError = error
             }
         }
     }
@@ -122,8 +125,10 @@ final class UserData: ObservableObject {
                 
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
                     AnalyticsService.shared.trackRefreshedTickerStatistics(parameters: analyticsParameters)
-                case .failure:
-                    break // TODO: Insert something here
+                    
+                    self?.fetchingError = nil
+                case .failure(let error):
+                    self?.fetchingError = error
             }
         }
     }
@@ -135,9 +140,9 @@ final class UserData: ObservableObject {
                     let userTickerIdentifiers = self?.tickers.map { TickerIdentifier(id: $0.id) } ?? []
                     
                     self?.availableTickersIdentifiersToAdd = allAvailableTickersIdentifiers.filter { userTickerIdentifiers.contains($0) == false }
-                case .failure:
+                case .failure(let error):
                     self?.availableTickersIdentifiersToAdd = []
-                    break // TODO: Insert something here
+                    self?.fetchingError = error
             }
         }
     }

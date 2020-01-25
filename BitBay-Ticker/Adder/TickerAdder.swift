@@ -16,34 +16,41 @@ struct TickerAdder: View {
     
     var body: some View {
         NavigationView {
-            List {
-                TextField(NSLocalizedString("Search", comment: ""), text: $searchTerm).modifier(ClearButton(text: $searchTerm))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .disableAutocorrection(true)
-                ForEach(userData.availableTickersIdentifiersToAdd.filter {
-                    self.searchTerm.isEmpty ? true : $0.tagsContain(searchTerm: self.searchTerm)
-                }) { tickerIdentifier in
-                    AdderRow(text: Text(tickerIdentifier.title))
-                        .contentShape(Rectangle())
-                        .padding()
-                        .onTapGesture {
-                            self.userData.appendAndRefreshTicker(from: tickerIdentifier)
-                            self.userData.removeAvailableToAddTickerIdentifier(tickerIdentifier: tickerIdentifier)
-                            
-                            AnalyticsService.shared.trackAddedTicker(parameters: AnalyticsParametersFactory.makeParameters(from: tickerIdentifier))
-                        }
+            VStack {
+                if userData.fetchingError != nil { // HACK: Change it when hidden() method be improved
+                    ErrorBanner(text: userData.fetchingError?.localizedDescription ?? "Error")
+                        .transition(.move(edge: .top))
                 }
-            }
-            .navigationBarTitle(Text("Add Ticker"), displayMode: .inline)
-            .modifier(AdaptsToSoftwareKeyboard())
-            .onAppear {
-                self.userData.isAdding = true
                 
-                AnalyticsService.shared.trackAddTickerView()
-            }
-            .onDisappear {
-                self.userData.isAdding = false
-                self.userData.setupRefreshingTimer()
+                List {
+                    TextField(NSLocalizedString("Search", comment: ""), text: $searchTerm).modifier(ClearButton(text: $searchTerm))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .disableAutocorrection(true)
+                    ForEach(userData.availableTickersIdentifiersToAdd.filter {
+                        self.searchTerm.isEmpty ? true : $0.tagsContain(searchTerm: self.searchTerm)
+                    }) { tickerIdentifier in
+                        AdderRow(text: Text(tickerIdentifier.title))
+                            .contentShape(Rectangle())
+                            .padding()
+                            .onTapGesture {
+                                self.userData.appendAndRefreshTicker(from: tickerIdentifier)
+                                self.userData.removeAvailableToAddTickerIdentifier(tickerIdentifier: tickerIdentifier)
+                                
+                                AnalyticsService.shared.trackAddedTicker(parameters: AnalyticsParametersFactory.makeParameters(from: tickerIdentifier))
+                            }
+                    }
+                }
+                .navigationBarTitle(Text("Add Ticker"), displayMode: .inline)
+                .modifier(AdaptsToSoftwareKeyboard())
+                .onAppear {
+                    self.userData.isAdding = true
+                    
+                    AnalyticsService.shared.trackAddTickerView()
+                }
+                .onDisappear {
+                    self.userData.isAdding = false
+                    self.userData.setupRefreshingTimer()
+                }
             }
         }
         .accentColor(Color.applicationPrimary)
