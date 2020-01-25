@@ -96,7 +96,7 @@ final class UserData: ObservableObject {
                     }
                     
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
-                    AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters)
+                    AnalyticsService.shared.trackRefreshedTickerValues(parameters: analyticsParameters)
                 
                 case .failure:
                     break // TODO: Insert something here
@@ -118,6 +118,9 @@ final class UserData: ObservableObject {
                     if let index = self?.tickers.firstIndex(of: ticker) {
                         self?.tickers[index] = refreshedTicker
                     }
+                
+                    let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
+                    AnalyticsService.shared.trackRefreshedTickerStatistics(parameters: analyticsParameters)
                 case .failure:
                     break // TODO: Insert something here
             }
