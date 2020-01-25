@@ -1,4 +1,4 @@
-struct TickerIdentifier: Codable, Equatable, Identifiable {
+struct TickerIdentifier: Codable, Identifiable {
     
     let id: String
     
@@ -44,4 +44,12 @@ struct TickerIdentifier: Codable, Equatable, Identifiable {
         
         return tags
     }
+}
+
+extension TickerIdentifier: Equatable {
+    
+    static func == (lhs: TickerIdentifier, rhs: TickerIdentifier) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }
