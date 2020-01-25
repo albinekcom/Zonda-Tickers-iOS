@@ -69,7 +69,6 @@ final class UserData: ObservableObject {
     
     func refresh(ticker: Ticker) {
         refreshValues(for: ticker)
-        refreshStatistics(for: ticker)
     }
     
     private func refreshValues(for ticker: Ticker) {
@@ -97,6 +96,8 @@ final class UserData: ObservableObject {
                     
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
                     AnalyticsService.shared.trackRefreshedTickerValues(parameters: analyticsParameters)
+                
+                    self?.refreshStatistics(for: refreshedTicker)
                 
                 case .failure:
                     break // TODO: Insert something here
