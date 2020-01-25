@@ -5,9 +5,23 @@ final class UserData: ObservableObject {
     @Published var tickers: [Ticker] = []
     @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
     
-    var isEditing: Bool = false {
+    var isEditing: Bool = false { // HACK
         didSet {
-            invalidRefreshingTimer()
+            if isEditing {
+                invalidRefreshingTimer()
+            } else if isAdding == false {
+                setupRefreshingTimer()
+            }
+        }
+    }
+    
+    var isAdding: Bool = false {
+        didSet {
+            if isAdding {
+                invalidRefreshingTimer()
+            } else {
+                setupRefreshingTimer()
+            }
         }
     }
     
@@ -23,12 +37,14 @@ final class UserData: ObservableObject {
     
     func setupRefreshingTimer() {
         guard isEditing == false else { return }
+        guard refreshingTimer == nil else { return }
         
         refreshingTimer = Timer.scheduledTimer(timeInterval: timeBetweenRefreshesInSeconds, target: self, selector: #selector(refreshAllTickers), userInfo: nil, repeats: true)
     }
     
     func invalidRefreshingTimer() {
         refreshingTimer?.invalidate()
+        refreshingTimer = nil
     }
     
     // MARK: - Managing

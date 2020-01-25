@@ -37,11 +37,12 @@ struct TickerAdder: View {
             .navigationBarTitle(Text("Add Ticker"), displayMode: .inline)
             .modifier(AdaptsToSoftwareKeyboard())
             .onAppear {
-                self.userData.invalidRefreshingTimer()
+                self.userData.isAdding = true
                 
                 AnalyticsService.shared.trackAddTickerView()
             }
             .onDisappear {
+                self.userData.isAdding = false
                 self.userData.setupRefreshingTimer()
             }
         }

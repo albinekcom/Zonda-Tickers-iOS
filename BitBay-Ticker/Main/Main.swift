@@ -4,9 +4,12 @@ struct Main: View {
     
     @EnvironmentObject private var userData: UserData
     @State private var isPresentingTickerAdder = false
+    @State private var editMode: EditMode = .inactive
     
     var body: some View {
-        NavigationView {
+        self.userData.isEditing = editMode.isEditing // HACK
+        
+        return NavigationView {
             MainContent().environmentObject(self.userData)
                 .navigationBarTitle(Text("Tickers"))
                 .navigationBarItems(
@@ -27,10 +30,9 @@ struct Main: View {
                                 EditButton()
                                     .frame(minWidth: MimiumTouchTargetSize.size, minHeight: MimiumTouchTargetSize.size)
                             }
-                            
                         }
-                        
                 )
+                .environment(\.editMode, self.$editMode)
         }
         .onAppear {
             AnalyticsService.shared.trackTickersView()
