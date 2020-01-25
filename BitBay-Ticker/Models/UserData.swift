@@ -26,7 +26,8 @@ final class UserData: ObservableObject {
         }
     }
     
-    static private let userDataTickersFileName: String = "user_data_tickers.json"
+//    static let sharedDefaultsIdentifier = "group.com.albinek.ios.BitBay-Ticker.shared.defaults" // TODO: Key in old version, use it for migrator
+    static private let userDataTickersFileName: String = "user_data_tickers_v1.json"
     
     private let timeBetweenRefreshesInSeconds: TimeInterval = 5
     
@@ -76,7 +77,13 @@ final class UserData: ObservableObject {
         tickerValuesFetcher.fetch(for: ticker.id) { [weak self] result in
             switch result {
                 case .success(let response):
-                    var refreshedTicker = ticker
+                    var refreshedTicker: Ticker
+                    
+                    if let tickers = self?.tickers, let index = tickers.firstIndex(where: { $0.id == ticker.id }) {
+                        refreshedTicker = tickers[index]
+                    } else {
+                        refreshedTicker = Ticker(id: ticker.id)
+                    }
                     
                     refreshedTicker.highestBid = response?.highestBid.doubleValue
                     refreshedTicker.lowestAsk = response?.lowestAsk.doubleValue
@@ -91,7 +98,7 @@ final class UserData: ObservableObject {
                     let secondCurrency = Ticker.Currency(currency: secondCurrencyResponseFromAPI?.currency, minimumOffer: secondCurrencyResponseFromAPI?.minOffer.doubleValue, scale: secondCurrencyResponseFromAPI?.scale)
                     refreshedTicker.secondCurrency = secondCurrency
                     
-                    if let index = self?.tickers.firstIndex(of: ticker) {
+                    if let index = self?.tickers.firstIndex(where: { $0.id == ticker.id }) {
                         self?.tickers[index] = refreshedTicker
                     }
                     
@@ -110,16 +117,22 @@ final class UserData: ObservableObject {
     
     private func refreshStatistics(for ticker: Ticker) {
         tickerStatisticsFetcher.fetch(for: ticker.id) { [weak self] result in
-            var refreshedTicker = ticker
-            
             switch result {
                 case .success(let response):
+                    var refreshedTicker: Ticker
+                    
+                    if let tickers = self?.tickers, let index = tickers.firstIndex(where: { $0.id == ticker.id }) {
+                        refreshedTicker = tickers[index]
+                    } else {
+                        refreshedTicker = Ticker(id: ticker.id)
+                    }
+                    
                     refreshedTicker.highestRate = response?.h.doubleValue
                     refreshedTicker.lowestRate = response?.l.doubleValue
                     refreshedTicker.volume = response?.v.doubleValue
                     refreshedTicker.average = response?.r24h.doubleValue
                     
-                    if let index = self?.tickers.firstIndex(of: ticker) {
+                    if let index = self?.tickers.firstIndex(where: { $0.id == ticker.id }) {
                         self?.tickers[index] = refreshedTicker
                     }
                 
