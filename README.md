@@ -13,7 +13,7 @@ BitBay Ticker for iOS devices.
 
 ## Technical aspects
 
-This application uses SwiftUI.
+The implementation of this application uses SwiftUI.
 
 ## Usage
 
@@ -22,7 +22,6 @@ Clone this repository, execute `carthage update --platform iOS` and open `BitBay
 ```bash
 $ git clone https://github.com/albinekcom/BitBay-Ticker-iOS.git
 $ cd BitBay-Ticker-iOS
-$ carthage update --platform iOS
 $ open BitBay-Ticker.xcodeproj
 ```
 
