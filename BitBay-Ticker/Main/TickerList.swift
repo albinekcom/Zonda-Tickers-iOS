@@ -34,14 +34,9 @@ struct TickerList: View {
     }
     
     private func delete(at offsets: IndexSet) {
-        if let tickerToDeleteIndex = offsets.first {
-            let tickerToDelete = userData.tickers[tickerToDeleteIndex]
-            let analyticsParamaters = AnalyticsParametersFactory.makeParameters(from: tickerToDelete)
-            
-            AnalyticsService.shared.trackRemovedTicker(parameters: analyticsParamaters)
-        }
+        guard let tickerToDeleteIndex = offsets.first else { return }
         
-        userData.tickers.remove(atOffsets: offsets)
+        userData.removeTicker(at: tickerToDeleteIndex)
     }
     
     private func move(from source: IndexSet, to destination: Int) {

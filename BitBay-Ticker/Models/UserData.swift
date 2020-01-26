@@ -59,6 +59,16 @@ final class UserData: ObservableObject {
         refresh(ticker: ticker)
     }
     
+    func removeTicker(at index: Int) {
+        let tickerToDelete = tickers.remove(at: index)
+        
+        let tickerIdentifiersOfUserTickers = tickers.map { TickerIdentifier(id: $0.id) }
+        tickersIdentifiersAvailableToAdd = TickerIdentifiersStore.shared.tickerIdentifiers.filter { tickerIdentifiersOfUserTickers.contains($0) == false }
+        
+        let analyticsParamaters = AnalyticsParametersFactory.makeParameters(from: tickerToDelete)
+        AnalyticsService.shared.trackRemovedTicker(parameters: analyticsParamaters)
+    }
+    
     // MARK: - Refreshing
     
     @objc func refreshAllTickers() {
@@ -166,17 +176,21 @@ final class UserData: ObservableObject {
     // MARK: - Storing
     
     func loadUserData(completion: (() -> (Void))? = nil) {
-        defer {
-            completion?()
-        }
-        
         DispatchQueue.global(qos: .background).async {
-            if Storage.fileExists(AppConfiguration.Storing.userDataTickersFileName, in: .documents) {
-                let tickersFromFile = Storage.retrieve(AppConfiguration.Storing.userDataTickersFileName, from: .documents, as: [Ticker].self)
-                
-                DispatchQueue.main.async { [weak self] in
-                    self?.tickers = tickersFromFile
+            guard Storage.fileExists(AppConfiguration.Storing.userDataTickersFileName, in: .documents) else {
+                DispatchQueue.main.async {
+                    completion?()
                 }
+                
+                return
+            }
+            
+            let tickersFromFile = Storage.retrieve(AppConfiguration.Storing.userDataTickersFileName, from: .documents, as: [Ticker].self)
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.tickers = tickersFromFile
+                
+                completion?()
             }
         }
     }
