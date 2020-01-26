@@ -2,10 +2,8 @@ import Foundation
 
 struct TickerValuesFetcher {
     
-    private let endpointString: String = "https://api.bitbay.net/rest/trading/ticker/"
-    
     func fetch(for pair: String, completion: @escaping (Result<TickerValuesAPIResponse.TickerAPIResponse?, Error>) -> Void) {
-        guard let url = URL(string: "\(endpointString)\(pair)") else { return }
+        guard let url = URL(string: "\(AppConfiguration.Endpoint.tickerValuesFetcher)\(pair)") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {

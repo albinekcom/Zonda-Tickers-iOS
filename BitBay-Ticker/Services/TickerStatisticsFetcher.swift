@@ -2,10 +2,8 @@ import Foundation
 
 struct TickerStatisticsFetcher {
     
-    private let endpointString: String = "https://api.bitbay.net/rest/trading/stats/"
-    
     func fetch(for pair: String, completion: @escaping (Result<TickerStatisticsAPIResponse.StatisticsAPIResponse?, Error>) -> Void) {
-        guard let url = URL(string: "\(endpointString)\(pair)") else { return }
+        guard let url = URL(string: "\(AppConfiguration.Endpoint.tickerStatisticsFetcher)\(pair)") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
@@ -35,4 +33,3 @@ struct TickerStatisticsFetcher {
     }
     
 }
-

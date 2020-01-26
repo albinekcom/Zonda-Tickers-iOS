@@ -4,7 +4,7 @@ final class UserData: ObservableObject {
     
     @Published var tickers: [Ticker] = []
     @Published var tickersIdentifiersAvailableToAdd: [TickerIdentifier] = []
-    @Published var fetchingError: Error? = nil
+    @Published var fetchingError: Error?
     
     var isEditing: Bool = false { // HACK
         didSet {
@@ -26,13 +26,7 @@ final class UserData: ObservableObject {
         }
     }
     
-//    static let sharedDefaultsIdentifier = "group.com.albinek.ios.BitBay-Ticker.shared.defaults" // TODO: Key in old version, use it for migrator
-    static private let userDataTickersFileName: String = "user_data_tickers_v1.json"
-    private let timeBetweenRefreshesInSeconds: TimeInterval = 5
-    private let minimumTimeBetweenNextPossibleTickerIndentifiersRefresh: TimeInterval = .oneHour
-    
     private var refreshingTimer: Timer?
-    
     private var lastSuccesfullyTickersIdentifiersFetchedDate: Date?
     
     private let tickerIdentifiersFetcher: TickerIdentifiersFetcher = TickerIdentifiersFetcher()
@@ -43,7 +37,7 @@ final class UserData: ObservableObject {
         guard isEditing == false else { return }
         guard refreshingTimer == nil else { return }
         
-        refreshingTimer = Timer.scheduledTimer(timeInterval: timeBetweenRefreshesInSeconds, target: self, selector: #selector(refreshAllTickers), userInfo: nil, repeats: true)
+        refreshingTimer = Timer.scheduledTimer(timeInterval: AppConfiguration.UserData.timeSpanBetweenTickerRefreshes, target: self, selector: #selector(refreshAllTickers), userInfo: nil, repeats: true)
     }
     
     func invalidRefreshingTimer() {
@@ -149,7 +143,7 @@ final class UserData: ObservableObject {
     }
     
     func refreshTickersIdentifiers() {
-        if let lastSuccesfullyTickersIdentifiersFetchedDate = lastSuccesfullyTickersIdentifiersFetchedDate, Date().timeIntervalSince(lastSuccesfullyTickersIdentifiersFetchedDate) < minimumTimeBetweenNextPossibleTickerIndentifiersRefresh {
+        if let lastSuccesfullyTickersIdentifiersFetchedDate = lastSuccesfullyTickersIdentifiersFetchedDate, Date().timeIntervalSince(lastSuccesfullyTickersIdentifiersFetchedDate) < AppConfiguration.UserData.minimumTimeSpanBetweenTickerIndentifiersRefreshes {
             return
         }
         
@@ -177,8 +171,8 @@ final class UserData: ObservableObject {
         }
         
         DispatchQueue.global(qos: .background).async {
-            if Storage.fileExists(UserData.userDataTickersFileName, in: .documents) {
-                let tickersFromFile = Storage.retrieve(UserData.userDataTickersFileName, from: .documents, as: [Ticker].self)
+            if Storage.fileExists(AppConfiguration.Storing.userDataTickersFileName, in: .documents) {
+                let tickersFromFile = Storage.retrieve(AppConfiguration.Storing.userDataTickersFileName, from: .documents, as: [Ticker].self)
                 
                 DispatchQueue.main.async { [weak self] in
                     self?.tickers = tickersFromFile
@@ -189,7 +183,7 @@ final class UserData: ObservableObject {
     
     func saveUserData() {
         DispatchQueue.global(qos: .background).async { [weak self] in
-            Storage.store(self?.tickers, to: .documents, as: UserData.userDataTickersFileName)
+            Storage.store(self?.tickers, to: .documents, as: AppConfiguration.Storing.userDataTickersFileName)
         }
     }
     

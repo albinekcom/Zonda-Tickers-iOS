@@ -2,7 +2,6 @@ import StoreKit
 
 struct ReviewPopUpController {
     
-    private let displayRatingPopUpEveryXApplicationLaunchTimes = 10
     private let userDefaultsManager: UserDefaultsManager
     
     init(userDefaultsManager: UserDefaultsManager = UserDefaultsManager()) {
@@ -18,6 +17,6 @@ struct ReviewPopUpController {
     }
     
     var shouldDisplayReviewPopUp: Bool {
-        userDefaultsManager.applicationLaunchCounter >= displayRatingPopUpEveryXApplicationLaunchTimes
+        userDefaultsManager.applicationLaunchCounter >= AppConfiguration.displayRatingPopUpEveryXApplicationLaunchTimes
     }
 }

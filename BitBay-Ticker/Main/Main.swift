@@ -3,7 +3,7 @@ import SwiftUI
 struct Main: View {
     
     @EnvironmentObject private var userData: UserData
-    @State private var isPresentingTickerAdder = false
+    @State private var isPresentingTickerAdder: Bool = false
     @State private var editMode: EditMode = .inactive
     
     var body: some View {

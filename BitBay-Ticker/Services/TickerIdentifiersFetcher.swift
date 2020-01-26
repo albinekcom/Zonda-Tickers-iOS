@@ -2,10 +2,8 @@ import Foundation
 
 struct TickerIdentifiersFetcher {
     
-    private let endpointString: String = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
-    
     func fetch(completion: @escaping (Result<[TickerIdentifier], Error>) -> Void) {
-        guard let url = URL(string: endpointString) else { return }
+        guard let url = URL(string: AppConfiguration.Endpoint.tickerIdentifiersFetcher) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {

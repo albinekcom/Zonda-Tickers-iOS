@@ -43,9 +43,10 @@
 		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C7F0D4E21CA242C002C6553 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
+		8C8CC5B123DDFBE5001CF17F /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */; };
+		8C8CC5B323DE0029001CF17F /* Int+TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */; };
 		8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */; };
 		8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */; };
-		8CAE92AA23DDF4330025539D /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A923DDF4330025539D /* TimeInterval+Extensions.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
@@ -153,11 +154,12 @@
 		8C7F0D3921CA23EE002C6553 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		8C7F0D3A21CA23EE002C6553 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
 		8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeIntervalExtensions.swift"; sourceTree = "<group>"; };
 		8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersViewControllerUITests.swift; sourceTree = "<group>"; };
 		8CAE92A523DDC6150025539D /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		8CAE92A623DDC6150025539D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifiersStore.swift; sourceTree = "<group>"; };
-		8CAE92A923DDF4330025539D /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
 		8CBD947B1F0D7D1400CA4250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CBD947D1F0D7D2500CA4250 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,6 +383,7 @@
 			children = (
 				8CAE92A423DDC6150025539D /* Headers */,
 				8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */,
+				8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */,
 				8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */,
 				8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */,
 				8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */,
@@ -429,11 +432,11 @@
 			children = (
 				8C0688B423A53F60003C45A3 /* Storage.swift */,
 				8C0688BA23A56994003C45A3 /* String+Extensions.swift */,
-				8C1F1D6723A652FF00D25D99 /* Color+ApplicationColors.swift */,
 				8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */,
 				8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */,
 				8CEB402623A95DC0000928CE /* UserDefaultsManager.swift */,
-				8CAE92A923DDF4330025539D /* TimeInterval+Extensions.swift */,
+				8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */,
+				8C1F1D6723A652FF00D25D99 /* Color+ApplicationColors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -700,7 +703,6 @@
 				8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */,
 				8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */,
 				8C0688AF23A4F385003C45A3 /* TickerValuesFetcher.swift in Sources */,
-				8CAE92AA23DDF4330025539D /* TimeInterval+Extensions.swift in Sources */,
 				8C1F1D6823A652FF00D25D99 /* Color+ApplicationColors.swift in Sources */,
 				8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */,
 				267BBC6723D9D5EF000EF9AB /* MainContent.swift in Sources */,
@@ -713,6 +715,7 @@
 				8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8C0688AD23A4DE75003C45A3 /* TickerIdentifiersFetcher.swift in Sources */,
+				8C8CC5B323DE0029001CF17F /* Int+TimeIntervalExtensions.swift in Sources */,
 				8C0688C023A58146003C45A3 /* BasicRow.swift in Sources */,
 				8CCE185423DAFC9900738D32 /* TickerIdentifierSorter.swift in Sources */,
 				8CCA6F3023A3A4FF0048B1B8 /* AdderRow.swift in Sources */,
@@ -721,6 +724,7 @@
 				8C0688B723A54930003C45A3 /* TickerStatisticsAPIResponse.swift in Sources */,
 				267BBC6323D9CC11000EF9AB /* TickerEmptyList.swift in Sources */,
 				8C1F1D6A23A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift in Sources */,
+				8C8CC5B123DDFBE5001CF17F /* AppConfiguration.swift in Sources */,
 				8CCA6F2E23A38EB60048B1B8 /* UserData.swift in Sources */,
 				8CEB402523A94D75000928CE /* ReviewPopUpController.swift in Sources */,
 				8C1F1D6023A62C5D00D25D99 /* PrettyValueFormatter.swift in Sources */,

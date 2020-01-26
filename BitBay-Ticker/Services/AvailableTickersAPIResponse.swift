@@ -11,4 +11,3 @@ struct AvailableTickersAPIResponse: Codable {
     let data: DataAPIResponse?
     
 }
-

@@ -4,14 +4,6 @@ final class AnalyticsService {
     
     static let shared: AnalyticsService = AnalyticsService()
     
-    #if DEBUG
-        private let isTrackingEnabled: Bool = false
-        private let shouldPrintConsoleLog: Bool = true
-    #else
-        private let isTrackingEnabled: Bool = true
-        private let shouldPrintConsoleLog: Bool = false
-    #endif
-    
     init() {
         FirebaseApp.configure()
     }
@@ -60,13 +52,13 @@ final class AnalyticsService {
     }
     
     private func trackIfEnabled(name: String, parameters: [String: String]? = nil) {
-        guard isTrackingEnabled else { return }
+        guard AppConfiguration.Analytics.isTrackingEnabled else { return }
         
         Analytics.logEvent(name, parameters: parameters)
     }
     
     private func printConsoleLogIfEnabled(name: String, parameters: [String: String]? = nil) {
-        guard shouldPrintConsoleLog else { return }
+        guard AppConfiguration.Analytics.shouldPrintConsoleLog else { return }
         
         var description = "👣 [TRACKED] \"\(name)\""
         

@@ -2,14 +2,12 @@ import Foundation
 
 final class UserDefaultsManager {
     
-    private let applicationLaunchCounterKey: String = "application_launch_counter"
-    
     var applicationLaunchCounter: Int {
         get {
-             userDefaults.integer(forKey: applicationLaunchCounterKey)
+            userDefaults.integer(forKey: AppConfiguration.Storing.applicationLaunchCounterKey)
         }
         set {
-            userDefaults.set(newValue, forKey: applicationLaunchCounterKey)
+            userDefaults.set(newValue, forKey: AppConfiguration.Storing.applicationLaunchCounterKey)
             userDefaults.synchronize()
         }
     }
