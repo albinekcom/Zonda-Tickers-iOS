@@ -7,13 +7,6 @@ struct TickerAdder: View {
     @EnvironmentObject private var userData: UserData
     @State private var searchTerm: String = ""
     
-    init(isPresented: Binding<Bool>) {
-        self._isPresented = isPresented
-        
-        UITableView.appearance().allowsSelection = false
-        UITableViewCell.appearance().selectionStyle = .none
-    }
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -44,6 +37,8 @@ struct TickerAdder: View {
                 .modifier(AdaptsToSoftwareKeyboard())
                 .onAppear {
                     self.userData.isAdding = true
+                    
+                    UITableViewCell.appearance().selectionStyle = .none
                     
                     AnalyticsService.shared.trackAddTickerView()
                 }

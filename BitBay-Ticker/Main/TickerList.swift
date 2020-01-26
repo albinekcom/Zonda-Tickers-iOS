@@ -27,6 +27,9 @@ struct TickerList: View {
                 }
                 .onMove(perform: move)
                 .onDelete(perform: delete)
+                .onAppear {
+                    UITableViewCell.appearance().selectionStyle = .default
+                }
             }
         }
     }
