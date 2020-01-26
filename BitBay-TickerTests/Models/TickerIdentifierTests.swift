@@ -15,10 +15,10 @@ final class TickerIdentifierTests: XCTestCase {
         XCTAssertEqual(tickerIdentifier.secondCurrencyIdentifier, "PLN")
     }
     
-    func testTitle() {
+    func testPrettyTitle() {
         let tickerIdentifier = TickerIdentifier(id: "BTC-PLN")
         
-        XCTAssertEqual(tickerIdentifier.title, "BTC/PLN")
+        XCTAssertEqual(tickerIdentifier.prettyTitle, "BTC/PLN")
     }
 
 }
