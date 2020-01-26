@@ -19,7 +19,9 @@ extension SceneDelegate: UIWindowSceneDelegate {
         
         userData.loadUserData { [weak self] in
             self?.userData.setupRefreshingTimer()
+            
             self?.userData.refreshAllTickers()
+            self?.userData.refreshTickersIdentifiers()
         }
         
         UserDefaultsManager().incrementApplicationLaunchCounter()

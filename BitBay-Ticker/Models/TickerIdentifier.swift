@@ -2,9 +2,12 @@ struct TickerIdentifier: Codable, Identifiable {
     
     let id: String
     
-    var title: String {
-        "\(firstCurrencyIdentifier)/\(secondCurrencyIdentifier)"
-    }
+    var firstCurrencyFullName: String?
+    var secondCurrencyFullName: String?
+    
+}
+
+extension TickerIdentifier {
     
     var firstCurrencyIdentifier: String {
         currencyIdentifier.first ?? ""
@@ -14,8 +17,9 @@ struct TickerIdentifier: Codable, Identifiable {
         currencyIdentifier.last ?? ""
     }
     
-    var firstCurrencyFullName: String?
-    var secondCurrencyFullName: String?
+    var prettyTitle: String {
+        "\(firstCurrencyIdentifier)/\(secondCurrencyIdentifier)"
+    }
     
     func tagsContain(searchTerm: String) -> Bool {
         for tag in tags {
@@ -32,7 +36,7 @@ struct TickerIdentifier: Codable, Identifiable {
     }
     
     private var tags: [String] {
-        var tags: [String] = [title]
+        var tags: [String] = [prettyTitle]
         
         if let firstCurrencyFullName = firstCurrencyFullName {
             tags.append(firstCurrencyFullName)
@@ -44,6 +48,7 @@ struct TickerIdentifier: Codable, Identifiable {
         
         return tags
     }
+    
 }
 
 extension TickerIdentifier: Equatable {

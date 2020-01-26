@@ -1,11 +1,16 @@
 import Firebase
 
-struct AnalyticsService {
+final class AnalyticsService {
     
     static let shared: AnalyticsService = AnalyticsService()
     
-    private let isTrackingEnabled: Bool = false // TODO: Change this value to "true" before releasing
-    private let shouldPrintConsoleLog: Bool = false
+    #if DEBUG
+        private let isTrackingEnabled: Bool = false
+        private let shouldPrintConsoleLog: Bool = true
+    #else
+        private let isTrackingEnabled: Bool = true
+        private let shouldPrintConsoleLog: Bool = false
+    #endif
     
     init() {
         FirebaseApp.configure()

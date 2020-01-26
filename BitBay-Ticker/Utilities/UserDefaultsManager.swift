@@ -2,7 +2,7 @@ import Foundation
 
 final class UserDefaultsManager {
     
-    private let applicationLaunchCounterKey = "application_launch_counter"
+    private let applicationLaunchCounterKey: String = "application_launch_counter"
     
     var applicationLaunchCounter: Int {
         get {

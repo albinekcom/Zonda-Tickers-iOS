@@ -3,7 +3,7 @@ import Foundation
 final class UserData: ObservableObject {
     
     @Published var tickers: [Ticker] = []
-    @Published var availableTickersIdentifiersToAdd: [TickerIdentifier] = []
+    @Published var tickersIdentifiersAvailableToAdd: [TickerIdentifier] = []
     @Published var fetchingError: Error? = nil
     
     var isEditing: Bool = false { // HACK
@@ -28,12 +28,14 @@ final class UserData: ObservableObject {
     
 //    static let sharedDefaultsIdentifier = "group.com.albinek.ios.BitBay-Ticker.shared.defaults" // TODO: Key in old version, use it for migrator
     static private let userDataTickersFileName: String = "user_data_tickers_v1.json"
-    
     private let timeBetweenRefreshesInSeconds: TimeInterval = 5
+    private let minimumTimeBetweenNextPossibleTickerIndentifiersRefresh: TimeInterval = .oneHour
     
     private var refreshingTimer: Timer?
     
-    private let allAvailableTickerIdentifiersFetcher: AllAvailableTickerIdentifiersFetcher = AllAvailableTickerIdentifiersFetcher()
+    private var lastSuccesfullyTickersIdentifiersFetchedDate: Date?
+    
+    private let tickerIdentifiersFetcher: TickerIdentifiersFetcher = TickerIdentifiersFetcher()
     private let tickerValuesFetcher: TickerValuesFetcher = TickerValuesFetcher()
     private let tickerStatisticsFetcher: TickerStatisticsFetcher = TickerStatisticsFetcher()
     
@@ -52,7 +54,7 @@ final class UserData: ObservableObject {
     // MARK: - Managing
     
     func removeAvailableToAddTickerIdentifier(tickerIdentifier: TickerIdentifier) {
-        availableTickersIdentifiersToAdd.removeAll { $0 == tickerIdentifier }
+        tickersIdentifiersAvailableToAdd.removeAll { $0 == tickerIdentifier }
     }
     
     func appendAndRefreshTicker(from tickerIdentifier: TickerIdentifier) {
@@ -146,15 +148,22 @@ final class UserData: ObservableObject {
         }
     }
     
-    func refreshAllAvailableTickersIdentifiersToAdd() {
-        allAvailableTickerIdentifiersFetcher.fetch { [weak self] result in
+    func refreshTickersIdentifiers() {
+        if let lastSuccesfullyTickersIdentifiersFetchedDate = lastSuccesfullyTickersIdentifiersFetchedDate, Date().timeIntervalSince(lastSuccesfullyTickersIdentifiersFetchedDate) < minimumTimeBetweenNextPossibleTickerIndentifiersRefresh {
+            return
+        }
+        
+        tickerIdentifiersFetcher.fetch { [weak self] result in
             switch result {
-                case .success(let allAvailableTickersIdentifiers):
-                    let userTickerIdentifiers = self?.tickers.map { TickerIdentifier(id: $0.id) } ?? []
+                case .success(let tickersIdentifiers):
+                    TickerIdentifiersStore.shared.tickerIdentifiers = tickersIdentifiers
+                
+                    let tickerIdentifiersOfUserTickers = self?.tickers.map { TickerIdentifier(id: $0.id) } ?? []
                     
-                    self?.availableTickersIdentifiersToAdd = allAvailableTickersIdentifiers.filter { userTickerIdentifiers.contains($0) == false }
+                    self?.tickersIdentifiersAvailableToAdd = tickersIdentifiers.filter { tickerIdentifiersOfUserTickers.contains($0) == false }
+                
+                    self?.lastSuccesfullyTickersIdentifiersFetchedDate = Date()
                 case .failure(let error):
-                    self?.availableTickersIdentifiersToAdd = []
                     self?.fetchingError = error
             }
         }

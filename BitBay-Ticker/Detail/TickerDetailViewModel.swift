@@ -16,7 +16,7 @@ struct TickerDetailViewModel {
     let model: Ticker
     
     var navigationBarTitle: Text {
-        Text(model.title)
+        Text(TickerIdentifiersStore.shared.tickerIdentifierOrCreateNew(id: model.id).prettyTitle)
     }
     
     func title(for row: Row) -> Text {

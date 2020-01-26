@@ -2,7 +2,7 @@ import Foundation
 
 struct TickerStatisticsFetcher {
     
-    private let endpointString = "https://api.bitbay.net/rest/trading/stats/"
+    private let endpointString: String = "https://api.bitbay.net/rest/trading/stats/"
     
     func fetch(for pair: String, completion: @escaping (Result<TickerStatisticsAPIResponse.StatisticsAPIResponse?, Error>) -> Void) {
         guard let url = URL(string: "\(endpointString)\(pair)") else { return }

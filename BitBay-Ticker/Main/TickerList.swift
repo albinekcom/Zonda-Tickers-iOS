@@ -3,7 +3,6 @@ import SwiftUI
 struct TickerList: View {
     
     @EnvironmentObject private var userData: UserData
-    @State private var showErrorBanner = false
     
     init() {
         UITableView.appearance().tableFooterView = UIView()
@@ -20,7 +19,7 @@ struct TickerList: View {
                     NavigationLink(
                         destination: TickerDetail(viewModel: TickerDetailViewModel(model: ticker))
                     ) {
-                        BasicRow(title: Text(ticker.title), value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: ticker.secondCurrency?.currency))
+                        BasicRow(title: Text(TickerIdentifiersStore.shared.tickerIdentifierOrCreateNew(id: ticker.id).prettyTitle), value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: ticker.secondCurrency?.currency))
                             .padding(.top)
                             .padding(.bottom)
                     }

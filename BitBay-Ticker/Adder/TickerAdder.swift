@@ -19,10 +19,10 @@ struct TickerAdder: View {
                     TextField(NSLocalizedString("Search", comment: ""), text: $searchTerm).modifier(ClearButton(text: $searchTerm))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
-                    ForEach(userData.availableTickersIdentifiersToAdd.filter {
+                    ForEach(userData.tickersIdentifiersAvailableToAdd.filter {
                         self.searchTerm.isEmpty ? true : $0.tagsContain(searchTerm: self.searchTerm)
                     }) { tickerIdentifier in
-                        AdderRow(text: Text(tickerIdentifier.title))
+                        AdderRow(text: Text(tickerIdentifier.prettyTitle))
                             .contentShape(Rectangle())
                             .padding()
                             .onTapGesture {

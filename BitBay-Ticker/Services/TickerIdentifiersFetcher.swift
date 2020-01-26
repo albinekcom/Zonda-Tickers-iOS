@@ -1,12 +1,11 @@
 import Foundation
 
-struct AllAvailableTickerIdentifiersFetcher {
+struct TickerIdentifiersFetcher {
     
-    private let urlString = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
-    
+    private let endpointString: String = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
     
     func fetch(completion: @escaping (Result<[TickerIdentifier], Error>) -> Void) {
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: endpointString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
@@ -24,7 +23,7 @@ struct AllAvailableTickerIdentifiersFetcher {
                 
                 let fullNames = availableTickersAPIResponse.data?.fullNames
                 
-                let availableTickerIdentifiers = availableTickersAPIResponse.data?.availableTickers?.compactMap { (identifier) -> TickerIdentifier in
+                let tickerIdentifiers = availableTickersAPIResponse.data?.availableTickers?.compactMap { (identifier) -> TickerIdentifier in
                     var tickerIdentifier = TickerIdentifier(id: identifier)
                     tickerIdentifier.firstCurrencyFullName = fullNames?[tickerIdentifier.firstCurrencyIdentifier]
                     tickerIdentifier.secondCurrencyFullName = fullNames?[tickerIdentifier.secondCurrencyIdentifier]
@@ -32,16 +31,16 @@ struct AllAvailableTickerIdentifiersFetcher {
                     return tickerIdentifier
                 }
                 
-                let sortedAvailableTickerIdentifiers: [TickerIdentifier]
+                let sortedTickerIdentifiers: [TickerIdentifier]
                 
-                if let sortingOrder = availableTickersAPIResponse.data?.sortingOrder, let availableTickerIdentifiers = availableTickerIdentifiers {
-                    sortedAvailableTickerIdentifiers = TickerIdentifierSorter.sorted(tickerIdentifiers: availableTickerIdentifiers, sortingOrder: sortingOrder)
+                if let sortingOrder = availableTickersAPIResponse.data?.sortingOrder, let tickerIdentifiers = tickerIdentifiers {
+                    sortedTickerIdentifiers = TickerIdentifierSorter.sorted(tickerIdentifiers: tickerIdentifiers, sortingOrder: sortingOrder)
                 } else {
-                    sortedAvailableTickerIdentifiers = availableTickerIdentifiers ?? []
+                    sortedTickerIdentifiers = tickerIdentifiers ?? []
                 }
                 
                 DispatchQueue.main.async {
-                    completion(.success(sortedAvailableTickerIdentifiers))
+                    completion(.success(sortedTickerIdentifiers))
                 }
             } catch {
                 print("Failed to decode: \(error.localizedDescription)")

@@ -15,7 +15,7 @@ struct Main: View {
                 .navigationBarItems(
                     leading:
                         Button(action: {
-                            self.userData.refreshAllAvailableTickersIdentifiersToAdd()
+                            self.userData.refreshTickersIdentifiers()
                             self.isPresentingTickerAdder.toggle()
                         }) {
                             AdderButtonView()
@@ -37,7 +37,7 @@ struct Main: View {
         .onAppear {
             AnalyticsService.shared.trackTickersView()
             
-//            ReviewPopUpController().displayReviewPopUpIfNeeded() // TODO: Uncomment this line before releasing
+            ReviewPopUpController().displayReviewPopUpIfNeeded()
         }
         .accentColor(Color.applicationPrimary)
     }
