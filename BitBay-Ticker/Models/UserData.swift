@@ -3,6 +3,7 @@ import Foundation
 final class UserData: ObservableObject {
     
     @Published var tickers: [Ticker] = []
+    @Published var areTickersLoaded: Bool = false
     @Published var tickersIdentifiersAvailableToAdd: [TickerIdentifier] = []
     @Published var fetchingError: Error?
     
