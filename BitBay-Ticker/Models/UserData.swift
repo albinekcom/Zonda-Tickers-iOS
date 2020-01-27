@@ -173,32 +173,4 @@ final class UserData: ObservableObject {
         }
     }
     
-    // MARK: - Storing
-    
-    func loadUserData(completion: (() -> (Void))? = nil) {
-        DispatchQueue.global(qos: .background).async {
-            guard Storage.fileExists(AppConfiguration.Storing.userDataTickersFileName, in: .documents) else {
-                DispatchQueue.main.async {
-                    completion?()
-                }
-                
-                return
-            }
-            
-            let tickersFromFile = Storage.retrieve(AppConfiguration.Storing.userDataTickersFileName, from: .documents, as: [Ticker].self)
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.tickers = tickersFromFile
-                
-                completion?()
-            }
-        }
-    }
-    
-    func saveUserData() {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            Storage.store(self?.tickers, to: .documents, as: AppConfiguration.Storing.userDataTickersFileName)
-        }
-    }
-    
 }

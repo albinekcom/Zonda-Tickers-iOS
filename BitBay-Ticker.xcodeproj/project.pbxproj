@@ -48,6 +48,10 @@
 		8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */; };
 		8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
+		8CBDE31323DF36890097DBBF /* MigratorFromV0ToV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31223DF36890097DBBF /* MigratorFromV0ToV1.swift */; };
+		8CBDE31623DF4E720097DBBF /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31523DF4E720097DBBF /* DataStorage.swift */; };
+		8CBDE31823DF4E800097DBBF /* TickersDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */; };
+		8CBDE31A23DF4E8E0097DBBF /* TickersDataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
@@ -161,6 +165,10 @@
 		8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifiersStore.swift; sourceTree = "<group>"; };
 		8CBD947B1F0D7D1400CA4250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CBD947D1F0D7D2500CA4250 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CBDE31223DF36890097DBBF /* MigratorFromV0ToV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigratorFromV0ToV1.swift; sourceTree = "<group>"; };
+		8CBDE31523DF4E720097DBBF /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersDataLoader.swift; sourceTree = "<group>"; };
+		8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersDataSaver.swift; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CC185021EFE4CAC0083DA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,6 +334,24 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		8CBDE31123DF36660097DBBF /* Migrators */ = {
+			isa = PBXGroup;
+			children = (
+				8CBDE31223DF36890097DBBF /* MigratorFromV0ToV1.swift */,
+			);
+			path = Migrators;
+			sourceTree = "<group>";
+		};
+		8CBDE31423DF4E580097DBBF /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				8CBDE31523DF4E720097DBBF /* DataStorage.swift */,
+				8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */,
+				8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		8CC184EF1EFE4CAC0083DA30 = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +376,7 @@
 		8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXGroup;
 			children = (
+				8CBDE31123DF36660097DBBF /* Migrators */,
 				8CEE9B5523A2DBAA00D5B24B /* Models */,
 				8C0688AB23A4DE5E003C45A3 /* Services */,
 				8C6FB62D23A2CCBD00724C86 /* Main */,
@@ -485,6 +512,7 @@
 		8CEE9B5523A2DBAA00D5B24B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8CBDE31423DF4E580097DBBF /* Storage */,
 				8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */,
 				8CEE9B5623A2DBB700D5B24B /* Ticker.swift */,
 				8CCA6F2D23A38EB60048B1B8 /* UserData.swift */,
@@ -698,10 +726,13 @@
 				8CCE185623DB0F8D00738D32 /* ClearButton.swift in Sources */,
 				8C0688BD23A57A78003C45A3 /* TickerDetailViewModel.swift in Sources */,
 				8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */,
+				8CBDE31A23DF4E8E0097DBBF /* TickersDataSaver.swift in Sources */,
 				8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */,
 				8C0688AF23A4F385003C45A3 /* TickerValuesFetcher.swift in Sources */,
 				8C1F1D6823A652FF00D25D99 /* Color+ApplicationColors.swift in Sources */,
+				8CBDE31823DF4E800097DBBF /* TickersDataLoader.swift in Sources */,
 				8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */,
+				8CBDE31623DF4E720097DBBF /* DataStorage.swift in Sources */,
 				267BBC6723D9D5EF000EF9AB /* MainContent.swift in Sources */,
 				8C0688B123A53D31003C45A3 /* TickerValuesAPIResponse.swift in Sources */,
 				8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */,
@@ -711,6 +742,7 @@
 				8C0688B923A549BC003C45A3 /* TickerStatisticsFetcher.swift in Sources */,
 				8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
+				8CBDE31323DF36890097DBBF /* MigratorFromV0ToV1.swift in Sources */,
 				8C0688AD23A4DE75003C45A3 /* TickerIdentifiersFetcher.swift in Sources */,
 				8C8CC5B323DE0029001CF17F /* Int+TimeIntervalExtensions.swift in Sources */,
 				8C0688C023A58146003C45A3 /* BasicRow.swift in Sources */,

@@ -5,6 +5,7 @@ final class SceneDelegate: UIResponder {
     var window: UIWindow?
     
     private let userData: UserData = UserData()
+    private let dataStorage: DataStorage = DataStorage()
     
 }
 
@@ -17,17 +18,14 @@ extension SceneDelegate: UIWindowSceneDelegate {
         window?.rootViewController = UIHostingController(rootView: Main().environmentObject(userData))
         window?.makeKeyAndVisible()
         
-        userData.loadUserData { [weak self] in
-            self?.userData.setupRefreshingTimer()
-            
-            self?.userData.refreshAllTickers()
-            self?.userData.refreshTickersIdentifiers()
-        }
+        dataStorage.userData = userData
+        dataStorage.loadUserData()
         
         UserDefaultsManager().incrementApplicationLaunchCounter()
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
-        userData.saveUserData()
+        dataStorage.saveUserData()
     }
+    
 }
