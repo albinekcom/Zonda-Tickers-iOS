@@ -10,9 +10,8 @@ struct TickerList: View {
     
     var body: some View {
         VStack {
-            if userData.fetchingError != nil { // HACK: Change it when hidden() method be improved
-                ErrorBanner(text: userData.fetchingError?.localizedDescription ?? "Error")
-                    .transition(.move(edge: .top))
+            if userData.fetchingTickerPropertiesError != nil { // HACK: Change it when hidden() method be improved
+                ErrorBanner(text: userData.fetchingTickerPropertiesError?.localizedDescription ?? "Error")
             }
             List {
                 ForEach(userData.tickers) { ticker in

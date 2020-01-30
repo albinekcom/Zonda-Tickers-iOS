@@ -10,9 +10,8 @@ struct TickerAdder: View {
     var body: some View {
         NavigationView {
             VStack {
-                if userData.fetchingError != nil { // HACK: Change it when hidden() method be improved
-                    ErrorBanner(text: userData.fetchingError?.localizedDescription ?? "Error")
-                        .transition(.move(edge: .top))
+                if userData.fetchingTickerIdentifiersError != nil { // HACK: Change it when hidden() method be improved
+                    ErrorBanner(text: userData.fetchingTickerIdentifiersError?.localizedDescription ?? "Error")
                 }
                 
                 List {

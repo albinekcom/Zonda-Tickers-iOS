@@ -4,8 +4,11 @@ final class UserData: ObservableObject {
     
     @Published var tickers: [Ticker] = []
     @Published var areTickersLoaded: Bool = false
-    @Published var tickersIdentifiersAvailableToAdd: [TickerIdentifier] = []
-    @Published var fetchingError: Error?
+    
+    @Published private(set) var tickersIdentifiersAvailableToAdd: [TickerIdentifier] = []
+    
+    @Published private(set) var fetchingTickerPropertiesError: Error?
+    @Published private(set) var fetchingTickerIdentifiersError: Error?
     
     var isEditing: Bool = false { // HACK
         didSet {
@@ -114,10 +117,10 @@ final class UserData: ObservableObject {
                 
                     self?.refreshStatistics(for: refreshedTicker)
                 
-                    self?.fetchingError = nil
+                    self?.fetchingTickerPropertiesError = nil
                 
                 case .failure(let error):
-                    self?.fetchingError = error
+                    self?.fetchingTickerPropertiesError = error
             }
         }
     }
@@ -146,9 +149,9 @@ final class UserData: ObservableObject {
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
                     AnalyticsService.shared.trackRefreshedTickerStatistics(parameters: analyticsParameters)
                     
-                    self?.fetchingError = nil
+                    self?.fetchingTickerPropertiesError = nil
                 case .failure(let error):
-                    self?.fetchingError = error
+                    self?.fetchingTickerPropertiesError = error
             }
         }
     }
@@ -168,8 +171,10 @@ final class UserData: ObservableObject {
                     self?.tickersIdentifiersAvailableToAdd = tickersIdentifiers.filter { tickerIdentifiersOfUserTickers.contains($0) == false }
                 
                     self?.lastSuccesfullyTickersIdentifiersFetchedDate = Date()
+                
+                    self?.fetchingTickerIdentifiersError = nil
                 case .failure(let error):
-                    self?.fetchingError = error
+                    self?.fetchingTickerIdentifiersError = error
             }
         }
     }
