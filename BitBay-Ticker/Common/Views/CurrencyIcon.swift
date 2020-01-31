@@ -5,15 +5,19 @@ struct CurrencyIcon: View {
     let currencyName: String
     
     var body: some View {
-        Image("BAT")
-            .resizable()
+        image(named: currencyName)
     }
     
-    private func image(named: String) -> Image {
-        if let image = UIImage(named: named) {
-            return Image(uiImage: image)
-        } else {
-            return Image(uiImage: UIImage(named: "BTC")!)
+    private func image(named: String) -> some View {
+        Group {
+            if UIImage(named: named) != nil {
+                Image(uiImage: UIImage(named: named)!)
+                    .resizable()
+            } else if named.first != nil {
+                CurrencyTemplateIcon(letter: String(named.first!), backgroundColor: Color(named.color))
+            } else {
+                Text("")
+            }
         }
     }
     
