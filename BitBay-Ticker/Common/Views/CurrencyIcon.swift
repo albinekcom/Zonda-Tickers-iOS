@@ -18,3 +18,16 @@ struct CurrencyIcon: View {
     }
     
 }
+
+#if DEBUG
+struct CurrencyIcon_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        let currencyName = "BTC"
+        
+        return CurrencyIcon(currencyName: currencyName)
+            .previewLayout(.fixed(width: 200, height: 200))
+    }
+    
+}
+#endif

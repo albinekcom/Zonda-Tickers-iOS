@@ -56,6 +56,7 @@
 		8CBDE31623DF4E720097DBBF /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31523DF4E720097DBBF /* DataStorage.swift */; };
 		8CBDE31823DF4E800097DBBF /* TickersDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */; };
 		8CBDE31A23DF4E8E0097DBBF /* TickersDataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */; };
+		8CBF652423E409760081F719 /* CurrencyTemplateIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF652323E409760081F719 /* CurrencyTemplateIcon.swift */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
@@ -176,6 +177,7 @@
 		8CBDE31523DF4E720097DBBF /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersDataLoader.swift; sourceTree = "<group>"; };
 		8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersDataSaver.swift; sourceTree = "<group>"; };
+		8CBF652323E409760081F719 /* CurrencyTemplateIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTemplateIcon.swift; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CC185021EFE4CAC0083DA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -286,9 +288,10 @@
 		8C0688BE23A58131003C45A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CB1450A23E37943002F5A6A /* Title.swift */,
 				8CEB402823A962C5000928CE /* ErrorBanner.swift */,
 				8C0192FB23E34730008693D8 /* CurrencyIcon.swift */,
-				8CB1450A23E37943002F5A6A /* Title.swift */,
+				8CBF652323E409760081F719 /* CurrencyTemplateIcon.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				8C0688B123A53D31003C45A3 /* TickerValuesAPIResponse.swift in Sources */,
 				8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */,
 				8C0688B523A53F60003C45A3 /* Storage.swift in Sources */,
+				8CBF652423E409760081F719 /* CurrencyTemplateIcon.swift in Sources */,
 				8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */,
 				8C0192FC23E34730008693D8 /* CurrencyIcon.swift in Sources */,
 				8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */,
