@@ -10,6 +10,8 @@ struct CurrencyTemplateIcon: View {
             Circle()
                 .fill(backgroundColor)
             Text(letter)
+                .font(.body)
+                .foregroundColor(Color.white)
         }
     }
     
