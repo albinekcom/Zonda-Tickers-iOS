@@ -50,7 +50,6 @@ struct TickerDetailViewModel {
     func value(for row: Row) -> String {
         let value: Double?
         let scale = model.secondCurrency?.scale
-        var currencyString = model.secondCurrency?.currency
         
         switch row {
         case .rate:
@@ -76,10 +75,9 @@ struct TickerDetailViewModel {
             
         case .volume:
             value = model.volume
-            currencyString = nil
         }
         
-        return PrettyValueFormatter.makePrettyString(value: value, scale: scale, currency: currencyString)
+        return PrettyValueFormatter.makePrettyString(value: value, scale: scale, currency: nil)
     }
     
 }

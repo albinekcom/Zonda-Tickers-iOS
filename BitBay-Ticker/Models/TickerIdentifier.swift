@@ -18,7 +18,7 @@ extension TickerIdentifier {
     }
     
     var prettyTitle: String {
-        "\(firstCurrencyIdentifier)/\(secondCurrencyIdentifier)"
+        "\(firstCurrencyIdentifier)\\\(secondCurrencyIdentifier)"
     }
     
     func tagsContain(searchTerm: String) -> Bool {

@@ -6,11 +6,11 @@ struct Title: View {
     let secondCurrency: String
     
     var body: some View {
-        HStack(alignment: .top, spacing: 8) {
+        HStack(alignment: .top, spacing: 4) {
             Text(firstCurrency)
                 .font(.headline)
                 .foregroundColor(.primary)
-            Text("/ \(secondCurrency)")
+            Text("\\ \(secondCurrency)")
                 .font(.footnote)
                 .foregroundColor(.secondary)
         }
