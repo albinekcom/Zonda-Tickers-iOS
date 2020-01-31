@@ -6,14 +6,14 @@ struct TickerDetail: View {
     
     var body: some View {
         List {
-            BasicRow(title: viewModel.title(for: .rate), value: viewModel.value(for: .rate))
-            BasicRow(title: viewModel.title(for: .previousRate), value: viewModel.value(for: .previousRate))
-            BasicRow(title: viewModel.title(for: .highestRate), value: viewModel.value(for: .highestRate))
-            BasicRow(title: viewModel.title(for: .lowestRate), value: viewModel.value(for: .lowestRate))
-            BasicRow(title: viewModel.title(for: .highestBid), value: viewModel.value(for: .highestBid))
-            BasicRow(title: viewModel.title(for: .lowestAsk), value: viewModel.value(for: .lowestAsk))
-            BasicRow(title: viewModel.title(for: .average), value: viewModel.value(for: .average))
-            BasicRow(title: viewModel.title(for: .volume), value: viewModel.value(for: .volume))
+            DetailRow(title: viewModel.title(for: .rate), value: viewModel.value(for: .rate))
+            DetailRow(title: viewModel.title(for: .previousRate), value: viewModel.value(for: .previousRate))
+            DetailRow(title: viewModel.title(for: .highestRate), value: viewModel.value(for: .highestRate))
+            DetailRow(title: viewModel.title(for: .lowestRate), value: viewModel.value(for: .lowestRate))
+            DetailRow(title: viewModel.title(for: .highestBid), value: viewModel.value(for: .highestBid))
+            DetailRow(title: viewModel.title(for: .lowestAsk), value: viewModel.value(for: .lowestAsk))
+            DetailRow(title: viewModel.title(for: .average), value: viewModel.value(for: .average))
+            DetailRow(title: viewModel.title(for: .volume), value: viewModel.value(for: .volume))
         }
         .navigationBarTitle(viewModel.navigationBarTitle)
         .onAppear {

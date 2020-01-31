@@ -21,9 +21,9 @@ struct TickerAdder: View {
                     ForEach(userData.tickersIdentifiersAvailableToAdd.filter {
                         self.searchTerm.isEmpty ? true : $0.tagsContain(searchTerm: self.searchTerm)
                     }) { tickerIdentifier in
-                        AdderRow(text: Text(tickerIdentifier.prettyTitle))
+                        AdderRow(firstCurrency: tickerIdentifier.firstCurrencyIdentifier, secondCurrency: tickerIdentifier.secondCurrencyIdentifier)
                             .contentShape(Rectangle())
-                            .padding()
+                            .padding(.horizontal, 4)
                             .onTapGesture {
                                 self.userData.appendAndRefreshTicker(from: tickerIdentifier)
                                 self.userData.removeAvailableToAddTickerIdentifier(tickerIdentifier: tickerIdentifier)
@@ -32,6 +32,7 @@ struct TickerAdder: View {
                             }
                     }
                 }
+                .environment(\.defaultMinListRowHeight, 64)
                 .navigationBarTitle(Text("Add Ticker"), displayMode: .inline)
                 .modifier(AdaptsToSoftwareKeyboard())
                 .onAppear {

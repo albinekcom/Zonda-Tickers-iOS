@@ -2,14 +2,21 @@ import SwiftUI
 
 struct AdderRow: View {
     
-    let text: Text
+    let firstCurrency: String
+    let secondCurrency: String
     
     var body: some View {
-        HStack {
-            Image(systemName: "plus.circle.fill")
-                .foregroundColor(Color.applicationPrimary)
-            text
-            Spacer()
+        GeometryReader { geometry in
+            HStack {
+                CurrencyIcon(currencyName: self.firstCurrency)
+                    .frame(width: geometry.size.height * 0.5, height: geometry.size.height * 0.5)
+                Title(firstCurrency: self.firstCurrency, secondCurrency: self.secondCurrency)
+                    .padding(.horizontal, 2)
+                Spacer()
+                Image(systemName: "plus.circle.fill")
+                    .foregroundColor(Color.applicationPrimary)
+                    .font(.headline)
+            }
         }
     }
     
@@ -19,10 +26,12 @@ struct AdderRow: View {
 struct AdderRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        Group {
-            AdderRow(text: Text("BTC-PLN"))
+        ZStack {
+            Color(.black)
+            AdderRow(firstCurrency: "BAT", secondCurrency: "PLN")
         }
         .previewLayout(.fixed(width: 400, height: 70))
+        .environment(\.colorScheme, .dark)
     }
     
 }

@@ -18,9 +18,7 @@ struct TickerList: View {
                     NavigationLink(
                         destination: TickerDetail(viewModel: TickerDetailViewModel(model: ticker))
                     ) {
-                        BasicRow(title: Text(TickerIdentifiersStore.shared.tickerIdentifierOrCreateNew(id: ticker.id).prettyTitle), value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: ticker.secondCurrency?.currency))
-                            .padding(.top)
-                            .padding(.bottom)
+                        TickerListRow(firstCurrency: TickerIdentifiersStore.shared.tickerIdentifierOrCreateNew(id: ticker.id).firstCurrencyIdentifier, secondCurrency: TickerIdentifiersStore.shared.tickerIdentifierOrCreateNew(id: ticker.id).secondCurrencyIdentifier, value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: ticker.secondCurrency?.currency))
                     }
                 }
                 .onMove(perform: move)
@@ -29,6 +27,7 @@ struct TickerList: View {
                     UITableViewCell.appearance().selectionStyle = .default
                 }
             }
+            .environment(\.defaultMinListRowHeight, 64)
         }
     }
     
