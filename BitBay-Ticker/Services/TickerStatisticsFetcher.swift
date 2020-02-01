@@ -3,7 +3,7 @@ import Foundation
 struct TickerStatisticsFetcher {
     
     func fetch(for pair: String, completion: @escaping (Result<TickerStatisticsAPIResponse.StatisticsAPIResponse?, Error>) -> Void) {
-        guard let url = URL(string: "\(AppConfiguration.Endpoint.tickerStatisticsFetcher)\(pair)") else { return }
+        guard let url = URL(string: "\(AppConfiguration.Endpoint.tickerStatistics)\(pair)") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {

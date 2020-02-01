@@ -4,9 +4,9 @@ struct AppConfiguration {
     
     struct Endpoint {
         
-        static let tickerIdentifiersFetcher: String = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
-        static let tickerValuesFetcher: String = "https://api.bitbay.net/rest/trading/ticker/"
-        static let tickerStatisticsFetcher: String = "https://api.bitbay.net/rest/trading/stats/"
+        static let tickerIdentifiers: String = "https://raw.githubusercontent.com/albinekcom/BitBay-API-Tools/master/v1/available-tickers.json"
+        static let tickerValues: String = "https://api.bitbay.net/rest/trading/ticker/"
+        static let tickerStatistics: String = "https://api.bitbay.net/rest/trading/stats/"
         
     }
     

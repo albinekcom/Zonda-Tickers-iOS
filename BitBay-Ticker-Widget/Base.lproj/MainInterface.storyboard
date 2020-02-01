@@ -16,17 +16,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gba-rj-Lj6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="341"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="306"/>
                                 <connections>
                                     <segue destination="Prt-bx-0BV" kind="embed" destinationCreationSelector="addSwiftUIView:" id="BJf-js-ZFa"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="gba-rj-Lj6" secondAttribute="bottom" constant="-304" id="CY4-pJ-C98"/>
-                            <constraint firstItem="gba-rj-Lj6" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="am7-V1-87X"/>
-                            <constraint firstItem="gba-rj-Lj6" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" constant="-44" id="lIb-Sd-Jda"/>
-                            <constraint firstItem="gba-rj-Lj6" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="r0W-L1-Eht"/>
+                            <constraint firstItem="gba-rj-Lj6" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" constant="313" id="Afa-jS-Q96"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="top" secondItem="gba-rj-Lj6" secondAttribute="top" id="VSQ-Xx-dvD"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="gba-rj-Lj6" secondAttribute="trailing" id="YhC-c6-6Do"/>
+                            <constraint firstItem="gba-rj-Lj6" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="yWf-kD-oJn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>

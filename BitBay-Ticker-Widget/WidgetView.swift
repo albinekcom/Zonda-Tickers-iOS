@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WidgetView : View {
+struct WidgetView: View {
     
     @EnvironmentObject private var widgetUserData: WidgetUserData
     
@@ -11,7 +11,10 @@ struct WidgetView : View {
                 secondCurrency: TickerIdentifiersStore.shared.tickerIdentifierOrCreateNew(id: ticker.id).secondCurrencyIdentifier,
                 value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: nil))
         }
-        .environment(\.defaultMinListRowHeight, WidgetConstant.cellHeight)
+        .onTapGesture {
+            self.widgetUserData.launchApplicaiton()
+        }
+        .environment(\.defaultMinListRowHeight, WidgetConfiguration.cellHeight)
     }
     
 }
