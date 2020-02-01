@@ -1,5 +1,7 @@
 struct AvailableTickersAPIResponse: Codable {
     
+    let data: DataAPIResponse?
+    
     struct DataAPIResponse: Codable {
         
         let availableTickers: [String]?
@@ -7,7 +9,5 @@ struct AvailableTickersAPIResponse: Codable {
         let fullNames: [String: String]?
         
     }
-    
-    let data: DataAPIResponse?
     
 }

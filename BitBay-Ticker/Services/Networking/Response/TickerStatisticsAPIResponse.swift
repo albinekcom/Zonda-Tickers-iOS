@@ -1,5 +1,8 @@
 struct TickerStatisticsAPIResponse: Codable {
     
+    let status: String?
+    let stats: StatisticsAPIResponse?
+    
     struct StatisticsAPIResponse: Codable {
         let m: String?
         let h: String?
@@ -7,8 +10,5 @@ struct TickerStatisticsAPIResponse: Codable {
         let v: String?
         let r24h: String?
     }
-    
-    let status: String?
-    let stats: StatisticsAPIResponse?
     
 }

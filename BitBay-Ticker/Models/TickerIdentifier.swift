@@ -54,7 +54,7 @@ extension TickerIdentifier {
 extension TickerIdentifier: Equatable {
     
     static func == (lhs: TickerIdentifier, rhs: TickerIdentifier) -> Bool {
-        return lhs.id == rhs.id
+        lhs.id == rhs.id
     }
     
 }
