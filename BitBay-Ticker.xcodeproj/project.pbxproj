@@ -49,6 +49,10 @@
 		8C8CC5B123DDFBE5001CF17F /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */; };
 		8C8CC5B323DE0029001CF17F /* Int+TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */; };
 		8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */; };
+		8C9BA35623E597FF00ADA235 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFB35111F1808F900475DC1 /* NotificationCenter.framework */; };
+		8C9BA35923E597FF00ADA235 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA35823E597FF00ADA235 /* TodayViewController.swift */; };
+		8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */; };
+		8C9BA36023E597FF00ADA235 /* BitBay-Ticker-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */; };
 		8CB1450B23E37943002F5A6A /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1450A23E37943002F5A6A /* Title.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
@@ -77,6 +81,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8C9BA35E23E597FF00ADA235 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C9BA35423E597FF00ADA235;
+			remoteInfo = "BitBay-Ticker-Widget";
+		};
 		8CC1850D1EFE4CAC0083DA30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
@@ -100,6 +111,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				8C9BA36023E597FF00ADA235 /* BitBay-Ticker-Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +179,10 @@
 		8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeIntervalExtensions.swift"; sourceTree = "<group>"; };
 		8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersViewControllerUITests.swift; sourceTree = "<group>"; };
+		8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BitBay-Ticker-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C9BA35823E597FF00ADA235 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		8C9BA35B23E597FF00ADA235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8C9BA35D23E597FF00ADA235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CAE92A523DDC6150025539D /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		8CAE92A623DDC6150025539D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifiersStore.swift; sourceTree = "<group>"; };
@@ -225,6 +241,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8C9BA35223E597FF00ADA235 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9BA35623E597FF00ADA235 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CC184F51EFE4CAC0083DA30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +369,16 @@
 			path = Translations;
 			sourceTree = "<group>";
 		};
+		8C9BA35723E597FF00ADA235 /* BitBay-Ticker-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BA35823E597FF00ADA235 /* TodayViewController.swift */,
+				8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */,
+				8C9BA35D23E597FF00ADA235 /* Info.plist */,
+			);
+			path = "BitBay-Ticker-Widget";
+			sourceTree = "<group>";
+		};
 		8CAE92A423DDC6150025539D /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +412,7 @@
 				8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */,
 				8CC1850F1EFE4CAC0083DA30 /* BitBay-TickerTests */,
 				8CDFD47B1F084106009F1E19 /* BitBay-TickerUITests */,
+				8C9BA35723E597FF00ADA235 /* BitBay-Ticker-Widget */,
 				8CC184F91EFE4CAC0083DA30 /* Products */,
 				C24AC6780E9338DA000950BE /* Frameworks */,
 			);
@@ -389,6 +424,7 @@
 				8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */,
 				8CC1850C1EFE4CAC0083DA30 /* BitBay-TickerTests.xctest */,
 				8CDFD47A1F084106009F1E19 /* BitBay-TickerUITests.xctest */,
+				8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -592,6 +628,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8C9BA35423E597FF00ADA235 /* BitBay-Ticker-Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C9BA36323E597FF00ADA235 /* Build configuration list for PBXNativeTarget "BitBay-Ticker-Widget" */;
+			buildPhases = (
+				8C9BA35123E597FF00ADA235 /* Sources */,
+				8C9BA35223E597FF00ADA235 /* Frameworks */,
+				8C9BA35323E597FF00ADA235 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BitBay-Ticker-Widget";
+			productName = "BitBay-Ticker-Widget";
+			productReference = 8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8CC184F71EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC185151EFE4CAC0083DA30 /* Build configuration list for PBXNativeTarget "BitBay-Ticker" */;
@@ -604,6 +657,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8C9BA35F23E597FF00ADA235 /* PBXTargetDependency */,
 			);
 			name = "BitBay-Ticker";
 			productName = "BitBay-Ticker";
@@ -652,10 +706,15 @@
 		8CC184F01EFE4CAC0083DA30 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Albin Sadowski";
 				TargetAttributes = {
+					8C9BA35423E597FF00ADA235 = {
+						CreatedOnToolsVersion = 11.3.1;
+						DevelopmentTeam = AXTXBRU9S7;
+						ProvisioningStyle = Automatic;
+					};
 					8CC184F71EFE4CAC0083DA30 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = AXTXBRU9S7;
@@ -704,11 +763,20 @@
 				8CC184F71EFE4CAC0083DA30 /* BitBay-Ticker */,
 				8CC1850B1EFE4CAC0083DA30 /* BitBay-TickerTests */,
 				8CDFD4791F084106009F1E19 /* BitBay-TickerUITests */,
+				8C9BA35423E597FF00ADA235 /* BitBay-Ticker-Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8C9BA35323E597FF00ADA235 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CC184F61EFE4CAC0083DA30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -737,6 +805,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8C9BA35123E597FF00ADA235 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9BA35923E597FF00ADA235 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CC184F41EFE4CAC0083DA30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -811,6 +887,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8C9BA35F23E597FF00ADA235 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C9BA35423E597FF00ADA235 /* BitBay-Ticker-Widget */;
+			targetProxy = 8C9BA35E23E597FF00ADA235 /* PBXContainerItemProxy */;
+		};
 		8CC1850E1EFE4CAC0083DA30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8CC184F71EFE4CAC0083DA30 /* BitBay-Ticker */;
@@ -824,6 +905,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C9BA35B23E597FF00ADA235 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		8CBD947C1F0D7D1400CA4250 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -845,6 +934,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8C9BA36123E597FF00ADA235 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "BitBay-Ticker-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C9BA36223E597FF00ADA235 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "BitBay-Ticker-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		8CC185131EFE4CAC0083DA30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -961,6 +1093,7 @@
 		8CC185161EFE4CAC0083DA30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker/Supporting Files/BitBay-Ticker.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -991,6 +1124,7 @@
 		8CC185171EFE4CAC0083DA30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker/Supporting Files/BitBay-Ticker.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1086,6 +1220,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8C9BA36323E597FF00ADA235 /* Build configuration list for PBXNativeTarget "BitBay-Ticker-Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C9BA36123E597FF00ADA235 /* Debug */,
+				8C9BA36223E597FF00ADA235 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8CC184F31EFE4CAC0083DA30 /* Build configuration list for PBXProject "BitBay-Ticker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
