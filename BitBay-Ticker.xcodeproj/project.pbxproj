@@ -52,7 +52,7 @@
 		8C9BA35623E597FF00ADA235 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFB35111F1808F900475DC1 /* NotificationCenter.framework */; };
 		8C9BA35923E597FF00ADA235 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA35823E597FF00ADA235 /* TodayViewController.swift */; };
 		8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */; };
-		8C9BA36023E597FF00ADA235 /* BitBay-Ticker-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8C9BA36023E597FF00ADA235 /* BitBay Ticker Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8C9BA35523E597FF00ADA235 /* BitBay Ticker Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */; };
 		8CB1450B23E37943002F5A6A /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1450A23E37943002F5A6A /* Title.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
@@ -111,7 +111,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8C9BA36023E597FF00ADA235 /* BitBay-Ticker-Widget.appex in Embed App Extensions */,
+				8C9BA36023E597FF00ADA235 /* BitBay Ticker Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,7 +179,7 @@
 		8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeIntervalExtensions.swift"; sourceTree = "<group>"; };
 		8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersViewControllerUITests.swift; sourceTree = "<group>"; };
-		8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BitBay-Ticker-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C9BA35523E597FF00ADA235 /* BitBay Ticker Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BitBay Ticker Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9BA35823E597FF00ADA235 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		8C9BA35B23E597FF00ADA235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8C9BA35D23E597FF00ADA235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -424,7 +424,7 @@
 				8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */,
 				8CC1850C1EFE4CAC0083DA30 /* BitBay-TickerTests.xctest */,
 				8CDFD47A1F084106009F1E19 /* BitBay-TickerUITests.xctest */,
-				8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */,
+				8C9BA35523E597FF00ADA235 /* BitBay Ticker Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -642,7 +642,7 @@
 			);
 			name = "BitBay-Ticker-Widget";
 			productName = "BitBay-Ticker-Widget";
-			productReference = 8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */;
+			productReference = 8C9BA35523E597FF00ADA235 /* BitBay Ticker Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		8CC184F71EFE4CAC0083DA30 /* BitBay-Ticker */ = {
@@ -949,7 +949,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BitBay Ticker Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -970,7 +970,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BitBay Ticker Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
