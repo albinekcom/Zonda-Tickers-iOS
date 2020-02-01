@@ -1,12 +1,11 @@
 import NotificationCenter
+import SwiftUI
 import UIKit
 
 final class TodayViewController: UIViewController {
     
-    // MARK: - Managing View
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBSegueAction private func addSwiftUIView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: WidgetView())
     }
     
 }

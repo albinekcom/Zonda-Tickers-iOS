@@ -15,15 +15,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="116" y="30.5" width="88.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gba-rj-Lj6">
+                                <rect key="frame" x="0.0" y="7" width="320" height="26"/>
+                                <connections>
+                                    <segue destination="Prt-bx-0BV" kind="embed" destinationCreationSelector="addSwiftUIView:" id="BJf-js-ZFa"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="34l-eu-STH"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="LWr-UI-oRD"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="top" secondItem="gba-rj-Lj6" secondAttribute="top" constant="37" id="6Ll-Ih-eup"/>
+                            <constraint firstItem="gba-rj-Lj6" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="HeH-qP-wuP"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="gba-rj-Lj6" secondAttribute="trailing" id="Vcj-Lr-mxb"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="gba-rj-Lj6" secondAttribute="bottom" constant="4" id="jEh-yQ-mcE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -33,7 +36,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="126"/>
+            <point key="canvasLocation" x="-168.11594202898553" y="120.87053571428571"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="Lwd-hQ-2lN">
+            <objects>
+                <hostingController id="Prt-bx-0BV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wp7-Ru-nmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="135"/>
         </scene>
     </scenes>
 </document>
