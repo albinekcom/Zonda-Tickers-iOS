@@ -79,6 +79,16 @@
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 		8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
 		8CF9492723E5AC7400625CA7 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9492623E5AC7400625CA7 /* WidgetView.swift */; };
+		8CF9492823E5B95400625CA7 /* TickerListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FD23E34977008693D8 /* TickerListRow.swift */; };
+		8CF9492923E5B96200625CA7 /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FB23E34730008693D8 /* CurrencyIcon.swift */; };
+		8CF9492A23E5B96600625CA7 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1450A23E37943002F5A6A /* Title.swift */; };
+		8CF9492B23E5B97600625CA7 /* TickerIdentifiersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */; };
+		8CF9492C23E5B97C00625CA7 /* TickerIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */; };
+		8CF9492D23E5B98700625CA7 /* PrettyValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D5F23A62C5D00D25D99 /* PrettyValueFormatter.swift */; };
+		8CF9492E23E5B9A800625CA7 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
+		8CF9492F23E5BA1100625CA7 /* CurrencyTemplateIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF652323E409760081F719 /* CurrencyTemplateIcon.swift */; };
+		8CF9493023E5BA1C00625CA7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BA23A56994003C45A3 /* String+Extensions.swift */; };
+		8CF9493123E5BA8800625CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -776,6 +786,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF9493123E5BA8800625CA7 /* Assets.xcassets in Resources */,
 				8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -812,8 +823,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF9492B23E5B97600625CA7 /* TickerIdentifiersStore.swift in Sources */,
+				8CF9493023E5BA1C00625CA7 /* String+Extensions.swift in Sources */,
+				8CF9492A23E5B96600625CA7 /* Title.swift in Sources */,
 				8CF9492723E5AC7400625CA7 /* WidgetView.swift in Sources */,
+				8CF9492C23E5B97C00625CA7 /* TickerIdentifier.swift in Sources */,
+				8CF9492E23E5B9A800625CA7 /* Ticker.swift in Sources */,
+				8CF9492923E5B96200625CA7 /* CurrencyIcon.swift in Sources */,
 				8C9BA35923E597FF00ADA235 /* TodayViewController.swift in Sources */,
+				8CF9492F23E5BA1100625CA7 /* CurrencyTemplateIcon.swift in Sources */,
+				8CF9492D23E5B98700625CA7 /* PrettyValueFormatter.swift in Sources */,
+				8CF9492823E5B95400625CA7 /* TickerListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,8 +2,16 @@ import SwiftUI
 
 struct WidgetView : View {
     
+    @EnvironmentObject private var widgetUserData: WidgetUserData
+    
     var body: some View {
-        Text("This is a SwiftUI view 👋")
+        List(widgetUserData.tickers) { (ticker) in
+            TickerListRow(
+                firstCurrency: TickerIdentifiersStore.shared.tickerIdentifierOrCreateNew(id: ticker.id).firstCurrencyIdentifier,
+                secondCurrency: TickerIdentifiersStore.shared.tickerIdentifierOrCreateNew(id: ticker.id).secondCurrencyIdentifier,
+                value: PrettyValueFormatter.makePrettyString(value: ticker.rate, scale: ticker.secondCurrency?.scale, currency: nil))
+        }
+        .environment(\.defaultMinListRowHeight, WidgetConstant.cellHeight)
     }
     
 }
