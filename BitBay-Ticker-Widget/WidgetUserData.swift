@@ -9,29 +9,27 @@ final class WidgetUserData: ObservableObject {
     private let tickersDataLoader: TickersDataLoader = TickersDataLoader()
     private let tickersDataSaver: TickersDataSaver = TickersDataSaver()
     
-    private let tickersRefresher: TickersRefresher = TickersRefresher()
+    private let tickerRefreshersStore: TickerRefreshersStore = TickerRefreshersStore()
     
-    func loadTickers() { // TODO: Use it in a proper place
-        tickersDataLoader.loadTickers() { [weak self] (tickers) in
-            self?.tickers = tickers ?? []
-        }
+    init() {
+        tickers = tickersDataLoader.loadTickersSynchronously() ?? []
     }
     
-    func saveTickers() { // TODO: Use it in a proper place
+    func saveTickers() {
         guard tickers.isEmpty == false else { return }
         
         tickersDataSaver.saveTickers(tickers: tickers)
     }
     
     func refreshTickers(completionHandler: @escaping (Error?) -> ()) {
-        for (index, ticker) in tickers.enumerated() {
-            tickersRefresher.refresh(ticker: ticker) { [weak self] result in
+        for (index, ticker) in tickers.enumerated() { // TODO: Invoke completionHandler somewhere
+            tickerRefreshersStore.tickersRefresher(for: ticker).refresh() { [weak self] result in
                 switch result {
                     case .success(let refreshedTicker):
                         self?.tickers[index] = refreshedTicker
-                        self?.saveTickers() // TODO: Move it after creating refreshTickers() in TickersRefresher
+                        self?.saveTickers()
                     
-                    case .failure(_):
+                    case .failure(let error):
                         break
                 }
             }

@@ -1,15 +1,21 @@
 import Combine
 import Foundation
 
-final class TickersRefresher {
+final class TickerRefresher {
     
     private var cancellable: AnyCancellable?
     
-    func refresh(ticker: Ticker, completionHandler: @escaping (Result<Ticker, Error>) -> Void) {
+    var ticker: Ticker
+    
+    init(ticker: Ticker) {
+        self.ticker = ticker
+    }
+    
+    func refresh(completionHandler: @escaping (Result<Ticker, Error>) -> Void) {
         var refreshedTicker = ticker
         
-        self.cancellable = Publishers.Zip(valuesPublisher(pair: ticker.id), statisticsPublisher(pair: ticker.id))
-            .receive(on: RunLoop.main)
+        cancellable = Publishers.Zip(valuesPublisher(pair: ticker.id), statisticsPublisher(pair: ticker.id))
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
                     case .finished:

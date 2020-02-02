@@ -1,21 +1,31 @@
 import Foundation
 
-struct TickersDataLoader {
+final class TickersDataLoader {
     
-    func loadTickers(completion: (([Ticker]?) -> (Void))? = nil) {
-        guard Storage.fileExists(AppConfiguration.Storing.userDataTickersFileName, in: .documents) else {
-            completion?(nil)
-            
-            return
-        }
-        
-        DispatchQueue.global(qos: .background).async {
-            let tickersFromFile = Storage.retrieve(AppConfiguration.Storing.userDataTickersFileName, from: .documents, as: [Ticker].self)
+    func loadTickersAsynchronously(completion: (([Ticker]?) -> (Void))? = nil) {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            let tickers = self?.tickersFromFile
             
             DispatchQueue.main.async {
-                completion?(tickersFromFile)
+                completion?(tickers)
             }
         }
+    }
+    
+    func loadTickersSynchronously() -> [Ticker]? {
+        return tickersFromFile
+    }
+    
+    private var tickersFromFile: [Ticker]? {
+        let tickersFromFile: [Ticker]?
+        
+        if let decodedTickersFromFile = UserDefaults.shared?.object(forKey: AppConfiguration.Storing.userDataTickersFileName) as? Data {
+            tickersFromFile = try? JSONDecoder().decode([Ticker].self, from: decodedTickersFromFile)
+        } else {
+            tickersFromFile = nil
+        }
+        
+        return tickersFromFile
     }
     
 }

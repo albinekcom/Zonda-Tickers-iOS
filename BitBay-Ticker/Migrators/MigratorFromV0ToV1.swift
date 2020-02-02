@@ -227,13 +227,15 @@ struct DataMigratorFromV0ToV1 {
     }
     
     var isMigrationNeeded: Bool {
-        if Storage.fileExists(AppConfiguration.Storing.userDataTickersFileName, in: .documents) {
-            return false
-        } else if let _ = oldPlistData {
-            return true
-        } else {
-            return false
-        }
+//        if Storage.fileExists(AppConfiguration.Storing.userDataTickersFileName, in: .documents) {
+//            return false
+//        } else if let _ = oldPlistData {
+//            return true
+//        } else {
+//            return false
+//        }
+        
+        return false
     }
     
     func loadTickers(completion: (([Ticker]?) -> (Void))? = nil) {
@@ -260,7 +262,7 @@ struct DataMigratorFromV0ToV1 {
     
     private var oldPlistData: Data? {
         if
-            let sharedUserDefaults = UserDefaults(suiteName: Key.sharedDefaultsIdentifier),
+            let sharedUserDefaults = UserDefaults.shared,
             let data = sharedUserDefaults.value(forKey: Key.userDataPlistName) as? Data {
             return data
         } else {

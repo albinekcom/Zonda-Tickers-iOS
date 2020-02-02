@@ -1,11 +1,17 @@
 import Foundation
 
-struct TickersDataSaver {
+final class TickersDataSaver {
     
     func saveTickers(tickers: [Ticker]) {
         DispatchQueue.global(qos: .background).async {
-            Storage.store(tickers, to: .documents, as: AppConfiguration.Storing.userDataTickersFileName)
+            UserDefaults.shared?.set(try? JSONEncoder().encode(tickers), forKey: AppConfiguration.Storing.userDataTickersFileName)
         }
     }
+    
+}
+
+extension UserDefaults {
+    
+    static let shared = UserDefaults(suiteName: AppConfiguration.Storing.sharedDefaultsIdentifier)
     
 }

@@ -23,7 +23,7 @@ final class DataStorage {
                 completion()
             }
         } else {
-            tickersLoader.loadTickers { [weak self] (tickers) in
+            tickersLoader.loadTickersAsynchronously { [weak self] (tickers) in
                 self?.userData?.tickers = tickers ?? []
                 
                 completion()

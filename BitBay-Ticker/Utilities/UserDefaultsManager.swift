@@ -4,17 +4,16 @@ final class UserDefaultsManager {
     
     var applicationLaunchCounter: Int {
         get {
-            userDefaults.integer(forKey: AppConfiguration.Storing.applicationLaunchCounterKey)
+            userDefaults?.integer(forKey: AppConfiguration.Storing.applicationLaunchCounterKey) ?? 0
         }
         set {
-            userDefaults.set(newValue, forKey: AppConfiguration.Storing.applicationLaunchCounterKey)
-            userDefaults.synchronize()
+            userDefaults?.set(newValue, forKey: AppConfiguration.Storing.applicationLaunchCounterKey)
         }
     }
     
-    let userDefaults: UserDefaults
+    let userDefaults: UserDefaults?
     
-    init(userDefaults: UserDefaults = .standard) {
+    init(userDefaults: UserDefaults? = UserDefaults.shared) {
         self.userDefaults = userDefaults
     }
     

@@ -17,7 +17,6 @@ final class TodayViewController: UIViewController {
         super.viewDidLoad()
         
         widgetUserData.todayViewController = self
-        widgetUserData.loadTickers()
         
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     }

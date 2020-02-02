@@ -10,6 +10,8 @@ final class UserData: ObservableObject {
     @Published private(set) var fetchingTickerPropertiesError: Error?
     @Published private(set) var fetchingTickerIdentifiersError: Error?
     
+    private let tickerRefreshersStore: TickerRefreshersStore = TickerRefreshersStore()
+    
     var isEditing: Bool = false { // HACK
         didSet {
             if isEditing {
@@ -79,7 +81,7 @@ final class UserData: ObservableObject {
     }
     
     func refresh(ticker: Ticker) {
-        tickersRefresher.refresh(ticker: ticker) { [weak self] result in
+        tickerRefreshersStore.tickersRefresher(for: ticker).refresh() { [weak self] result in
             switch result {
                 case .success(let refreshedTicker):
                     if let tickerIndex = self?.tickers.firstIndex(where: { $0.id == ticker.id }) {
