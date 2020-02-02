@@ -31,9 +31,9 @@ struct AppConfiguration {
     
     struct Storing {
         
+        static let sharedDefaultsIdentifier: String = "group.com.albinek.ios.BitBay-Ticker.shared.defaults"
         static let userDataTickersFileName: String = "user_data_tickers_v1"
         static let applicationLaunchCounterKey: String = "application_launch_counter"
-        static let sharedDefaultsIdentifier: String = "group.com.albinek.ios.BitBay-Ticker.shared.defaults"
         
     }
     

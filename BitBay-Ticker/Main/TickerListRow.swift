@@ -10,7 +10,7 @@ struct TickerListRow: View {
         HStack {
             CurrencyIcon(currencyName: self.firstCurrency)
             Title(firstCurrency: self.firstCurrency, secondCurrency: self.secondCurrency)
-                .padding(.horizontal, 2)
+                .padding(.horizontal, 4)
             Spacer()
             Text(self.value)
                 .font(.subheadline)

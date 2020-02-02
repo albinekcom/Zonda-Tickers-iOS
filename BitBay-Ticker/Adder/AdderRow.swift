@@ -6,17 +6,14 @@ struct AdderRow: View {
     let secondCurrency: String
     
     var body: some View {
-        GeometryReader { geometry in
-            HStack {
-                CurrencyIcon(currencyName: self.firstCurrency)
-                    .frame(width: geometry.size.height * 0.5, height: geometry.size.height * 0.5)
-                Title(firstCurrency: self.firstCurrency, secondCurrency: self.secondCurrency)
-                    .padding(.horizontal, 2)
-                Spacer()
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(Color.applicationPrimary)
-                    .font(.headline)
-            }
+        HStack {
+            CurrencyIcon(currencyName: firstCurrency)
+            Title(firstCurrency: firstCurrency, secondCurrency: secondCurrency)
+                .padding(.horizontal, 4)
+            Spacer()
+            Image(systemName: "plus.circle.fill")
+                .foregroundColor(Color.applicationPrimary)
+                .font(.headline)
         }
     }
     

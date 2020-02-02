@@ -18,7 +18,6 @@
 		8C0688AD23A4DE75003C45A3 /* TickerIdentifiersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688AC23A4DE75003C45A3 /* TickerIdentifiersFetcher.swift */; };
 		8C0688B123A53D31003C45A3 /* TickerValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */; };
 		8C0688B323A53D4F003C45A3 /* AvailableTickersAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B223A53D4F003C45A3 /* AvailableTickersAPIResponse.swift */; };
-		8C0688B523A53F60003C45A3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B423A53F60003C45A3 /* Storage.swift */; };
 		8C0688B723A54930003C45A3 /* TickerStatisticsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B623A54930003C45A3 /* TickerStatisticsAPIResponse.swift */; };
 		8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BA23A56994003C45A3 /* String+Extensions.swift */; };
 		8C0688BD23A57A78003C45A3 /* TickerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BC23A57A78003C45A3 /* TickerDetailViewModel.swift */; };
@@ -93,7 +92,6 @@
 		8CF9493723E5C38C00625CA7 /* TickersDataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */; };
 		8CF9493823E5C3B300625CA7 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */; };
 		8CF9493923E5C3BD00625CA7 /* Int+TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */; };
-		8CF9493A23E5C3C400625CA7 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B423A53F60003C45A3 /* Storage.swift */; };
 		8CF9493D23E5C6DB00625CA7 /* TickersRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9493C23E5C6DB00625CA7 /* TickersRefresher.swift */; };
 		8CF9493E23E5D73100625CA7 /* TickersRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9493C23E5C6DB00625CA7 /* TickersRefresher.swift */; };
 		8CF9493F23E5D73A00625CA7 /* TickerValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */; };
@@ -157,7 +155,6 @@
 		8C0688AC23A4DE75003C45A3 /* TickerIdentifiersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifiersFetcher.swift; sourceTree = "<group>"; };
 		8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerValuesAPIResponse.swift; sourceTree = "<group>"; };
 		8C0688B223A53D4F003C45A3 /* AvailableTickersAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTickersAPIResponse.swift; sourceTree = "<group>"; };
-		8C0688B423A53F60003C45A3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		8C0688B623A54930003C45A3 /* TickerStatisticsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerStatisticsAPIResponse.swift; sourceTree = "<group>"; };
 		8C0688BA23A56994003C45A3 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		8C0688BC23A57A78003C45A3 /* TickerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerDetailViewModel.swift; sourceTree = "<group>"; };
@@ -535,7 +532,6 @@
 		8CD1D20E23A42D7D0045E60A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8C0688B423A53F60003C45A3 /* Storage.swift */,
 				8C0688BA23A56994003C45A3 /* String+Extensions.swift */,
 				8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */,
 				8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */,
@@ -863,7 +859,6 @@
 				8CF9496B23E7051000625CA7 /* TickerRefreshersStore.swift in Sources */,
 				8CF9493723E5C38C00625CA7 /* TickersDataSaver.swift in Sources */,
 				8CF9492723E5AC7400625CA7 /* WidgetView.swift in Sources */,
-				8CF9493A23E5C3C400625CA7 /* Storage.swift in Sources */,
 				8CF9493323E5C0DD00625CA7 /* WidgetConfiguration.swift in Sources */,
 				8CF9493523E5C11E00625CA7 /* WidgetUserData.swift in Sources */,
 				8CF9492C23E5B97C00625CA7 /* TickerIdentifier.swift in Sources */,
@@ -900,7 +895,6 @@
 				267BBC6723D9D5EF000EF9AB /* MainContent.swift in Sources */,
 				8C0688B123A53D31003C45A3 /* TickerValuesAPIResponse.swift in Sources */,
 				8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */,
-				8C0688B523A53F60003C45A3 /* Storage.swift in Sources */,
 				8CBF652423E409760081F719 /* CurrencyTemplateIcon.swift in Sources */,
 				8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */,
 				8C0192FC23E34730008693D8 /* CurrencyIcon.swift in Sources */,
@@ -1008,13 +1002,15 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker-Widget/BitBay Ticker Widget.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker-Widget/BitBay-Ticker-Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2000;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "BitBay-Ticker-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
@@ -1031,13 +1027,15 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker-Widget/BitBay Ticker Widget.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker-Widget/BitBay-Ticker-Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2000;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "BitBay-Ticker-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
 				PRODUCT_NAME = "BitBay Ticker Widget";
@@ -1167,7 +1165,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker/Supporting Files/BitBay-Ticker.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 2000;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1178,7 +1176,7 @@
 				INFOPLIST_FILE = "BitBay-Ticker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.13;
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -1198,7 +1196,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker/Supporting Files/BitBay-Ticker.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 2000;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1209,7 +1207,7 @@
 				INFOPLIST_FILE = "BitBay-Ticker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.13;
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",

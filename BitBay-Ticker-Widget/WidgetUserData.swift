@@ -22,15 +22,16 @@ final class WidgetUserData: ObservableObject {
     }
     
     func refreshTickers(completionHandler: @escaping (Error?) -> ()) {
-        for (index, ticker) in tickers.enumerated() { // TODO: Invoke completionHandler somewhere
+        for (index, ticker) in tickers.enumerated() {
             tickerRefreshersStore.tickersRefresher(for: ticker).refresh() { [weak self] result in
                 switch result {
                     case .success(let refreshedTicker):
                         self?.tickers[index] = refreshedTicker
-                        self?.saveTickers()
+                        self?.saveTickers() // TODO: Move it to a better place after implementing refresh(tickers:) method
+                        completionHandler(nil) // TODO: Move it to a better place after implementing refresh(tickers:) method
                     
                     case .failure(let error):
-                        break
+                        completionHandler(error) // TODO: Move it to a better place after implementing refresh(tickers:) method
                 }
             }
         }

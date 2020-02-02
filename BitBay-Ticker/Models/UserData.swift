@@ -75,6 +75,9 @@ final class UserData: ObservableObject {
     // MARK: - Refreshing
     
     @objc func refreshAllTickers() {
+        let analyticsParamaters = AnalyticsParametersFactory.makeAllTickersParameters(from: tickers)
+        AnalyticsService.shared.trackStartRefreshingTickers(parameters: analyticsParamaters)
+        
         tickers.forEach { refresh(ticker: $0) }
     }
     

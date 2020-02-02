@@ -221,21 +221,12 @@ extension OldTicker {
 struct DataMigratorFromV0ToV1 {
     
     private struct Key {
-        static let sharedDefaultsIdentifier = "group.com.albinek.ios.BitBay-Ticker.shared.defaults"
         static let userDataPlistName = "user_data"
         static let tickers = "tickers"
     }
     
     var isMigrationNeeded: Bool {
-//        if Storage.fileExists(AppConfiguration.Storing.userDataTickersFileName, in: .documents) {
-//            return false
-//        } else if let _ = oldPlistData {
-//            return true
-//        } else {
-//            return false
-//        }
-        
-        return false
+        return oldPlistData != nil
     }
     
     func loadTickers(completion: (([Ticker]?) -> (Void))? = nil) {
@@ -256,6 +247,8 @@ struct DataMigratorFromV0ToV1 {
         }
         
         let newTickers = oldTickers.map { Ticker(id: $0.migratedID) }
+        
+        UserDefaults.shared?.removeObject(forKey: Key.userDataPlistName)
         
         completion?(newTickers)
     }

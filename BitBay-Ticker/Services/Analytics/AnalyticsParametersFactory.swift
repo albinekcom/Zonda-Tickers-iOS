@@ -8,4 +8,8 @@ struct AnalyticsParametersFactory {
         return ["Ticker": tickerIdentifier.id]
     }
     
+    static func makeAllTickersParameters(from tickers: [Ticker]) -> [String: String] {
+        return ["Tickers": tickers.map { $0.id }.joined(separator: ",")]
+    }
+    
 }

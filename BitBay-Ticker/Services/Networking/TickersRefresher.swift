@@ -29,8 +29,8 @@ final class TickerRefresher {
             }
     }
     
-    func refresh(tickers: [Ticker]) {
-        // TODO: Implement it later
+    func refreshAll(tickers: [Ticker]) {
+        // TODO: Fill the implementation and move it to other class
     }
     
     private func valuesPublisher(pair: String) -> AnyPublisher<TickerValuesAPIResponse, Error> {

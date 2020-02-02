@@ -36,16 +36,12 @@ final class AnalyticsService {
         track(name: "Removed_Ticker", parameters: parameters)
     }
     
+    func trackStartRefreshingTickers(parameters: [String: String]) {
+        track(name: "Start_Refreshing_Tickers", parameters: parameters)
+    }
+    
     func trackRefreshedTicker(parameters: [String: String]) {
         track(name: "Refreshed_Ticker", parameters: parameters)
-    }
-    
-    func trackRefreshedTickerValues(parameters: [String: String]) {
-        track(name: "Refreshed_Ticker_Values", parameters: parameters)
-    }
-    
-    func trackRefreshedTickerStatistics(parameters: [String: String]) {
-        track(name: "Refreshed_Ticker_Statistics", parameters: parameters)
     }
     
     // MARK: - Tracking
