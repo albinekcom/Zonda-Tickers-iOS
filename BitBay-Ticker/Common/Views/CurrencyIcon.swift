@@ -4,6 +4,8 @@ struct CurrencyIcon: View {
     
     let currencyName: String
     
+    static let size: CGFloat = 28
+    
     var body: some View {
         Group {
             if UIImage(named: currencyName) != nil {
@@ -15,6 +17,7 @@ struct CurrencyIcon: View {
                 Text("")
             }
         }
+        .frame(width: CurrencyIcon.size, height: CurrencyIcon.size)
     }
     
 }

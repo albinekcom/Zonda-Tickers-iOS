@@ -10,8 +10,6 @@ final class UserData: ObservableObject {
     @Published private(set) var fetchingTickerPropertiesError: Error?
     @Published private(set) var fetchingTickerIdentifiersError: Error?
     
-    private let tickerRefreshersStore: TickerRefreshersStore = TickerRefreshersStore()
-    
     var isEditing: Bool = false { // HACK
         didSet {
             if isEditing {
@@ -36,7 +34,7 @@ final class UserData: ObservableObject {
     private var lastSuccesfullyTickersIdentifiersFetchedDate: Date?
     
     private let tickerIdentifiersFetcher: TickerIdentifiersFetcher = TickerIdentifiersFetcher()
-    private let tickersRefresher: TickersRefresher = TickersRefresher()
+    private let tickerRefreshersStore: TickerRefreshersStore = TickerRefreshersStore()
     
     func setupRefreshingTimer() {
         guard isEditing == false else { return }

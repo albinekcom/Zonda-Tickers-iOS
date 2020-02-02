@@ -7,35 +7,14 @@ struct TickerListRow: View {
     let value: String
     
     var body: some View {
-        GeometryReader { geometry in
-            HStack {
-                CurrencyIcon(currencyName: self.firstCurrency)
-                    .frame(width: geometry.size.height * 0.5, height: geometry.size.height * 0.5)
-                Title(firstCurrency: self.firstCurrency, secondCurrency: self.secondCurrency)
-                    .padding(.horizontal, 2)
-                Spacer()
-                Text(self.value)
-                    .font(.subheadline)
-                    .foregroundColor(.primary)
-            }
-        }
-    }
-    
-}
-
-struct MainTitle: View {
-    
-    let firstCurrency: String
-    let secondCurrency: String
-    
-    var body: some View {
-        HStack(alignment: .top, spacing: 8) {
-            Text(firstCurrency)
-                .font(.title)
+        HStack {
+            CurrencyIcon(currencyName: self.firstCurrency)
+            Title(firstCurrency: self.firstCurrency, secondCurrency: self.secondCurrency)
+                .padding(.horizontal, 2)
+            Spacer()
+            Text(self.value)
+                .font(.subheadline)
                 .foregroundColor(.primary)
-            Text("/ \(secondCurrency)")
-                .font(.callout)
-                .foregroundColor(.secondary)
         }
     }
     
