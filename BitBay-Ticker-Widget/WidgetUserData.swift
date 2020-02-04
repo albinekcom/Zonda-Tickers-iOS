@@ -15,12 +15,6 @@ final class WidgetUserData: ObservableObject {
         tickers = tickersDataLoader.loadTickersSynchronously() ?? []
     }
     
-    func saveTickers() {
-        guard tickers.isEmpty == false else { return }
-        
-        tickersDataSaver.saveTickers(tickers: tickers)
-    }
-    
     func refreshTickers(completionHandler: @escaping (Error?) -> ()) {
         tickerPropertiesFetcher.fetch(for: tickers) { [weak self] result in
             switch result {
@@ -49,6 +43,12 @@ final class WidgetUserData: ObservableObject {
         guard let applicationURL = WidgetConfiguration.applicationURL else { return }
         
         todayViewController?.extensionContext?.open(applicationURL)
+    }
+    
+    private func saveTickers() {
+        guard tickers.isEmpty == false else { return }
+        
+        tickersDataSaver.saveTickers(tickers: tickers)
     }
     
 }
