@@ -92,12 +92,35 @@
 		8CF9493723E5C38C00625CA7 /* TickersDataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */; };
 		8CF9493823E5C3B300625CA7 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */; };
 		8CF9493923E5C3BD00625CA7 /* Int+TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */; };
-		8CF9493D23E5C6DB00625CA7 /* TickersRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9493C23E5C6DB00625CA7 /* TickersRefresher.swift */; };
-		8CF9493E23E5D73100625CA7 /* TickersRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9493C23E5C6DB00625CA7 /* TickersRefresher.swift */; };
 		8CF9493F23E5D73A00625CA7 /* TickerValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */; };
 		8CF9496523E5E2FE00625CA7 /* TickerStatisticsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B623A54930003C45A3 /* TickerStatisticsAPIResponse.swift */; };
-		8CF9496A23E704FC00625CA7 /* TickerRefreshersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9496923E704FC00625CA7 /* TickerRefreshersStore.swift */; };
-		8CF9496B23E7051000625CA7 /* TickerRefreshersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9496923E704FC00625CA7 /* TickerRefreshersStore.swift */; };
+		8CFF6D7623E9FA7100C34B35 /* TickerPropertiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */; };
+		8CFF6D7923EA0CFB00C34B35 /* TickerPropertiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */; };
+		8CFF6D7A23EA1A3500C34B35 /* AnalyticsParametersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBC63223A7F9A800084B7F /* AnalyticsParametersFactory.swift */; };
+		8CFF6D7C23EA1A6D00C34B35 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; };
+		8CFF6D7D23EA1A6D00C34B35 /* FIRAnalyticsConnector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D7E23EA1A6D00C34B35 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; };
+		8CFF6D7F23EA1A6D00C34B35 /* FirebaseAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D8023EA1A6D00C34B35 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; };
+		8CFF6D8123EA1A6D00C34B35 /* FirebaseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D8223EA1A6D00C34B35 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62223A7F4EA00084B7F /* FirebaseCoreDiagnostics.framework */; };
+		8CFF6D8323EA1A6D00C34B35 /* FirebaseCoreDiagnostics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62223A7F4EA00084B7F /* FirebaseCoreDiagnostics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D8423EA1A6D00C34B35 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */; };
+		8CFF6D8523EA1A6D00C34B35 /* FirebaseInstallations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D8623EA1A6D00C34B35 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62123A7F4EA00084B7F /* FirebaseInstanceID.framework */; };
+		8CFF6D8723EA1A6D00C34B35 /* FirebaseInstanceID.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62123A7F4EA00084B7F /* FirebaseInstanceID.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D8823EA1A6D00C34B35 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61B23A7F4EA00084B7F /* GoogleAppMeasurement.framework */; };
+		8CFF6D8923EA1A6D00C34B35 /* GoogleAppMeasurement.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61B23A7F4EA00084B7F /* GoogleAppMeasurement.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D8A23EA1A6D00C34B35 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */; };
+		8CFF6D8B23EA1A6D00C34B35 /* GoogleDataTransport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D8C23EA1A6D00C34B35 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */; };
+		8CFF6D8D23EA1A6D00C34B35 /* GoogleDataTransportCCTSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D8E23EA1A6D00C34B35 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61E23A7F4EA00084B7F /* GoogleUtilities.framework */; };
+		8CFF6D8F23EA1A6D00C34B35 /* GoogleUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61E23A7F4EA00084B7F /* GoogleUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D9023EA1A6D00C34B35 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61F23A7F4EA00084B7F /* nanopb.framework */; };
+		8CFF6D9123EA1A6D00C34B35 /* nanopb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61F23A7F4EA00084B7F /* nanopb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFF6D9223EA1A6D00C34B35 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438B023DCDCCF00496367 /* PromisesObjC.framework */; };
+		8CFF6D9323EA1A6D00C34B35 /* PromisesObjC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438B023DCDCCF00496367 /* PromisesObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +157,28 @@
 				8C9BA36023E597FF00ADA235 /* BitBay Ticker Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CFF6D9423EA1A6D00C34B35 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8CFF6D7F23EA1A6D00C34B35 /* FirebaseAnalytics.framework in Embed Frameworks */,
+				8CFF6D8D23EA1A6D00C34B35 /* GoogleDataTransportCCTSupport.framework in Embed Frameworks */,
+				8CFF6D9323EA1A6D00C34B35 /* PromisesObjC.framework in Embed Frameworks */,
+				8CFF6D9123EA1A6D00C34B35 /* nanopb.framework in Embed Frameworks */,
+				8CFF6D8723EA1A6D00C34B35 /* FirebaseInstanceID.framework in Embed Frameworks */,
+				8CFF6D8523EA1A6D00C34B35 /* FirebaseInstallations.framework in Embed Frameworks */,
+				8CFF6D8323EA1A6D00C34B35 /* FirebaseCoreDiagnostics.framework in Embed Frameworks */,
+				8CFF6D8923EA1A6D00C34B35 /* GoogleAppMeasurement.framework in Embed Frameworks */,
+				8CFF6D8B23EA1A6D00C34B35 /* GoogleDataTransport.framework in Embed Frameworks */,
+				8CFF6D7D23EA1A6D00C34B35 /* FIRAnalyticsConnector.framework in Embed Frameworks */,
+				8CFF6D8F23EA1A6D00C34B35 /* GoogleUtilities.framework in Embed Frameworks */,
+				8CFF6D8123EA1A6D00C34B35 /* FirebaseCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -254,10 +299,9 @@
 		8CF9492623E5AC7400625CA7 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		8CF9493223E5C0DD00625CA7 /* WidgetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConfiguration.swift; sourceTree = "<group>"; };
 		8CF9493423E5C11E00625CA7 /* WidgetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUserData.swift; sourceTree = "<group>"; };
-		8CF9493C23E5C6DB00625CA7 /* TickersRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersRefresher.swift; sourceTree = "<group>"; };
 		8CF9496823E6229600625CA7 /* BitBay Ticker Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay Ticker Widget.entitlements"; sourceTree = "<group>"; };
-		8CF9496923E704FC00625CA7 /* TickerRefreshersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRefreshersStore.swift; sourceTree = "<group>"; };
 		8CFB35111F1808F900475DC1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerPropertiesFetcher.swift; sourceTree = "<group>"; };
 		91937493DCBCD003EA208242 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B087561A567A814D6F909055 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		BF13BF0B80336B95A6FA66B6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -268,7 +312,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFF6D9223EA1A6D00C34B35 /* PromisesObjC.framework in Frameworks */,
+				8CFF6D8023EA1A6D00C34B35 /* FirebaseCore.framework in Frameworks */,
 				8C9BA35623E597FF00ADA235 /* NotificationCenter.framework in Frameworks */,
+				8CFF6D8223EA1A6D00C34B35 /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				8CFF6D7C23EA1A6D00C34B35 /* FIRAnalyticsConnector.framework in Frameworks */,
+				8CFF6D8623EA1A6D00C34B35 /* FirebaseInstanceID.framework in Frameworks */,
+				8CFF6D7E23EA1A6D00C34B35 /* FirebaseAnalytics.framework in Frameworks */,
+				8CFF6D8A23EA1A6D00C34B35 /* GoogleDataTransport.framework in Frameworks */,
+				8CFF6D8823EA1A6D00C34B35 /* GoogleAppMeasurement.framework in Frameworks */,
+				8CFF6D8C23EA1A6D00C34B35 /* GoogleDataTransportCCTSupport.framework in Frameworks */,
+				8CFF6D8423EA1A6D00C34B35 /* FirebaseInstallations.framework in Frameworks */,
+				8CFF6D9023EA1A6D00C34B35 /* nanopb.framework in Frameworks */,
+				8CFF6D8E23EA1A6D00C34B35 /* GoogleUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,8 +659,7 @@
 			children = (
 				8CF9496723E61F7D00625CA7 /* Response */,
 				8C0688AC23A4DE75003C45A3 /* TickerIdentifiersFetcher.swift */,
-				8CF9493C23E5C6DB00625CA7 /* TickersRefresher.swift */,
-				8CF9496923E704FC00625CA7 /* TickerRefreshersStore.swift */,
+				8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -677,6 +732,7 @@
 				8C9BA35123E597FF00ADA235 /* Sources */,
 				8C9BA35223E597FF00ADA235 /* Frameworks */,
 				8C9BA35323E597FF00ADA235 /* Resources */,
+				8CFF6D9423EA1A6D00C34B35 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -854,11 +910,11 @@
 			files = (
 				8CF9492B23E5B97600625CA7 /* TickerIdentifiersStore.swift in Sources */,
 				8CF9493023E5BA1C00625CA7 /* String+Extensions.swift in Sources */,
-				8CF9493E23E5D73100625CA7 /* TickersRefresher.swift in Sources */,
 				8CF9492A23E5B96600625CA7 /* Title.swift in Sources */,
-				8CF9496B23E7051000625CA7 /* TickerRefreshersStore.swift in Sources */,
 				8CF9493723E5C38C00625CA7 /* TickersDataSaver.swift in Sources */,
 				8CF9492723E5AC7400625CA7 /* WidgetView.swift in Sources */,
+				8CFF6D7A23EA1A3500C34B35 /* AnalyticsParametersFactory.swift in Sources */,
+				8CFF6D7923EA0CFB00C34B35 /* TickerPropertiesFetcher.swift in Sources */,
 				8CF9493323E5C0DD00625CA7 /* WidgetConfiguration.swift in Sources */,
 				8CF9493523E5C11E00625CA7 /* WidgetUserData.swift in Sources */,
 				8CF9492C23E5B97C00625CA7 /* TickerIdentifier.swift in Sources */,
@@ -885,6 +941,7 @@
 				8CCE185623DB0F8D00738D32 /* ClearButton.swift in Sources */,
 				8C0688BD23A57A78003C45A3 /* TickerDetailViewModel.swift in Sources */,
 				8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */,
+				8CFF6D7623E9FA7100C34B35 /* TickerPropertiesFetcher.swift in Sources */,
 				8CBDE31A23DF4E8E0097DBBF /* TickersDataSaver.swift in Sources */,
 				8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */,
 				8C1F1D6823A652FF00D25D99 /* Color+ApplicationColors.swift in Sources */,
@@ -913,10 +970,8 @@
 				8C1F1D6A23A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				8C8CC5B123DDFBE5001CF17F /* AppConfiguration.swift in Sources */,
 				8CCA6F2E23A38EB60048B1B8 /* UserData.swift in Sources */,
-				8CF9496A23E704FC00625CA7 /* TickerRefreshersStore.swift in Sources */,
 				8CEB402523A94D75000928CE /* ReviewPopUpController.swift in Sources */,
 				8C1F1D6023A62C5D00D25D99 /* PrettyValueFormatter.swift in Sources */,
-				8CF9493D23E5C6DB00625CA7 /* TickersRefresher.swift in Sources */,
 				8CEB402723A95DC0000928CE /* UserDefaultsManager.swift in Sources */,
 				8C0688B323A53D4F003C45A3 /* AvailableTickersAPIResponse.swift in Sources */,
 				8CEB402923A962C5000928CE /* ErrorBanner.swift in Sources */,
@@ -1006,6 +1061,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2000;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BitBay-Ticker/Frameworks/Firebase/Analytics",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "BitBay-Ticker-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1031,6 +1090,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2000;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BitBay-Ticker/Frameworks/Firebase/Analytics",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "BitBay-Ticker-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

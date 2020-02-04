@@ -1,6 +1,6 @@
 import Foundation
 
-struct TickerIdentifiersFetcher {
+final class TickerIdentifiersFetcher {
     
     func fetch(completion: @escaping (Result<[TickerIdentifier], Error>) -> Void) {
         guard let url = URL(string: AppConfiguration.Endpoint.tickerIdentifiers) else { return }
@@ -8,9 +8,11 @@ struct TickerIdentifiersFetcher {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
                 guard let data = data else {
-                    if let error = error {
-                        DispatchQueue.main.async {
+                    DispatchQueue.main.async {
+                        if let error = error {
                             completion(.failure(error))
+                        } else {
+                            completion(.failure(DataError.unwrappingError))
                         }
                     }
                     

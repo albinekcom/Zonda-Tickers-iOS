@@ -9,7 +9,7 @@ final class WidgetUserData: ObservableObject {
     private let tickersDataLoader: TickersDataLoader = TickersDataLoader()
     private let tickersDataSaver: TickersDataSaver = TickersDataSaver()
     
-    private let tickerRefreshersStore: TickerRefreshersStore = TickerRefreshersStore()
+    private let tickerPropertiesFetcher: TickerPropertiesFetcher = TickerPropertiesFetcher()
     
     init() {
         tickers = tickersDataLoader.loadTickersSynchronously() ?? []
@@ -22,17 +22,25 @@ final class WidgetUserData: ObservableObject {
     }
     
     func refreshTickers(completionHandler: @escaping (Error?) -> ()) {
-        for (index, ticker) in tickers.enumerated() {
-            tickerRefreshersStore.tickersRefresher(for: ticker).refresh() { [weak self] result in
-                switch result {
-                    case .success(let refreshedTicker):
-                        self?.tickers[index] = refreshedTicker
-                        self?.saveTickers() // TODO: Move it to a better place after implementing refresh(tickers:) method
-                        completionHandler(nil) // TODO: Move it to a better place after implementing refresh(tickers:) method
+        tickerPropertiesFetcher.fetch(for: tickers) { [weak self] result in
+            switch result {
+                case .success(let refreshedTickers):
+                    for refreshedTicker in refreshedTickers {
+                        if let tickerIndex = self?.tickers.firstIndex(where: { $0.id == refreshedTicker.id }) {
+                            self?.tickers[tickerIndex] = refreshedTicker
+                        }
+                    }
                     
-                    case .failure(let error):
-                        completionHandler(error) // TODO: Move it to a better place after implementing refresh(tickers:) method
-                }
+                    /* TODO: Uncomment these lines after integrating "Firebase" framework with this "Today Extension"
+                    let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: refreshedTickers)
+                    AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters, refresingSource: .widget)
+                    */
+                
+                    completionHandler(nil)
+                case .failure(let error):
+                    completionHandler(error)
+                
+//                    AnalyticsService.shared.trackRefreshingTickersFailed() // TODO: Uncomment this line after integrating "Firebase" framework with this "Today Extension"
             }
         }
     }

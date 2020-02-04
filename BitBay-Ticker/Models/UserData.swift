@@ -34,7 +34,7 @@ final class UserData: ObservableObject {
     private var lastSuccesfullyTickersIdentifiersFetchedDate: Date?
     
     private let tickerIdentifiersFetcher: TickerIdentifiersFetcher = TickerIdentifiersFetcher()
-    private let tickerRefreshersStore: TickerRefreshersStore = TickerRefreshersStore()
+    private let tickerPropertiesFetcher: TickerPropertiesFetcher = TickerPropertiesFetcher()
     
     func setupRefreshingTimer() {
         guard isEditing == false else { return }
@@ -59,7 +59,7 @@ final class UserData: ObservableObject {
         
         tickers.append(ticker)
         
-        refresh(ticker: ticker)
+        refresh(tickers: [ticker], refreshingSource: .automatic)
     }
     
     func removeTicker(at index: Int) {
@@ -75,29 +75,31 @@ final class UserData: ObservableObject {
     // MARK: - Refreshing
     
     @objc func refreshAllTickers() {
-        let analyticsParamaters = AnalyticsParametersFactory.makeAllTickersParameters(from: tickers)
-        AnalyticsService.shared.trackStartRefreshingTickers(parameters: analyticsParamaters)
-        
-        tickers.forEach { refresh(ticker: $0) }
+        refresh(tickers: tickers, refreshingSource: .automatic)
     }
     
-    func refresh(ticker: Ticker) {
-        tickerRefreshersStore.tickersRefresher(for: ticker).refresh() { [weak self] result in
+    func refresh(tickers: [Ticker], refreshingSource: AnalyticsService.RefreshingSource) {
+        tickerPropertiesFetcher.fetch(for: tickers) { [weak self] result in
             switch result {
-                case .success(let refreshedTicker):
-                    if let tickerIndex = self?.tickers.firstIndex(where: { $0.id == ticker.id }) {
-                        self?.tickers[tickerIndex] = refreshedTicker
+                case .success(let refreshedTickers):
+                    for refreshedTicker in refreshedTickers {
+                        if let tickerIndex = self?.tickers.firstIndex(where: { $0.id == refreshedTicker.id }) {
+                            self?.tickers[tickerIndex] = refreshedTicker
+                        }
                     }
                     
-                    let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: ticker)
-                    AnalyticsService.shared.trackRefreshedTicker(parameters: analyticsParameters)
+                    let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: refreshedTickers)
+                    AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters, refreshingSource: refreshingSource)
                 
                     self?.fetchingTickerPropertiesError = nil
                 
                 case .failure(let error):
+                    AnalyticsService.shared.trackRefreshingTickersFailed(refreshingSource: refreshingSource)
+                    
                     self?.fetchingTickerPropertiesError = error
             }
         }
+        
     }
     
     func refreshTickersIdentifiers() {

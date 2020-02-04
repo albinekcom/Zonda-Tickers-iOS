@@ -2,6 +2,13 @@ import Firebase
 
 final class AnalyticsService {
     
+    enum RefreshingSource: String {
+        
+        case automatic = "Automatic"
+        case todayExtension = "Today Extension"
+        
+    }
+    
     static let shared: AnalyticsService = AnalyticsService()
     
     init() {
@@ -36,12 +43,18 @@ final class AnalyticsService {
         track(name: "Removed_Ticker", parameters: parameters)
     }
     
-    func trackStartRefreshingTickers(parameters: [String: String]) {
-        track(name: "Start_Refreshing_Tickers", parameters: parameters)
+    func trackRefreshedTickers(parameters: [String: String], refreshingSource: RefreshingSource) {
+        var updatedParameters = parameters
+        updatedParameters["Refreshing_Source"] = refreshingSource.rawValue
+        
+        track(name: "Refreshed_Tickers", parameters: updatedParameters)
     }
     
-    func trackRefreshedTicker(parameters: [String: String]) {
-        track(name: "Refreshed_Ticker", parameters: parameters)
+    func trackRefreshingTickersFailed(refreshingSource: RefreshingSource) {
+        var parameters: [String: String] = [:]
+        parameters["Refreshing_Source"] = refreshingSource.rawValue
+        
+        track(name: "Refreshing_Tickers_Failed", parameters: parameters)
     }
     
     // MARK: - Tracking
