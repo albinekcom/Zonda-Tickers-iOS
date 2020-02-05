@@ -50,6 +50,7 @@
 		8C9BA35923E597FF00ADA235 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA35823E597FF00ADA235 /* TodayViewController.swift */; };
 		8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */; };
 		8C9BA36023E597FF00ADA235 /* BitBay Ticker Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8C9BA35523E597FF00ADA235 /* BitBay Ticker Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8CAE2E2C23EB4FA6005C53BC /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2E2B23EB4FA6005C53BC /* WidgetTableViewCell.swift */; };
 		8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */; };
 		8CB1450B23E37943002F5A6A /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1450A23E37943002F5A6A /* Title.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
@@ -75,7 +76,6 @@
 		8CEB402923A962C5000928CE /* ErrorBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB402823A962C5000928CE /* ErrorBanner.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 		8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
-		8CF9492723E5AC7400625CA7 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9492623E5AC7400625CA7 /* WidgetView.swift */; };
 		8CF9492823E5B95400625CA7 /* TickerListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FD23E34977008693D8 /* TickerListRow.swift */; };
 		8CF9492923E5B96200625CA7 /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FB23E34730008693D8 /* CurrencyIcon.swift */; };
 		8CF9492A23E5B96600625CA7 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1450A23E37943002F5A6A /* Title.swift */; };
@@ -245,6 +245,7 @@
 		8C9BA35823E597FF00ADA235 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		8C9BA35B23E597FF00ADA235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8C9BA35D23E597FF00ADA235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CAE2E2B23EB4FA6005C53BC /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
 		8CAE92A523DDC6150025539D /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		8CAE92A623DDC6150025539D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifiersStore.swift; sourceTree = "<group>"; };
@@ -296,7 +297,6 @@
 		8CEE9B5623A2DBB700D5B24B /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/FirebaseInstallations.framework"; sourceTree = "<group>"; };
 		8CF438B023DCDCCF00496367 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/PromisesObjC.framework"; sourceTree = "<group>"; };
-		8CF9492623E5AC7400625CA7 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		8CF9493223E5C0DD00625CA7 /* WidgetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConfiguration.swift; sourceTree = "<group>"; };
 		8CF9493423E5C11E00625CA7 /* WidgetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUserData.swift; sourceTree = "<group>"; };
 		8CF9496823E6229600625CA7 /* BitBay Ticker Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay Ticker Widget.entitlements"; sourceTree = "<group>"; };
@@ -446,12 +446,12 @@
 		8C9BA35723E597FF00ADA235 /* BitBay-Ticker-Widget */ = {
 			isa = PBXGroup;
 			children = (
-				8CF9496823E6229600625CA7 /* BitBay Ticker Widget.entitlements */,
 				8C9BA35823E597FF00ADA235 /* TodayViewController.swift */,
-				8CF9492623E5AC7400625CA7 /* WidgetView.swift */,
 				8CF9493423E5C11E00625CA7 /* WidgetUserData.swift */,
+				8CAE2E2B23EB4FA6005C53BC /* WidgetTableViewCell.swift */,
 				8CF9493223E5C0DD00625CA7 /* WidgetConfiguration.swift */,
 				8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */,
+				8CF9496823E6229600625CA7 /* BitBay Ticker Widget.entitlements */,
 				8C9BA35D23E597FF00ADA235 /* Info.plist */,
 			);
 			path = "BitBay-Ticker-Widget";
@@ -912,9 +912,9 @@
 				8CF9493023E5BA1C00625CA7 /* String+Extensions.swift in Sources */,
 				8CF9492A23E5B96600625CA7 /* Title.swift in Sources */,
 				8CF9493723E5C38C00625CA7 /* TickersDataSaver.swift in Sources */,
-				8CF9492723E5AC7400625CA7 /* WidgetView.swift in Sources */,
 				8CFF6D7A23EA1A3500C34B35 /* AnalyticsParametersFactory.swift in Sources */,
 				8CFF6D7923EA0CFB00C34B35 /* TickerPropertiesFetcher.swift in Sources */,
+				8CAE2E2C23EB4FA6005C53BC /* WidgetTableViewCell.swift in Sources */,
 				8CF9493323E5C0DD00625CA7 /* WidgetConfiguration.swift in Sources */,
 				8CF9493523E5C11E00625CA7 /* WidgetUserData.swift in Sources */,
 				8CF9492C23E5B97C00625CA7 /* TickerIdentifier.swift in Sources */,

@@ -3,9 +3,7 @@ import Foundation
 final class WidgetUserData: ObservableObject {
     
     @Published var tickers: [Ticker] = []
-    
-    weak var todayViewController: TodayViewController?
-    
+        
     private let tickersDataLoader: TickersDataLoader = TickersDataLoader()
     private let tickersDataSaver: TickersDataSaver = TickersDataSaver()
     
@@ -37,12 +35,6 @@ final class WidgetUserData: ObservableObject {
 //                    AnalyticsService.shared.trackRefreshingTickersFailed() // TODO: Uncomment this line after integrating "Firebase" framework with this "Today Extension"
             }
         }
-    }
-    
-    func launchApplicaiton() {
-        guard let applicationURL = WidgetConfiguration.applicationURL else { return }
-        
-        todayViewController?.extensionContext?.open(applicationURL)
     }
     
     private func saveTickers() {
