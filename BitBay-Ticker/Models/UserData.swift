@@ -110,19 +110,33 @@ final class UserData: ObservableObject {
         tickerIdentifiersFetcher.fetch { [weak self] result in
             switch result {
                 case .success(let tickersIdentifiers):
-                    TickerIdentifiersStore.shared.tickerIdentifiers = tickersIdentifiers
-                
-                    let tickerIdentifiersOfUserTickers = self?.tickers.map { TickerIdentifier(id: $0.id) } ?? []
+                    self?.removeUnsupportedTickers(fetchedTickersIdentifiers: tickersIdentifiers)
+                    self?.updateTickersIdentifiersAvailableToAdd(fetchedTickersIdentifiers: tickersIdentifiers)
                     
-                    self?.tickersIdentifiersAvailableToAdd = tickersIdentifiers.filter { tickerIdentifiersOfUserTickers.contains($0) == false }
-                
                     self?.lastSuccesfullyTickersIdentifiersFetchedDate = Date()
-                
+                    
                     self?.fetchingTickerIdentifiersError = nil
                 case .failure(let error):
                     self?.fetchingTickerIdentifiersError = error
             }
         }
+    }
+    
+    private func removeUnsupportedTickers(fetchedTickersIdentifiers: [TickerIdentifier]) {
+        let tickersToRemoveFromUserTickers = tickers.filter { fetchedTickersIdentifiers.contains(TickerIdentifier(id: $0.id)) == false }
+        
+        for tickerToRemove in tickersToRemoveFromUserTickers {
+            if let index = tickers.firstIndex(of: tickerToRemove) {
+                tickers.remove(at: index)
+            }
+        }
+    }
+    
+    private func updateTickersIdentifiersAvailableToAdd(fetchedTickersIdentifiers: [TickerIdentifier]) {
+        TickerIdentifiersStore.shared.tickerIdentifiers = fetchedTickersIdentifiers
+        let tickerIdentifiersOfUserTickers = tickers.map { TickerIdentifier(id: $0.id) }
+        
+        tickersIdentifiersAvailableToAdd = fetchedTickersIdentifiers.filter { tickerIdentifiersOfUserTickers.contains($0) == false }
     }
     
 }
