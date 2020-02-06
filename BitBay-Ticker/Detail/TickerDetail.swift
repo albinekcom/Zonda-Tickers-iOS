@@ -6,6 +6,7 @@ struct TickerDetail: View {
     
     var body: some View {
         List {
+            DetailRow(title: viewModel.title(for: .name), value: viewModel.value(for: .name))
             DetailRow(title: viewModel.title(for: .rate), value: viewModel.value(for: .rate))
             DetailRow(title: viewModel.title(for: .previousRate), value: viewModel.value(for: .previousRate))
             DetailRow(title: viewModel.title(for: .highestRate), value: viewModel.value(for: .highestRate))

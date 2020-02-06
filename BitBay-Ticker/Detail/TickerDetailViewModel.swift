@@ -11,6 +11,7 @@ struct TickerDetailViewModel {
         case lowestAsk
         case average
         case volume
+        case name
     }
     
     let model: Ticker
@@ -44,40 +45,43 @@ struct TickerDetailViewModel {
             
         case .volume:
             return Text("Volume")
+            
+        case .name:
+            return Text("Name")
         }
     }
     
     func value(for row: Row) -> String {
-        let value: Double?
         let scale = model.secondCurrency?.scale
         
         switch row {
         case .rate:
-            value = model.rate
+            return PrettyValueFormatter.makePrettyString(value: model.rate, scale: scale, currency: nil)
             
         case .previousRate:
-            value = model.previousRate
+            return PrettyValueFormatter.makePrettyString(value: model.previousRate, scale: scale, currency: nil)
             
         case .highestRate:
-            value = model.highestRate
+            return PrettyValueFormatter.makePrettyString(value: model.highestRate, scale: scale, currency: nil)
             
         case .lowestRate:
-            value = model.lowestRate
+            return PrettyValueFormatter.makePrettyString(value: model.lowestRate, scale: scale, currency: nil)
             
         case .highestBid:
-            value = model.highestBid
+            return PrettyValueFormatter.makePrettyString(value: model.highestBid, scale: scale, currency: nil)
             
         case .lowestAsk:
-            value = model.lowestAsk
+            return PrettyValueFormatter.makePrettyString(value: model.lowestAsk, scale: scale, currency: nil)
             
         case .average:
-            value = model.average
+            return PrettyValueFormatter.makePrettyString(value: model.average, scale: scale, currency: nil)
             
         case .volume:
-            value = model.volume
+            return PrettyValueFormatter.makePrettyString(value: model.volume, scale: scale, currency: nil)
+            
+        case .name:
+            return TickerIdentifiersStore.shared.tickerIdentifier(id: model.id)?.firstCurrencyFullName ?? "-"
         }
-        
-        return PrettyValueFormatter.makePrettyString(value: value, scale: scale, currency: nil)
     }
     
 }
