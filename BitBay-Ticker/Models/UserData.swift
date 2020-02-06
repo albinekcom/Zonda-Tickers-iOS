@@ -14,6 +14,8 @@ final class UserData: ObservableObject {
         didSet {
             if isEditing {
                 invalidRefreshingTimer()
+                
+                AnalyticsService.shared.trackEditTickersView()
             } else if isAdding == false {
                 setupRefreshingTimer()
             }

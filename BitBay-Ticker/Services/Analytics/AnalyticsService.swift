@@ -29,6 +29,10 @@ final class AnalyticsService {
         track(name: "Ticker_Details_View", parameters: parameters)
     }
     
+    func trackEditTickersView() {
+        track(name: "Edit_Tickers_View")
+    }
+    
     func trackRequestedRatingView() {
         track(name: "Requested_Rating_View")
     }
