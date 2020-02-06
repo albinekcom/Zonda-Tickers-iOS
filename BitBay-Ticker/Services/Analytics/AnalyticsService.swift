@@ -5,7 +5,7 @@ final class AnalyticsService {
     enum RefreshingSource: String {
         
         case automatic = "Automatic"
-        case todayExtension = "Today Extension"
+        case widget = "Widget"
         
     }
     

@@ -12,39 +12,42 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="BitBay_Ticker_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gba-rj-Lj6">
-                                <rect key="frame" x="0.0" y="44" width="320" height="306"/>
-                                <connections>
-                                    <segue destination="Prt-bx-0BV" kind="embed" destinationCreationSelector="addSwiftUIView:" id="BJf-js-ZFa"/>
-                                </connections>
-                            </containerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wJY-xT-phM">
+                                <rect key="frame" x="0.0" y="44" width="320" height="66"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WidgetTableViewCell" id="8Z9-FR-SWG" customClass="WidgetTableViewCell" customModule="BitBay_Ticker_Widget" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Z9-FR-SWG" id="sCG-UZ-x6w">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="gba-rj-Lj6" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" constant="313" id="Afa-jS-Q96"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="top" secondItem="gba-rj-Lj6" secondAttribute="top" id="VSQ-Xx-dvD"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="gba-rj-Lj6" secondAttribute="trailing" id="YhC-c6-6Do"/>
-                            <constraint firstItem="gba-rj-Lj6" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="yWf-kD-oJn"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="top" secondItem="wJY-xT-phM" secondAttribute="top" id="DP1-4E-jYb"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="wJY-xT-phM" secondAttribute="trailing" id="P3v-OF-O9S"/>
+                            <constraint firstItem="wJY-xT-phM" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="f67-gV-Xdl"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="wJY-xT-phM" secondAttribute="bottom" id="jfT-ed-mfG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="37"/>
+                    <size key="freeformSize" width="320" height="110"/>
+                    <connections>
+                        <outlet property="tableView" destination="wJY-xT-phM" id="Jre-GU-FyB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-168.11594202898553" y="120.87053571428571"/>
-        </scene>
-        <!--Hosting Controller-->
-        <scene sceneID="Lwd-hQ-2lN">
-            <objects>
-                <hostingController id="Prt-bx-0BV" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wp7-Ru-nmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="400" y="135"/>
+            <point key="canvasLocation" x="-168.11594202898553" y="120.53571428571428"/>
         </scene>
     </scenes>
 </document>

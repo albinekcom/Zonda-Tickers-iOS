@@ -29,16 +29,12 @@ final class WidgetTableViewCell: UITableViewCell {
     
     // MARK: - Initializing
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         
         setUpSubviews()
         setUpViewsHierarchy()
         setUpConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("Do not use this initializer!")
     }
     
     // MARK: - Setting

@@ -134,8 +134,8 @@ final class UserData: ObservableObject {
     
     private func updateTickersIdentifiersAvailableToAdd(fetchedTickersIdentifiers: [TickerIdentifier]) {
         TickerIdentifiersStore.shared.tickerIdentifiers = fetchedTickersIdentifiers
-        let tickerIdentifiersOfUserTickers = tickers.map { TickerIdentifier(id: $0.id) }
         
+        let tickerIdentifiersOfUserTickers = tickers.map { TickerIdentifier(id: $0.id) }
         tickersIdentifiersAvailableToAdd = fetchedTickersIdentifiers.filter { tickerIdentifiersOfUserTickers.contains($0) == false }
     }
     

@@ -1,14 +1,4 @@
 import NotificationCenter
-import SwiftUI
-
-struct MyStructure {
-    
-    let id: String
-    let firstCurrency: String
-    let secondCurrency: String
-    let value: String
-    
-}
 
 final class TodayViewController: UIViewController {
     
@@ -31,10 +21,6 @@ final class TodayViewController: UIViewController {
 
 extension TodayViewController : UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int { // TODO: Check if it can be removed
-        1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         widgetUserData.tickers.count
     }
@@ -53,7 +39,7 @@ extension TodayViewController : UITableViewDataSource {
         return widgetTableViewCell
     }
     
-    private func launchApplicaiton() { // TODO: Invoke it after tapping on cell
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let applicationURL = WidgetConfiguration.applicationURL else { return }
         
         extensionContext?.open(applicationURL)
@@ -74,7 +60,7 @@ extension TodayViewController: NCWidgetProviding {
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         widgetUserData.refreshTickers() { [weak self] (error) in
             completionHandler((error == nil) ? .newData : .failed)
-            self?.tableView.reloadData() // TODO: Check if it is needed here
+            self?.tableView.reloadData()
         }
     }
     
