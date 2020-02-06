@@ -27,6 +27,8 @@ final class WidgetUserData: ObservableObject {
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: refreshedTickers)
                     AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters, refresingSource: .widget)
                     */
+                    
+                    self?.saveTickers()
                 
                     completionHandler(nil)
                 case .failure(let error):

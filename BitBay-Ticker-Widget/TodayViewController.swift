@@ -59,8 +59,9 @@ extension TodayViewController: NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         widgetUserData.refreshTickers() { [weak self] (error) in
-            completionHandler((error == nil) ? .newData : .failed)
             self?.tableView.reloadData()
+            
+            completionHandler((error == nil) ? .newData : .failed)
         }
     }
     
