@@ -33,7 +33,7 @@ final class UserData: ObservableObject {
     private var refreshingTimer: Timer?
     private var lastSuccesfullyTickersIdentifiersFetchedDate: Date?
     
-    private let tickerIdentifiersFetcher: TickerIdentifiersFetcher = TickerIdentifiersFetcher()
+    private let supportedTickersFetcher: SupportedTickersFetcher = SupportedTickersFetcher()
     private let tickerPropertiesFetcher: TickerPropertiesFetcher = TickerPropertiesFetcher()
     
     func setupRefreshingTimer() {
@@ -107,7 +107,7 @@ final class UserData: ObservableObject {
             return
         }
         
-        tickerIdentifiersFetcher.fetch { [weak self] result in
+        supportedTickersFetcher.fetch { [weak self] result in
             switch result {
                 case .success(let tickersIdentifiers):
                     self?.removeUnsupportedTickers(fetchedTickersIdentifiers: tickersIdentifiers)

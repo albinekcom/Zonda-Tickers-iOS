@@ -1,9 +1,9 @@
 import Foundation
 
-final class TickerIdentifiersFetcher {
+final class SupportedTickersFetcher {
     
     func fetch(completion: @escaping (Result<[TickerIdentifier], Error>) -> Void) {
-        guard let url = URL(string: AppConfiguration.Endpoint.tickerIdentifiers) else { return }
+        guard let url = URL(string: AppConfiguration.Endpoint.supportedTickers) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
@@ -19,11 +19,11 @@ final class TickerIdentifiersFetcher {
                     return
                 }
                 
-                let availableTickersAPIResponse = try JSONDecoder().decode(AvailableTickersAPIResponse.self, from: data)
+                let supportedTickersAPIResponse = try JSONDecoder().decode(SupportedTickersAPIResponse.self, from: data)
                 
-                let fullNames = availableTickersAPIResponse.data?.fullNames
+                let fullNames = supportedTickersAPIResponse.fullNames
                 
-                let tickerIdentifiers = availableTickersAPIResponse.data?.availableTickers?.compactMap { (identifier) -> TickerIdentifier in
+                let tickerIdentifiers = supportedTickersAPIResponse.supportedTickers?.compactMap { (identifier) -> TickerIdentifier in
                     var tickerIdentifier = TickerIdentifier(id: identifier)
                     tickerIdentifier.firstCurrencyFullName = fullNames?[tickerIdentifier.firstCurrencyIdentifier]
                     tickerIdentifier.secondCurrencyFullName = fullNames?[tickerIdentifier.secondCurrencyIdentifier]
@@ -33,7 +33,7 @@ final class TickerIdentifiersFetcher {
                 
                 let sortedTickerIdentifiers: [TickerIdentifier]
                 
-                if let sortingOrder = availableTickersAPIResponse.data?.sortingOrder, let tickerIdentifiers = tickerIdentifiers {
+                if let sortingOrder = supportedTickersAPIResponse.sortingOrder, let tickerIdentifiers = tickerIdentifiers {
                     sortedTickerIdentifiers = TickerIdentifierSorter.sorted(tickerIdentifiers: tickerIdentifiers, sortingOrder: sortingOrder)
                 } else {
                     sortedTickerIdentifiers = tickerIdentifiers ?? []
