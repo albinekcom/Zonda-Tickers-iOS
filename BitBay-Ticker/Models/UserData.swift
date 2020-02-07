@@ -56,6 +56,8 @@ final class UserData: ObservableObject {
     }
     
     func appendAndRefreshTicker(from tickerIdentifier: TickerIdentifier) {
+        guard tickers.contains(where: {$0.id == tickerIdentifier.id}) == false else { return }
+        
         let ticker = Ticker(id: tickerIdentifier.id)
         
         tickers.append(ticker)
