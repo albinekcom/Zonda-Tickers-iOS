@@ -2,7 +2,7 @@ import Firebase
 
 final class AnalyticsService {
     
-    enum RefreshingSource: String {
+    enum Source: String {
         
         case automatic = "Automatic"
         case automaticAfterAddingTicker = "Automatic_after_adding_ticker"
@@ -48,16 +48,16 @@ final class AnalyticsService {
         track(name: "Removed_Ticker", parameters: parameters)
     }
     
-    func trackRefreshedTickers(parameters: [String: String], refreshingSource: RefreshingSource) {
+    func trackRefreshedTickers(parameters: [String: String], source: Source) {
         var updatedParameters = parameters
-        updatedParameters["Refreshing_Source"] = refreshingSource.rawValue
+        updatedParameters["Refreshing_Source"] = source.rawValue
         
         track(name: "Refreshed_Tickers", parameters: updatedParameters)
     }
     
-    func trackRefreshingTickersFailed(refreshingSource: RefreshingSource) {
+    func trackRefreshingTickersFailed(source: Source) {
         var parameters: [String: String] = [:]
-        parameters["Refreshing_Source"] = refreshingSource.rawValue
+        parameters["Refreshing_Source"] = source.rawValue
         
         track(name: "Refreshing_Tickers_Failed", parameters: parameters)
     }

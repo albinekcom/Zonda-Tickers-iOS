@@ -62,7 +62,7 @@ final class UserData: ObservableObject {
         
         tickers.append(ticker)
         
-        refresh(tickers: [ticker], refreshingSource: .automaticAfterAddingTicker)
+        refresh(tickers: [ticker], source: .automaticAfterAddingTicker)
     }
     
     func removeTicker(at index: Int) {
@@ -78,10 +78,10 @@ final class UserData: ObservableObject {
     // MARK: - Refreshing
     
     @objc func refreshAllTickers() {
-        refresh(tickers: tickers, refreshingSource: .automatic)
+        refresh(tickers: tickers, source: .automatic)
     }
     
-    func refresh(tickers: [Ticker], refreshingSource: AnalyticsService.RefreshingSource) {
+    func refresh(tickers: [Ticker], source: AnalyticsService.Source) {
         tickerPropertiesFetcher.fetch(for: tickers) { [weak self] result in
             switch result {
                 case .success(let refreshedTickers):
@@ -92,12 +92,12 @@ final class UserData: ObservableObject {
                     }
                     
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: refreshedTickers)
-                    AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters, refreshingSource: refreshingSource)
+                    AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters, source: source)
                 
                     self?.fetchingTickerPropertiesError = nil
                 
                 case .failure(let error):
-                    AnalyticsService.shared.trackRefreshingTickersFailed(refreshingSource: refreshingSource)
+                    AnalyticsService.shared.trackRefreshingTickersFailed(source: source)
                     
                     self?.fetchingTickerPropertiesError = error
             }
