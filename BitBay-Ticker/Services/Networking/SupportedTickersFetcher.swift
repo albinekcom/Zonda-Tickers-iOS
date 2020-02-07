@@ -29,16 +29,8 @@ final class SupportedTickersFetcher {
                     return tickerIdentifier
                 }
                 
-                let sortedTickerIdentifiers: [TickerIdentifier]
-                
-                if let sortOrder = supportedTickersAPIResponse.sortOrder, let tickerIdentifiers = tickerIdentifiers {
-                    sortedTickerIdentifiers = TickerIdentifierSorter.sorted(tickerIdentifiers: tickerIdentifiers, sortOrder: sortOrder)
-                } else {
-                    sortedTickerIdentifiers = tickerIdentifiers ?? []
-                }
-                
                 DispatchQueue.main.async {
-                    completion(.success(sortedTickerIdentifiers))
+                    completion(.success(tickerIdentifiers ?? []))
                 }
             } catch {
                 print("Failed to decode: \(error.localizedDescription)")
