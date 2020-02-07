@@ -50,14 +50,14 @@ final class AnalyticsService {
     
     func trackRefreshedTickers(parameters: [String: String], source: Source) {
         var updatedParameters = parameters
-        updatedParameters["Refreshing_Source"] = source.rawValue
+        updatedParameters["Source"] = source.rawValue
         
         track(name: "Refreshed_Tickers", parameters: updatedParameters)
     }
     
     func trackRefreshingTickersFailed(source: Source) {
         var parameters: [String: String] = [:]
-        parameters["Refreshing_Source"] = source.rawValue
+        parameters["Source"] = source.rawValue
         
         track(name: "Refreshing_Tickers_Failed", parameters: parameters)
     }

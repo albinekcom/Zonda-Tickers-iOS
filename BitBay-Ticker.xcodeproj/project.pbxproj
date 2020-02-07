@@ -15,6 +15,8 @@
 		8C0192FE23E34977008693D8 /* TickerListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FD23E34977008693D8 /* TickerListRow.swift */; };
 		8C01930123E36238008693D8 /* AdderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C01930023E36238008693D8 /* AdderRow.swift */; };
 		8C01930323E3711E008693D8 /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C01930223E3711E008693D8 /* DetailRow.swift */; };
+		8C05601723EDC4FD00CF43A7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC63023A7F84600084B7F /* libsqlite3.tbd */; };
+		8C05601923EDC64F00CF43A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
 		8C0688AD23A4DE75003C45A3 /* SupportedTickersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688AC23A4DE75003C45A3 /* SupportedTickersFetcher.swift */; };
 		8C0688B123A53D31003C45A3 /* TickerValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */; };
 		8C0688B323A53D4F003C45A3 /* SupportedTickersAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B223A53D4F003C45A3 /* SupportedTickersAPIResponse.swift */; };
@@ -22,7 +24,6 @@
 		8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BA23A56994003C45A3 /* String+Extensions.swift */; };
 		8C0688BD23A57A78003C45A3 /* TickerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BC23A57A78003C45A3 /* TickerDetailViewModel.swift */; };
 		8C07E58F23EDA07500B6BF35 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */; };
-		8C07E59023EDA40400B6BF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
 		8C07E59123EDA4BC00B6BF35 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; };
 		8C07E59323EDA4BC00B6BF35 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; };
 		8C07E59523EDA4BC00B6BF35 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; };
@@ -285,6 +286,7 @@
 			files = (
 				8C07E5A723EDA4BD00B6BF35 /* PromisesObjC.framework in Frameworks */,
 				8C07E59523EDA4BC00B6BF35 /* FirebaseCore.framework in Frameworks */,
+				8C05601723EDC4FD00CF43A7 /* libsqlite3.tbd in Frameworks */,
 				8C9BA35623E597FF00ADA235 /* NotificationCenter.framework in Frameworks */,
 				8C07E59723EDA4BC00B6BF35 /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				8C07E59123EDA4BC00B6BF35 /* FIRAnalyticsConnector.framework in Frameworks */,
@@ -835,7 +837,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF9493123E5BA8800625CA7 /* Assets.xcassets in Resources */,
-				8C07E59023EDA40400B6BF35 /* GoogleService-Info.plist in Resources */,
+				8C05601923EDC64F00CF43A7 /* GoogleService-Info.plist in Resources */,
 				8C4E5FB323ED5B9E0017E753 /* Localizable.strings in Resources */,
 				8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */,
 			);
