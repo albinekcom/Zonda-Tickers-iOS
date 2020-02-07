@@ -60,7 +60,7 @@ final class UserData: ObservableObject {
         
         tickers.append(ticker)
         
-        refresh(tickers: [ticker], refreshingSource: .automatic)
+        refresh(tickers: [ticker], refreshingSource: .automaticAfterAddingTicker)
     }
     
     func removeTicker(at index: Int) {

@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct TickerEmptyList: View {
+struct TickerAdderEmpty: View {
     
     var body: some View {
-        Text("Press + to add a ticker")
+        Text("No results")
             .font(.subheadline)
             .foregroundColor(.primary)
     }
@@ -11,10 +11,10 @@ struct TickerEmptyList: View {
 }
 
 #if DEBUG
-struct TickerEmptyList_Previews: PreviewProvider {
+struct TickerAdderEmpty_Previews: PreviewProvider {
     
     static var previews: some View {
-        TickerEmptyList()
+        TickerAdderEmpty()
     }
     
 }

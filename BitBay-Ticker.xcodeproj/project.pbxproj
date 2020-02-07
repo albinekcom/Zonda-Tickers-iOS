@@ -76,6 +76,8 @@
 		8CEB402923A962C5000928CE /* ErrorBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB402823A962C5000928CE /* ErrorBanner.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 		8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
+		8CF387A423ED703300BE9349 /* TickerAdderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF387A323ED703300BE9349 /* TickerAdderContent.swift */; };
+		8CF387A823ED705D00BE9349 /* TickerAdderEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF387A723ED705D00BE9349 /* TickerAdderEmpty.swift */; };
 		8CF9492823E5B95400625CA7 /* TickerListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FD23E34977008693D8 /* TickerListRow.swift */; };
 		8CF9492923E5B96200625CA7 /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FB23E34730008693D8 /* CurrencyIcon.swift */; };
 		8CF9492A23E5B96600625CA7 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1450A23E37943002F5A6A /* Title.swift */; };
@@ -294,6 +296,8 @@
 		8CEB402823A962C5000928CE /* ErrorBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBanner.swift; sourceTree = "<group>"; };
 		8CED93082083C4EA00A068BD /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		8CEE9B5623A2DBB700D5B24B /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		8CF387A323ED703300BE9349 /* TickerAdderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerAdderContent.swift; sourceTree = "<group>"; };
+		8CF387A723ED705D00BE9349 /* TickerAdderEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerAdderEmpty.swift; sourceTree = "<group>"; };
 		8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/FirebaseInstallations.framework"; sourceTree = "<group>"; };
 		8CF438B023DCDCCF00496367 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/PromisesObjC.framework"; sourceTree = "<group>"; };
 		8CF9493223E5C0DD00625CA7 /* WidgetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConfiguration.swift; sourceTree = "<group>"; };
@@ -552,6 +556,8 @@
 			isa = PBXGroup;
 			children = (
 				8CCA6F2523A369220048B1B8 /* TickerAdder.swift */,
+				8CF387A323ED703300BE9349 /* TickerAdderContent.swift */,
+				8CF387A723ED705D00BE9349 /* TickerAdderEmpty.swift */,
 				8C01930023E36238008693D8 /* AdderRow.swift */,
 			);
 			path = Adder;
@@ -952,6 +958,7 @@
 				8CBDE31323DF36890097DBBF /* MigratorFromV0ToV1.swift in Sources */,
 				8C0688AD23A4DE75003C45A3 /* SupportedTickersFetcher.swift in Sources */,
 				8C8CC5B323DE0029001CF17F /* Int+TimeIntervalExtensions.swift in Sources */,
+				8CF387A423ED703300BE9349 /* TickerAdderContent.swift in Sources */,
 				267BBC6B23D9D6B8000EF9AB /* AdderButtonView.swift in Sources */,
 				8C0192FE23E34977008693D8 /* TickerListRow.swift in Sources */,
 				8CDBC63323A7F9A800084B7F /* AnalyticsParametersFactory.swift in Sources */,
@@ -964,6 +971,7 @@
 				8C1F1D6023A62C5D00D25D99 /* PrettyValueFormatter.swift in Sources */,
 				8CEB402723A95DC0000928CE /* UserDefaultsManager.swift in Sources */,
 				8C0688B323A53D4F003C45A3 /* SupportedTickersAPIResponse.swift in Sources */,
+				8CF387A823ED705D00BE9349 /* TickerAdderEmpty.swift in Sources */,
 				8CEB402923A962C5000928CE /* ErrorBanner.swift in Sources */,
 				8C01930323E3711E008693D8 /* DetailRow.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,

@@ -5,49 +5,25 @@ struct TickerAdder: View {
     @Binding var isPresented: Bool
     
     @EnvironmentObject private var userData: UserData
-    @State private var searchTerm: String = ""
     
     var body: some View {
         NavigationView {
-            VStack {
-                if userData.fetchingTickerIdentifiersError != nil { // HACK: Change it when hidden() method be improved
-                    ErrorBanner(text: userData.fetchingTickerIdentifiersError?.localizedDescription ?? "Error")
-                }
-                
-                List {
-                    TextField(NSLocalizedString("Search", comment: ""), text: $searchTerm).modifier(ClearButton(text: $searchTerm))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .disableAutocorrection(true)
-                    ForEach(userData.tickersIdentifiersAvailableToAdd.filter {
-                        self.searchTerm.isEmpty ? true : $0.tagsContain(searchTerm: self.searchTerm)
-                    }) { tickerIdentifier in
-                        AdderRow(firstCurrency: tickerIdentifier.firstCurrencyIdentifier, secondCurrency: tickerIdentifier.secondCurrencyIdentifier)
-                            .contentShape(Rectangle())
-                            .padding(.horizontal, 4)
-                            .onTapGesture {
-                                self.userData.appendAndRefreshTicker(from: tickerIdentifier)
-                                self.userData.removeAvailableToAddTickerIdentifier(tickerIdentifier: tickerIdentifier)
-                                
-                                AnalyticsService.shared.trackAddedTicker(parameters: AnalyticsParametersFactory.makeParameters(from: tickerIdentifier))
-                            }
-                    }
-                }
-                .environment(\.defaultMinListRowHeight, 64)
+            TickerAdderContent()
+                .environmentObject(userData)
                 .navigationBarTitle(Text("Add Ticker"), displayMode: .inline)
                 .modifier(AdaptsToSoftwareKeyboard())
-                .onAppear {
-                    self.userData.isAdding = true
-                    
-                    UITableViewCell.appearance().selectionStyle = .none
-                    
-                    AnalyticsService.shared.trackAddTickerView()
-                }
-                .onDisappear {
-                    self.userData.isAdding = false
-                }
-            }
         }
         .accentColor(Color.applicationPrimary)
+        .onAppear {
+            self.userData.isAdding = true
+            
+            UITableViewCell.appearance().selectionStyle = .none
+            
+            AnalyticsService.shared.trackAddTickerView()
+        }
+        .onDisappear {
+            self.userData.isAdding = false
+        }
     }
 }
 
