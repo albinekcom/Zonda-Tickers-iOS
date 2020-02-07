@@ -22,7 +22,7 @@ final class TodayViewController: UIViewController {
 extension TodayViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        widgetUserData.tickers.count
+        min(WidgetConfiguration.maximumVisibleTickersCount, widgetUserData.tickers.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +50,7 @@ extension TodayViewController : UITableViewDataSource {
 extension TodayViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        WidgetConfiguration.cellHeight
+        WidgetConfiguration.Cell.height
     }
     
 }
@@ -66,7 +66,7 @@ extension TodayViewController: NCWidgetProviding {
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        let height = CGFloat(widgetUserData.tickers.count) * WidgetConfiguration.cellHeight
+        let height = CGFloat(min(WidgetConfiguration.maximumVisibleTickersCount, widgetUserData.tickers.count)) * WidgetConfiguration.Cell.height
         
         preferredContentSize = activeDisplayMode == .expanded ? CGSize(width: maxSize.width, height: height) : maxSize
     }

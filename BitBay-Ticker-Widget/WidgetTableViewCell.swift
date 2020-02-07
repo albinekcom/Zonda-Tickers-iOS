@@ -62,10 +62,10 @@ final class WidgetTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate(
             [
-                iconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: WidgetConfiguration.marginInCell),
+                iconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: WidgetConfiguration.Cell.margin),
                 iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
-                iconView.widthAnchor.constraint(equalToConstant: WidgetConfiguration.iconSize),
-                iconView.heightAnchor.constraint(equalToConstant: WidgetConfiguration.iconSize)
+                iconView.widthAnchor.constraint(equalToConstant: WidgetConfiguration.Cell.iconSize),
+                iconView.heightAnchor.constraint(equalToConstant: WidgetConfiguration.Cell.iconSize)
             ]
         )
         
@@ -73,7 +73,7 @@ final class WidgetTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate(
             [
-                firstCurrencyLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: WidgetConfiguration.marginInCell),
+                firstCurrencyLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: WidgetConfiguration.Cell.margin),
                 firstCurrencyLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
             ]
         )
@@ -82,8 +82,8 @@ final class WidgetTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate(
             [
-                secondCurrencyLabel.leadingAnchor.constraint(equalTo: firstCurrencyLabel.trailingAnchor, constant: WidgetConfiguration.marginInCell),
-                secondCurrencyLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -(WidgetConfiguration.marginInCell / 2))
+                secondCurrencyLabel.leadingAnchor.constraint(equalTo: firstCurrencyLabel.trailingAnchor, constant: WidgetConfiguration.Cell.margin / 2),
+                secondCurrencyLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -(WidgetConfiguration.Cell.margin / 2))
             ]
         )
         
@@ -91,7 +91,7 @@ final class WidgetTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate(
             [
-                valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -WidgetConfiguration.marginInCell),
+                valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -WidgetConfiguration.Cell.margin),
                 valueLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
                 valueLabel.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.5)
             ]
