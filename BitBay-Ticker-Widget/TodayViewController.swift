@@ -24,7 +24,13 @@ final class TodayViewController: UIViewController {
 extension TodayViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        min(WidgetConfiguration.maximumVisibleTickersCount, widgetUserData.tickers.count)
+        if widgetUserData.tickers.isEmpty {
+            tableView.setEmptyView(text: NSLocalizedString("No tickers", comment: ""))
+        } else {
+            tableView.restore()
+        }
+        
+        return min(WidgetConfiguration.maximumVisibleTickersCount, widgetUserData.tickers.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,4 +79,33 @@ extension TodayViewController: NCWidgetProviding {
         preferredContentSize = activeDisplayMode == .expanded ? CGSize(width: maxSize.width, height: height) : maxSize
     }
     
+}
+
+extension UITableView {
+    
+    func setEmptyView(text: String) {
+        separatorStyle = .none
+        
+        let emptyView = UIView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height))
+        backgroundView = emptyView
+        
+        let titleLabel = UILabel()
+        titleLabel.text = text
+        titleLabel.font = .preferredFont(forTextStyle: .subheadline)
+        titleLabel.textColor = .label
+        
+        emptyView.addSubview(titleLabel)
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor)
+        ])
+    }
+    
+    func restore() {
+        backgroundView = nil
+        separatorStyle = .singleLine
+    }
 }

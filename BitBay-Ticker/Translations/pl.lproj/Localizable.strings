@@ -23,3 +23,7 @@
 
 "Add Ticker" = "Dodaj Ticker";
 "Search" = "Szukaj";
+
+// Widget
+
+"No tickers" = "Brak tickerów";

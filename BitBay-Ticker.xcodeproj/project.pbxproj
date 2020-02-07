@@ -40,6 +40,7 @@
 		8C1F1D6A23A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */; };
 		8C1F1D6D23A65A4000D25D99 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */; };
 		8C3EA62E23A6888000A501CD /* MimimumTouchTargetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */; };
+		8C4E5FB323ED5B9E0017E753 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C7F0D4E21CA242C002C6553 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
@@ -861,6 +862,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF9493123E5BA8800625CA7 /* Assets.xcassets in Resources */,
+				8C4E5FB323ED5B9E0017E753 /* Localizable.strings in Resources */,
 				8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
