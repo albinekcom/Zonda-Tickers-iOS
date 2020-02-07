@@ -14,6 +14,8 @@ final class TodayViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.tableFooterView = UIView()
+        
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     }
     
