@@ -2,8 +2,8 @@ struct TickerIdentifier: Codable, Identifiable {
     
     let id: String
     
-    var firstCurrencyFullName: String?
-    var secondCurrencyFullName: String?
+    var firstCurrencyName: String?
+    var secondCurrencyName: String?
     
 }
 
@@ -38,12 +38,12 @@ extension TickerIdentifier {
     private var tags: [String] {
         var tags: [String] = [prettyTitle]
         
-        if let firstCurrencyFullName = firstCurrencyFullName {
-            tags.append(firstCurrencyFullName)
+        if let firstCurrencyName = firstCurrencyName {
+            tags.append(firstCurrencyName)
         }
         
-        if let secondCurrencyFullName = secondCurrencyFullName {
-            tags.append(secondCurrencyFullName)
+        if let secondCurrencyName = secondCurrencyName {
+            tags.append(secondCurrencyName)
         }
         
         return tags

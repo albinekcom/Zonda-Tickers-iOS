@@ -1,7 +1,7 @@
 struct SupportedTickersAPIResponse: Codable {
     
     let supportedTickers: [String]?
-    let fullNames: [String: String]?
-    let sortingOrder: [String]?
+    let names: [String: String]?
+    let sortOrder: [String]?
     
 }

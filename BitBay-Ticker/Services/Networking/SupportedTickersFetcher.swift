@@ -21,20 +21,18 @@ final class SupportedTickersFetcher {
                 
                 let supportedTickersAPIResponse = try JSONDecoder().decode(SupportedTickersAPIResponse.self, from: data)
                 
-                let fullNames = supportedTickersAPIResponse.fullNames
-                
                 let tickerIdentifiers = supportedTickersAPIResponse.supportedTickers?.compactMap { (identifier) -> TickerIdentifier in
                     var tickerIdentifier = TickerIdentifier(id: identifier)
-                    tickerIdentifier.firstCurrencyFullName = fullNames?[tickerIdentifier.firstCurrencyIdentifier]
-                    tickerIdentifier.secondCurrencyFullName = fullNames?[tickerIdentifier.secondCurrencyIdentifier]
+                    tickerIdentifier.firstCurrencyName = supportedTickersAPIResponse.names?[tickerIdentifier.firstCurrencyIdentifier]
+                    tickerIdentifier.secondCurrencyName = supportedTickersAPIResponse.names?[tickerIdentifier.secondCurrencyIdentifier]
                     
                     return tickerIdentifier
                 }
                 
                 let sortedTickerIdentifiers: [TickerIdentifier]
                 
-                if let sortingOrder = supportedTickersAPIResponse.sortingOrder, let tickerIdentifiers = tickerIdentifiers {
-                    sortedTickerIdentifiers = TickerIdentifierSorter.sorted(tickerIdentifiers: tickerIdentifiers, sortingOrder: sortingOrder)
+                if let sortOrder = supportedTickersAPIResponse.sortOrder, let tickerIdentifiers = tickerIdentifiers {
+                    sortedTickerIdentifiers = TickerIdentifierSorter.sorted(tickerIdentifiers: tickerIdentifiers, sortOrder: sortOrder)
                 } else {
                     sortedTickerIdentifiers = tickerIdentifiers ?? []
                 }

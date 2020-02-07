@@ -44,7 +44,6 @@ struct TickerAdder: View {
                 }
                 .onDisappear {
                     self.userData.isAdding = false
-                    self.userData.setupRefreshingTimer()
                 }
             }
         }

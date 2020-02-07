@@ -2,7 +2,8 @@ import SwiftUI
 
 struct TickerDetailViewModel {
     
-    enum Row {
+    enum Row: CaseIterable {
+        case name
         case rate
         case previousRate
         case highestRate
@@ -11,7 +12,6 @@ struct TickerDetailViewModel {
         case lowestAsk
         case average
         case volume
-        case name
     }
     
     let model: Ticker
@@ -22,6 +22,9 @@ struct TickerDetailViewModel {
     
     func title(for row: Row) -> Text {
         switch row {
+        case .name:
+            return Text("Name")
+            
         case .rate:
             return Text("Last")
             
@@ -45,9 +48,6 @@ struct TickerDetailViewModel {
             
         case .volume:
             return Text("Volume")
-            
-        case .name:
-            return Text("Name")
         }
     }
     
@@ -55,6 +55,9 @@ struct TickerDetailViewModel {
         let scale = model.secondCurrency?.scale
         
         switch row {
+        case .name:
+            return TickerIdentifiersStore.shared.tickerIdentifier(id: model.id)?.firstCurrencyName ?? "-"
+            
         case .rate:
             return PrettyValueFormatter.makePrettyString(value: model.rate, scale: scale, currency: nil)
             
@@ -78,9 +81,6 @@ struct TickerDetailViewModel {
             
         case .volume:
             return PrettyValueFormatter.makePrettyString(value: model.volume, scale: scale, currency: nil)
-            
-        case .name:
-            return TickerIdentifiersStore.shared.tickerIdentifier(id: model.id)?.firstCurrencyFullName ?? "-"
         }
     }
     

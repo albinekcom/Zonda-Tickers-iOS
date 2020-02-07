@@ -11,12 +11,12 @@ final class UserData: ObservableObject {
     @Published private(set) var fetchingTickerIdentifiersError: Error?
     
     var isEditing: Bool = false { // HACK
-        didSet {
-            if isEditing {
+        willSet {
+            if isEditing == false && newValue {
                 invalidRefreshingTimer()
                 
                 AnalyticsService.shared.trackEditTickersView()
-            } else if isAdding == false {
+            } else if isEditing && newValue == false {
                 setupRefreshingTimer()
             }
         }
@@ -26,7 +26,7 @@ final class UserData: ObservableObject {
         didSet {
             if isAdding {
                 invalidRefreshingTimer()
-            } else {
+            } else if isEditing == false {
                 setupRefreshingTimer()
             }
         }
@@ -39,7 +39,6 @@ final class UserData: ObservableObject {
     private let tickerPropertiesFetcher: TickerPropertiesFetcher = TickerPropertiesFetcher()
     
     func setupRefreshingTimer() {
-        guard isEditing == false else { return }
         guard refreshingTimer == nil else { return }
         
         refreshingTimer = Timer.scheduledTimer(timeInterval: AppConfiguration.UserData.timeSpanBetweenTickerRefreshes, target: self, selector: #selector(refreshAllTickers), userInfo: nil, repeats: true)
