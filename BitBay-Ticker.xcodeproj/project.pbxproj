@@ -21,6 +21,20 @@
 		8C0688B723A54930003C45A3 /* TickerStatisticsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B623A54930003C45A3 /* TickerStatisticsAPIResponse.swift */; };
 		8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BA23A56994003C45A3 /* String+Extensions.swift */; };
 		8C0688BD23A57A78003C45A3 /* TickerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BC23A57A78003C45A3 /* TickerDetailViewModel.swift */; };
+		8C07E58F23EDA07500B6BF35 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */; };
+		8C07E59023EDA40400B6BF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
+		8C07E59123EDA4BC00B6BF35 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; };
+		8C07E59323EDA4BC00B6BF35 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; };
+		8C07E59523EDA4BC00B6BF35 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; };
+		8C07E59723EDA4BC00B6BF35 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62223A7F4EA00084B7F /* FirebaseCoreDiagnostics.framework */; };
+		8C07E59923EDA4BC00B6BF35 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */; };
+		8C07E59B23EDA4BD00B6BF35 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62123A7F4EA00084B7F /* FirebaseInstanceID.framework */; };
+		8C07E59D23EDA4BD00B6BF35 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61B23A7F4EA00084B7F /* GoogleAppMeasurement.framework */; };
+		8C07E59F23EDA4BD00B6BF35 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */; };
+		8C07E5A123EDA4BD00B6BF35 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */; };
+		8C07E5A323EDA4BD00B6BF35 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61E23A7F4EA00084B7F /* GoogleUtilities.framework */; };
+		8C07E5A523EDA4BD00B6BF35 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61F23A7F4EA00084B7F /* nanopb.framework */; };
+		8C07E5A723EDA4BD00B6BF35 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438B023DCDCCF00496367 /* PromisesObjC.framework */; };
 		8C1512CA23DDB00A000CC2CE /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; };
 		8C1512CC23DDB00A000CC2CE /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; };
 		8C1512CE23DDB00A000CC2CE /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; };
@@ -99,30 +113,6 @@
 		8CFF6D7623E9FA7100C34B35 /* TickerPropertiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */; };
 		8CFF6D7923EA0CFB00C34B35 /* TickerPropertiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */; };
 		8CFF6D7A23EA1A3500C34B35 /* AnalyticsParametersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBC63223A7F9A800084B7F /* AnalyticsParametersFactory.swift */; };
-		8CFF6D7C23EA1A6D00C34B35 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; };
-		8CFF6D7D23EA1A6D00C34B35 /* FIRAnalyticsConnector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D7E23EA1A6D00C34B35 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; };
-		8CFF6D7F23EA1A6D00C34B35 /* FirebaseAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D8023EA1A6D00C34B35 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; };
-		8CFF6D8123EA1A6D00C34B35 /* FirebaseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D8223EA1A6D00C34B35 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62223A7F4EA00084B7F /* FirebaseCoreDiagnostics.framework */; };
-		8CFF6D8323EA1A6D00C34B35 /* FirebaseCoreDiagnostics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62223A7F4EA00084B7F /* FirebaseCoreDiagnostics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D8423EA1A6D00C34B35 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */; };
-		8CFF6D8523EA1A6D00C34B35 /* FirebaseInstallations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D8623EA1A6D00C34B35 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62123A7F4EA00084B7F /* FirebaseInstanceID.framework */; };
-		8CFF6D8723EA1A6D00C34B35 /* FirebaseInstanceID.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62123A7F4EA00084B7F /* FirebaseInstanceID.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D8823EA1A6D00C34B35 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61B23A7F4EA00084B7F /* GoogleAppMeasurement.framework */; };
-		8CFF6D8923EA1A6D00C34B35 /* GoogleAppMeasurement.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61B23A7F4EA00084B7F /* GoogleAppMeasurement.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D8A23EA1A6D00C34B35 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */; };
-		8CFF6D8B23EA1A6D00C34B35 /* GoogleDataTransport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D8C23EA1A6D00C34B35 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */; };
-		8CFF6D8D23EA1A6D00C34B35 /* GoogleDataTransportCCTSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D8E23EA1A6D00C34B35 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61E23A7F4EA00084B7F /* GoogleUtilities.framework */; };
-		8CFF6D8F23EA1A6D00C34B35 /* GoogleUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61E23A7F4EA00084B7F /* GoogleUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D9023EA1A6D00C34B35 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61F23A7F4EA00084B7F /* nanopb.framework */; };
-		8CFF6D9123EA1A6D00C34B35 /* nanopb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61F23A7F4EA00084B7F /* nanopb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8CFF6D9223EA1A6D00C34B35 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438B023DCDCCF00496367 /* PromisesObjC.framework */; };
-		8CFF6D9323EA1A6D00C34B35 /* PromisesObjC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438B023DCDCCF00496367 /* PromisesObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,28 +149,6 @@
 				8C9BA36023E597FF00ADA235 /* BitBay-Ticker-Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CFF6D9423EA1A6D00C34B35 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8CFF6D7F23EA1A6D00C34B35 /* FirebaseAnalytics.framework in Embed Frameworks */,
-				8CFF6D8D23EA1A6D00C34B35 /* GoogleDataTransportCCTSupport.framework in Embed Frameworks */,
-				8CFF6D9323EA1A6D00C34B35 /* PromisesObjC.framework in Embed Frameworks */,
-				8CFF6D9123EA1A6D00C34B35 /* nanopb.framework in Embed Frameworks */,
-				8CFF6D8723EA1A6D00C34B35 /* FirebaseInstanceID.framework in Embed Frameworks */,
-				8CFF6D8523EA1A6D00C34B35 /* FirebaseInstallations.framework in Embed Frameworks */,
-				8CFF6D8323EA1A6D00C34B35 /* FirebaseCoreDiagnostics.framework in Embed Frameworks */,
-				8CFF6D8923EA1A6D00C34B35 /* GoogleAppMeasurement.framework in Embed Frameworks */,
-				8CFF6D8B23EA1A6D00C34B35 /* GoogleDataTransport.framework in Embed Frameworks */,
-				8CFF6D7D23EA1A6D00C34B35 /* FIRAnalyticsConnector.framework in Embed Frameworks */,
-				8CFF6D8F23EA1A6D00C34B35 /* GoogleUtilities.framework in Embed Frameworks */,
-				8CFF6D8123EA1A6D00C34B35 /* FirebaseCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -315,19 +283,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CFF6D9223EA1A6D00C34B35 /* PromisesObjC.framework in Frameworks */,
-				8CFF6D8023EA1A6D00C34B35 /* FirebaseCore.framework in Frameworks */,
+				8C07E5A723EDA4BD00B6BF35 /* PromisesObjC.framework in Frameworks */,
+				8C07E59523EDA4BC00B6BF35 /* FirebaseCore.framework in Frameworks */,
 				8C9BA35623E597FF00ADA235 /* NotificationCenter.framework in Frameworks */,
-				8CFF6D8223EA1A6D00C34B35 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				8CFF6D7C23EA1A6D00C34B35 /* FIRAnalyticsConnector.framework in Frameworks */,
-				8CFF6D8623EA1A6D00C34B35 /* FirebaseInstanceID.framework in Frameworks */,
-				8CFF6D7E23EA1A6D00C34B35 /* FirebaseAnalytics.framework in Frameworks */,
-				8CFF6D8A23EA1A6D00C34B35 /* GoogleDataTransport.framework in Frameworks */,
-				8CFF6D8823EA1A6D00C34B35 /* GoogleAppMeasurement.framework in Frameworks */,
-				8CFF6D8C23EA1A6D00C34B35 /* GoogleDataTransportCCTSupport.framework in Frameworks */,
-				8CFF6D8423EA1A6D00C34B35 /* FirebaseInstallations.framework in Frameworks */,
-				8CFF6D9023EA1A6D00C34B35 /* nanopb.framework in Frameworks */,
-				8CFF6D8E23EA1A6D00C34B35 /* GoogleUtilities.framework in Frameworks */,
+				8C07E59723EDA4BC00B6BF35 /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				8C07E59123EDA4BC00B6BF35 /* FIRAnalyticsConnector.framework in Frameworks */,
+				8C07E59B23EDA4BD00B6BF35 /* FirebaseInstanceID.framework in Frameworks */,
+				8C07E59323EDA4BC00B6BF35 /* FirebaseAnalytics.framework in Frameworks */,
+				8C07E59F23EDA4BD00B6BF35 /* GoogleDataTransport.framework in Frameworks */,
+				8C07E59D23EDA4BD00B6BF35 /* GoogleAppMeasurement.framework in Frameworks */,
+				8C07E5A123EDA4BD00B6BF35 /* GoogleDataTransportCCTSupport.framework in Frameworks */,
+				8C07E59923EDA4BC00B6BF35 /* FirebaseInstallations.framework in Frameworks */,
+				8C07E5A523EDA4BD00B6BF35 /* nanopb.framework in Frameworks */,
+				8C07E5A323EDA4BD00B6BF35 /* GoogleUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,7 +696,6 @@
 				8C9BA35123E597FF00ADA235 /* Sources */,
 				8C9BA35223E597FF00ADA235 /* Frameworks */,
 				8C9BA35323E597FF00ADA235 /* Resources */,
-				8CFF6D9423EA1A6D00C34B35 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -868,6 +835,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF9493123E5BA8800625CA7 /* Assets.xcassets in Resources */,
+				8C07E59023EDA40400B6BF35 /* GoogleService-Info.plist in Resources */,
 				8C4E5FB323ED5B9E0017E753 /* Localizable.strings in Resources */,
 				8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */,
 			);
@@ -923,6 +891,7 @@
 				8CF9493923E5C3BD00625CA7 /* Int+TimeIntervalExtensions.swift in Sources */,
 				8CF9492923E5B96200625CA7 /* CurrencyIcon.swift in Sources */,
 				8C9BA35923E597FF00ADA235 /* TodayViewController.swift in Sources */,
+				8C07E58F23EDA07500B6BF35 /* AnalyticsService.swift in Sources */,
 				8CF9492F23E5BA1100625CA7 /* CurrencyTemplateIcon.swift in Sources */,
 				8CF9492D23E5B98700625CA7 /* PrettyValueFormatter.swift in Sources */,
 				8CF9492823E5B95400625CA7 /* TickerListRow.swift in Sources */,
@@ -1070,11 +1039,13 @@
 				MARKETING_VERSION = 2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
 				PRODUCT_NAME = "BitBay-Ticker-Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BitBay-Ticker/Supporting\\ Files/Headers/";
 			};
 			name = Debug;
 		};
@@ -1098,11 +1069,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2.0;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
 				PRODUCT_NAME = "BitBay-Ticker-Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BitBay-Ticker/Supporting\\ Files/Headers/";
 			};
 			name = Release;
 		};

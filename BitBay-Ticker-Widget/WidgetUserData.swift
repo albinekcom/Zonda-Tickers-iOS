@@ -23,16 +23,14 @@ final class WidgetUserData: ObservableObject {
                         }
                     }
                     
-                    /* TODO: Uncomment these lines after integrating "Firebase" framework with this "Today Extension"
                     let analyticsParameters = AnalyticsParametersFactory.makeParameters(from: refreshedTickers)
                     AnalyticsService.shared.trackRefreshedTickers(parameters: analyticsParameters, source: .widget)
-                    */
                     
                     self?.saveTickers()
                 
                     completionHandler(nil)
                 case .failure(let error):
-                    // AnalyticsService.shared.trackRefreshingTickersFailed() // TODO: Uncomment this line after integrating "Firebase" framework with this "Today Extension"
+                    AnalyticsService.shared.trackRefreshingTickersFailed(source: .widget)
                 
                     completionHandler(error)
             }
