@@ -24,6 +24,7 @@ struct TickerAdder: View {
         .onDisappear {
             self.userData.isAdding = false
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

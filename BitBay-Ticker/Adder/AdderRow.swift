@@ -15,6 +15,7 @@ struct AdderRow: View {
                 .foregroundColor(Color.applicationPrimary)
                 .font(.headline)
         }
+        .accessibility(label: Text("Add ticker \(firstCurrency)\\\(secondCurrency)"))
     }
     
 }

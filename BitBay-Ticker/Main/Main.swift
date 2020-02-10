@@ -40,6 +40,8 @@ struct Main: View {
             ReviewPopUpController().displayReviewPopUpIfNeeded()
         }
         .accentColor(Color.applicationPrimary)
+        .navigationViewStyle(DoubleColumnNavigationViewStyle())
+        .padding(.leading, 1) // HACK for iPad, link: https://stackoverflow.com/a/58371424
     }
     
 }

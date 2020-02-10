@@ -16,6 +16,8 @@ struct TickerListRow: View {
                 .font(.subheadline)
                 .foregroundColor(.primary)
         }
+        .accessibility(label: Text("Ticker \(firstCurrency)\\\(secondCurrency)"))
+        .accessibility(value: Text(value))
     }
     
 }

@@ -82,6 +82,8 @@ final class UserData: ObservableObject {
     }
     
     func refresh(tickers: [Ticker], source: AnalyticsService.Source) {
+        guard tickers.isEmpty == false else { return }
+        
         tickerPropertiesFetcher.fetch(for: tickers) { [weak self] result in
             switch result {
                 case .success(let refreshedTickers):

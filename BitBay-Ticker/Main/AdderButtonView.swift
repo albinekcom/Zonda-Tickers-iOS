@@ -4,10 +4,11 @@ struct AdderButtonView: View {
     
     var body: some View {
         HStack {
-             Image(systemName: "plus")
-                 .font(Font.system(size: 22, weight: .light))
-             Spacer()
-         }
+            Image(systemName: "plus")
+                .font(Font.system(size: 22, weight: .light))
+            Spacer()
+        }
+        .accessibility(label: Text("Add"))
     }
     
 }

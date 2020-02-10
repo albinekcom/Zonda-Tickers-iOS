@@ -15,6 +15,8 @@ struct DetailRow: View {
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
+        .accessibility(label: title)
+        .accessibility(value: Text(value))
     }
     
 }
