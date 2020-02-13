@@ -17,7 +17,7 @@ The implementation of this application uses SwiftUI.
 
 ## Usage
 
-Clone this repository, execute `carthage update --platform iOS` and open `BitBay-Ticker.xcodeproj`.
+Clone this repository and open `BitBay-Ticker.xcodeproj`.
 
 ```bash
 $ git clone https://github.com/albinekcom/BitBay-Ticker-iOS.git
