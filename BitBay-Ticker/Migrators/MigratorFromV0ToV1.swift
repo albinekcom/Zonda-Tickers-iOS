@@ -65,11 +65,6 @@ struct OldTicker {
         case xineur
         case xinbtc
         
-        case xmrpln
-        case xmrusd
-        case xmreur
-        case xmrbtc
-        
         case zecpln
         case zecusd
         case zeceur
@@ -165,7 +160,6 @@ struct OldTicker {
                  .kzcpln, .kzcusd, .kzceur, .kzcbtc,
                  .xrppln, .xrpgbp, .xrpusd, .xrpeur, .xrpbtc,
                  .xinpln, .xinusd, .xineur, .xinbtc,
-                 .xmrpln, .xmrusd, .xmreur, .xmrbtc,
                  .zecpln, .zecusd, .zeceur, .zecbtc,
                  .gntpln, .gntusd, .gnteur, .gntbtc,
                  .omgpln, .omgusd, .omgeur, .omgbtc,
