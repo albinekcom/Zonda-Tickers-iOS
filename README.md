@@ -8,7 +8,7 @@
 BitBay Ticker for iOS devices.
 
 <p align="center">
-  <img src ="./Assets/demo.gif" width="261" height="464">
+  <img src ="./Assets/demo.gif" width="204" height="400">
 </p>
 
 ## Technical aspects
