@@ -36,7 +36,10 @@ extension TickerIdentifier {
     }
     
     private var tags: [String] {
-        var tags: [String] = [prettyTitle]
+        var tags: [String] = []
+        
+        tags.append(prettyTitle)
+        tags.append("\(firstCurrencyIdentifier)\(secondCurrencyIdentifier)")
         
         if let firstCurrencyName = firstCurrencyName {
             tags.append(firstCurrencyName)
