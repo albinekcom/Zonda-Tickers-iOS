@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1130"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8CDFD4791F084106009F1E19"
-               BuildableName = "BitBay-TickerUITests.xctest"
-               BlueprintName = "BitBay-TickerUITests"
+               BlueprintIdentifier = "8CC184F71EFE4CAC0083DA30"
+               BuildableName = "BitBay-Ticker.app"
+               BlueprintName = "BitBay-Ticker"
                ReferencedContainer = "container:BitBay-Ticker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,24 +27,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "ARE_FETCHING_REAL_TICKERS"
-            value = "true"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8CDFD4791F084106009F1E19"
-               BuildableName = "BitBay-TickerUITests.xctest"
-               BlueprintName = "BitBay-TickerUITests"
-               ReferencedContainer = "container:BitBay-Ticker.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -57,27 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CDFD4791F084106009F1E19"
-            BuildableName = "BitBay-TickerUITests.xctest"
-            BlueprintName = "BitBay-TickerUITests"
+            BlueprintIdentifier = "8CC184F71EFE4CAC0083DA30"
+            BuildableName = "BitBay-Ticker.app"
+            BlueprintName = "BitBay-Ticker"
             ReferencedContainer = "container:BitBay-Ticker.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "ARE_FETCHING_REAL_TICKERS"
-            value = "true"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "SIMULATOR_STATUS_MAGIC_OVERRIDES"
-            value = "true"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -85,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CDFD4791F084106009F1E19"
-            BuildableName = "BitBay-TickerUITests.xctest"
-            BlueprintName = "BitBay-TickerUITests"
+            BlueprintIdentifier = "8CC184F71EFE4CAC0083DA30"
+            BuildableName = "BitBay-Ticker.app"
+            BlueprintName = "BitBay-Ticker"
             ReferencedContainer = "container:BitBay-Ticker.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
