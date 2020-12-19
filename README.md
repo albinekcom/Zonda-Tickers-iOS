@@ -2,8 +2,9 @@
 
 # BitBay Ticker (iOS)
 
-![Swift 5.1](https://img.shields.io/badge/Swift-5.1-orange.svg)
-[![Build Status](https://travis-ci.org/albinekcom/BitBay-Ticker-iOS.svg?branch=master)](https://travis-ci.org/albinekcom/BitBay-Ticker-iOS)
+![Swift 5.3](https://img.shields.io/badge/Swift-5.3-orange.svg)
+[![Build Status](https://travis-ci.com/albinekcom/BitBay-Ticker-iOS.svg?branch=master)](https://travis-ci.com/albinekcom/BitBay-Ticker-iOS)
+[![codecov](https://codecov.io/gh/albinekcom/BitBay-Ticker-iOS/branch/master/graph/badge.svg?token=Y8ZkSmohRq)](https://codecov.io/gh/albinekcom/BitBay-Ticker-iOS)
 
 BitBay Ticker for iOS devices.
 
