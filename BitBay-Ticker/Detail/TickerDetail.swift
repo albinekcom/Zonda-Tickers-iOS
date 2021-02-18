@@ -16,6 +16,7 @@ struct TickerDetail: View {
             DetailRow(title: viewModel.title(for: .average), value: viewModel.value(for: .average))
             DetailRow(title: viewModel.title(for: .volume), value: viewModel.value(for: .volume))
         }
+        .environment(\.defaultMinListRowHeight, 44)
         .navigationBarTitle(viewModel.navigationBarTitle)
         .onAppear {
             let parameters = AnalyticsParametersFactory.makeParameters(from: self.viewModel.model)
