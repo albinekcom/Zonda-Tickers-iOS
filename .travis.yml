@@ -8,10 +8,7 @@ osx_image:
   - xcode12.4
 
 script:
-  - xcodebuild test \
-      -project BitBay-Ticker.xcodeproj \
-      -scheme BitBay-Ticker \
-      -destination "platform=iOS Simulator,name=iPhone 12 Pro" \
+  - xcodebuild test -project BitBay-Ticker.xcodeproj -scheme BitBay-Ticker -destination "platform=iOS Simulator,name=iPhone 12 Pro"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
