@@ -12,7 +12,6 @@ extension AppDelegate: UIApplicationDelegate {
 
 // TODO:
 //   - Remove old code from disk
-//   - Change gif and icon in README.md
 //   - Check migration with removed "BitBay-Ticker.entitlements"
 //   - Remove old UI tests
 //   - Watch sessions about widget

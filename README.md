@@ -1,13 +1,13 @@
-<img src="https://cdn.rawgit.com/albinekcom/29fe998ef7459a1e5096b496b090d68f/raw/7fbf69734ba866281984ec56dc0f68adace3c223/bitbay_ticker_logo.svg" alt="BitBay Ticker - logo">
+<img src="https://raw.githubusercontent.com/albinekcom/Zonda-Tickers-iOS/master/Assets/logo.svg" alt="Zonda Tickers iOS - logo">
 
 # Zonda Tickers (iOS)
 
-![Swift 5.5](https://img.shields.io/badge/Swift-5.5-orange.svg)
+![Swift 5.6](https://img.shields.io/badge/Swift-5.6-orange.svg)
 
 Zonda Tickers for iOS devices.
 
 <p align="center">
-  <img src ="./Assets/demo.gif" width="204" height="400">
+  <img src ="./Assets/demo.gif" width="296" height="640">
 </p>
 
 ## Technical aspects
