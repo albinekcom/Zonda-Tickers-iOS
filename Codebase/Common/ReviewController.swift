@@ -28,7 +28,7 @@ final class ReviewController {
         if counter >= counterMaximum {
             counter = 0
             
-//            storeReviewController.requestReview(in: activeScene) // TODO: Uncomment before shipping
+            storeReviewController.requestReview(in: activeScene)
             
             AnalyticsService.shared.trackReviewRequested()
         }

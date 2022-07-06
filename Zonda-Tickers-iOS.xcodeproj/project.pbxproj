@@ -12,13 +12,11 @@
 		8C8EE96A28734AA2005679DC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8EE96928734AA2005679DC /* Launch Screen.storyboard */; };
 		8C8EE97428734CFD005679DC /* Double+StringColorStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EE97128734CE6005679DC /* Double+StringColorStyleTests.swift */; };
 		8C8EE97528734D09005679DC /* StringColorStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EE97028734CE6005679DC /* StringColorStyleTests.swift */; };
-		8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */; };
+		8C9146CB1F0915D300221180 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* ExampleUITests.swift */; };
 		8C99875528739E9B00A6BDB7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C99875428739E9B00A6BDB7 /* FirebaseAnalyticsSwift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
-		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
-		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 		8CF02E762873462C00700EAA /* EmptyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E412873462C00700EAA /* EmptyDetailsView.swift */; };
 		8CF02E772873462C00700EAA /* EmptyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E422873462C00700EAA /* EmptyDetailsViewController.swift */; };
 		8CF02E782873462C00700EAA /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E442873462C00700EAA /* NavigationCoordinator.swift */; };
@@ -93,7 +91,7 @@
 		8C8EE96928734AA2005679DC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8C8EE97028734CE6005679DC /* StringColorStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringColorStyleTests.swift; sourceTree = "<group>"; };
 		8C8EE97128734CE6005679DC /* Double+StringColorStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+StringColorStyleTests.swift"; sourceTree = "<group>"; };
-		8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersViewControllerUITests.swift; sourceTree = "<group>"; };
+		8C9146CA1F0915D300221180 /* ExampleUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		8CBD947B1F0D7D1400CA4250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CBD947D1F0D7D2500CA4250 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* Zonda Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zonda Tickers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,10 +100,8 @@
 		8CC1850C1EFE4CAC0083DA30 /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerDetailsViewControllerUITests.swift; sourceTree = "<group>"; };
 		8CDFD47E1F084106009F1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
-		8CED93082083C4EA00A068BD /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		8CF02E412873462C00700EAA /* EmptyDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDetailsView.swift; sourceTree = "<group>"; };
 		8CF02E422873462C00700EAA /* EmptyDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDetailsViewController.swift; sourceTree = "<group>"; };
 		8CF02E442873462C00700EAA /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
@@ -248,9 +244,7 @@
 		8CDFD47B1F084106009F1E19 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				8CED93082083C4EA00A068BD /* SnapshotHelper.swift */,
-				8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */,
-				8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */,
+				8C9146CA1F0915D300221180 /* ExampleUITests.swift */,
 				8CDFD47E1F084106009F1E19 /* Info.plist */,
 			);
 			path = UI;
@@ -640,9 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */,
-				8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */,
-				8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */,
+				8C9146CB1F0915D300221180 /* ExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,17 +899,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
-				INFOPLIST_FILE = "BitBay-TickerUITests/Info.plist";
+				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-TickerUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.Zonda-Tickers-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "BitBay-Ticker";
+				TEST_TARGET_NAME = "Zonda Tickers";
 			};
 			name = Debug;
 		};
@@ -925,17 +918,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
-				INFOPLIST_FILE = "BitBay-TickerUITests/Info.plist";
+				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-TickerUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.Zonda-Tickers-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "BitBay-Ticker";
+				TEST_TARGET_NAME = "Zonda Tickers";
 			};
 			name = Release;
 		};

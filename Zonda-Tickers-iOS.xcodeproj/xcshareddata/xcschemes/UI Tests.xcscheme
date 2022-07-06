@@ -66,18 +66,6 @@
             ReferencedContainer = "container:Zonda-Tickers-iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "ARE_FETCHING_REAL_TICKERS"
-            value = "true"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "SIMULATOR_STATUS_MAGIC_OVERRIDES"
-            value = "true"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

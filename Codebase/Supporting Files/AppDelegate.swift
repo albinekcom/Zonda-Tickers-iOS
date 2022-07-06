@@ -11,10 +11,6 @@ extension AppDelegate: UIApplicationDelegate {
 }
 
 // TODO:
-//   - Remove old code from disk
-//   - Check migration with removed "BitBay-Ticker.entitlements"
-//   - Remove old UI tests
-//   - Watch sessions about widget
 //   - Create a widget
 //   - Ship the application to App Store
 //   - Add unit tests for "Double+Pretty"
@@ -30,3 +26,6 @@ extension AppDelegate: UIApplicationDelegate {
 //   - Add unit tests for "ListViewModel"
 //   - Add unit tests for "DetailsViewModel"
 //   - Add unit tests for "AdderViewModel"
+//
+// INFO:
+//   - For migration "BitBay-Ticker.entitlements" is needed
