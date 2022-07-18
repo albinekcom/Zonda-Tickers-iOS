@@ -7,55 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C39197028BFB93800E2BB34 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39196F28BFB93800E2BB34 /* Utils.swift */; };
+		8C39197128BFBC9D00E2BB34 /* TickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554A28B10FCA004AA3D7 /* TickerRow.swift */; };
+		8C39197228BFBCAB00E2BB34 /* Double+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554128B10FC9004AA3D7 /* Double+Pretty.swift */; };
+		8C39197328BFBCBC00E2BB34 /* Double+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554628B10FC9004AA3D7 /* Double+Color.swift */; };
+		8C39197428BFBCC700E2BB34 /* String+GeneratedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554228B10FC9004AA3D7 /* String+GeneratedColor.swift */; };
+		8C39197628BFCB3100E2BB34 /* SimpleTickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39197528BFCB3100E2BB34 /* SimpleTickerRow.swift */; };
 		8C49495528749C8F00C24BC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C49495428749C8E00C24BC0 /* GoogleService-Info.plist */; };
-		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
+		8C80553628B10BC1004AA3D7 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553528B10BC1004AA3D7 /* MainApp.swift */; };
+		8C80555428B10FCA004AA3D7 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553928B10FC9004AA3D7 /* LocalStore.swift */; };
+		8C80555528B10FCA004AA3D7 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553A28B10FC9004AA3D7 /* Ticker.swift */; };
+		8C80555628B10FCA004AA3D7 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553B28B10FC9004AA3D7 /* ModelData.swift */; };
+		8C80555728B10FCA004AA3D7 /* TickerWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553D28B10FC9004AA3D7 /* TickerWebService.swift */; };
+		8C80555828B10FCA004AA3D7 /* APIResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553E28B10FC9004AA3D7 /* APIResponses.swift */; };
+		8C80555A28B10FCA004AA3D7 /* Double+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554128B10FC9004AA3D7 /* Double+Pretty.swift */; };
+		8C80555B28B10FCA004AA3D7 /* String+GeneratedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554228B10FC9004AA3D7 /* String+GeneratedColor.swift */; };
+		8C80555C28B10FCA004AA3D7 /* Image+SystemName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554328B10FC9004AA3D7 /* Image+SystemName.swift */; };
+		8C80555D28B10FCA004AA3D7 /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554428B10FC9004AA3D7 /* ReviewController.swift */; };
+		8C80555F28B10FCA004AA3D7 /* Double+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554628B10FC9004AA3D7 /* Double+Color.swift */; };
+		8C80556028B10FCA004AA3D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554828B10FC9004AA3D7 /* HomeView.swift */; };
+		8C80556128B10FCA004AA3D7 /* TickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554A28B10FCA004AA3D7 /* TickerRow.swift */; };
+		8C80556228B10FCA004AA3D7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554C28B10FCA004AA3D7 /* DetailView.swift */; };
+		8C80556328B10FCA004AA3D7 /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554D28B10FCA004AA3D7 /* DetailRow.swift */; };
+		8C80556428B10FCA004AA3D7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554F28B10FCA004AA3D7 /* ListView.swift */; };
+		8C80556528B10FCA004AA3D7 /* AdderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80555128B10FCA004AA3D7 /* AdderView.swift */; };
+		8C819D1028BE7894005DFC1D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C819D0F28BE7894005DFC1D /* WidgetKit.framework */; };
+		8C819D1228BE7894005DFC1D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C819D1128BE7894005DFC1D /* SwiftUI.framework */; };
+		8C819D1528BE7894005DFC1D /* WatchlistWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C819D1428BE7894005DFC1D /* WatchlistWidget.swift */; };
+		8C819D1728BE7896005DFC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C819D1628BE7896005DFC1D /* Assets.xcassets */; };
+		8C819D1B28BE7896005DFC1D /* Watchlist Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8C819D0D28BE7894005DFC1D /* Watchlist Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8C819D2028BE78C8005DFC1D /* WatchlistTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C819D1F28BE78C8005DFC1D /* WatchlistTimelineProvider.swift */; };
+		8C819D2228BE7904005DFC1D /* WatchlistEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C819D2128BE7904005DFC1D /* WatchlistEntryView.swift */; };
+		8C819D2428BE792F005DFC1D /* WatchlistTimelineEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C819D2328BE792F005DFC1D /* WatchlistTimelineEntry.swift */; };
+		8C819D2528BE8917005DFC1D /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553A28B10FC9004AA3D7 /* Ticker.swift */; };
+		8C81EC3C28C26FE200550FE1 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553928B10FC9004AA3D7 /* LocalStore.swift */; };
+		8C81EC3E28C2708C00550FE1 /* TickerWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553D28B10FC9004AA3D7 /* TickerWebService.swift */; };
+		8C81EC3F28C2709A00550FE1 /* APIResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553E28B10FC9004AA3D7 /* APIResponses.swift */; };
 		8C8EE96A28734AA2005679DC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8EE96928734AA2005679DC /* Launch Screen.storyboard */; };
 		8C8EE97428734CFD005679DC /* Double+StringColorStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EE97128734CE6005679DC /* Double+StringColorStyleTests.swift */; };
 		8C8EE97528734D09005679DC /* StringColorStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EE97028734CE6005679DC /* StringColorStyleTests.swift */; };
 		8C9146CB1F0915D300221180 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* ExampleUITests.swift */; };
+		8C9446C728C277AC00DB5B52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
+		8C9446C928C2850200DB5B52 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9446C828C2850200DB5B52 /* AnalyticsService.swift */; };
+		8C9446CC28C2857800DB5B52 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9446CB28C2857800DB5B52 /* AppEnvironment.swift */; };
 		8C99875528739E9B00A6BDB7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C99875428739E9B00A6BDB7 /* FirebaseAnalyticsSwift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
-		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
-		8CF02E762873462C00700EAA /* EmptyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E412873462C00700EAA /* EmptyDetailsView.swift */; };
-		8CF02E772873462C00700EAA /* EmptyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E422873462C00700EAA /* EmptyDetailsViewController.swift */; };
-		8CF02E782873462C00700EAA /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E442873462C00700EAA /* NavigationCoordinator.swift */; };
-		8CF02E792873462C00700EAA /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E462873462C00700EAA /* ReviewController.swift */; };
-		8CF02E7A2873462C00700EAA /* Double+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E482873462C00700EAA /* Double+Pretty.swift */; };
-		8CF02E7B2873462C00700EAA /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E492873462C00700EAA /* String+Localized.swift */; };
-		8CF02E7C2873462C00700EAA /* String+GeneratedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E4A2873462C00700EAA /* String+GeneratedColor.swift */; };
-		8CF02E7D2873462C00700EAA /* Publisher+WeakAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E4B2873462C00700EAA /* Publisher+WeakAssign.swift */; };
-		8CF02E7E2873462C00700EAA /* Image+SystemName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E4C2873462C00700EAA /* Image+SystemName.swift */; };
-		8CF02E7F2873462C00700EAA /* Double+StringColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E4D2873462C00700EAA /* Double+StringColorStyle.swift */; };
-		8CF02E802873462C00700EAA /* TickerRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E4F2873462C00700EAA /* TickerRowViewModel.swift */; };
-		8CF02E812873462C00700EAA /* TrendIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E512873462C00700EAA /* TrendIcon.swift */; };
-		8CF02E822873462C00700EAA /* TrendTriangleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E522873462C00700EAA /* TrendTriangleIcon.swift */; };
-		8CF02E832873462C00700EAA /* TickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E532873462C00700EAA /* TickerRow.swift */; };
-		8CF02E842873462C00700EAA /* StringColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E542873462C00700EAA /* StringColorStyle.swift */; };
-		8CF02E852873462C00700EAA /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E562873462C00700EAA /* AnalyticsService.swift */; };
-		8CF02E862873462C00700EAA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E582873462C00700EAA /* ListViewController.swift */; };
-		8CF02E872873462C00700EAA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E592873462C00700EAA /* ListView.swift */; };
-		8CF02E882873462C00700EAA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E5A2873462C00700EAA /* ListViewModel.swift */; };
-		8CF02E892873462C00700EAA /* AdderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E5C2873462C00700EAA /* AdderView.swift */; };
-		8CF02E8A2873462C00700EAA /* AdderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E5D2873462C00700EAA /* AdderViewModel.swift */; };
-		8CF02E8B2873462C00700EAA /* AdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E5E2873462C00700EAA /* AdderViewController.swift */; };
-		8CF02E8C2873462C00700EAA /* AdderSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E5F2873462C00700EAA /* AdderSearchBarView.swift */; };
-		8CF02E8D2873462C00700EAA /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E612873462C00700EAA /* DetailsView.swift */; };
-		8CF02E8E2873462C00700EAA /* DetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E632873462C00700EAA /* DetailsRow.swift */; };
-		8CF02E8F2873462C00700EAA /* DetailsRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E642873462C00700EAA /* DetailsRowViewModel.swift */; };
-		8CF02E902873462C00700EAA /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E652873462C00700EAA /* DetailsViewModel.swift */; };
-		8CF02E912873462C00700EAA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E662873462C00700EAA /* DetailsViewController.swift */; };
-		8CF02E922873462C00700EAA /* OldLocalDataRepositoryMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E6A2873462C00700EAA /* OldLocalDataRepositoryMigrator.swift */; };
-		8CF02E932873462C00700EAA /* LocalDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E6B2873462C00700EAA /* LocalDataRepository.swift */; };
-		8CF02E942873462C00700EAA /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E6C2873462C00700EAA /* DataRepository.swift */; };
-		8CF02E952873462C00700EAA /* RemoteDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E6E2873462C00700EAA /* RemoteDataRepository.swift */; };
-		8CF02E962873462C00700EAA /* CurrenciesNamesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E702873462C00700EAA /* CurrenciesNamesAPIResponse.swift */; };
-		8CF02E972873462C00700EAA /* TickersValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E712873462C00700EAA /* TickersValuesAPIResponse.swift */; };
-		8CF02E982873462C00700EAA /* TickersStatisticsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E722873462C00700EAA /* TickersStatisticsAPIResponse.swift */; };
-		8CF02E992873462C00700EAA /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF02E742873462C00700EAA /* Ticker.swift */; };
+		8CD9E88828C3A72600812A8C /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD9E88728C3A72600812A8C /* PlaceholderView.swift */; };
+		8CD9E88A28C3A78300812A8C /* FilledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD9E88928C3A78300812A8C /* FilledView.swift */; };
+		8CE6C20328C7B00200C90110 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C20228C7B00200C90110 /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8C819D1928BE7896005DFC1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C819D0C28BE7894005DFC1D;
+			remoteInfo = TickersWidgetExtension;
+		};
 		8CC1850D1EFE4CAC0083DA30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
@@ -79,6 +89,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				8C819D1B28BE7896005DFC1D /* Watchlist Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,61 +97,65 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C39196F28BFB93800E2BB34 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8C39197528BFCB3100E2BB34 /* SimpleTickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTickerRow.swift; sourceTree = "<group>"; };
 		8C49495428749C8E00C24BC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8C80553528B10BC1004AA3D7 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
+		8C80553928B10FC9004AA3D7 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		8C80553A28B10FC9004AA3D7 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		8C80553B28B10FC9004AA3D7 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		8C80553D28B10FC9004AA3D7 /* TickerWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerWebService.swift; sourceTree = "<group>"; };
+		8C80553E28B10FC9004AA3D7 /* APIResponses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponses.swift; sourceTree = "<group>"; };
+		8C80554128B10FC9004AA3D7 /* Double+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Pretty.swift"; sourceTree = "<group>"; };
+		8C80554228B10FC9004AA3D7 /* String+GeneratedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+GeneratedColor.swift"; sourceTree = "<group>"; };
+		8C80554328B10FC9004AA3D7 /* Image+SystemName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+SystemName.swift"; sourceTree = "<group>"; };
+		8C80554428B10FC9004AA3D7 /* ReviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
+		8C80554628B10FC9004AA3D7 /* Double+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Color.swift"; sourceTree = "<group>"; };
+		8C80554828B10FC9004AA3D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8C80554A28B10FCA004AA3D7 /* TickerRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerRow.swift; sourceTree = "<group>"; };
+		8C80554C28B10FCA004AA3D7 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		8C80554D28B10FCA004AA3D7 /* DetailRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
+		8C80554F28B10FCA004AA3D7 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		8C80555128B10FCA004AA3D7 /* AdderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderView.swift; sourceTree = "<group>"; };
+		8C819D0D28BE7894005DFC1D /* Watchlist Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watchlist Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C819D0F28BE7894005DFC1D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		8C819D1128BE7894005DFC1D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		8C819D1428BE7894005DFC1D /* WatchlistWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistWidget.swift; sourceTree = "<group>"; };
+		8C819D1628BE7896005DFC1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C819D1828BE7896005DFC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C819D1F28BE78C8005DFC1D /* WatchlistTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTimelineProvider.swift; sourceTree = "<group>"; };
+		8C819D2128BE7904005DFC1D /* WatchlistEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistEntryView.swift; sourceTree = "<group>"; };
+		8C819D2328BE792F005DFC1D /* WatchlistTimelineEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTimelineEntry.swift; sourceTree = "<group>"; };
 		8C8EE96928734AA2005679DC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8C8EE97028734CE6005679DC /* StringColorStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringColorStyleTests.swift; sourceTree = "<group>"; };
 		8C8EE97128734CE6005679DC /* Double+StringColorStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+StringColorStyleTests.swift"; sourceTree = "<group>"; };
 		8C9146CA1F0915D300221180 /* ExampleUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
+		8C9446C828C2850200DB5B52 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		8C9446CB28C2857800DB5B52 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		8CBD947B1F0D7D1400CA4250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CBD947D1F0D7D2500CA4250 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* Zonda Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zonda Tickers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CC185021EFE4CAC0083DA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CC1850C1EFE4CAC0083DA30 /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CD9E88728C3A72600812A8C /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		8CD9E88928C3A78300812A8C /* FilledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledView.swift; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDFD47E1F084106009F1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
-		8CF02E412873462C00700EAA /* EmptyDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDetailsView.swift; sourceTree = "<group>"; };
-		8CF02E422873462C00700EAA /* EmptyDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDetailsViewController.swift; sourceTree = "<group>"; };
-		8CF02E442873462C00700EAA /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
-		8CF02E462873462C00700EAA /* ReviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
-		8CF02E482873462C00700EAA /* Double+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Pretty.swift"; sourceTree = "<group>"; };
-		8CF02E492873462C00700EAA /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
-		8CF02E4A2873462C00700EAA /* String+GeneratedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+GeneratedColor.swift"; sourceTree = "<group>"; };
-		8CF02E4B2873462C00700EAA /* Publisher+WeakAssign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+WeakAssign.swift"; sourceTree = "<group>"; };
-		8CF02E4C2873462C00700EAA /* Image+SystemName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+SystemName.swift"; sourceTree = "<group>"; };
-		8CF02E4D2873462C00700EAA /* Double+StringColorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+StringColorStyle.swift"; sourceTree = "<group>"; };
-		8CF02E4F2873462C00700EAA /* TickerRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerRowViewModel.swift; sourceTree = "<group>"; };
-		8CF02E512873462C00700EAA /* TrendIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendIcon.swift; sourceTree = "<group>"; };
-		8CF02E522873462C00700EAA /* TrendTriangleIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendTriangleIcon.swift; sourceTree = "<group>"; };
-		8CF02E532873462C00700EAA /* TickerRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerRow.swift; sourceTree = "<group>"; };
-		8CF02E542873462C00700EAA /* StringColorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringColorStyle.swift; sourceTree = "<group>"; };
-		8CF02E562873462C00700EAA /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
-		8CF02E582873462C00700EAA /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		8CF02E592873462C00700EAA /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		8CF02E5A2873462C00700EAA /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		8CF02E5C2873462C00700EAA /* AdderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderView.swift; sourceTree = "<group>"; };
-		8CF02E5D2873462C00700EAA /* AdderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderViewModel.swift; sourceTree = "<group>"; };
-		8CF02E5E2873462C00700EAA /* AdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderViewController.swift; sourceTree = "<group>"; };
-		8CF02E5F2873462C00700EAA /* AdderSearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderSearchBarView.swift; sourceTree = "<group>"; };
-		8CF02E612873462C00700EAA /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
-		8CF02E632873462C00700EAA /* DetailsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsRow.swift; sourceTree = "<group>"; };
-		8CF02E642873462C00700EAA /* DetailsRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsRowViewModel.swift; sourceTree = "<group>"; };
-		8CF02E652873462C00700EAA /* DetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
-		8CF02E662873462C00700EAA /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		8CF02E6A2873462C00700EAA /* OldLocalDataRepositoryMigrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldLocalDataRepositoryMigrator.swift; sourceTree = "<group>"; };
-		8CF02E6B2873462C00700EAA /* LocalDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataRepository.swift; sourceTree = "<group>"; };
-		8CF02E6C2873462C00700EAA /* DataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
-		8CF02E6E2873462C00700EAA /* RemoteDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataRepository.swift; sourceTree = "<group>"; };
-		8CF02E702873462C00700EAA /* CurrenciesNamesAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesNamesAPIResponse.swift; sourceTree = "<group>"; };
-		8CF02E712873462C00700EAA /* TickersValuesAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersValuesAPIResponse.swift; sourceTree = "<group>"; };
-		8CF02E722873462C00700EAA /* TickersStatisticsAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersStatisticsAPIResponse.swift; sourceTree = "<group>"; };
-		8CF02E742873462C00700EAA /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		8CE06BD61F061D1400EBD7B9 /* Zonda-Tickers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Zonda-Tickers.entitlements"; sourceTree = "<group>"; };
+		8CE6C20228C7B00200C90110 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8C819D0A28BE7894005DFC1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C819D1228BE7894005DFC1D /* SwiftUI.framework in Frameworks */,
+				8C819D1028BE7894005DFC1D /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CC184F51EFE4CAC0083DA30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +189,124 @@
 			path = Translations;
 			sourceTree = "<group>";
 		};
+		8C80553728B10FC9004AA3D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C80553828B10FC9004AA3D7 /* Local */,
+				8C80553A28B10FC9004AA3D7 /* Ticker.swift */,
+				8C80553B28B10FC9004AA3D7 /* ModelData.swift */,
+				8C80553C28B10FC9004AA3D7 /* Remote */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C80553828B10FC9004AA3D7 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				8C80553928B10FC9004AA3D7 /* LocalStore.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		8C80553C28B10FC9004AA3D7 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				8C80553D28B10FC9004AA3D7 /* TickerWebService.swift */,
+				8C80553E28B10FC9004AA3D7 /* APIResponses.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		8C80553F28B10FC9004AA3D7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8C80554128B10FC9004AA3D7 /* Double+Pretty.swift */,
+				8C80554228B10FC9004AA3D7 /* String+GeneratedColor.swift */,
+				8C80554328B10FC9004AA3D7 /* Image+SystemName.swift */,
+				8C80554428B10FC9004AA3D7 /* ReviewController.swift */,
+				8C80554628B10FC9004AA3D7 /* Double+Color.swift */,
+				8C9446CB28C2857800DB5B52 /* AppEnvironment.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8C80554728B10FC9004AA3D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C80554828B10FC9004AA3D7 /* HomeView.swift */,
+				8C80554928B10FCA004AA3D7 /* Common */,
+				8C80554B28B10FCA004AA3D7 /* Detail */,
+				8C80554E28B10FCA004AA3D7 /* List */,
+				8C80555028B10FCA004AA3D7 /* Adder */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8C80554928B10FCA004AA3D7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8C80554A28B10FCA004AA3D7 /* TickerRow.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8C80554B28B10FCA004AA3D7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8C80554C28B10FCA004AA3D7 /* DetailView.swift */,
+				8C80554D28B10FCA004AA3D7 /* DetailRow.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		8C80554E28B10FCA004AA3D7 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				8C80554F28B10FCA004AA3D7 /* ListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		8C80555028B10FCA004AA3D7 /* Adder */ = {
+			isa = PBXGroup;
+			children = (
+				8C80555128B10FCA004AA3D7 /* AdderView.swift */,
+			);
+			path = Adder;
+			sourceTree = "<group>";
+		};
+		8C80555228B10FCA004AA3D7 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				8C9446C828C2850200DB5B52 /* AnalyticsService.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		8C819D0E28BE7894005DFC1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C819D0F28BE7894005DFC1D /* WidgetKit.framework */,
+				8C819D1128BE7894005DFC1D /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C819D1328BE7894005DFC1D /* WatchlistWidget */ = {
+			isa = PBXGroup;
+			children = (
+				8CD9E88628C3A56800812A8C /* Views */,
+				8C819D2328BE792F005DFC1D /* WatchlistTimelineEntry.swift */,
+				8C819D1F28BE78C8005DFC1D /* WatchlistTimelineProvider.swift */,
+				8CE6C20228C7B00200C90110 /* ModelData.swift */,
+				8C819D1428BE7894005DFC1D /* WatchlistWidget.swift */,
+				8C39196F28BFB93800E2BB34 /* Utils.swift */,
+				8C819D1628BE7896005DFC1D /* Assets.xcassets */,
+				8C819D1828BE7896005DFC1D /* Info.plist */,
+			);
+			path = WatchlistWidget;
+			sourceTree = "<group>";
+		};
 		8C8EE96F28734CE6005679DC /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +321,8 @@
 			children = (
 				8CC184FA1EFE4CAC0083DA30 /* Codebase */,
 				8CF02E3F2873452500700EAA /* Tests */,
+				8C819D1328BE7894005DFC1D /* WatchlistWidget */,
+				8C819D0E28BE7894005DFC1D /* Frameworks */,
 				8CC184F91EFE4CAC0083DA30 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -198,6 +333,7 @@
 				8CC184F81EFE4CAC0083DA30 /* Zonda Tickers.app */,
 				8CC1850C1EFE4CAC0083DA30 /* Unit Tests.xctest */,
 				8CDFD47A1F084106009F1E19 /* UI Tests.xctest */,
+				8C819D0D28BE7894005DFC1D /* Watchlist Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,14 +341,10 @@
 		8CC184FA1EFE4CAC0083DA30 /* Codebase */ = {
 			isa = PBXGroup;
 			children = (
-				8CF02E452873462C00700EAA /* Common */,
-				8CF02E732873462C00700EAA /* Models */,
-				8CF02E672873462C00700EAA /* Data Repository */,
-				8CF02E432873462C00700EAA /* Navigation */,
-				8CF02E572873462C00700EAA /* List */,
-				8CF02E602873462C00700EAA /* Details */,
-				8CF02E402873462C00700EAA /* Empty Details */,
-				8CF02E5B2873462C00700EAA /* Adder */,
+				8C80555228B10FCA004AA3D7 /* Analytics */,
+				8C80553728B10FC9004AA3D7 /* Model */,
+				8C80553F28B10FC9004AA3D7 /* Utils */,
+				8C80554728B10FC9004AA3D7 /* Views */,
 				8C6FB63223A2CE2200724C86 /* Translations */,
 				8CC7DDA81EFFEDD500050A7F /* Supporting Files */,
 				8CC185021EFE4CAC0083DA30 /* Assets.xcassets */,
@@ -232,13 +364,23 @@
 		8CC7DDA81EFFEDD500050A7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C80553528B10BC1004AA3D7 /* MainApp.swift */,
 				8C49495428749C8E00C24BC0 /* GoogleService-Info.plist */,
-				8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */,
-				8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */,
-				8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */,
+				8CE06BD61F061D1400EBD7B9 /* Zonda-Tickers.entitlements */,
 				8C8EE96928734AA2005679DC /* Launch Screen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CD9E88628C3A56800812A8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C819D2128BE7904005DFC1D /* WatchlistEntryView.swift */,
+				8CD9E88728C3A72600812A8C /* PlaceholderView.swift */,
+				8CD9E88928C3A78300812A8C /* FilledView.swift */,
+				8C39197528BFCB3100E2BB34 /* SimpleTickerRow.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8CDFD47B1F084106009F1E19 /* UI */ = {
@@ -259,173 +401,26 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		8CF02E402873462C00700EAA /* Empty Details */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E412873462C00700EAA /* EmptyDetailsView.swift */,
-				8CF02E422873462C00700EAA /* EmptyDetailsViewController.swift */,
-			);
-			path = "Empty Details";
-			sourceTree = "<group>";
-		};
-		8CF02E432873462C00700EAA /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E442873462C00700EAA /* NavigationCoordinator.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		8CF02E452873462C00700EAA /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E552873462C00700EAA /* Analytics */,
-				8CF02E4E2873462C00700EAA /* Ticker Row */,
-				8CF02E472873462C00700EAA /* Utils */,
-				8CF02E542873462C00700EAA /* StringColorStyle.swift */,
-				8CF02E462873462C00700EAA /* ReviewController.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		8CF02E472873462C00700EAA /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E482873462C00700EAA /* Double+Pretty.swift */,
-				8CF02E492873462C00700EAA /* String+Localized.swift */,
-				8CF02E4A2873462C00700EAA /* String+GeneratedColor.swift */,
-				8CF02E4B2873462C00700EAA /* Publisher+WeakAssign.swift */,
-				8CF02E4C2873462C00700EAA /* Image+SystemName.swift */,
-				8CF02E4D2873462C00700EAA /* Double+StringColorStyle.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		8CF02E4E2873462C00700EAA /* Ticker Row */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E4F2873462C00700EAA /* TickerRowViewModel.swift */,
-				8CF02E502873462C00700EAA /* Icons */,
-				8CF02E532873462C00700EAA /* TickerRow.swift */,
-			);
-			path = "Ticker Row";
-			sourceTree = "<group>";
-		};
-		8CF02E502873462C00700EAA /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E512873462C00700EAA /* TrendIcon.swift */,
-				8CF02E522873462C00700EAA /* TrendTriangleIcon.swift */,
-			);
-			path = Icons;
-			sourceTree = "<group>";
-		};
-		8CF02E552873462C00700EAA /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E562873462C00700EAA /* AnalyticsService.swift */,
-			);
-			path = Analytics;
-			sourceTree = "<group>";
-		};
-		8CF02E572873462C00700EAA /* List */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E582873462C00700EAA /* ListViewController.swift */,
-				8CF02E592873462C00700EAA /* ListView.swift */,
-				8CF02E5A2873462C00700EAA /* ListViewModel.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
-		8CF02E5B2873462C00700EAA /* Adder */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E5C2873462C00700EAA /* AdderView.swift */,
-				8CF02E5D2873462C00700EAA /* AdderViewModel.swift */,
-				8CF02E5E2873462C00700EAA /* AdderViewController.swift */,
-				8CF02E5F2873462C00700EAA /* AdderSearchBarView.swift */,
-			);
-			path = Adder;
-			sourceTree = "<group>";
-		};
-		8CF02E602873462C00700EAA /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E622873462C00700EAA /* Row */,
-				8CF02E612873462C00700EAA /* DetailsView.swift */,
-				8CF02E652873462C00700EAA /* DetailsViewModel.swift */,
-				8CF02E662873462C00700EAA /* DetailsViewController.swift */,
-			);
-			path = Details;
-			sourceTree = "<group>";
-		};
-		8CF02E622873462C00700EAA /* Row */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E632873462C00700EAA /* DetailsRow.swift */,
-				8CF02E642873462C00700EAA /* DetailsRowViewModel.swift */,
-			);
-			path = Row;
-			sourceTree = "<group>";
-		};
-		8CF02E672873462C00700EAA /* Data Repository */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E682873462C00700EAA /* Local */,
-				8CF02E6D2873462C00700EAA /* Remote */,
-				8CF02E6C2873462C00700EAA /* DataRepository.swift */,
-			);
-			path = "Data Repository";
-			sourceTree = "<group>";
-		};
-		8CF02E682873462C00700EAA /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E692873462C00700EAA /* Migrator */,
-				8CF02E6B2873462C00700EAA /* LocalDataRepository.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		8CF02E692873462C00700EAA /* Migrator */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E6A2873462C00700EAA /* OldLocalDataRepositoryMigrator.swift */,
-			);
-			path = Migrator;
-			sourceTree = "<group>";
-		};
-		8CF02E6D2873462C00700EAA /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E6F2873462C00700EAA /* API Models */,
-				8CF02E6E2873462C00700EAA /* RemoteDataRepository.swift */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		8CF02E6F2873462C00700EAA /* API Models */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E702873462C00700EAA /* CurrenciesNamesAPIResponse.swift */,
-				8CF02E712873462C00700EAA /* TickersValuesAPIResponse.swift */,
-				8CF02E722873462C00700EAA /* TickersStatisticsAPIResponse.swift */,
-			);
-			path = "API Models";
-			sourceTree = "<group>";
-		};
-		8CF02E732873462C00700EAA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8CF02E742873462C00700EAA /* Ticker.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8C819D0C28BE7894005DFC1D /* Watchlist Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C819D1E28BE7896005DFC1D /* Build configuration list for PBXNativeTarget "Watchlist Widget" */;
+			buildPhases = (
+				8C819D0928BE7894005DFC1D /* Sources */,
+				8C819D0A28BE7894005DFC1D /* Frameworks */,
+				8C819D0B28BE7894005DFC1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watchlist Widget";
+			productName = TickersWidgetExtension;
+			productReference = 8C819D0D28BE7894005DFC1D /* Watchlist Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8CC184F71EFE4CAC0083DA30 /* Zonda Tickers */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC185151EFE4CAC0083DA30 /* Build configuration list for PBXNativeTarget "Zonda Tickers" */;
@@ -438,6 +433,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8C819D1A28BE7896005DFC1D /* PBXTargetDependency */,
 			);
 			name = "Zonda Tickers";
 			packageProductDependencies = (
@@ -489,10 +485,13 @@
 		8CC184F01EFE4CAC0083DA30 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Albin Sadowski";
 				TargetAttributes = {
+					8C819D0C28BE7894005DFC1D = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					8CC184F71EFE4CAC0083DA30 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = AXTXBRU9S7;
@@ -543,11 +542,21 @@
 				8CC184F71EFE4CAC0083DA30 /* Zonda Tickers */,
 				8CC1850B1EFE4CAC0083DA30 /* Unit Tests */,
 				8CDFD4791F084106009F1E19 /* UI Tests */,
+				8C819D0C28BE7894005DFC1D /* Watchlist Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8C819D0B28BE7894005DFC1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C819D1728BE7896005DFC1D /* Assets.xcassets in Resources */,
+				8C9446C728C277AC00DB5B52 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CC184F61EFE4CAC0083DA30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -576,48 +585,53 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8C819D0928BE7894005DFC1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C39197028BFB93800E2BB34 /* Utils.swift in Sources */,
+				8C819D2428BE792F005DFC1D /* WatchlistTimelineEntry.swift in Sources */,
+				8C39197428BFBCC700E2BB34 /* String+GeneratedColor.swift in Sources */,
+				8C81EC3C28C26FE200550FE1 /* LocalStore.swift in Sources */,
+				8C39197328BFBCBC00E2BB34 /* Double+Color.swift in Sources */,
+				8C819D2228BE7904005DFC1D /* WatchlistEntryView.swift in Sources */,
+				8C819D2528BE8917005DFC1D /* Ticker.swift in Sources */,
+				8CD9E88828C3A72600812A8C /* PlaceholderView.swift in Sources */,
+				8C39197228BFBCAB00E2BB34 /* Double+Pretty.swift in Sources */,
+				8CD9E88A28C3A78300812A8C /* FilledView.swift in Sources */,
+				8C39197128BFBC9D00E2BB34 /* TickerRow.swift in Sources */,
+				8C819D2028BE78C8005DFC1D /* WatchlistTimelineProvider.swift in Sources */,
+				8C81EC3F28C2709A00550FE1 /* APIResponses.swift in Sources */,
+				8C819D1528BE7894005DFC1D /* WatchlistWidget.swift in Sources */,
+				8C81EC3E28C2708C00550FE1 /* TickerWebService.swift in Sources */,
+				8CE6C20328C7B00200C90110 /* ModelData.swift in Sources */,
+				8C39197628BFCB3100E2BB34 /* SimpleTickerRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CC184F41EFE4CAC0083DA30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
-				8CF02E792873462C00700EAA /* ReviewController.swift in Sources */,
-				8CF02E8F2873462C00700EAA /* DetailsRowViewModel.swift in Sources */,
-				8CF02E922873462C00700EAA /* OldLocalDataRepositoryMigrator.swift in Sources */,
-				8CF02E882873462C00700EAA /* ListViewModel.swift in Sources */,
-				8CF02E8B2873462C00700EAA /* AdderViewController.swift in Sources */,
-				8CF02E962873462C00700EAA /* CurrenciesNamesAPIResponse.swift in Sources */,
-				8CF02E992873462C00700EAA /* Ticker.swift in Sources */,
-				8CF02E972873462C00700EAA /* TickersValuesAPIResponse.swift in Sources */,
-				8CF02E852873462C00700EAA /* AnalyticsService.swift in Sources */,
-				8CF02E952873462C00700EAA /* RemoteDataRepository.swift in Sources */,
-				8CF02E7B2873462C00700EAA /* String+Localized.swift in Sources */,
-				8CF02E902873462C00700EAA /* DetailsViewModel.swift in Sources */,
-				8CF02E7E2873462C00700EAA /* Image+SystemName.swift in Sources */,
-				8CF02E8A2873462C00700EAA /* AdderViewModel.swift in Sources */,
-				8CF02E832873462C00700EAA /* TickerRow.swift in Sources */,
-				8CF02E762873462C00700EAA /* EmptyDetailsView.swift in Sources */,
-				8CF02E802873462C00700EAA /* TickerRowViewModel.swift in Sources */,
-				8CF02E862873462C00700EAA /* ListViewController.swift in Sources */,
-				8CF02E7F2873462C00700EAA /* Double+StringColorStyle.swift in Sources */,
-				8CF02E772873462C00700EAA /* EmptyDetailsViewController.swift in Sources */,
-				8CF02E8E2873462C00700EAA /* DetailsRow.swift in Sources */,
-				8CF02E7D2873462C00700EAA /* Publisher+WeakAssign.swift in Sources */,
-				8CF02E982873462C00700EAA /* TickersStatisticsAPIResponse.swift in Sources */,
-				8CF02E872873462C00700EAA /* ListView.swift in Sources */,
-				8CF02E7A2873462C00700EAA /* Double+Pretty.swift in Sources */,
-				8CF02E892873462C00700EAA /* AdderView.swift in Sources */,
-				8CF02E782873462C00700EAA /* NavigationCoordinator.swift in Sources */,
-				8CF02E8D2873462C00700EAA /* DetailsView.swift in Sources */,
-				8CF02E942873462C00700EAA /* DataRepository.swift in Sources */,
-				8CF02E8C2873462C00700EAA /* AdderSearchBarView.swift in Sources */,
-				8CF02E932873462C00700EAA /* LocalDataRepository.swift in Sources */,
-				8CF02E7C2873462C00700EAA /* String+GeneratedColor.swift in Sources */,
-				8CF02E842873462C00700EAA /* StringColorStyle.swift in Sources */,
-				8CF02E822873462C00700EAA /* TrendTriangleIcon.swift in Sources */,
-				8CF02E812873462C00700EAA /* TrendIcon.swift in Sources */,
-				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
-				8CF02E912873462C00700EAA /* DetailsViewController.swift in Sources */,
+				8C80555F28B10FCA004AA3D7 /* Double+Color.swift in Sources */,
+				8C80556028B10FCA004AA3D7 /* HomeView.swift in Sources */,
+				8C80555728B10FCA004AA3D7 /* TickerWebService.swift in Sources */,
+				8C80555D28B10FCA004AA3D7 /* ReviewController.swift in Sources */,
+				8C80556328B10FCA004AA3D7 /* DetailRow.swift in Sources */,
+				8C9446CC28C2857800DB5B52 /* AppEnvironment.swift in Sources */,
+				8C80556128B10FCA004AA3D7 /* TickerRow.swift in Sources */,
+				8C80553628B10BC1004AA3D7 /* MainApp.swift in Sources */,
+				8C80556428B10FCA004AA3D7 /* ListView.swift in Sources */,
+				8C80555628B10FCA004AA3D7 /* ModelData.swift in Sources */,
+				8C80556528B10FCA004AA3D7 /* AdderView.swift in Sources */,
+				8C9446C928C2850200DB5B52 /* AnalyticsService.swift in Sources */,
+				8C80555A28B10FCA004AA3D7 /* Double+Pretty.swift in Sources */,
+				8C80556228B10FCA004AA3D7 /* DetailView.swift in Sources */,
+				8C80555C28B10FCA004AA3D7 /* Image+SystemName.swift in Sources */,
+				8C80555528B10FCA004AA3D7 /* Ticker.swift in Sources */,
+				8C80555428B10FCA004AA3D7 /* LocalStore.swift in Sources */,
+				8C80555B28B10FCA004AA3D7 /* String+GeneratedColor.swift in Sources */,
+				8C80555828B10FCA004AA3D7 /* APIResponses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +655,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8C819D1A28BE7896005DFC1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C819D0C28BE7894005DFC1D /* Watchlist Widget */;
+			targetProxy = 8C819D1928BE7896005DFC1D /* PBXContainerItemProxy */;
+		};
 		8CC1850E1EFE4CAC0083DA30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8CC184F71EFE4CAC0083DA30 /* Zonda Tickers */;
@@ -666,6 +685,75 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8C819D1C28BE7896005DFC1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2002;
+				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchlistWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Watchlist Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.WatchlistWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C819D1D28BE7896005DFC1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2002;
+				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchlistWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Watchlist Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.WatchlistWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		8CC185131EFE4CAC0083DA30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -702,6 +790,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -764,6 +853,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -787,11 +877,12 @@
 		8CC185161EFE4CAC0083DA30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
-				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/BitBay-Ticker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2001;
+				CURRENT_PROJECT_VERSION = 2002;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -804,7 +895,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -820,11 +911,12 @@
 		8CC185171EFE4CAC0083DA30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
-				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/BitBay-Ticker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2001;
+				CURRENT_PROJECT_VERSION = 2002;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -837,7 +929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -936,6 +1028,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8C819D1E28BE7896005DFC1D /* Build configuration list for PBXNativeTarget "Watchlist Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C819D1C28BE7896005DFC1D /* Debug */,
+				8C819D1D28BE7896005DFC1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8CC184F31EFE4CAC0083DA30 /* Build configuration list for PBXProject "Zonda-Tickers-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

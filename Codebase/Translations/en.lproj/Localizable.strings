@@ -1,30 +1,34 @@
-// Common
+// Home
 
-"Error" = "Error";
+"Select a Ticker" = "Select a Ticker";
 
-// Main
+// List
 
 "Tickers" = "Tickers";
-"Press + to add a ticker" = "Press + to add a ticker";
+"Press + to add a Ticker" = "Press + to add a Ticker";
 
 // Detail
 
-"Last" = "Last";
-"Previous" = "Previous";
-"Maximum" = "Maximum";
-"Minimum" = "Minimum";
+"Name" = "Name";
+"Rate" = "Rate";
+"Change" = "Change";
+"Change (%)" = "Change (%)";
+"Previous rate" = "Previous rate";
+"Highest rate" = "Highest rate";
+"Lowest rate" = "Lowest rate";
 "Bid" = "Bid";
 "Ask" = "Ask";
 "Average" = "Average";
 "Volume" = "Volume";
-"Name" = "Name";
+"Volume value" = "Volume value";
 
 // Adder
 
 "Add Ticker" = "Add Ticker";
-"Search" = "Search";
 "No results" = "No results";
 
 // Widget
 
-"No tickers" = "No tickers";
+"Watchlist" = "Watchlist";
+"View and track performance of your tickers throughout the day." = "View and track performance of your tickers throughout the day.";
+"No Tickers" = "No Tickers";
