@@ -33,7 +33,7 @@ final class AnalyticsService {
         )
     }
     
-    private init(
+    init(
         firebaseAppType: FirebaseApp.Type,
         analyticsType: Analytics.Type
     ) {

@@ -1,0 +1,134 @@
+import Firebase
+import XCTest
+@testable import Zonda_Tickers
+
+final class AnalyticsServiceTests: XCTestCase {
+    
+    private var sut: AnalyticsService!
+    
+    private let firebaseAppSpyType = FirebaseApp.Spy.self
+    private let analyticsSpyType = Analytics.Spy.self
+    
+    // MARK: - Setting
+    
+    override func setUp() {
+        super.setUp()
+        
+        firebaseAppSpyType.isConfigured = false
+        analyticsSpyType.loggedEvents = []
+        
+        sut = .init(
+            firebaseAppType: firebaseAppSpyType,
+            analyticsType: analyticsSpyType
+        )
+    }
+    
+    // MARK: - Tests
+    
+    func test_init() {
+        XCTAssertTrue(firebaseAppSpyType.isConfigured)
+    }
+    
+    func test_trackView() {
+        sut.trackView()
+        sut.trackView(tickerId: "1")
+        
+        assert(expectedLoggedEvents: [
+            .init(
+                name: "screen_view",
+                parameters: nil
+            ),
+            .init(
+                name: "screen_view",
+                parameters: ["Ticker": "1"]
+            )
+        ])
+    }
+    
+    func test_trackUserTickerAppended() {
+        sut.trackUserTickerAppended(tickerId: "1")
+        
+        assert(expectedLoggedEvents: [.init(
+            name: "User_Ticker_Appended",
+            parameters: ["Ticker": "1"]
+        )])
+    }
+    
+    func test_trackUserTickerDeleted() {
+        sut.trackUserTickerDeleted(tickerId: "1")
+        
+        assert(expectedLoggedEvents: [.init(
+            name: "User_Ticker_Deleted",
+            parameters: ["Ticker": "1"]
+        )])
+    }
+    
+    func test_trackUserTickersRefreshed() {
+        sut.trackUserTickersRefreshed(tickerIds: ["1", "2", "3", "4"])
+        
+        assert(expectedLoggedEvents: [.init(
+            name: "User_Tickers_Refreshed",
+            parameters: ["Tickers": "1,2,3,4"]
+        )])
+    }
+    
+    func test_trackUserTickersRefreshingFailed() {
+        sut.trackUserTickersRefreshingFailed(tickerIds: ["1", "2", "3", "4"])
+        
+        assert(expectedLoggedEvents: [.init(
+            name: "User_Tickers_Refreshing_Failed",
+            parameters: ["Tickers": "1,2,3,4"]
+        )])
+    }
+    
+    func test_trackReviewRequested() {
+        sut.trackReviewRequested()
+        
+        assert(expectedLoggedEvents: [.init(
+            name: "Requested_Review",
+            parameters: nil
+        )])
+    }
+    
+    private func assert(expectedLoggedEvents: [Analytics.Spy.LoggedEvent]) {
+        XCTAssertEqual(expectedLoggedEvents, analyticsSpyType.loggedEvents)
+    }
+
+}
+
+// MARK: - Helpers
+
+private extension FirebaseApp {
+    
+    final class Spy: FirebaseApp {
+        
+        static var isConfigured = false
+        
+        override class func configure() {
+            isConfigured = true
+        }
+        
+    }
+    
+}
+
+private extension Analytics {
+    
+    final class Spy: Analytics {
+        
+        struct LoggedEvent: Equatable {
+            
+            let name: String
+            let parameters: [String: String]?
+            
+        }
+        
+        static var loggedEvents: [LoggedEvent] = []
+        
+        override class func logEvent(_ name: String, parameters: [String: Any]?) {
+            loggedEvents.append(.init(name: name, parameters: parameters as? [String: String]))
+        }
+        
+    }
+    
+}
