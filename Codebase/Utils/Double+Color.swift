@@ -3,13 +3,17 @@ import SwiftUI
 extension Double {
     
     var color: Color {
+        let color: Color
+        
         if self > 0 {
-            return .green
+            color = .green
         } else if self < 0 {
-            return .red
+            color = .red
         } else {
-            return .orange
+            color = .orange
         }
+        
+        return color
     }
     
 }
