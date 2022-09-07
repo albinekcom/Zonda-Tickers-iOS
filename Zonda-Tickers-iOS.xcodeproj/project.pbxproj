@@ -13,7 +13,8 @@
 		8C39197328BFBCBC00E2BB34 /* Double+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554628B10FC9004AA3D7 /* Double+Color.swift */; };
 		8C39197428BFBCC700E2BB34 /* String+GeneratedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554228B10FC9004AA3D7 /* String+GeneratedColor.swift */; };
 		8C39197628BFCB3100E2BB34 /* SimpleTickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39197528BFCB3100E2BB34 /* SimpleTickerRow.swift */; };
-		8C3A2F7128C8F402001FD018 /* Double+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A2F7028C8F402001FD018 /* Double+Pretty.swift */; };
+		8C3A2F7128C8F402001FD018 /* Double+PrettyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A2F7028C8F402001FD018 /* Double+PrettyTests.swift */; };
+		8C3A2F7328C8F71A001FD018 /* String+GeneratedColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A2F7228C8F71A001FD018 /* String+GeneratedColorTests.swift */; };
 		8C49495528749C8F00C24BC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C49495428749C8E00C24BC0 /* GoogleService-Info.plist */; };
 		8C80553628B10BC1004AA3D7 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553528B10BC1004AA3D7 /* MainApp.swift */; };
 		8C80555428B10FCA004AA3D7 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553928B10FC9004AA3D7 /* LocalStore.swift */; };
@@ -99,7 +100,8 @@
 /* Begin PBXFileReference section */
 		8C39196F28BFB93800E2BB34 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8C39197528BFCB3100E2BB34 /* SimpleTickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTickerRow.swift; sourceTree = "<group>"; };
-		8C3A2F7028C8F402001FD018 /* Double+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Pretty.swift"; sourceTree = "<group>"; };
+		8C3A2F7028C8F402001FD018 /* Double+PrettyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+PrettyTests.swift"; sourceTree = "<group>"; };
+		8C3A2F7228C8F71A001FD018 /* String+GeneratedColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+GeneratedColorTests.swift"; sourceTree = "<group>"; };
 		8C49495428749C8E00C24BC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C80553528B10BC1004AA3D7 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		8C80553928B10FC9004AA3D7 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
@@ -220,12 +222,12 @@
 		8C80553F28B10FC9004AA3D7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8C9446CB28C2857800DB5B52 /* AppEnvironment.swift */,
+				8C80554628B10FC9004AA3D7 /* Double+Color.swift */,
 				8C80554128B10FC9004AA3D7 /* Double+Pretty.swift */,
-				8C80554228B10FC9004AA3D7 /* String+GeneratedColor.swift */,
 				8C80554328B10FC9004AA3D7 /* Image+SystemName.swift */,
 				8C80554428B10FC9004AA3D7 /* ReviewController.swift */,
-				8C80554628B10FC9004AA3D7 /* Double+Color.swift */,
-				8C9446CB28C2857800DB5B52 /* AppEnvironment.swift */,
+				8C80554228B10FC9004AA3D7 /* String+GeneratedColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -307,13 +309,14 @@
 			path = WatchlistWidget;
 			sourceTree = "<group>";
 		};
-		8C8EE96F28734CE6005679DC /* Common */ = {
+		8C8EE96F28734CE6005679DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				8C8EE97128734CE6005679DC /* Double+ColorStyleTests.swift */,
-				8C3A2F7028C8F402001FD018 /* Double+Pretty.swift */,
+				8C3A2F7028C8F402001FD018 /* Double+PrettyTests.swift */,
+				8C3A2F7228C8F71A001FD018 /* String+GeneratedColorTests.swift */,
 			);
-			path = Common;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		8CC184EF1EFE4CAC0083DA30 = {
@@ -355,7 +358,7 @@
 		8CC1850F1EFE4CAC0083DA30 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
-				8C8EE96F28734CE6005679DC /* Common */,
+				8C8EE96F28734CE6005679DC /* Utils */,
 				8CC185121EFE4CAC0083DA30 /* Info.plist */,
 			);
 			path = Unit;
@@ -639,8 +642,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C3A2F7128C8F402001FD018 /* Double+Pretty.swift in Sources */,
+				8C3A2F7128C8F402001FD018 /* Double+PrettyTests.swift in Sources */,
 				8C8EE97428734CFD005679DC /* Double+ColorStyleTests.swift in Sources */,
+				8C3A2F7328C8F71A001FD018 /* String+GeneratedColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

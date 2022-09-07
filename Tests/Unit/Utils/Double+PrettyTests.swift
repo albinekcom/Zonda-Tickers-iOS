@@ -1,7 +1,7 @@
 import XCTest
 @testable import Zonda_Tickers
 
-final class Double_Pretty: XCTestCase {
+final class Double_PrettyTests: XCTestCase {
     
     func test_pretty() {
         XCTAssertEqual("1.123", 1.123456.pretty(precision: nil))
