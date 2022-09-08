@@ -12,9 +12,10 @@ struct PlaceholderView: View {
                 ForEach(1...count, id: \.self) { _ in
                     placeholderRow(isSimpleTitle: isSimpleTitle)
                         .frame(height: proxy.size.height / CGFloat(count))
+                        .padding(.horizontal)
+                    Divider()
                 }
             }
-            .padding(.horizontal)
         }
     }
     

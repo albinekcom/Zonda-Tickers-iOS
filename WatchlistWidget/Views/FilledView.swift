@@ -13,10 +13,10 @@ struct FilledView: View {
                     row(for: ticker)
                         .padding(.horizontal, isSimpleTickerRowUsed ? 8 : 16)
                         .frame(height: proxy.size.height / CGFloat(maximumCount))
+                    Divider()
                 }
                 Spacer()
             }
-            
         }
     }
     
