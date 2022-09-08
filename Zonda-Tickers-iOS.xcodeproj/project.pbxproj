@@ -747,14 +747,14 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2002;
+				CURRENT_PROJECT_VERSION = 2004;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WatchlistWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Watchlist Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,14 +782,14 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2002;
+				CURRENT_PROJECT_VERSION = 2004;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WatchlistWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Watchlist Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -934,7 +934,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2002;
+				CURRENT_PROJECT_VERSION = 2004;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -968,7 +968,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2002;
+				CURRENT_PROJECT_VERSION = 2004;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
