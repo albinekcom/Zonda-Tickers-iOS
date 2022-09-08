@@ -4,7 +4,7 @@ import SwiftUI
 private struct MainApp: App {
     
     @StateObject private var modelData = ModelData()
-    @StateObject private var appEnvironment = AppEnvironment(analyticsService: AnalyticsService())
+    @StateObject private var appEnvironment = AppEnvironment(analyticsService: FirebaseAnalyticsService())
     
     @Environment(\.scenePhase) private var scenePhase
     

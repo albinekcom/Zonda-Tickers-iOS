@@ -2,19 +2,20 @@ import StoreKit
 
 final class ReviewController {
     
+    static let counterMaximum = 10
+    static let counterKey = "counter"
+    
     private let analyticsService: AnalyticsService?
     
-    private let storeReviewController: SKStoreReviewController.Type
+    private let storeReviewControllerType: SKStoreReviewController.Type
     private let userDefaults: UserDefaults
     
-    private let counterMaximum = 10
-    private let counterKey = "counter"
     private var counter: Int {
         get {
-            userDefaults.integer(forKey: counterKey)
+            userDefaults.integer(forKey: Self.counterKey)
         }
         set {
-            userDefaults.set(newValue, forKey: counterKey)
+            userDefaults.set(newValue, forKey: Self.counterKey)
         }
     }
     
@@ -27,21 +28,21 @@ final class ReviewController {
     
     init(
         analyticsService: AnalyticsService?,
-        storeReviewController: SKStoreReviewController.Type = SKStoreReviewController.self,
+        storeReviewControllerType: SKStoreReviewController.Type = SKStoreReviewController.self,
         userDefaults: UserDefaults = .standard
     ) {
         self.analyticsService = analyticsService
-        self.storeReviewController = storeReviewController
+        self.storeReviewControllerType = storeReviewControllerType
         self.userDefaults = userDefaults
     }
     
     func tryToDisplay() {
         counter += 1
         
-        if counter >= counterMaximum, let windowScene = windowScene {
+        if counter >= Self.counterMaximum, let windowScene = windowScene {
             counter = 0
             
-            storeReviewController.requestReview(in: windowScene)
+            storeReviewControllerType.requestReview(in: windowScene)
             
             analyticsService?.trackReviewRequested()
         }

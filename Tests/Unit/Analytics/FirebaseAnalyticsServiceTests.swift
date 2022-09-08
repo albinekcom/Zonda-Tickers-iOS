@@ -2,9 +2,9 @@ import Firebase
 import XCTest
 @testable import Zonda_Tickers
 
-final class AnalyticsServiceTests: XCTestCase {
+final class FirebaseAnalyticsServiceTests: XCTestCase {
     
-    private var sut: AnalyticsService!
+    private var sut: FirebaseAnalyticsService!
     
     private let firebaseAppSpyType = FirebaseApp.Spy.self
     private let analyticsSpyType = Analytics.Spy.self
