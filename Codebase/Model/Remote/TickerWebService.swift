@@ -1,25 +1,25 @@
 import Foundation
 
-private enum Endpoint: String {
-    
-    case currencies = "https://raw.githubusercontent.com/albinekcom/Zonda-API-Tools/main/v1/currencies.json"
-    case ticker = "https://api.zonda.exchange/rest/trading/ticker"
-    case stats = "https://api.zonda.exchange/rest/trading/stats"
-    
-    var url: URL {
-        URL(string: rawValue)!
-    }
-    
-}
-
 final class TickerWebService {
     
-    private let urlSession: URLSession
+    enum Endpoint: String {
+        
+        case currencies = "https://raw.githubusercontent.com/albinekcom/Zonda-API-Tools/main/v1/currencies.json"
+        case ticker = "https://api.zonda.exchange/rest/trading/ticker"
+        case stats = "https://api.zonda.exchange/rest/trading/stats"
+        
+        var url: URL {
+            URL(string: rawValue)!
+        }
+        
+    }
+    
+    private let urlSessionData: URLSessionData
     
     private var cachedCurrenciesNamesAPIResponse: CurrenciesNamesAPIResponse?
     
-    init(urlSession: URLSession = URLSession.shared) {
-        self.urlSession = urlSession
+    init(urlSessionData: URLSessionData = URLSession.shared) {
+        self.urlSessionData = urlSessionData
     }
     
     func fetch() async throws -> [Ticker] {
@@ -53,7 +53,7 @@ final class TickerWebService {
     ) async throws -> T {
         try JSONDecoder().decode(
             T.self,
-            from: try await urlSession.data(from: endpoint.url).0
+            from: try await urlSessionData.data(from: endpoint.url, delegate: nil).0
         )
     }
     
@@ -121,3 +121,11 @@ private extension String {
     }
     
 }
+
+protocol URLSessionData {
+    
+    func data(from url: URL, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse)
+    
+}
+
+extension URLSession: URLSessionData {}

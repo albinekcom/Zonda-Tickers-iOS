@@ -15,7 +15,7 @@ final class ReviewControllerTests: XCTestCase {
         UserDefaults.standard.set(0, forKey: ReviewController.counterKey)
         
         storeReviewControllerType.requestReviewInvoked = false
-        analyticsService = AnalyticsServiceSpy()
+        analyticsService = .init()
         
         sut = .init(
             analyticsService: analyticsService,
