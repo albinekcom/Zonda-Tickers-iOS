@@ -45,14 +45,18 @@ final class ModelData: ObservableObject {
         userTickersId = localStore.load(from: .userTickerIds) ?? []
         tickers = localStore.load(from: .tickers) ?? []
         
-        $tickers.sink { [weak self] in
-            self?.localStore.save($0, in: .tickers)
+        $tickers.sink { newTickers in
+            DispatchQueue.global(qos: .background).async { [weak self] in
+                self?.localStore.save(newTickers, in: .tickers)
+            }
             
             WidgetCenter.shared.reloadAllTimelines()
         }.store(in: &cancellables)
         
-        $userTickersId.sink { [weak self] in
-            self?.localStore.save($0, in: .userTickerIds)
+        $userTickersId.sink { newUserTickersId in
+            DispatchQueue.global(qos: .background).async { [weak self] in
+                self?.localStore.save(newUserTickersId, in: .userTickerIds)
+            }
             
             WidgetCenter.shared.reloadAllTimelines()
         }.store(in: &cancellables)

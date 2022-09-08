@@ -28,9 +28,7 @@ final class LocalStore {
     func save<T: Encodable>(_ data: T, in fileName: FileName) {
         guard let fileURL = fileName.fileURL(for: fileManager) else { return }
         
-        DispatchQueue.global(qos: .background).async {
-            try? JSONEncoder().encode(data).write(to: fileURL)
-        }
+        try? JSONEncoder().encode(data).write(to: fileURL)
     }
     
 }
