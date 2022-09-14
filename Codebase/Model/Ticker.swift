@@ -61,6 +61,23 @@ struct Ticker: Codable, Hashable, Identifiable {
 
 extension Ticker {
     
+    init?(id: String) {
+        let currenciesId = id.components(separatedBy: "-")
+        
+        guard currenciesId.count == 2,
+              let firstCurrencyId = currenciesId.first, firstCurrencyId.isEmpty == false,
+              let secondCurrencyId = currenciesId.last, secondCurrencyId.isEmpty == false else { return nil }
+        
+        self.init(
+            firstCurrency: .init(id: firstCurrencyId),
+            secondCurrency: .init(id: secondCurrencyId)
+        )
+    }
+    
+}
+
+extension Ticker {
+    
     var change: Double? {
         guard let average = average,
               let rate = rate else { return nil }

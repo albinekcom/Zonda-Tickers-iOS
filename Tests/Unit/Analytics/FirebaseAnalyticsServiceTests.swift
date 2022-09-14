@@ -6,19 +6,19 @@ final class FirebaseAnalyticsServiceTests: XCTestCase {
     
     private var sut: FirebaseAnalyticsService!
     
-    private let firebaseAppSpyType = FirebaseApp.Spy.self
+    private let firebaseConfigurableSpyType = FirebaseConfigurableSpy.self
     private let analyticsSpyType = Analytics.Spy.self
     
-    // MARK: - Setting
+    // MARK: - Setting Up
     
     override func setUp() {
         super.setUp()
         
-        firebaseAppSpyType.isConfigured = false
+        firebaseConfigurableSpyType.isConfigured = false
         analyticsSpyType.loggedEvents = []
         
         sut = .init(
-            firebaseAppType: firebaseAppSpyType,
+            firebaseConfigurableType: firebaseConfigurableSpyType,
             analyticsType: analyticsSpyType
         )
     }
@@ -26,7 +26,7 @@ final class FirebaseAnalyticsServiceTests: XCTestCase {
     // MARK: - Tests
     
     func test_init() {
-        XCTAssertTrue(firebaseAppSpyType.isConfigured)
+        XCTAssertTrue(firebaseConfigurableSpyType.isConfigured)
     }
     
     func test_trackView() {
@@ -98,16 +98,12 @@ final class FirebaseAnalyticsServiceTests: XCTestCase {
 
 // MARK: - Helpers
 
-private extension FirebaseApp {
+private final class FirebaseConfigurableSpy: FirebaseConfigurable {
     
-    final class Spy: FirebaseApp {
-        
-        static var isConfigured = false
-        
-        override class func configure() {
-            isConfigured = true
-        }
-        
+    static var isConfigured = false
+    
+    static func configure() {
+        isConfigured = true
     }
     
 }

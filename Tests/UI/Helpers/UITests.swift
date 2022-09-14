@@ -1,10 +1,10 @@
 import XCTest
 
-final class ExampleUITests: XCTestCase {
+class UITests: XCTestCase {
     
-    private var application: XCUIApplication!
+    var application: XCUIApplication!
     
-    // MARK: - Setting
+    // MARK: - Setting Up
         
     override func setUp() {
         super.setUp()
@@ -12,13 +12,13 @@ final class ExampleUITests: XCTestCase {
         continueAfterFailure = false
         
         application = XCUIApplication()
+        application.launchArguments = launchArguments
+        
         application.launch()
     }
     
-    // MARK: - Tests
-    
-    func test_example() {
-        XCTAssertTrue(true)
+    var launchArguments: [String] {
+        [AppArguments.uiTestsKey]
     }
     
 }

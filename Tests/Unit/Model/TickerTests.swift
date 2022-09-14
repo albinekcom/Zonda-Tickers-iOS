@@ -26,5 +26,12 @@ final class TickerTests: XCTestCase {
     func test_comparable() {
         XCTAssertTrue(Ticker.stub < Ticker.stub2)
     }
+    
+    func test_init_from_id() {
+        XCTAssertNil(Ticker(id: "btcpln"))
+        XCTAssertNil(Ticker(id: "btc-"))
+        XCTAssertNil(Ticker(id: "-pln"))
+        XCTAssertNotNil(Ticker(id: "btc-pln"))
+    }
 
 }

@@ -14,6 +14,9 @@ struct TickerRow: View {
             Spacer()
             values
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(firstCurrencyId.uppercased()) \\ \(secondCurrencyId.uppercased())")
+        .accessibilityValue(Text(rate?.pretty(precision: ratePrecision) ?? "Unknown"))
     }
     
     private var titleLabel: some View {
@@ -178,7 +181,6 @@ extension Ticker {
     }
     
 }
-
 
 #if DEBUG
 

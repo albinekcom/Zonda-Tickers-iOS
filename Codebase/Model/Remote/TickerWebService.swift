@@ -1,6 +1,6 @@
 import Foundation
 
-final class TickerWebService {
+final class TickerWebService: TickerFetcher {
     
     enum Endpoint: String {
         

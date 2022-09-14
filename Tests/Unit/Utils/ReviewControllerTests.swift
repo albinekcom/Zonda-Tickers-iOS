@@ -6,8 +6,10 @@ final class ReviewControllerTests: XCTestCase {
     
     private var sut: ReviewController!
     
-    private var analyticsService: AnalyticsServiceSpy!
+    private var analyticsServiceSpy: AnalyticsServiceSpy!
     private var storeReviewControllerType = SKStoreReviewController.Spy.self
+    
+    // MARK: - Setting Up
     
     override func setUp() {
         super.setUp()
@@ -15,10 +17,10 @@ final class ReviewControllerTests: XCTestCase {
         UserDefaults.standard.set(0, forKey: ReviewController.counterKey)
         
         storeReviewControllerType.requestReviewInvoked = false
-        analyticsService = .init()
+        analyticsServiceSpy = .init()
         
         sut = .init(
-            analyticsService: analyticsService,
+            analyticsService: analyticsServiceSpy,
             storeReviewControllerType: storeReviewControllerType
         )
     }
@@ -29,14 +31,23 @@ final class ReviewControllerTests: XCTestCase {
         invokeTryToDisplay(count: ReviewController.counterMaximum - 1)
         
         XCTAssertFalse(storeReviewControllerType.requestReviewInvoked)
-        XCTAssertFalse(analyticsService.trackReviewRequestedInvoked)
+        XCTAssertFalse(analyticsServiceSpy.trackReviewRequestedInvoked)
     }
     
     func test_tryToDisplay_enoughInvokeCount() {
         invokeTryToDisplay(count: ReviewController.counterMaximum)
         
         XCTAssertTrue(storeReviewControllerType.requestReviewInvoked)
-        XCTAssertTrue(analyticsService.trackReviewRequestedInvoked)
+        XCTAssertTrue(analyticsServiceSpy.trackReviewRequestedInvoked)
+    }
+    
+    func test_tryToDisplay_disabled() {
+        sut.isEnabled = false
+        
+        invokeTryToDisplay(count: ReviewController.counterMaximum)
+        
+        XCTAssertFalse(storeReviewControllerType.requestReviewInvoked)
+        XCTAssertFalse(analyticsServiceSpy.trackReviewRequestedInvoked)
     }
     
     private func invokeTryToDisplay(count: Int) {
@@ -58,4 +69,5 @@ private extension SKStoreReviewController {
         }
         
     }
+    
 }

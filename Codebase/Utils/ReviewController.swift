@@ -5,6 +5,8 @@ final class ReviewController {
     static let counterMaximum = 10
     static let counterKey = "counter"
     
+    var isEnabled: Bool = true
+    
     private let analyticsService: AnalyticsService?
     
     private let storeReviewControllerType: SKStoreReviewController.Type
@@ -37,6 +39,8 @@ final class ReviewController {
     }
     
     func tryToDisplay() {
+        guard isEnabled else { return }
+        
         counter += 1
         
         if counter >= Self.counterMaximum, let windowScene = windowScene {

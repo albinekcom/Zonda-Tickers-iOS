@@ -2,9 +2,6 @@ import Foundation
 
 final class AppEnvironment: ObservableObject {
     
-    let analyticsService: AnalyticsService
+    let analyticsService = FirebaseAnalyticsService(firebaseConfigurableType: ServiceFactory().makeFirebaseConfigurableType())
     
-    init(analyticsService: AnalyticsService) {
-        self.analyticsService = analyticsService
-    }
 }

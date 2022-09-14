@@ -17,8 +17,9 @@ struct DetailRow: View {
         }
         .padding(.vertical)
         .animation(.default, value: value)
-        .accessibility(label: Text(title))
-        .accessibility(value: Text(value))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(title))
+        .accessibilityValue(Text(value))
     }
     
 }

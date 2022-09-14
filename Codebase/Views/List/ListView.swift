@@ -6,6 +6,7 @@ struct ListView: View {
     @EnvironmentObject private var appEnvironment: AppEnvironment
     
     @State private var isShowingAdder = false
+    @StateObject private var automaticMethodInvoker = AutomaticMethodInvoker()
     
     var body: some View {
         content
@@ -21,6 +22,7 @@ struct ListView: View {
                     .sheet(isPresented: $isShowingAdder) {
                         AdderView()
                     }
+                    .accessibilityLabel("Add Ticker")
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -30,13 +32,21 @@ struct ListView: View {
                             .animation(.linear(duration: 0.3), value: modelData.isRefreshing)
                         EditButton()
                             .opacity(modelData.userTickers.isEmpty ? 0 : 1)
+                            .accessibilityLabel("Edit Tickers")
                     }
                 }
             }
             .onAppear {
+                modelData.analyticsService = appEnvironment.analyticsService
+                
                 appEnvironment.analyticsService.trackView(tickerId: nil)
                 
-                ReviewController(analyticsService: appEnvironment.analyticsService).tryToDisplay()
+                let reviewController = ReviewController(analyticsService: appEnvironment.analyticsService)
+                reviewController.isEnabled = !AppArguments().isUITest
+                reviewController.tryToDisplay()
+                
+                automaticMethodInvoker.invokeMethod = { await modelData.refreshTickers() }
+                automaticMethodInvoker.start()
             }
     }
     
@@ -65,7 +75,7 @@ struct ListView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .animation(.default, value: modelData.availableTickers)
+        .animation(.default, value: modelData.userTickers)
     }
     
     private var empty: some View {
@@ -86,6 +96,9 @@ struct ListView: View {
             .padding()
             .background(.red)
             .listRowInsets(EdgeInsets())
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Error")
+            .accessibilityValue(error.localizedDescription)
         }
     }
     

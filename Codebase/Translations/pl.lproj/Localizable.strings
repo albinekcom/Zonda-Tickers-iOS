@@ -32,3 +32,8 @@
 "Watchlist" = "Obserwowane";
 "View and track performance of your tickers throughout the day." = "Wyświetlaj i śledź kursy obserwowanych tickerów przez cały dzień.";
 "No Tickers" = "Brak Tickerów";
+
+// Common
+
+"Unknown" = "Nieznana";
+"Edit Tickers" = "Edytuj Tickery";

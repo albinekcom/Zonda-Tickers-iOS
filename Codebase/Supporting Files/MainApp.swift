@@ -3,8 +3,8 @@ import SwiftUI
 @main
 private struct MainApp: App {
     
-    @StateObject private var modelData = ModelData()
-    @StateObject private var appEnvironment = AppEnvironment(analyticsService: FirebaseAnalyticsService())
+    @StateObject private var modelData = ModelData(serviceFactory: .init())
+    @StateObject private var appEnvironment = AppEnvironment()
     
     @Environment(\.scenePhase) private var scenePhase
     
@@ -13,16 +13,6 @@ private struct MainApp: App {
             HomeView()
                 .environmentObject(modelData)
                 .environmentObject(appEnvironment)
-        }
-        .onChange(of: scenePhase) {
-            switch $0 {
-            case .active:
-                modelData.analyticsService = appEnvironment.analyticsService
-                modelData.reloadLocalTickers()
-                
-            default:
-                break
-            }
         }
     }
     

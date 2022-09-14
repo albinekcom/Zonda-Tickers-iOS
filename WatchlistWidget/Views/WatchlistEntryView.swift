@@ -39,22 +39,22 @@ struct WatchlistEntryView_Previews: PreviewProvider {
     
     static var previews: some View {
         watchlistEntryViewPreview(
-            tickers: .filledTickersStub(count: 6),
-            family: .systemSmall
+            family: .systemSmall,
+            tickers: .filledTickersStub(count: 6)
         )
         watchlistEntryViewPreview(
-            tickers: [],
-            family: .systemSmall
+            family: .systemSmall,
+            tickers: []
         )
         watchlistEntryViewPreview(
-            tickers: nil,
-            family: .systemSmall
+            family: .systemSmall,
+            tickers: nil
         )
     }
     
     private static func watchlistEntryViewPreview(
-        tickers: [Ticker]?,
-        family: WidgetFamily
+        family: WidgetFamily,
+        tickers: [Ticker]?
     ) -> some View {
         WatchlistEntryView(entry: .init(
             family: family,

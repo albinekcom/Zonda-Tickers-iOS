@@ -26,20 +26,13 @@ final class FirebaseAnalyticsService: AnalyticsService {
     
     // MARK: - Initializing
     
-    convenience init() {
-        self.init(
-            firebaseAppType: FirebaseApp.self,
-            analyticsType: Analytics.self
-        )
-    }
-    
     init(
-        firebaseAppType: FirebaseApp.Type,
-        analyticsType: Analytics.Type
+        firebaseConfigurableType: FirebaseConfigurable.Type = FirebaseApp.self,
+        analyticsType: Analytics.Type = Analytics.self
     ) {
         self.analyticsType = analyticsType
         
-        firebaseAppType.configure()
+        firebaseConfigurableType.configure()
     }
     
     // MARK: - Tracks
@@ -113,6 +106,8 @@ final class FirebaseAnalyticsService: AnalyticsService {
     
 }
 
+// MARK: - Helpers
+
 private extension Array where Element == String {
     
     var string: String { joined(separator: ",") }
@@ -126,3 +121,11 @@ private extension Dictionary where Key == FirebaseAnalyticsService.Track.Paramet
     }
     
 }
+
+protocol FirebaseConfigurable {
+    
+    static func configure()
+    
+}
+
+extension FirebaseApp: FirebaseConfigurable {}

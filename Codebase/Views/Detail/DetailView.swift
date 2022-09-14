@@ -13,7 +13,7 @@ struct DetailView: View {
             otherValues
         }
         .animation(.default, value: modelData.availableTickers)
-        .navigationTitle("\(ticker?.firstCurrency.id.uppercased() ?? "-") \\ \(ticker?.secondCurrency.id.uppercased()  ?? "-")")
+        .navigationTitle(tickerId.navigationTitle)
         .onAppear { appEnvironment.analyticsService.trackView(tickerId: tickerId) }
     }
     
@@ -93,6 +93,19 @@ struct DetailView: View {
             value: ticker?.volumeValue?.pretty(precision: ticker?.secondCurrency.precision) ?? "-",
             valueColor: .secondary
         )
+    }
+    
+}
+
+private extension String {
+    
+    var navigationTitle: String {
+        let currenciesId = components(separatedBy: "-")
+        
+        let firstCurrencyId = currenciesId.first ?? "-"
+        let secondCurrencyId = currenciesId.last ?? "-"
+        
+        return "\(firstCurrencyId) \\ \(secondCurrencyId)".uppercased()
     }
     
 }
