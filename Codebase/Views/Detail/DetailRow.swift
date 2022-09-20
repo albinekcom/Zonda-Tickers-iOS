@@ -2,38 +2,59 @@ import SwiftUI
 
 struct DetailRow: View {
     
-    let title: String
-    let value: String
-    let valueColor: Color
+    let model: Model
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(model.title)
                 .font(.callout)
             Spacer()
-            Text(value)
+            Text(model.value)
                 .font(.body)
-                .foregroundColor(valueColor)
+                .foregroundColor(model.valueColor)
         }
         .padding(.vertical)
-        .animation(.default, value: value)
+        .animation(.default, value: model.value)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(title))
-        .accessibilityValue(Text(value))
+        .accessibilityLabel(Text(model.title))
+        .accessibilityValue(Text(model.value))
     }
     
 }
 
-#if DEBUG
+extension DetailRow {
+    
+    struct Model: Identifiable {
+        
+        let title: String
+        let value: String
+        let valueColor: Color
+        
+        init(
+            title: String,
+            value: String,
+            valueColor: Color = .secondary
+        ) {
+            self.title = title
+            self.value = value
+            self.valueColor = valueColor
+        }
+        
+        var id: String { title }
+        
+    }
+    
+}
+
+#if DEBUG && !TESTING
 
 struct DetailRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        DetailRow(
+        DetailRow(model: .init(
             title: "Title",
-            value: "1234.567",
-            valueColor: .secondary
-        )
+            value: "1234.567"
+        ))
     }
     
 }

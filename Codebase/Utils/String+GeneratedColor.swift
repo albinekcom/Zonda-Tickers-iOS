@@ -2,7 +2,7 @@ import SwiftUI
 
 extension String {
     
-    var generatedColor: Color {
+    var generatedBackgroundColor: Color {
         let charactersSum = Int(unicodeScalars.map { UInt32.init($0) }.reduce(0, +))
         
         var randomNumberGenerator = RandomNumberGeneratorWithSeed(seed: charactersSum)
@@ -14,6 +14,8 @@ extension String {
         )
     }
     
+    var generatedForegroundColor: Color { .white }
+    
     private func randomColorComponentValue(
         using generator: inout RandomNumberGeneratorWithSeed,
         maximumColorComponentValue: Double = 0.7
@@ -22,6 +24,18 @@ extension String {
             in: 0...maximumColorComponentValue,
             using: &generator
         )
+    }
+    
+}
+
+extension Optional where Wrapped == String {
+    
+    var generatedBackgroundColor: Color {
+        self?.generatedBackgroundColor ?? .gray
+    }
+    
+    var generatedForegroundColor: Color {
+        self?.generatedForegroundColor ?? .gray
     }
     
 }

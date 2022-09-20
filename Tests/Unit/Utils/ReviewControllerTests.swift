@@ -6,7 +6,7 @@ final class ReviewControllerTests: XCTestCase {
     
     private var sut: ReviewController!
     
-    private var analyticsServiceSpy: AnalyticsServiceSpy!
+    private var analyticsServiceLoggerSpy: AnalyticsServiceLoggerSpy!
     private var storeReviewControllerType = SKStoreReviewController.Spy.self
     
     // MARK: - Setting Up
@@ -17,10 +17,10 @@ final class ReviewControllerTests: XCTestCase {
         UserDefaults.standard.set(0, forKey: ReviewController.counterKey)
         
         storeReviewControllerType.requestReviewInvoked = false
-        analyticsServiceSpy = .init()
+        analyticsServiceLoggerSpy = .init()
         
         sut = .init(
-            analyticsService: analyticsServiceSpy,
+            analyticsService: .init(logger: analyticsServiceLoggerSpy),
             storeReviewControllerType: storeReviewControllerType
         )
     }
@@ -31,14 +31,14 @@ final class ReviewControllerTests: XCTestCase {
         invokeTryToDisplay(count: ReviewController.counterMaximum - 1)
         
         XCTAssertFalse(storeReviewControllerType.requestReviewInvoked)
-        XCTAssertFalse(analyticsServiceSpy.trackReviewRequestedInvoked)
+        analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [])
     }
     
     func test_tryToDisplay_enoughInvokeCount() {
         invokeTryToDisplay(count: ReviewController.counterMaximum)
         
         XCTAssertTrue(storeReviewControllerType.requestReviewInvoked)
-        XCTAssertTrue(analyticsServiceSpy.trackReviewRequestedInvoked)
+        analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.reviewRequested, nil)])
     }
     
     func test_tryToDisplay_disabled() {
@@ -47,7 +47,7 @@ final class ReviewControllerTests: XCTestCase {
         invokeTryToDisplay(count: ReviewController.counterMaximum)
         
         XCTAssertFalse(storeReviewControllerType.requestReviewInvoked)
-        XCTAssertFalse(analyticsServiceSpy.trackReviewRequestedInvoked)
+        analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [])
     }
     
     private func invokeTryToDisplay(count: Int) {

@@ -53,7 +53,9 @@ struct ListView: View {
     @ViewBuilder
     private var content: some View {
         if modelData.userTickers.isEmpty {
-            empty
+            Text("Press + to add a Ticker")
+                .padding(.vertical)
+                .padding(.horizontal, 8)
         } else {
             filled
         }
@@ -66,7 +68,7 @@ struct ListView: View {
                     NavigationLink {
                         DetailView(tickerId: ticker.id)
                     } label: {
-                        ticker.tickerRow
+                        TickerRow(ticker: ticker)
                             .padding(.vertical, 8)
                     }
                 }
@@ -76,12 +78,6 @@ struct ListView: View {
         }
         .listStyle(.insetGrouped)
         .animation(.default, value: modelData.userTickers)
-    }
-    
-    private var empty: some View {
-        Text("Press + to add a Ticker")
-            .padding(.vertical)
-            .padding(.horizontal, 8)
     }
     
     @ViewBuilder
@@ -96,7 +92,7 @@ struct ListView: View {
             .padding()
             .background(.red)
             .listRowInsets(EdgeInsets())
-            .accessibilityElement(children: .combine)
+            .accessibilityElement(children: .ignore)
             .accessibilityLabel("Error")
             .accessibilityValue(error.localizedDescription)
         }
@@ -117,7 +113,7 @@ private extension ModelData {
     
 }
 
-#if DEBUG
+#if DEBUG && !TESTING
 
 struct ListView_Previews: PreviewProvider {
     

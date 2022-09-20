@@ -3,7 +3,7 @@ import SwiftUI
 @main
 private struct MainApp: App {
     
-    @StateObject private var modelData = ModelData(serviceFactory: .init())
+    @StateObject private var modelData = ModelData()
     @StateObject private var appEnvironment = AppEnvironment()
     
     @Environment(\.scenePhase) private var scenePhase

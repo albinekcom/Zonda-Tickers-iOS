@@ -63,7 +63,7 @@ final class ModelData: ObservableObject {
     }
     
     convenience init(
-        serviceFactory: ServiceFactory
+        serviceFactory: ServiceFactory = .init()
     ) {
         let localDataService = serviceFactory.makeLocalDataService()
         
@@ -76,8 +76,20 @@ final class ModelData: ObservableObject {
         )
     }
     
-    var availableTickers: [Ticker] {
-        tickers.filter { userTickersId.contains($0.id) == false }
+    func availableTickers(searchText: String = "") -> [Ticker] {
+        tickers
+            .filter { userTickersId.contains($0.id) == false }
+            .filter {
+                if searchText.isEmpty { return true }
+                
+                for searchTag in searchText.components(separatedBy: " ") {
+                    if $0.tags.joined(separator: " ").contains(searchTag.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()) {
+                        return true
+                    }
+                }
+                
+                return false
+            }
     }
     
     var userTickers: [Ticker] {

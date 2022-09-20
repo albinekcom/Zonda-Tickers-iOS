@@ -6,50 +6,54 @@ struct WatchlistEntryView: View {
     let entry: WatchlistTimelineEntry
     
     var body: some View {
-        if let tickers = entry.tickers, tickers.isEmpty {
-            EmptyView()
-        } else if let tickers = entry.tickers {
-            FilledView(
-                tickers: tickers.firstElements(maximumCount: entry.family.tickersMaximumCount),
+        switch entry.family {
+        case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
+            SystemView(
+                tickers: entry.tickers,
                 maximumCount: entry.family.tickersMaximumCount,
-                isSimpleTickerRowUsed: entry.family.isSimpleTickerRowUsed
+                isSystemSmall: entry.family.isSystemSmall
             )
-        } else {
-            PlaceholderView(
-                count: entry.family.tickersMaximumCount,
-                isCircleVisible: entry.family.isPlaceholderCircleVisible,
-                isSimpleTitle: entry.family.isSimplePlaceholderTitle
+            
+        case .accessoryInline:
+            AccessoryInlineView(tickers: entry.tickers)
+            
+        case .accessoryCircular:
+            AccessoryCircularView(tickers: entry.tickers)
+            
+        case .accessoryRectangular:
+            AccessoryRectangularView(
+                tickers: entry.tickers,
+                maximumCount: entry.family.tickersMaximumCount
             )
+            
+        @unknown default:
+            EmptyView()
         }
-    }
-    
-    private struct EmptyView: View {
-        
-        var body: some View {
-            Text("No Tickers")
-        }
-        
     }
     
 }
 
-#if DEBUG
+#if DEBUG && !TESTING
 
 struct WatchlistEntryView_Previews: PreviewProvider {
     
     static var previews: some View {
-        watchlistEntryViewPreview(
-            family: .systemSmall,
-            tickers: .filledTickersStub(count: 6)
-        )
-        watchlistEntryViewPreview(
-            family: .systemSmall,
-            tickers: []
-        )
-        watchlistEntryViewPreview(
-            family: .systemSmall,
-            tickers: nil
-        )
+        if #available(iOSApplicationExtension 16.0, *) {
+            watchlistEntryViewPreview(
+                family: .accessoryCircular,
+                tickers: nil
+            )
+            watchlistEntryViewPreview(
+                family: .accessoryCircular,
+                tickers: []
+            )
+            watchlistEntryViewPreview(
+                family: .accessoryCircular,
+                tickers: [Ticker].stub()
+            )
+        } else {
+            EmptyView()
+        }
     }
     
     private static func watchlistEntryViewPreview(
@@ -67,7 +71,7 @@ struct WatchlistEntryView_Previews: PreviewProvider {
 
 private extension Array where Element == Ticker {
     
-    static func filledTickersStub(count: Int = 42) -> Self {
+    static func stub(count: Int = 42) -> Self {
         (0 ..< count).map { _ in .stub }
     }
     
@@ -84,7 +88,7 @@ private extension Ticker {
             id: "pln",
             name: "Złoty",
             precision: 2),
-        rate: 123456789.45,
+        rate: 200.00,
         average: 123.00
     )
     

@@ -2,69 +2,35 @@ import XCTest
 
 final class DetailUITests: UITests {
     
-    func test_filled_ticker_btc_pln() {
-        assertDetail(
-            tickerLabel: "BTC \\ PLN",
-            expectedRowsValue: [
-                "Bitcoin",
-                "3.00",
-                "-5.00",
-                "-62.50%",
-                "4.00",
-                "5.00",
-                "6.00",
-                "1.00",
-                "2.00",
-                "5.00",
-                "7",
-                "21.00"
-            ]
-        )
-    }
-    
-    func test_empty_ticker_xxx_zzz() {
-        assertDetail(
-            tickerLabel: "XXX \\ ZZZ",
-            expectedRowsValue: [
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-"
-            ]
-        )
-    }
-    
-    private func assertDetail(
-        tickerLabel: String,
-        expectedRowsValue: [String]
-    ) {
+    func test_ticker() {
+        let tickerLabel = "BTC \\ PLN"
+        
         application.cells.buttons[tickerLabel].tap()
         
         XCTAssertEqual(tickerLabel, application.navigationBars.firstMatch.identifier)
         
-        assertRow(expectedLabel: "Name", expectedValue: expectedRowsValue[0])
-        assertRow(expectedLabel: "Rate", expectedValue: expectedRowsValue[1])
-        assertRow(expectedLabel: "Change", expectedValue: expectedRowsValue[2])
-        assertRow(expectedLabel: "Change (%)", expectedValue: expectedRowsValue[3])
-        assertRow(expectedLabel: "Previous rate", expectedValue: expectedRowsValue[4])
-        assertRow(expectedLabel: "Highest rate", expectedValue: expectedRowsValue[5])
-        assertRow(expectedLabel: "Lowest rate", expectedValue: expectedRowsValue[6])
+        assertRow(expectedLabel: "Name", expectedValue: "Bitcoin")
+        assertRow(expectedLabel: "Rate", expectedValue: "3.00")
+        assertRow(expectedLabel: "Change", expectedValue: "-5.00")
+        assertRow(expectedLabel: "Change (%)", expectedValue:  "-62.50%")
+        assertRow(expectedLabel: "Previous rate", expectedValue: "4.00")
+        assertRow(expectedLabel: "Highest rate", expectedValue: "5.00")
+        assertRow(expectedLabel: "Lowest rate", expectedValue: "6.00")
         
         application.swipeUp()
         
-        assertRow(expectedLabel: "Bid", expectedValue: expectedRowsValue[7])
-        assertRow(expectedLabel: "Ask", expectedValue: expectedRowsValue[8])
-        assertRow(expectedLabel: "Average", expectedValue: expectedRowsValue[9])
-        assertRow(expectedLabel: "Volume", expectedValue: expectedRowsValue[10])
-        assertRow(expectedLabel: "Volume value", expectedValue: expectedRowsValue[11])
+        assertRow(expectedLabel: "Bid", expectedValue: "1.00")
+        assertRow(expectedLabel: "Ask", expectedValue: "2.00")
+        assertRow(expectedLabel: "Average", expectedValue: "8.00")
+        assertRow(expectedLabel: "Volume", expectedValue: "7")
+        assertRow(expectedLabel: "Volume value", expectedValue: "21.00")
+    }
+    
+    func test_unsupported_ticker() {
+        application.cells.buttons["XXX \\ ZZZ"].tap()
+        
+        XCTAssertEqual("- \\ -", application.navigationBars.firstMatch.identifier)
+        XCTAssertTrue(application.staticTexts["This Ticker is no longer supported"].exists)
     }
     
     private func assertRow(

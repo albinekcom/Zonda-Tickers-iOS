@@ -3,13 +3,13 @@ import XCTest
 
 final class ModelDataTests: XCTestCase {
     
-    private var analyticsServiceSpy: AnalyticsServiceSpy!
+    private var sut: ModelData!
+    
+    private var analyticsServiceLoggerSpy: AnalyticsServiceLoggerSpy!
     private var widgetReloadableSpy: WidgetReloadableSpy!
     
     private var localDataServicePartialSpy: LocalDataServicePartialSpy!
     private var tickerFetcherStub: TickerFetcherStub!
-    
-    private var sut: ModelData!
     
     // MARK: - Setting Up
     
@@ -17,7 +17,7 @@ final class ModelDataTests: XCTestCase {
         super.setUp()
         
         widgetReloadableSpy = .init()
-        analyticsServiceSpy = .init()
+        analyticsServiceLoggerSpy = .init()
         
         localDataServicePartialSpy = .init()
         tickerFetcherStub = .init()
@@ -30,13 +30,19 @@ final class ModelDataTests: XCTestCase {
             ),
             widgetReloadable: widgetReloadableSpy
         )
-        sut.analyticsService = analyticsServiceSpy
+        sut.analyticsService = .init(logger: analyticsServiceLoggerSpy)
     }
     
     // MARK: - Tests
     
     func test_availableTickers() {
-        XCTAssertEqual([.stub3], sut.availableTickers)
+        XCTAssertEqual([.stub3], sut.availableTickers())
+        XCTAssertEqual([.stub3], sut.availableTickers(searchText: "Lisk"))
+        XCTAssertEqual([.stub3], sut.availableTickers(searchText: " Lisk "))
+        XCTAssertEqual([.stub3], sut.availableTickers(searchText: "lsk"))
+        XCTAssertEqual([.stub3], sut.availableTickers(searchText: "lisk euro"))
+        XCTAssertEqual([.stub3], sut.availableTickers(searchText: "euro lisk"))
+        XCTAssertEqual([], sut.availableTickers(searchText: "xxx-zzz"))
     }
     
     func test_userTickers() {
@@ -53,8 +59,8 @@ final class ModelDataTests: XCTestCase {
         
         XCTAssertEqual([.stub, .init(id: "xxx-zzz")!, .init(id: "appended-newtickerid")!], sut.userTickers)
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickersIdInvoked)
-        XCTAssertTrue(analyticsServiceSpy.trackUserTickerAppendedInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickerAppended, [.ticker: "appended-newtickerid"])])
     }
     
     func test_removeUserTicker() {
@@ -65,8 +71,11 @@ final class ModelDataTests: XCTestCase {
         XCTAssertEqual([], sut.userTickers)
         
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickersIdInvoked)
-        XCTAssertTrue(analyticsServiceSpy.trackUserTickerDeletedInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [
+            (.userTickerDeleted, [.ticker: "xxx-zzz"]),
+            (.userTickerDeleted, [.ticker: "btc-pln"])
+        ])
     }
     
     func test_moveUserTicker() {
@@ -81,12 +90,12 @@ final class ModelDataTests: XCTestCase {
     func test_refreshTickers_success() async {
         await sut.refreshTickers()
 
-        XCTAssertEqual([.stub2], sut.availableTickers)
+        XCTAssertEqual([.stub2], sut.availableTickers())
         XCTAssertEqual([.stub, .init(id: "xxx-zzz")!], sut.userTickers)
         XCTAssertEqual(.refreshingSuccess, sut.state)
         XCTAssertTrue(localDataServicePartialSpy.saveTickersInvoked)
-        XCTAssertTrue(analyticsServiceSpy.trackUserTickersRefreshedInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickersRefreshed, [.tickers: "btc-pln,xxx-zzz"])])
     }
     
     func test_refreshTickers_failure() async {
@@ -94,12 +103,12 @@ final class ModelDataTests: XCTestCase {
         
         await sut.refreshTickers()
         
-        XCTAssertEqual([.stub3], sut.availableTickers)
+        XCTAssertEqual([.stub3], sut.availableTickers())
         XCTAssertEqual([.stub, .init(id: "xxx-zzz")!], sut.userTickers)
         XCTAssertEqual(.refreshingFailure(error: TickerFetcherStub.CustomError.fetch), sut.state)
         XCTAssertFalse(localDataServicePartialSpy.saveTickersInvoked)
-        XCTAssertTrue(analyticsServiceSpy.trackUserTickersRefreshingFailedInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickersRefreshingFailed, [.tickers: "btc-pln,xxx-zzz"])])
     }
     
 }

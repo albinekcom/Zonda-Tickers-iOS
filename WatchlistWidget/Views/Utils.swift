@@ -12,32 +12,17 @@ extension WidgetFamily {
     
     var tickersMaximumCount: Int {
         switch self {
-        case .systemSmall, .systemMedium: return 3
+        case .accessoryInline, .accessoryCircular: return 1
+        case .systemSmall, .systemMedium, .accessoryRectangular: return 3
         case .systemLarge, .systemExtraLarge: return 6
         @unknown default: return 6
         }
     }
     
-    var isSimpleTickerRowUsed: Bool {
+    var isSystemSmall: Bool {
         switch self {
         case .systemSmall: return true
-        case .systemMedium, .systemLarge, .systemExtraLarge: return false
-        @unknown default: return false
-        }
-    }
-    
-    var isPlaceholderCircleVisible: Bool {
-        switch self {
-        case .systemSmall: return false
-        case .systemMedium, .systemLarge, .systemExtraLarge: return true
-        @unknown default: return true
-        }
-    }
-    
-    var isSimplePlaceholderTitle: Bool {
-        switch self {
-        case .systemSmall: return true
-        case .systemMedium, .systemLarge, .systemExtraLarge: return false
+        case .systemMedium, .systemLarge, .systemExtraLarge, .accessoryInline, .accessoryCircular, .accessoryRectangular: return false
         @unknown default: return false
         }
     }

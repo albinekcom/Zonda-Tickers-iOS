@@ -9,20 +9,20 @@ struct AdderView: View {
     @State private var searchText = ""
     
     private var searchResults: [Ticker] {
-        modelData.availableTickers
-            .filter { (searchText.isEmpty || $0.tags.joined(separator: " ").contains(searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased())) }
+        modelData.availableTickers(searchText: searchText)
     }
     
     var body: some View {
         NavigationView {
             List {
                 if searchResults.isEmpty {
-                    emptyRows
+                    Text("No results")
+                        .padding(.vertical)
                 } else {
                     filledRows
                 }
             }
-            .animation(.default, value: modelData.availableTickers)
+            .animation(.default, value: searchResults)
             .searchable(text: $searchText)
             .disableAutocorrection(true)
             .navigationTitle("Add Ticker")
@@ -42,11 +42,6 @@ struct AdderView: View {
         }
     }
     
-    private var emptyRows: some View {
-        Text("No results")
-            .padding(.vertical)
-    }
-    
     private var filledRows: some View {
         ForEach(searchResults) { ticker in
             Button(action: {
@@ -54,7 +49,7 @@ struct AdderView: View {
                     modelData.appendUserTickerId(ticker.id)
                 }
             }) {
-                ticker.tickerRow
+                TickerRow(ticker: ticker)
                     .modifier(PlusIconAppender())
                     .padding(.vertical, 8)
             }
@@ -76,7 +71,7 @@ private struct PlusIconAppender: ViewModifier {
     
 }
 
-#if DEBUG
+#if DEBUG && !TESTING
 
 struct AdderView_Previews: PreviewProvider {
     
