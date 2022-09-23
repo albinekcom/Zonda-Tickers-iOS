@@ -104,11 +104,12 @@
 		8C819D2528BE8917005DFC1D /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553A28B10FC9004AA3D7 /* Ticker.swift */; };
 		8C81EC3E28C2708C00550FE1 /* TickerWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553D28B10FC9004AA3D7 /* TickerWebService.swift */; };
 		8C81EC3F28C2709A00550FE1 /* APIResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553E28B10FC9004AA3D7 /* APIResponses.swift */; };
+		8C8D794128DDFF9F00373985 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8D794028DDFF9F00373985 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		8C8D794328DDFF9F00373985 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8D794228DDFF9F00373985 /* FirebaseCrashlytics */; };
 		8C8EE96A28734AA2005679DC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8EE96928734AA2005679DC /* Launch Screen.storyboard */; };
 		8C9146CB1F0915D300221180 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* UITests.swift */; };
 		8C9446C728C277AC00DB5B52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8C9446CC28C2857800DB5B52 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9446CB28C2857800DB5B52 /* AppEnvironment.swift */; };
-		8C99875528739E9B00A6BDB7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C99875428739E9B00A6BDB7 /* FirebaseAnalyticsSwift */; };
 		8CB3CF5E28CA52B700690C44 /* ReviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3CF5D28CA52B700690C44 /* ReviewControllerTests.swift */; };
 		8CB3CF6A28CA607B00690C44 /* TickerWebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3CF6928CA607B00690C44 /* TickerWebServiceTests.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
@@ -267,7 +268,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C99875528739E9B00A6BDB7 /* FirebaseAnalyticsSwift in Frameworks */,
+				8C8D794128DDFF9F00373985 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				8C8D794328DDFF9F00373985 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,7 +722,8 @@
 			);
 			name = "Zonda Tickers";
 			packageProductDependencies = (
-				8C99875428739E9B00A6BDB7 /* FirebaseAnalyticsSwift */,
+				8C8D794028DDFF9F00373985 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				8C8D794228DDFF9F00373985 /* FirebaseCrashlytics */,
 			);
 			productName = "BitBay-Ticker";
 			productReference = 8CC184F81EFE4CAC0083DA30 /* Zonda Tickers.app */;
@@ -774,6 +777,8 @@
 				TargetAttributes = {
 					8C819D0C28BE7894005DFC1D = {
 						CreatedOnToolsVersion = 13.4.1;
+						DevelopmentTeam = AXTXBRU9S7;
+						ProvisioningStyle = Automatic;
 					};
 					8CC184F71EFE4CAC0083DA30 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -816,7 +821,7 @@
 			);
 			mainGroup = 8CC184EF1EFE4CAC0083DA30;
 			packageReferences = (
-				8C99875328739E9B00A6BDB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8C8D793F28DDFF9F00373985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8CC184F91EFE4CAC0083DA30 /* Products */;
 			projectDirPath = "";
@@ -1098,7 +1103,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2004;
+				CURRENT_PROJECT_VERSION = 2005;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1176,7 +1181,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2004;
+				CURRENT_PROJECT_VERSION = 2005;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1211,7 +1216,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2004;
+				CURRENT_PROJECT_VERSION = 2005;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1246,7 +1251,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2004;
+				CURRENT_PROJECT_VERSION = 2005;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1398,7 +1403,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2004;
+				CURRENT_PROJECT_VERSION = 2005;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1432,7 +1437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2004;
+				CURRENT_PROJECT_VERSION = 2005;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1597,7 +1602,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8C99875328739E9B00A6BDB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		8C8D793F28DDFF9F00373985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -1608,10 +1613,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8C99875428739E9B00A6BDB7 /* FirebaseAnalyticsSwift */ = {
+		8C8D794028DDFF9F00373985 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8C99875328739E9B00A6BDB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
+			package = 8C8D793F28DDFF9F00373985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		8C8D794228DDFF9F00373985 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C8D793F28DDFF9F00373985 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
