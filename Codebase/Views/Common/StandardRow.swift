@@ -35,11 +35,13 @@ struct StandardRow: View {
         VStack(alignment: .trailing, spacing: 4) {
             Text(model.rateText)
                 .font(.headline)
-            Label(
-                model.percentageChangeWithoutSignText,
-                systemImage: model.changeImageName.rawValue
-            )
-            .labelStyle(TickerChangeLabelStyle())
+            HStack {
+                Image(systemName: model.changeImageName)
+                    .imageScale(.small)
+                    .rotationEffect(.radians(model.changeColor == .red ? .pi : 0))
+                Text(model.percentageChangeWithoutSignText)
+                    .font(.subheadline)
+            }
             .foregroundColor(model.changeColor)
         }
         .lineLimit(1)
@@ -64,19 +66,6 @@ extension StandardRow {
             firstCurrencyText + " \\ " + secondCurrencyText
         }
         
-    }
-    
-}
-
-private struct TickerChangeLabelStyle: LabelStyle {
-    
-    func makeBody(configuration: Configuration) -> some View {
-        HStack(spacing: 4) {
-            configuration.icon
-                .imageScale(.small)
-            configuration.title
-                .font(.subheadline)
-        }
     }
     
 }

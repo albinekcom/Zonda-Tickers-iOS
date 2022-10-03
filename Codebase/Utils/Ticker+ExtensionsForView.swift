@@ -23,9 +23,7 @@ extension Ticker {
     }
     
     var changeImageName: Image.SystemName {
-        guard let changeRatio = changeRatio else { return .squareFill }
-        
-        return changeRatio > 0 ? .arrowTriangleUpFill : changeRatio < 0 ? .arrowTriangleDownFill : .squareFill
+        (changeRatio ?? 0) == 0 ? .squareFill : .arrowTriangleUpFill
     }
     
     var changeColor: Color {
@@ -88,23 +86,6 @@ extension Optional where Wrapped == Ticker {
     
     var name: String {
         self?.name ?? "- \\ -"
-    }
-    
-}
-
-extension Ticker {
-    
-    var standardRowModel: StandardRow.Model {
-        .init(
-            firstCurrencyId: firstCurrency.id,
-            firstCurrencyText: firstCurrencyText,
-            secondCurrencyText: secondCurrencyText,
-            rateText: rateText,
-            percentageChangeWithoutSignText: percentageChangeWithoutSignText,
-            percentageChangeWithPositiveSignText: percentageChangeWithPositiveSignText,
-            changeImageName: changeImageName,
-            changeColor: changeColor
-        )
     }
     
 }

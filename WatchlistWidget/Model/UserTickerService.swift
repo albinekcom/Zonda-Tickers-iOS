@@ -1,5 +1,3 @@
-import Foundation
-
 final class UserTickerService {
     
     private let userTickersIdService = UserTickersIdService()
@@ -8,13 +6,9 @@ final class UserTickerService {
     var userTickers: [Ticker] {
         
         get async {
-            userTickersId.userTickers(from: await tickers)
+            userTickersIdService.loaded.userTickers(from: await tickers)
         }
         
-    }
-    
-    private var userTickersId: [String] {
-        userTickersIdService.loaded
     }
     
     private var tickers: [Ticker] {

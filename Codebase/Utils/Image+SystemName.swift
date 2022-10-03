@@ -4,7 +4,6 @@ extension Image {
     
     enum SystemName: String {
         
-        case arrowTriangleDownFill = "arrowtriangle.down.fill"
         case arrowTriangleUpFill = "arrowtriangle.up.fill"
         case multiplyCircleFill = "multiply.circle.fill"
         case plus

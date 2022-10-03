@@ -33,7 +33,8 @@ private extension Ticker {
         .init(
             icon: changeImageName,
             title: firstCurrencyText + "\\" + secondCurrencyText,
-            valueText: rateText
+            valueText: rateText,
+            isGain: (change ?? 0) > 0
         )
     }
     
@@ -56,7 +57,8 @@ private extension AccessoryRectangularRow.Model {
     static let placeholder: Self = .init(
         icon: .squareFill,
         title: "-\\-",
-        valueText: "-"
+        valueText: "-",
+        isGain: false
     )
     
 }

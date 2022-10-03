@@ -96,8 +96,8 @@ final class ModelData: ObservableObject {
         userTickersId.userTickers(from: tickers)
     }
     
-    func ticker(for tickerId: String) -> Ticker? {
-        tickers.first(where: { $0.id == tickerId })
+    func ticker(id: String) -> Ticker? {
+        tickers.ticker(id: id)
     }
     
     func appendUserTickerId(_ tickerId: String) {

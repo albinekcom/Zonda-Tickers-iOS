@@ -2,13 +2,12 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @EnvironmentObject private var modelData: ModelData
-    @EnvironmentObject private var appEnvironment: AppEnvironment
-    
     let tickerId: String
     
+    @EnvironmentObject private var userTickerStore: UserTickerStore
+    
     private var ticker: Ticker? {
-        modelData.ticker(id: tickerId)
+        userTickerStore.tickers.ticker(id: tickerId)
     }
     
     var body: some View {
@@ -23,7 +22,6 @@ struct DetailView: View {
             }
         }
         .navigationTitle(ticker.name)
-        .onAppear { appEnvironment.analyticsService.trackView(tickerId: tickerId) }
     }
     
 }
@@ -48,3 +46,16 @@ private extension Ticker {
     }
     
 }
+
+#if DEBUG && !TESTING
+
+struct DetailView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        DetailView(tickerId: "btc-pln")
+            .environmentObject(UserTickerStore())
+    }
+    
+}
+
+#endif

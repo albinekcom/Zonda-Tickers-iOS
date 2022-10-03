@@ -8,10 +8,11 @@ struct AccessoryInlineView: View {
         if tickers?.isEmpty == true {
             NoTickersView()
         } else {
-            Label(
-                ticker.intlineText,
-                systemImage: ticker.changeImageName.rawValue
-            )
+            HStack {
+                Image(systemName: ticker.changeImageName)
+                    .rotationEffect(.radians((ticker?.change ?? 0) > 0 ? 0 : .pi))
+                Text(ticker.intlineText)
+            }
         }
     }
     

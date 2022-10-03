@@ -29,7 +29,6 @@ final class Ticker_ExtensionsForViewTests: XCTestCase {
     func test_changeImageName() {
         XCTAssertEqual(.squareFill, Ticker.stub().changeImageName)
         XCTAssertEqual(.arrowTriangleUpFill, Ticker.stub(rate: 2, average: 1).changeImageName)
-        XCTAssertEqual(.arrowTriangleDownFill, Ticker.stub(rate: 1, average: 2).changeImageName)
         XCTAssertEqual(.squareFill, Ticker.stub(rate: 1, average: 1).changeImageName)
     }
     

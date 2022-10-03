@@ -6,23 +6,15 @@ struct AccessoryRectangularRow: View {
     
     var body: some View {
         HStack {
-            Label(
-                model.title,
-                systemImage: model.icon.rawValue
-            ).labelStyle(AccessoryRectangularTickerRowLabelStyle())
+            HStack(spacing: 2) {
+                Image(systemName: model.icon)
+                    .rotationEffect(.radians(model.isGain ? 0 : .pi))
+                Text(model.title)
+            }
+            
             Spacer()
+            
             Text(model.valueText)
-        }
-    }
-    
-}
-
-private struct AccessoryRectangularTickerRowLabelStyle: LabelStyle {
-    
-    func makeBody(configuration: Configuration) -> some View {
-        HStack(spacing: 2) {
-            configuration.icon
-            configuration.title
         }
     }
     
@@ -35,6 +27,7 @@ extension AccessoryRectangularRow {
         let icon: Image.SystemName
         let title: String
         let valueText: String
+        let isGain: Bool
         
     }
     
