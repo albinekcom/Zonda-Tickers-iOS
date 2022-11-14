@@ -19,10 +19,10 @@ final class ListUITests: UITests {
         
         application.buttons["Edit Tickers"].tap()
         application.cells.buttons["XXX \\ ZZZ"].press(
-            forDuration: 0.5,
+            forDuration: 1,
             thenDragTo: application.cells.buttons["BTC \\ PLN"],
-            withVelocity: .default,
-            thenHoldForDuration: 0.5
+            withVelocity: .slow,
+            thenHoldForDuration: 1
         )
         application.buttons["Edit Tickers"].tap()
         
