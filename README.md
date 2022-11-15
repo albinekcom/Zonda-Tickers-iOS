@@ -3,7 +3,7 @@
 # Zonda Tickers (iOS)
 
 ![Swift 5.7](https://img.shields.io/badge/Swift-5.7-orange.svg)
-[![Build](https://github.com/albinekcom/Zonda-Tickers-iOS/actions/workflows/test.yml/badge.svg)](https://github.com/albinekcom/Zonda-Tickers-iOS/actions/workflows/test.yml)
+[![Build](https://github.com/albinekcom/Zonda-Tickers-iOS/actions/workflows/build.yml/badge.svg)](https://github.com/albinekcom/Zonda-Tickers-iOS/actions/workflows/build.yml)
 
 Zonda Tickers for iOS devices.
 
