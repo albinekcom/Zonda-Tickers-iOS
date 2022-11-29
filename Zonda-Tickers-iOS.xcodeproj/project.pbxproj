@@ -143,8 +143,43 @@
 		8CA5A87A292531E8000C58CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CB3CF5E28CA52B700690C44 /* ReviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3CF5D28CA52B700690C44 /* ReviewControllerTests.swift */; };
 		8CB3CF6A28CA607B00690C44 /* TickerWebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3CF6928CA607B00690C44 /* TickerWebServiceTests.swift */; };
+		8CB901122935288800DFB721 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C819D0F28BE7894005DFC1D /* WidgetKit.framework */; };
+		8CB901132935288800DFB721 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C819D1128BE7894005DFC1D /* SwiftUI.framework */; };
+		8CB901162935288800DFB721 /* WatchComplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB901152935288800DFB721 /* WatchComplications.swift */; };
+		8CB9011C2935288A00DFB721 /* WatchComplicationsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8CB901112935288800DFB721 /* WatchComplicationsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8CB90129293529E000DFB721 /* ComplicationsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB90128293529E000DFB721 /* ComplicationsEntryView.swift */; };
+		8CB9012A293533E800DFB721 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553A28B10FC9004AA3D7 /* Ticker.swift */; };
+		8CB9012B293533EB00DFB721 /* TickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654722E28CBC489008BF37C /* TickerService.swift */; };
+		8CB9012C293533EE00DFB721 /* UserTickersIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickersIdService.swift */; };
+		8CB9012D293533F700DFB721 /* APIResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553E28B10FC9004AA3D7 /* APIResponses.swift */; };
+		8CB9012E293533F900DFB721 /* TickerWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553D28B10FC9004AA3D7 /* TickerWebService.swift */; };
+		8CB9012F293533FB00DFB721 /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921828CCC36F00A82999 /* TickerFetcher.swift */; };
+		8CB90130293533FE00DFB721 /* FileManagerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553928B10FC9004AA3D7 /* FileManagerDataService.swift */; };
+		8CB901312935340000DFB721 /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921528CCC2E400A82999 /* LocalDataService.swift */; };
+		8CB901322935341A00DFB721 /* Dispatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2920E28CCBEBE00A82999 /* Dispatching.swift */; };
+		8CB901332935341C00DFB721 /* Double+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554128B10FC9004AA3D7 /* Double+Pretty.swift */; };
+		8CB901342935341F00DFB721 /* FileManager+FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694381128CD435500F3321E /* FileManager+FileURL.swift */; };
+		8CB901352935342100DFB721 /* Image+SystemName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554328B10FC9004AA3D7 /* Image+SystemName.swift */; };
+		8CB901362935342600DFB721 /* OptionalString+FirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263337F428D5B8DC000F8F13 /* OptionalString+FirstCharacter.swift */; };
+		8CB901372935342C00DFB721 /* String+GeneratedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554228B10FC9004AA3D7 /* String+GeneratedColor.swift */; };
+		8CB901382935342F00DFB721 /* Ticker+ExtensionsForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A99FF128D4B15C00040DA7 /* Ticker+ExtensionsForView.swift */; };
+		8CB901392935356C00DFB721 /* UserTickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C20228C7B00200C90110 /* UserTickerService.swift */; };
+		8CB9013A293535B300DFB721 /* StringArray+UserTickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723328CBCB9F008BF37C /* StringArray+UserTickers.swift */; };
+		8CB9013B293535B900DFB721 /* TickerArray+Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69293628FF1EFE00441BE8 /* TickerArray+Ticker.swift */; };
+		8CB9013C293535F400DFB721 /* WatchlistTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C819D1F28BE78C8005DFC1D /* WatchlistTimelineProvider.swift */; };
+		8CB9013D293535FB00DFB721 /* WatchlistTimelineEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C819D2328BE792F005DFC1D /* WatchlistTimelineEntry.swift */; };
+		8CB9013E29353AD800DFB721 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
+		8CD573142936728900C71D33 /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633382028D609AF000F8F13 /* AccessoryCircularView.swift */; };
+		8CD573152936729400C71D33 /* NoTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381C28D60840000F8F13 /* NoTickersView.swift */; };
+		8CD57316293672AB00C71D33 /* AccessoryRectangularRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633380E28D5D02D000F8F13 /* AccessoryRectangularRow.swift */; };
+		8CD57317293672AE00C71D33 /* AccessoryRectangularListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0989528D890B400023B1A /* AccessoryRectangularListView.swift */; };
+		8CD57318293672B000C71D33 /* AccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633380C28D5CEC8000F8F13 /* AccessoryRectangularView.swift */; };
+		8CD57319293672CA00C71D33 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39196F28BFB93800E2BB34 /* Utils.swift */; };
+		8CD5731A2936731200C71D33 /* AccessoryInlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381828D6038F000F8F13 /* AccessoryInlineView.swift */; };
+		8CD5731C2936739500C71D33 /* AccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5731B2936739500C71D33 /* AccessoryCornerView.swift */; };
+		8CD5731D293683A700C71D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CD9E88A28C3A78300812A8C /* SystemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD9E88928C3A78300812A8C /* SystemListView.swift */; };
 		8CE6C20328C7B00200C90110 /* UserTickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C20228C7B00200C90110 /* UserTickerService.swift */; };
 /* End PBXBuildFile section */
@@ -156,6 +191,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8C819D0C28BE7894005DFC1D;
 			remoteInfo = TickersWidgetExtension;
+		};
+		8CB9011A2935288A00DFB721 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CB901102935288800DFB721;
+			remoteInfo = WatchComplicationsExtension;
 		};
 		8CC1850D1EFE4CAC0083DA30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -174,6 +216,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8CB9011D2935288A00DFB721 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8CB9011C2935288A00DFB721 /* WatchComplicationsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CFB35201F1808F900475DC1 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +335,10 @@
 		8C9446CB28C2857800DB5B52 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		8CB3CF5D28CA52B700690C44 /* ReviewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewControllerTests.swift; sourceTree = "<group>"; };
 		8CB3CF6928CA607B00690C44 /* TickerWebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerWebServiceTests.swift; sourceTree = "<group>"; };
+		8CB901112935288800DFB721 /* WatchComplicationsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WatchComplicationsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB901152935288800DFB721 /* WatchComplications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchComplications.swift; sourceTree = "<group>"; };
+		8CB901192935288A00DFB721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CB90128293529E000DFB721 /* ComplicationsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationsEntryView.swift; sourceTree = "<group>"; };
 		8CBD947B1F0D7D1400CA4250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CBD947D1F0D7D2500CA4250 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* Zonda Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zonda Tickers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,6 +346,7 @@
 		8CC1850C1EFE4CAC0083DA30 /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC9D5AC290AF4970038F6ED /* WatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WatchApp.entitlements; sourceTree = "<group>"; };
+		8CD5731B2936739500C71D33 /* AccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCornerView.swift; sourceTree = "<group>"; };
 		8CD9E88928C3A78300812A8C /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDFD47E1F084106009F1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -310,6 +368,15 @@
 			files = (
 				8C819D1228BE7894005DFC1D /* SwiftUI.framework in Frameworks */,
 				8C819D1028BE7894005DFC1D /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CB9010E2935288800DFB721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB901132935288800DFB721 /* SwiftUI.framework in Frameworks */,
+				8CB901122935288800DFB721 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +766,25 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
+		8CB901142935288800DFB721 /* WatchComplications */ = {
+			isa = PBXGroup;
+			children = (
+				8CB901232935292700DFB721 /* Views */,
+				8CB901152935288800DFB721 /* WatchComplications.swift */,
+				8CB901192935288A00DFB721 /* Info.plist */,
+			);
+			path = WatchComplications;
+			sourceTree = "<group>";
+		};
+		8CB901232935292700DFB721 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CB90128293529E000DFB721 /* ComplicationsEntryView.swift */,
+				8CD5731B2936739500C71D33 /* AccessoryCornerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8CC184EF1EFE4CAC0083DA30 = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +792,7 @@
 				8CF02E3F2873452500700EAA /* Tests */,
 				8C819D1328BE7894005DFC1D /* WatchlistWidget */,
 				8C69292828FF1CFC00441BE8 /* WatchApp */,
+				8CB901142935288800DFB721 /* WatchComplications */,
 				8C819D0E28BE7894005DFC1D /* Frameworks */,
 				8CC184F91EFE4CAC0083DA30 /* Products */,
 			);
@@ -719,6 +806,7 @@
 				8CDFD47A1F084106009F1E19 /* UI Tests.xctest */,
 				8C819D0D28BE7894005DFC1D /* Watchlist Widget.appex */,
 				8C69292728FF1CFC00441BE8 /* WatchApp.app */,
+				8CB901112935288800DFB721 /* WatchComplicationsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -804,10 +892,12 @@
 				8C69292328FF1CFC00441BE8 /* Sources */,
 				8C69292428FF1CFC00441BE8 /* Frameworks */,
 				8C69292528FF1CFC00441BE8 /* Resources */,
+				8CB9011D2935288A00DFB721 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8CB9011B2935288A00DFB721 /* PBXTargetDependency */,
 			);
 			name = WatchApp;
 			productName = "WatchApp Watch App";
@@ -829,6 +919,23 @@
 			name = "Watchlist Widget";
 			productName = TickersWidgetExtension;
 			productReference = 8C819D0D28BE7894005DFC1D /* Watchlist Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8CB901102935288800DFB721 /* WatchComplicationsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CB901212935288A00DFB721 /* Build configuration list for PBXNativeTarget "WatchComplicationsExtension" */;
+			buildPhases = (
+				8CB9010D2935288800DFB721 /* Sources */,
+				8CB9010E2935288800DFB721 /* Frameworks */,
+				8CB9010F2935288800DFB721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatchComplicationsExtension;
+			productName = WatchComplicationsExtension;
+			productReference = 8CB901112935288800DFB721 /* WatchComplicationsExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		8CC184F71EFE4CAC0083DA30 /* Zonda Tickers */ = {
@@ -896,7 +1003,7 @@
 		8CC184F01EFE4CAC0083DA30 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Albin Sadowski";
 				TargetAttributes = {
@@ -907,6 +1014,9 @@
 						CreatedOnToolsVersion = 13.4.1;
 						DevelopmentTeam = AXTXBRU9S7;
 						ProvisioningStyle = Automatic;
+					};
+					8CB901102935288800DFB721 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 					8CC184F71EFE4CAC0083DA30 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -960,6 +1070,7 @@
 				8CDFD4791F084106009F1E19 /* UI Tests */,
 				8C819D0C28BE7894005DFC1D /* Watchlist Widget */,
 				8C69292628FF1CFC00441BE8 /* WatchApp */,
+				8CB901102935288800DFB721 /* WatchComplicationsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -981,6 +1092,15 @@
 			files = (
 				8CA5A87A292531E8000C58CC /* Assets.xcassets in Resources */,
 				8C9446C728C277AC00DB5B52 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CB9010F2935288800DFB721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CD5731D293683A700C71D33 /* Assets.xcassets in Resources */,
+				8CB9013E29353AD800DFB721 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,6 +1205,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8CB9010D2935288800DFB721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB901392935356C00DFB721 /* UserTickerService.swift in Sources */,
+				8CB9012E293533F900DFB721 /* TickerWebService.swift in Sources */,
+				8CB901322935341A00DFB721 /* Dispatching.swift in Sources */,
+				8CD57319293672CA00C71D33 /* Utils.swift in Sources */,
+				8CB90130293533FE00DFB721 /* FileManagerDataService.swift in Sources */,
+				8CB9013A293535B300DFB721 /* StringArray+UserTickers.swift in Sources */,
+				8CB901332935341C00DFB721 /* Double+Pretty.swift in Sources */,
+				8CB901352935342100DFB721 /* Image+SystemName.swift in Sources */,
+				8CB9012D293533F700DFB721 /* APIResponses.swift in Sources */,
+				8CD573142936728900C71D33 /* AccessoryCircularView.swift in Sources */,
+				8CB901382935342F00DFB721 /* Ticker+ExtensionsForView.swift in Sources */,
+				8CB9013D293535FB00DFB721 /* WatchlistTimelineEntry.swift in Sources */,
+				8CD5731C2936739500C71D33 /* AccessoryCornerView.swift in Sources */,
+				8CB9013B293535B900DFB721 /* TickerArray+Ticker.swift in Sources */,
+				8CD57318293672B000C71D33 /* AccessoryRectangularView.swift in Sources */,
+				8CD5731A2936731200C71D33 /* AccessoryInlineView.swift in Sources */,
+				8CD57317293672AE00C71D33 /* AccessoryRectangularListView.swift in Sources */,
+				8CB901362935342600DFB721 /* OptionalString+FirstCharacter.swift in Sources */,
+				8CB9012C293533EE00DFB721 /* UserTickersIdService.swift in Sources */,
+				8CB9012A293533E800DFB721 /* Ticker.swift in Sources */,
+				8CB901312935340000DFB721 /* LocalDataService.swift in Sources */,
+				8CB9013C293535F400DFB721 /* WatchlistTimelineProvider.swift in Sources */,
+				8CB901162935288800DFB721 /* WatchComplications.swift in Sources */,
+				8CB901342935341F00DFB721 /* FileManager+FileURL.swift in Sources */,
+				8CD573152936729400C71D33 /* NoTickersView.swift in Sources */,
+				8CD57316293672AB00C71D33 /* AccessoryRectangularRow.swift in Sources */,
+				8CB90129293529E000DFB721 /* ComplicationsEntryView.swift in Sources */,
+				8CB9012B293533EB00DFB721 /* TickerService.swift in Sources */,
+				8CB901372935342C00DFB721 /* String+GeneratedColor.swift in Sources */,
+				8CB9012F293533FB00DFB721 /* TickerFetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CC184F41EFE4CAC0083DA30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1180,6 +1337,11 @@
 			isa = PBXTargetDependency;
 			target = 8C819D0C28BE7894005DFC1D /* Watchlist Widget */;
 			targetProxy = 8C819D1928BE7896005DFC1D /* PBXContainerItemProxy */;
+		};
+		8CB9011B2935288A00DFB721 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CB901102935288800DFB721 /* WatchComplicationsExtension */;
+			targetProxy = 8CB9011A2935288A00DFB721 /* PBXContainerItemProxy */;
 		};
 		8CC1850E1EFE4CAC0083DA30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1382,6 +1544,7 @@
 		8C69293228FF1CFE00441BE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1419,6 +1582,7 @@
 		8C69293328FF1CFE00441BE8 /* Testing */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1455,6 +1619,7 @@
 		8C69293428FF1CFE00441BE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1552,6 +1717,109 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8CB9011E2935288A00DFB721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2005;
+				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchComplications/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchComplications;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp.WatchComplications;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		8CB9011F2935288A00DFB721 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2005;
+				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchComplications/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchComplications;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp.WatchComplications;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Testing;
+		};
+		8CB901202935288A00DFB721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2005;
+				DEVELOPMENT_TEAM = AXTXBRU9S7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchComplications/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchComplications;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp.WatchComplications;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -1845,6 +2113,16 @@
 				8C819D1C28BE7896005DFC1D /* Debug */,
 				26A99FFD28D4CD8700040DA7 /* Testing */,
 				8C819D1D28BE7896005DFC1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CB901212935288A00DFB721 /* Build configuration list for PBXNativeTarget "WatchComplicationsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CB9011E2935288A00DFB721 /* Debug */,
+				8CB9011F2935288A00DFB721 /* Testing */,
+				8CB901202935288A00DFB721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

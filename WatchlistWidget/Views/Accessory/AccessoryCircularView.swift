@@ -19,8 +19,10 @@ struct AccessoryCircularView: View {
             } else {
                 VStack {
                     Image(systemName: ticker.changeImageName.rawValue)
+                        .foregroundColor(ticker.changeColor)
                     Text(ticker.shortName)
                     Text(ticker.percentageChangeWithoutSignText)
+                        .foregroundColor(ticker.changeColor)
                 }
             }
         }
@@ -37,6 +39,10 @@ private extension Optional where Wrapped == Ticker {
     
     var changeImageName: Image.SystemName {
         self?.changeImageName ?? .squareFill
+    }
+    
+    var changeColor: Color {
+        self?.changeColor ?? .primary
     }
     
     var shortName: String {

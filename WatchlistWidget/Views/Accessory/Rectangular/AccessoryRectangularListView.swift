@@ -34,6 +34,7 @@ private extension Ticker {
             icon: changeImageName,
             title: firstCurrencyText + "\\" + secondCurrencyText,
             valueText: rateText,
+            valueColor: changeColor,
             isGain: (change ?? 0) > 0
         )
     }
@@ -58,6 +59,7 @@ private extension AccessoryRectangularRow.Model {
         icon: .squareFill,
         title: "-\\-",
         valueText: "-",
+        valueColor: .primary,
         isGain: false
     )
     
