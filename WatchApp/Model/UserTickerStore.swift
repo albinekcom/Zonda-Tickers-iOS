@@ -12,27 +12,12 @@ final class UserTickerStore: ObservableObject {
     }
     
     init() {
-//        tickers = userTickersIds.userTickers(from: tickerService.loaded) // TODO: Change it later
-        tickers = [
-            .init(
-                firstCurrency: .init(id: "btc"),
-                secondCurrency: .init(id: "pln"),
-                rate: 123.45,
-                previousRate: 12344,
-                average: 100
-            ),
-            .init(
-                firstCurrency: .init(id: "eth"),
-                secondCurrency: .init(id: "usd"),
-                rate: 22.33,
-                average: 30
-            )
-        ]
+        tickers = userTickersIds.userTickers(from: tickerService.loaded)
     }
     
     @MainActor
     func refresh() async {
-//        tickers = userTickersIds.userTickers(from: (try? await tickerService.fetched) ?? tickerService.loaded) // TODO: Change it later
+        tickers = userTickersIds.userTickers(from: (try? await tickerService.fetched) ?? tickerService.loaded)
     }
     
 }

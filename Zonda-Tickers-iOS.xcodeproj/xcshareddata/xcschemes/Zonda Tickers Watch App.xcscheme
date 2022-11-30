@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8C69292628FF1CFC00441BE8"
-               BuildableName = "WatchApp.app"
-               BlueprintName = "WatchApp"
+               BuildableName = "Zonda Tickers Watch App.app"
+               BlueprintName = "Zonda Tickers Watch App"
                ReferencedContainer = "container:Zonda-Tickers-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8C69292628FF1CFC00441BE8"
-            BuildableName = "WatchApp.app"
-            BlueprintName = "WatchApp"
+            BuildableName = "Zonda Tickers.app"
+            BlueprintName = "Zonda Tickers Watch App"
             ReferencedContainer = "container:Zonda-Tickers-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8C69292628FF1CFC00441BE8"
-            BuildableName = "WatchApp.app"
-            BlueprintName = "WatchApp"
+            BuildableName = "Zonda Tickers.app"
+            BlueprintName = "Zonda Tickers Watch App"
             ReferencedContainer = "container:Zonda-Tickers-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

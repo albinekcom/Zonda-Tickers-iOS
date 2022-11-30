@@ -15,6 +15,3 @@ private struct WatchApp: App {
     }
     
 }
-
-// TODO:
-// - Add complications

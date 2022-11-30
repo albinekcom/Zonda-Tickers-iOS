@@ -146,7 +146,7 @@
 		8CB901122935288800DFB721 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C819D0F28BE7894005DFC1D /* WidgetKit.framework */; };
 		8CB901132935288800DFB721 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C819D1128BE7894005DFC1D /* SwiftUI.framework */; };
 		8CB901162935288800DFB721 /* WatchComplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB901152935288800DFB721 /* WatchComplications.swift */; };
-		8CB9011C2935288A00DFB721 /* WatchComplicationsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8CB901112935288800DFB721 /* WatchComplicationsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8CB9011C2935288A00DFB721 /* Watch Complications.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8CB901112935288800DFB721 /* Watch Complications.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8CB90129293529E000DFB721 /* ComplicationsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB90128293529E000DFB721 /* ComplicationsEntryView.swift */; };
 		8CB9012A293533E800DFB721 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553A28B10FC9004AA3D7 /* Ticker.swift */; };
 		8CB9012B293533EB00DFB721 /* TickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654722E28CBC489008BF37C /* TickerService.swift */; };
@@ -171,6 +171,7 @@
 		8CB9013E29353AD800DFB721 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
+		8CD299B82937AAD600BF279A /* Zonda Tickers.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8C69292728FF1CFC00441BE8 /* Zonda Tickers.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8CD573142936728900C71D33 /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633382028D609AF000F8F13 /* AccessoryCircularView.swift */; };
 		8CD573152936729400C71D33 /* NoTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381C28D60840000F8F13 /* NoTickersView.swift */; };
 		8CD57316293672AB00C71D33 /* AccessoryRectangularRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633380E28D5D02D000F8F13 /* AccessoryRectangularRow.swift */; };
@@ -206,6 +207,13 @@
 			remoteGlobalIDString = 8CC184F71EFE4CAC0083DA30;
 			remoteInfo = "BitBay-Ticker";
 		};
+		8CD299B92937AAD600BF279A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C69292628FF1CFC00441BE8;
+			remoteInfo = "Zonda Tickers Watch App";
+		};
 		8CDFD47F1F084106009F1E19 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
@@ -222,9 +230,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8CB9011C2935288A00DFB721 /* WatchComplicationsExtension.appex in Embed Foundation Extensions */,
+				8CB9011C2935288A00DFB721 /* Watch Complications.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CD299BB2937AAD600BF279A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8CD299B82937AAD600BF279A /* Zonda Tickers.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8CFB35201F1808F900475DC1 /* Embed Foundation Extensions */ = {
@@ -295,7 +314,7 @@
 		8C3A2F7B28CA22AE001FD018 /* FileManagerDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerDataServiceTests.swift; sourceTree = "<group>"; };
 		8C3A2F7D28CA329D001FD018 /* Ticker+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticker+Stub.swift"; sourceTree = "<group>"; };
 		8C49495428749C8E00C24BC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8C69292728FF1CFC00441BE8 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C69292728FF1CFC00441BE8 /* Zonda Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zonda Tickers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C69292928FF1CFC00441BE8 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
 		8C69292D28FF1CFE00441BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C69293028FF1CFE00441BE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -335,7 +354,7 @@
 		8C9446CB28C2857800DB5B52 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		8CB3CF5D28CA52B700690C44 /* ReviewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewControllerTests.swift; sourceTree = "<group>"; };
 		8CB3CF6928CA607B00690C44 /* TickerWebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerWebServiceTests.swift; sourceTree = "<group>"; };
-		8CB901112935288800DFB721 /* WatchComplicationsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WatchComplicationsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB901112935288800DFB721 /* Watch Complications.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Complications.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB901152935288800DFB721 /* WatchComplications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchComplications.swift; sourceTree = "<group>"; };
 		8CB901192935288A00DFB721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB90128293529E000DFB721 /* ComplicationsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationsEntryView.swift; sourceTree = "<group>"; };
@@ -346,6 +365,7 @@
 		8CC1850C1EFE4CAC0083DA30 /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC9D5AC290AF4970038F6ED /* WatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WatchApp.entitlements; sourceTree = "<group>"; };
+		8CD299BC2937AC4800BF279A /* Watch Complications.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Complications.entitlements"; sourceTree = "<group>"; };
 		8CD5731B2936739500C71D33 /* AccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCornerView.swift; sourceTree = "<group>"; };
 		8CD9E88928C3A78300812A8C /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -772,6 +792,7 @@
 				8CB901232935292700DFB721 /* Views */,
 				8CB901152935288800DFB721 /* WatchComplications.swift */,
 				8CB901192935288A00DFB721 /* Info.plist */,
+				8CD299BC2937AC4800BF279A /* Watch Complications.entitlements */,
 			);
 			path = WatchComplications;
 			sourceTree = "<group>";
@@ -805,8 +826,8 @@
 				8CC1850C1EFE4CAC0083DA30 /* Unit Tests.xctest */,
 				8CDFD47A1F084106009F1E19 /* UI Tests.xctest */,
 				8C819D0D28BE7894005DFC1D /* Watchlist Widget.appex */,
-				8C69292728FF1CFC00441BE8 /* WatchApp.app */,
-				8CB901112935288800DFB721 /* WatchComplicationsExtension.appex */,
+				8C69292728FF1CFC00441BE8 /* Zonda Tickers.app */,
+				8CB901112935288800DFB721 /* Watch Complications.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -885,9 +906,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C69292628FF1CFC00441BE8 /* WatchApp */ = {
+		8C69292628FF1CFC00441BE8 /* Zonda Tickers Watch App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C69293528FF1CFE00441BE8 /* Build configuration list for PBXNativeTarget "WatchApp" */;
+			buildConfigurationList = 8C69293528FF1CFE00441BE8 /* Build configuration list for PBXNativeTarget "Zonda Tickers Watch App" */;
 			buildPhases = (
 				8C69292328FF1CFC00441BE8 /* Sources */,
 				8C69292428FF1CFC00441BE8 /* Frameworks */,
@@ -899,9 +920,9 @@
 			dependencies = (
 				8CB9011B2935288A00DFB721 /* PBXTargetDependency */,
 			);
-			name = WatchApp;
+			name = "Zonda Tickers Watch App";
 			productName = "WatchApp Watch App";
-			productReference = 8C69292728FF1CFC00441BE8 /* WatchApp.app */;
+			productReference = 8C69292728FF1CFC00441BE8 /* Zonda Tickers.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8C819D0C28BE7894005DFC1D /* Watchlist Widget */ = {
@@ -921,9 +942,9 @@
 			productReference = 8C819D0D28BE7894005DFC1D /* Watchlist Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		8CB901102935288800DFB721 /* WatchComplicationsExtension */ = {
+		8CB901102935288800DFB721 /* Watch Complications */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8CB901212935288A00DFB721 /* Build configuration list for PBXNativeTarget "WatchComplicationsExtension" */;
+			buildConfigurationList = 8CB901212935288A00DFB721 /* Build configuration list for PBXNativeTarget "Watch Complications" */;
 			buildPhases = (
 				8CB9010D2935288800DFB721 /* Sources */,
 				8CB9010E2935288800DFB721 /* Frameworks */,
@@ -933,9 +954,9 @@
 			);
 			dependencies = (
 			);
-			name = WatchComplicationsExtension;
+			name = "Watch Complications";
 			productName = WatchComplicationsExtension;
-			productReference = 8CB901112935288800DFB721 /* WatchComplicationsExtension.appex */;
+			productReference = 8CB901112935288800DFB721 /* Watch Complications.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		8CC184F71EFE4CAC0083DA30 /* Zonda Tickers */ = {
@@ -946,11 +967,13 @@
 				8CC184F51EFE4CAC0083DA30 /* Frameworks */,
 				8CC184F61EFE4CAC0083DA30 /* Resources */,
 				8CFB35201F1808F900475DC1 /* Embed Foundation Extensions */,
+				8CD299BB2937AAD600BF279A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				8C819D1A28BE7896005DFC1D /* PBXTargetDependency */,
+				8CD299BA2937AAD600BF279A /* PBXTargetDependency */,
 			);
 			name = "Zonda Tickers";
 			packageProductDependencies = (
@@ -1066,11 +1089,11 @@
 			projectRoot = "";
 			targets = (
 				8CC184F71EFE4CAC0083DA30 /* Zonda Tickers */,
+				8C819D0C28BE7894005DFC1D /* Watchlist Widget */,
+				8CB901102935288800DFB721 /* Watch Complications */,
+				8C69292628FF1CFC00441BE8 /* Zonda Tickers Watch App */,
 				8CC1850B1EFE4CAC0083DA30 /* Unit Tests */,
 				8CDFD4791F084106009F1E19 /* UI Tests */,
-				8C819D0C28BE7894005DFC1D /* Watchlist Widget */,
-				8C69292628FF1CFC00441BE8 /* WatchApp */,
-				8CB901102935288800DFB721 /* WatchComplicationsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1340,13 +1363,18 @@
 		};
 		8CB9011B2935288A00DFB721 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8CB901102935288800DFB721 /* WatchComplicationsExtension */;
+			target = 8CB901102935288800DFB721 /* Watch Complications */;
 			targetProxy = 8CB9011A2935288A00DFB721 /* PBXContainerItemProxy */;
 		};
 		8CC1850E1EFE4CAC0083DA30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8CC184F71EFE4CAC0083DA30 /* Zonda Tickers */;
 			targetProxy = 8CC1850D1EFE4CAC0083DA30 /* PBXContainerItemProxy */;
+		};
+		8CD299BA2937AAD600BF279A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C69292628FF1CFC00441BE8 /* Zonda Tickers Watch App */;
+			targetProxy = 8CD299B92937AAD600BF279A /* PBXContainerItemProxy */;
 		};
 		8CDFD4801F084106009F1E19 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1439,7 +1467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1452,7 +1480,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -1516,7 +1544,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1529,7 +1557,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.WatchlistWidget";
@@ -1552,24 +1580,23 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = WatchApp/WatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchApp/Preview Content\"";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.albinek.ios.BitBay-Ticker";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.watchkitapp";
+				PRODUCT_NAME = "Zonda Tickers";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1590,23 +1617,22 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = WatchApp/WatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchApp/Preview Content\"";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.albinek.ios.BitBay-Ticker";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.watchkitapp";
+				PRODUCT_NAME = "Zonda Tickers";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1627,23 +1653,22 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = WatchApp/WatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchApp/Preview Content\"";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.albinek.ios.BitBay-Ticker";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.watchkitapp";
+				PRODUCT_NAME = "Zonda Tickers";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1662,7 +1687,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1675,7 +1700,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.WatchlistWidget";
@@ -1696,7 +1721,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1709,7 +1734,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.WatchlistWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1727,13 +1752,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "WatchComplications/Watch Complications.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WatchComplications/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchComplications;
+				INFOPLIST_KEY_CFBundleDisplayName = "Watch Complications";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1741,10 +1767,10 @@
 					"@executable_path/../../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp.WatchComplications;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.watchkitapp.WatchComplications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1762,13 +1788,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "WatchComplications/Watch Complications.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WatchComplications/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchComplications;
+				INFOPLIST_KEY_CFBundleDisplayName = "Watch Complications";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1776,9 +1803,9 @@
 					"@executable_path/../../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp.WatchComplications;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.watchkitapp.WatchComplications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1796,13 +1823,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "WatchComplications/Watch Complications.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WatchComplications/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchComplications;
+				INFOPLIST_KEY_CFBundleDisplayName = "Watch Complications";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Albin Sadowski. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1810,9 +1838,9 @@
 					"@executable_path/../../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp.WatchComplications;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.watchkitapp.WatchComplications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1951,7 +1979,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1964,7 +1992,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -1985,7 +2013,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2005;
+				CURRENT_PROJECT_VERSION = 3100;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1998,7 +2026,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -2097,7 +2125,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C69293528FF1CFE00441BE8 /* Build configuration list for PBXNativeTarget "WatchApp" */ = {
+		8C69293528FF1CFE00441BE8 /* Build configuration list for PBXNativeTarget "Zonda Tickers Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C69293228FF1CFE00441BE8 /* Debug */,
@@ -2117,7 +2145,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8CB901212935288A00DFB721 /* Build configuration list for PBXNativeTarget "WatchComplicationsExtension" */ = {
+		8CB901212935288A00DFB721 /* Build configuration list for PBXNativeTarget "Watch Complications" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8CB9011E2935288A00DFB721 /* Debug */,

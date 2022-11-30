@@ -28,22 +28,20 @@ struct DetailView: View {
 
 private extension Ticker {
     
-    var detailRowModels: [DetailRow.Model] {
-        [
-            .init(title: "Name", value: firstCurrencyName),
-            .init(title: "Rate", value: rateText),
-            .init(title: "Change", value: changeText, valueColor: changeColor),
-            .init(title: "Change (%)", value: percentageChangeWithPositiveSignText, valueColor: changeColor),
-            .init(title: "Previous rate", value: previousRateText),
-            .init(title: "Highest rate", value: highestRateText),
-            .init(title: "Lowest rate", value: lowestRateText),
-            .init(title: "Bid", value: highestBidText),
-            .init(title: "Ask", value: lowestAskText),
-            .init(title: "Average", value: averageText),
-            .init(title: "Volume", value: volumeText),
-            .init(title: "Volume value", value: volumeValueText)
-        ]
-    }
+    var detailRowModels: [DetailRow.Model] { [
+        .init(title: "Name", value: firstCurrencyName),
+        .init(title: "Rate", value: rateText),
+        .init(title: "Change", value: changeText, valueColor: changeColor),
+        .init(title: "Change (%)", value: percentageChangeWithPositiveSignText, valueColor: changeColor),
+        .init(title: "Previous rate", value: previousRateText),
+        .init(title: "Highest rate", value: highestRateText),
+        .init(title: "Lowest rate", value: lowestRateText),
+        .init(title: "Bid", value: highestBidText),
+        .init(title: "Ask", value: lowestAskText),
+        .init(title: "Average", value: averageText),
+        .init(title: "Volume", value: volumeText),
+        .init(title: "Volume value", value: volumeValueText)
+    ] }
     
 }
 
