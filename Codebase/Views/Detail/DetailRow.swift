@@ -6,7 +6,7 @@ struct DetailRow: View {
     
     var body: some View {
         HStack {
-            Text(model.title)
+            Text(LocalizedStringKey(model.title))
                 .font(.callout)
             Spacer()
             Text(model.value)
@@ -14,9 +14,8 @@ struct DetailRow: View {
                 .foregroundColor(model.valueColor)
         }
         .padding(.vertical)
-        .animation(.default, value: model.value)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(model.title))
+        .accessibilityLabel(Text(LocalizedStringKey(model.title)))
         .accessibilityValue(Text(model.value))
     }
     
