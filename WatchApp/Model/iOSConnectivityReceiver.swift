@@ -1,4 +1,5 @@
 import WatchConnectivity
+import WatchKit
 
 final class iOSConnectivityReceiver: NSObject {
     
@@ -25,6 +26,8 @@ extension iOSConnectivityReceiver: WCSessionDelegate {
         didReceiveMessage message: [String: Any],
         replyHandler: @escaping ([String: Any]) -> Void
     ) {
+        print("didReceiveMessage invoked")
+        
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             
@@ -42,6 +45,15 @@ extension iOSConnectivityReceiver: WCSessionDelegate {
         _ session: WCSession,
         activationDidCompleteWith activationState: WCSessionActivationState,
         error: Error?
-    ) {}
+    ) {
+        print("activationDidCompleteWith invoked")
+    }
+    
+    func session(
+        _ session: WCSession,
+        didReceiveApplicationContext applicationContext: [String: Any]
+    ) {
+        print("didReceiveApplicationContext invoked")
+    }
     
 }

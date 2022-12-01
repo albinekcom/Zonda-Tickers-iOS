@@ -32,6 +32,8 @@ final class WatchOSConnectivityProvider: NSObject, ConnectivityProvider {
     private func send(message: [String: Any]) {
         guard session.isReachable else { return }
         
+        try? session.updateApplicationContext(message)
+        
         session.sendMessage(message, replyHandler: { _ in } )
     }
     

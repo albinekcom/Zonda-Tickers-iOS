@@ -1,4 +1,5 @@
 import Combine
+import WidgetKit
 
 final class ModelData: ObservableObject {
     
@@ -17,6 +18,9 @@ final class ModelData: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
+        userTickerIds = userTickersIdService.loaded
+        tickers = tickerService.loaded
+        
         connectivityReceiver
             .$tickers
             .weakAssign(to: \.tickers, on: self)
@@ -26,11 +30,31 @@ final class ModelData: ObservableObject {
             .$userTickersIds
             .weakAssign(to: \.userTickerIds, on: self)
             .store(in: &cancellables)
+        
+        $tickers.sink { [weak self] _ in
+            self?.refreshWidgets()
+        }.store(in: &cancellables)
+        
+        $userTickerIds.sink { [weak self] in
+            self?.userTickersIdService.save(userTickersId: $0)
+            
+            self?.refreshWidgets()
+        }.store(in: &cancellables)
     }
     
     @MainActor
     func refresh() async {
-        tickers = (try? await tickerService.fetched) ?? tickerService.loaded
+        guard let fetchedTickers = try? await tickerService.fetched else { return }
+        
+        tickers = fetchedTickers
+        
+        print("Fetched")
+    }
+    
+    private func refreshWidgets() {
+        if #available(watchOS 9.0, *) {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
     
 }

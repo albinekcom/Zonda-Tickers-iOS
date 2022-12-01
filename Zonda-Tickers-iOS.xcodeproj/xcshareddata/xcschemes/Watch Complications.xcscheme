@@ -61,12 +61,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8CB901102935288800DFB721"
+            BuildableName = "Watch Complications.appex"
+            BlueprintName = "Watch Complications"
+            ReferencedContainer = "container:Zonda-Tickers-iOS.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
             BlueprintIdentifier = "8C69292628FF1CFC00441BE8"
             BuildableName = "Zonda Tickers.app"
             BlueprintName = "Zonda Tickers Watch App"
             ReferencedContainer = "container:Zonda-Tickers-iOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"

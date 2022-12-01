@@ -19,8 +19,7 @@ private struct MainApp: App {
 }
 
 // TODO:
-// - Get initial data for "iOSConnectivityReceiver" class
-// - Add tickers fetcher in "Watch App"
-// - Pass data to "Watch Complications"
-// - Add tickers fetcher in "Watch Complications"
+// - Get initial data in "watchOS App" ("iOSConnectivityReceiver" class, link: https://developer.apple.com/forums/thread/13116)
+// - Refresh "watchOS App" when it is in the background
+// - Check refreshing "Complications" from iOS App (probably it will work automaticly when watchOS refresh in the background shared data)
 // - Add unit tests for "WatchOSConnectivityProvider" class

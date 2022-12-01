@@ -58,7 +58,6 @@ final class ModelData: ObservableObject {
         $tickers.sink { [weak self] in
             self?.widgetReloadable.reloadAllTimelines()
             self?.connectivityProvider.send(tickers: $0)
-//            self?.connectivityProvider.send(text: "tickers")
         }.store(in: &cancellables)
         
         $userTickerIds.sink { [weak self] in
@@ -66,7 +65,6 @@ final class ModelData: ObservableObject {
             
             self?.widgetReloadable.reloadAllTimelines()
             self?.connectivityProvider.send(userTickerIds: $0)
-//            self?.connectivityProvider.send(text: "userTickerIds")
         }.store(in: &cancellables)
     }
     
