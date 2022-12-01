@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8C69292628FF1CFC00441BE8"
-               BuildableName = "Zonda Tickers Watch App.app"
+               BuildableName = "Zonda Tickers.app"
                BlueprintName = "Zonda Tickers Watch App"
                ReferencedContainer = "container:Zonda-Tickers-iOS.xcodeproj">
             </BuildableReference>

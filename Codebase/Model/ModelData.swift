@@ -29,10 +29,12 @@ final class ModelData: ObservableObject {
     
     var analyticsService: AnalyticsService?
     
-    @Published private var userTickersId: [String]
+    @Published private var userTickerIds: [String]
     @Published private var tickers: [Ticker]
     
     private let widgetReloadable: WidgetReloadable
+    
+    private let connectivityProvider: ConnectivityProvider
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -42,23 +44,29 @@ final class ModelData: ObservableObject {
     init(
         userTickersIdService: UserTickersIdService,
         tickerService: TickerService,
-        widgetReloadable: WidgetReloadable = WidgetCenter.shared
+        widgetReloadable: WidgetReloadable = WidgetCenter.shared,
+        connectivityProvider: ConnectivityProvider = WatchOSConnectivityProvider()
     ) {
         self.userTickersIdService = userTickersIdService
         self.tickerService = tickerService
         self.widgetReloadable = widgetReloadable
+        self.connectivityProvider = connectivityProvider
         
-        userTickersId = userTickersIdService.loaded
+        userTickerIds = userTickersIdService.loaded
         tickers = tickerService.loaded
         
-        $tickers.sink { [weak self] _ in
+        $tickers.sink { [weak self] in
             self?.widgetReloadable.reloadAllTimelines()
+            self?.connectivityProvider.send(tickers: $0)
+//            self?.connectivityProvider.send(text: "tickers")
         }.store(in: &cancellables)
         
-        $userTickersId.sink { [weak self] in
+        $userTickerIds.sink { [weak self] in
             self?.userTickersIdService.save(userTickersId: $0)
             
             self?.widgetReloadable.reloadAllTimelines()
+            self?.connectivityProvider.send(userTickerIds: $0)
+//            self?.connectivityProvider.send(text: "userTickerIds")
         }.store(in: &cancellables)
     }
     
@@ -78,7 +86,7 @@ final class ModelData: ObservableObject {
     
     func availableTickers(searchText: String = "") -> [Ticker] {
         tickers
-            .filter { userTickersId.contains($0.id) == false }
+            .filter { userTickerIds.contains($0.id) == false }
             .filter {
                 if searchText.isEmpty { return true }
                 
@@ -93,7 +101,7 @@ final class ModelData: ObservableObject {
     }
     
     var userTickers: [Ticker] {
-        userTickersId.userTickers(from: tickers)
+        userTickerIds.userTickers(from: tickers)
     }
     
     func ticker(id: String) -> Ticker? {
@@ -101,21 +109,21 @@ final class ModelData: ObservableObject {
     }
     
     func appendUserTickerId(_ tickerId: String) {
-        userTickersId.append(tickerId)
+        userTickerIds.append(tickerId)
         
         analyticsService?.trackUserTickerAppended(tickerId: tickerId)
     }
     
     func removeUserTicker(at offsets: IndexSet) {
-        let removedTickerId = userTickersId[offsets.map { $0 }[0]]
+        let removedTickerId = userTickerIds[offsets.map { $0 }[0]]
         
-        userTickersId.remove(atOffsets: offsets)
+        userTickerIds.remove(atOffsets: offsets)
         
         analyticsService?.trackUserTickerDeleted(tickerId: removedTickerId)
     }
     
     func moveUserTicker(from source: IndexSet, to destination: Int) {
-        userTickersId.move(fromOffsets: source, toOffset: destination)
+        userTickerIds.move(fromOffsets: source, toOffset: destination)
     }
     
     @MainActor
@@ -127,11 +135,11 @@ final class ModelData: ObservableObject {
             
             state = .refreshingSuccess
             
-            analyticsService?.trackUserTickersRefreshed(tickerIds: userTickersId)
+            analyticsService?.trackUserTickersRefreshed(tickerIds: userTickerIds)
         } catch {
             state = .refreshingFailure(error: error)
             
-            analyticsService?.trackUserTickersRefreshingFailed(tickerIds: userTickersId)
+            analyticsService?.trackUserTickersRefreshingFailed(tickerIds: userTickerIds)
         }
     }
     

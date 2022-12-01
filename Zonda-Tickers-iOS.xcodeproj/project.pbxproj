@@ -82,7 +82,7 @@
 		8C69293128FF1CFE00441BE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C69293028FF1CFE00441BE8 /* Preview Assets.xcassets */; };
 		8C69293728FF1EFE00441BE8 /* TickerArray+Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69293628FF1EFE00441BE8 /* TickerArray+Ticker.swift */; };
 		8C69293828FF1F0400441BE8 /* TickerArray+Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69293628FF1EFE00441BE8 /* TickerArray+Ticker.swift */; };
-		8C69293C28FF202D00441BE8 /* UserTickerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69293B28FF202D00441BE8 /* UserTickerStore.swift */; };
+		8C69293C28FF202D00441BE8 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69293B28FF202D00441BE8 /* ModelData.swift */; };
 		8C69293E28FF205700441BE8 /* UserTickersIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickersIdService.swift */; };
 		8C69293F28FF206000441BE8 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553A28B10FC9004AA3D7 /* Ticker.swift */; };
 		8C69294028FF206800441BE8 /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921528CCC2E400A82999 /* LocalDataService.swift */; };
@@ -172,6 +172,8 @@
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CD299B82937AAD600BF279A /* Zonda Tickers.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8C69292728FF1CFC00441BE8 /* Zonda Tickers.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8CD299BE2937B84500BF279A /* WatchOSConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD299BD2937B84400BF279A /* WatchOSConnectivityProvider.swift */; };
+		8CD299C02937CB2500BF279A /* iOSConnectivityReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD299BF2937CB2500BF279A /* iOSConnectivityReceiver.swift */; };
 		8CD573142936728900C71D33 /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633382028D609AF000F8F13 /* AccessoryCircularView.swift */; };
 		8CD573152936729400C71D33 /* NoTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381C28D60840000F8F13 /* NoTickersView.swift */; };
 		8CD57316293672AB00C71D33 /* AccessoryRectangularRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633380E28D5D02D000F8F13 /* AccessoryRectangularRow.swift */; };
@@ -319,7 +321,7 @@
 		8C69292D28FF1CFE00441BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C69293028FF1CFE00441BE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C69293628FF1EFE00441BE8 /* TickerArray+Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TickerArray+Ticker.swift"; sourceTree = "<group>"; };
-		8C69293B28FF202D00441BE8 /* UserTickerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTickerStore.swift; sourceTree = "<group>"; };
+		8C69293B28FF202D00441BE8 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		8C69295028FF217700441BE8 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		8C69295328FF21A000441BE8 /* TickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRow.swift; sourceTree = "<group>"; };
 		8C69295628FF21BC00441BE8 /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
@@ -366,6 +368,8 @@
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC9D5AC290AF4970038F6ED /* WatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WatchApp.entitlements; sourceTree = "<group>"; };
 		8CD299BC2937AC4800BF279A /* Watch Complications.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Complications.entitlements"; sourceTree = "<group>"; };
+		8CD299BD2937B84400BF279A /* WatchOSConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchOSConnectivityProvider.swift; sourceTree = "<group>"; };
+		8CD299BF2937CB2500BF279A /* iOSConnectivityReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSConnectivityReceiver.swift; sourceTree = "<group>"; };
 		8CD5731B2936739500C71D33 /* AccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCornerView.swift; sourceTree = "<group>"; };
 		8CD9E88928C3A78300812A8C /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -480,6 +484,7 @@
 				2654723328CBCB9F008BF37C /* StringArray+UserTickers.swift */,
 				26C96C6D28CF315C00698935 /* WidgetReloadable.swift */,
 				8C69293628FF1EFE00441BE8 /* TickerArray+Ticker.swift */,
+				8CD299BD2937B84400BF279A /* WatchOSConnectivityProvider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -592,7 +597,8 @@
 		8C69293D28FF204300441BE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8C69293B28FF202D00441BE8 /* UserTickerStore.swift */,
+				8C69293B28FF202D00441BE8 /* ModelData.swift */,
+				8CD299BF2937CB2500BF279A /* iOSConnectivityReceiver.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1161,6 +1167,7 @@
 			files = (
 				8C69295E28FF246F00441BE8 /* AutomaticMethodInvoker.swift in Sources */,
 				8C69294328FF209700441BE8 /* TickerWebService.swift in Sources */,
+				8CD299C02937CB2500BF279A /* iOSConnectivityReceiver.swift in Sources */,
 				8C69295928FF21C700441BE8 /* DetailView.swift in Sources */,
 				8C69294D28FF212400441BE8 /* StringArray+UserTickers.swift in Sources */,
 				8C69294628FF20B600441BE8 /* Dispatching.swift in Sources */,
@@ -1170,7 +1177,7 @@
 				8C69294428FF209A00441BE8 /* APIResponses.swift in Sources */,
 				8C69294E28FF212800441BE8 /* TickerArray+Ticker.swift in Sources */,
 				8C69294A28FF20CD00441BE8 /* OptionalString+FirstCharacter.swift in Sources */,
-				8C69293C28FF202D00441BE8 /* UserTickerStore.swift in Sources */,
+				8C69293C28FF202D00441BE8 /* ModelData.swift in Sources */,
 				8C69293E28FF205700441BE8 /* UserTickersIdService.swift in Sources */,
 				8C69294228FF209100441BE8 /* TickerService.swift in Sources */,
 				8C69295428FF21A000441BE8 /* TickerRow.swift in Sources */,
@@ -1271,6 +1278,7 @@
 			files = (
 				26A99FF728D4B4DC00040DA7 /* CurrencyLogo.swift in Sources */,
 				2654722C28CB836F008BF37C /* AutomaticMethodInvoker.swift in Sources */,
+				8CD299BE2937B84500BF279A /* WatchOSConnectivityProvider.swift in Sources */,
 				8C80556028B10FCA004AA3D7 /* HomeView.swift in Sources */,
 				8C80555728B10FCA004AA3D7 /* TickerWebService.swift in Sources */,
 				2633381128D5D752000F8F13 /* TickerRow.swift in Sources */,

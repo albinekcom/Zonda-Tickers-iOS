@@ -4,10 +4,10 @@ struct DetailView: View {
     
     let tickerId: String
     
-    @EnvironmentObject private var userTickerStore: UserTickerStore
+    @EnvironmentObject private var modelData: ModelData
     
     private var ticker: Ticker? {
-        userTickerStore.tickers.ticker(id: tickerId)
+        modelData.userTickers.ticker(id: tickerId)
     }
     
     var body: some View {
@@ -51,7 +51,7 @@ struct DetailView_Previews: PreviewProvider {
     
     static var previews: some View {
         DetailView(tickerId: "btc-pln")
-            .environmentObject(UserTickerStore())
+            .environmentObject(ModelData())
     }
     
 }

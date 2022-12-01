@@ -2,28 +2,28 @@ import SwiftUI
 
 struct ListView: View {
     
-    @EnvironmentObject private var userTickerStore: UserTickerStore
+    @EnvironmentObject private var modelData: ModelData
     @StateObject private var automaticMethodInvoker = AutomaticMethodInvoker()
     
     var body: some View {
         content
             .navigationTitle("Tickers")
             .onAppear {
-                automaticMethodInvoker.invokeMethod = { await userTickerStore.refresh() }
+                automaticMethodInvoker.invokeMethod = { await modelData.refresh() }
                 automaticMethodInvoker.start()
             }
     }
     
     @ViewBuilder
     private var content: some View {
-        if userTickerStore.tickers.isEmpty {
+        if modelData.userTickers.isEmpty {
             Text("No Tickers")
         } else {
             List {
-                ForEach(userTickerStore.tickers) { ticker in
+                ForEach(modelData.userTickers) { ticker in
                     NavigationLink {
                         DetailView(tickerId: ticker.id)
-                            .environmentObject(userTickerStore)
+                            .environmentObject(modelData)
                     } label: {
                         TickerRow(ticker: ticker)
                     }
@@ -41,7 +41,7 @@ struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ListView()
-                .environmentObject(UserTickerStore())
+                .environmentObject(ModelData())
         }
     }
     

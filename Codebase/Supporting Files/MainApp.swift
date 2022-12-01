@@ -17,3 +17,12 @@ private struct MainApp: App {
     }
     
 }
+
+// TODO:
+// - Get initial data for "iOSConnectivityReceiver" class
+// - Add tickers fetcher in watchOS
+// - Pass data to watchOS Complications
+// - dd tickers fetcher in watchOS Complications
+// - Fix localizaing on Details view on iOS
+// - Fix localizaing on Details view on watchOS
+// - Add unit tests for "WatchOSConnectivityProvider" class
