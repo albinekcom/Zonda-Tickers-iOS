@@ -19,6 +19,7 @@ struct AccessoryCircularView: View {
             } else {
                 VStack {
                     Image(systemName: ticker.changeImageName.rawValue)
+                        .rotationEffect(.radians((ticker?.change ?? 0) > 0 ? 0 : .pi))
                         .foregroundColor(ticker.changeColor)
                     Text(ticker.shortName)
                     Text(ticker.percentageChangeWithoutSignText)

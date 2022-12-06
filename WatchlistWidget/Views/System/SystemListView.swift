@@ -67,7 +67,8 @@ private extension StandardRow.Model {
         percentageChangeWithoutSignText: "-",
         percentageChangeWithPositiveSignText: "-",
         changeImageName: .squareFill,
-        changeColor: .secondary
+        changeColor: .secondary,
+        isGain: false
     )
     
 }

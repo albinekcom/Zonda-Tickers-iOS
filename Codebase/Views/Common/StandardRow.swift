@@ -38,7 +38,7 @@ struct StandardRow: View {
             HStack {
                 Image(systemName: model.changeImageName)
                     .imageScale(.small)
-                    .rotationEffect(.radians(model.changeColor == .red ? .pi : 0))
+                    .rotationEffect(.radians(model.isGain ? 0 : .pi))
                 Text(model.percentageChangeWithoutSignText)
                     .font(.subheadline)
             }
@@ -61,6 +61,7 @@ extension StandardRow {
         let percentageChangeWithPositiveSignText: String
         let changeImageName: Image.SystemName
         let changeColor: Color
+        let isGain: Bool
         
         var name: String {
             firstCurrencyText + " \\ " + secondCurrencyText
@@ -83,7 +84,8 @@ struct StandardRow_Previews: PreviewProvider {
             percentageChangeWithoutSignText: "123.45",
             percentageChangeWithPositiveSignText: "22.33",
             changeImageName: .arrowTriangleUpFill,
-            changeColor: .orange
+            changeColor: .orange,
+            isGain: false
         ))
     }
 

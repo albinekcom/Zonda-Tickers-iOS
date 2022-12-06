@@ -9,7 +9,8 @@ extension Ticker {
             percentageChangeWithoutSignText: percentageChangeWithoutSignText,
             percentageChangeWithPositiveSignText: percentageChangeWithPositiveSignText,
             changeImageName: changeImageName,
-            changeColor: changeColor
+            changeColor: changeColor,
+            isGain: (change ?? 0) > 0
         )
     }
     
