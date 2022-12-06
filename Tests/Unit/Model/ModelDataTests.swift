@@ -7,6 +7,7 @@ final class ModelDataTests: XCTestCase {
     
     private var analyticsServiceLoggerSpy: AnalyticsServiceLoggerSpy!
     private var widgetReloadableSpy: WidgetReloadableSpy!
+    private var connectivityProviderPartialSpy: ConnectivityProviderPartialSpy!
     
     private var localDataServicePartialSpy: LocalDataServicePartialSpy!
     private var tickerFetcherStub: TickerFetcherStub!
@@ -16,8 +17,9 @@ final class ModelDataTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        widgetReloadableSpy = .init()
         analyticsServiceLoggerSpy = .init()
+        widgetReloadableSpy = .init()
+        connectivityProviderPartialSpy = .init()
         
         localDataServicePartialSpy = .init()
         tickerFetcherStub = .init()
@@ -28,7 +30,8 @@ final class ModelDataTests: XCTestCase {
                 localDataService: localDataServicePartialSpy,
                 tickerFetcher: tickerFetcherStub
             ),
-            widgetReloadable: widgetReloadableSpy
+            widgetReloadable: widgetReloadableSpy,
+            connectivityProvider: connectivityProviderPartialSpy
         )
         sut.analyticsService = .init(logger: analyticsServiceLoggerSpy)
     }
@@ -50,8 +53,8 @@ final class ModelDataTests: XCTestCase {
     }
     
     func test_ticker() {
-        XCTAssertEqual(.stub, sut.ticker(for: "btc-pln"))
-        XCTAssertNil(sut.ticker(for: "unknown-ticker"))
+        XCTAssertEqual(.stub, sut.ticker(id: "btc-pln"))
+        XCTAssertNil(sut.ticker(id: "unknown-ticker"))
     }
     
     func test_appendUserTickerId() {
@@ -60,6 +63,7 @@ final class ModelDataTests: XCTestCase {
         XCTAssertEqual([.stub, .init(id: "xxx-zzz")!, .init(id: "appended-newtickerid")!], sut.userTickers)
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickersIdInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        XCTAssertTrue(connectivityProviderPartialSpy.sendInvoked)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickerAppended, [.ticker: "appended-newtickerid"])])
     }
     
@@ -72,6 +76,7 @@ final class ModelDataTests: XCTestCase {
         
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickersIdInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        XCTAssertTrue(connectivityProviderPartialSpy.sendInvoked)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [
             (.userTickerDeleted, [.ticker: "xxx-zzz"]),
             (.userTickerDeleted, [.ticker: "btc-pln"])
@@ -85,6 +90,7 @@ final class ModelDataTests: XCTestCase {
         
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickersIdInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        XCTAssertTrue(connectivityProviderPartialSpy.sendInvoked)
     }
     
     func test_refreshTickers_success() async {
@@ -121,6 +127,18 @@ private final class WidgetReloadableSpy: WidgetReloadable {
     
     func reloadAllTimelines() {
         reloadAllTimelinesInvoked = true
+    }
+    
+}
+
+private final class ConnectivityProviderPartialSpy: ConnectivityProvider {
+    
+    private(set) var sendInvoked = false
+    
+    var delegate: ConnectivityProviderDelegate? = nil
+    
+    func send(userTickerIds: [String]) {
+        sendInvoked = true
     }
     
 }
