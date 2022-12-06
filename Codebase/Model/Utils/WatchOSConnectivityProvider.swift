@@ -12,13 +12,23 @@ protocol ConnectivityProviderDelegate: AnyObject {
     var userTickerIds: [String] { get }
 }
 
+protocol WCSessionProtocol: AnyObject {
+    
+    func activate()
+    func updateApplicationContext(_ applicationContext: [String: Any]) throws
+    
+    var delegate: WCSessionDelegate? { get set }
+}
+
+extension WCSession: WCSessionProtocol {}
+
 final class WatchOSConnectivityProvider: NSObject, ConnectivityProvider {
     
-    private let session: WCSession
+    private let session: WCSessionProtocol
     
     weak var delegate: ConnectivityProviderDelegate?
     
-    init(session: WCSession = .default) {
+    init(session: WCSessionProtocol = WCSession.default) {
         self.session = session
         
         super.init()
