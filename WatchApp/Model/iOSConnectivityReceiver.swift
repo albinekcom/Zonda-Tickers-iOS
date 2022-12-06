@@ -1,12 +1,20 @@
 import WatchConnectivity
-import WatchKit
+
+protocol ConnectivityReceiver: AnyObject {
+    
+    var delegate: ConnectivityReceiverDelegate? { get set }
+}
+
+protocol ConnectivityReceiverDelegate: AnyObject {
+    
+    func userTickerIdsDidUpdate(userTickerIds: [String])
+}
 
 final class iOSConnectivityReceiver: NSObject {
     
-    @Published private(set) var tickers: [Ticker] = []
-    @Published private(set) var userTickersIds: [String] = []
-    
     private let session: WCSession
+    
+    weak var delegate: ConnectivityReceiverDelegate?
     
     init(session: WCSession = .default) {
         self.session = session
@@ -23,21 +31,12 @@ extension iOSConnectivityReceiver: WCSessionDelegate {
     
     func session(
         _ session: WCSession,
-        didReceiveMessage message: [String: Any],
-        replyHandler: @escaping ([String: Any]) -> Void
+        didReceiveApplicationContext applicationContext: [String: Any]
     ) {
-        print("didReceiveMessage invoked")
-        
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            
-            if let tickers = message["tickers"] as? [Ticker] {
-                self.tickers = tickers
-            }
-            
-            if let userTickersIds = message["userTickerIds"] as? [String] {
-                self.userTickersIds = userTickersIds
-            }
+            guard let userTickerIds = applicationContext["userTickerIds"] as? [String] else { return }
+                
+            self?.delegate?.userTickerIdsDidUpdate(userTickerIds: userTickerIds)
         }
     }
     
@@ -45,15 +44,6 @@ extension iOSConnectivityReceiver: WCSessionDelegate {
         _ session: WCSession,
         activationDidCompleteWith activationState: WCSessionActivationState,
         error: Error?
-    ) {
-        print("activationDidCompleteWith invoked")
-    }
-    
-    func session(
-        _ session: WCSession,
-        didReceiveApplicationContext applicationContext: [String: Any]
-    ) {
-        print("didReceiveApplicationContext invoked")
-    }
+    ) {}
     
 }

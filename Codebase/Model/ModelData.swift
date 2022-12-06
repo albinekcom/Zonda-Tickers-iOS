@@ -1,7 +1,7 @@
 import Combine
 import WidgetKit
 
-final class ModelData: ObservableObject {
+final class ModelData: ObservableObject, ConnectivityProviderDelegate {
     
     enum State: Equatable {
         
@@ -29,7 +29,7 @@ final class ModelData: ObservableObject {
     
     var analyticsService: AnalyticsService?
     
-    @Published private var userTickerIds: [String]
+    @Published private(set) var userTickerIds: [String]
     @Published private var tickers: [Ticker]
     
     private let widgetReloadable: WidgetReloadable
@@ -55,22 +55,22 @@ final class ModelData: ObservableObject {
         userTickerIds = userTickersIdService.loaded
         tickers = tickerService.loaded
         
-        $tickers.sink { [weak self] in
+        connectivityProvider.delegate = self
+        
+        $tickers.sink { [weak self] _ in
             self?.widgetReloadable.reloadAllTimelines()
-            self?.connectivityProvider.send(tickers: $0)
         }.store(in: &cancellables)
         
         $userTickerIds.sink { [weak self] in
             self?.userTickersIdService.save(userTickersId: $0)
             
             self?.widgetReloadable.reloadAllTimelines()
+            
             self?.connectivityProvider.send(userTickerIds: $0)
         }.store(in: &cancellables)
     }
     
-    convenience init(
-        serviceFactory: ServiceFactory = .init()
-    ) {
+    convenience init(serviceFactory: ServiceFactory = .init()) {
         let localDataService = serviceFactory.makeLocalDataService()
         
         self.init(

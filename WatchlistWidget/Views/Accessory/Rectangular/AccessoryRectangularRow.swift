@@ -12,6 +12,7 @@ struct AccessoryRectangularRow: View {
                     .foregroundColor(model.valueColor)
                 Text(model.title)
             }
+            .layoutPriority(1)
             
             Spacer()
             

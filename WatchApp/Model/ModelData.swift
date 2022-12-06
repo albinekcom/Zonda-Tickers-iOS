@@ -21,15 +21,7 @@ final class ModelData: ObservableObject {
         userTickerIds = userTickersIdService.loaded
         tickers = tickerService.loaded
         
-        connectivityReceiver
-            .$tickers
-            .weakAssign(to: \.tickers, on: self)
-            .store(in: &cancellables)
-        
-        connectivityReceiver
-            .$userTickersIds
-            .weakAssign(to: \.userTickerIds, on: self)
-            .store(in: &cancellables)
+        connectivityReceiver.delegate = self
         
         $tickers.sink { [weak self] _ in
             self?.refreshWidgets()
@@ -47,8 +39,6 @@ final class ModelData: ObservableObject {
         guard let fetchedTickers = try? await tickerService.fetched else { return }
         
         tickers = fetchedTickers
-        
-        print("Fetched")
     }
     
     private func refreshWidgets() {
@@ -59,15 +49,10 @@ final class ModelData: ObservableObject {
     
 }
 
-private extension Publisher where Failure == Never {
+extension ModelData: ConnectivityReceiverDelegate {
     
-    func weakAssign<T: AnyObject>(
-        to keyPath: ReferenceWritableKeyPath<T, Output>,
-        on object: T
-    ) -> AnyCancellable {
-        sink { [weak object] in
-            object?[keyPath: keyPath] = $0
-        }
+    func userTickerIdsDidUpdate(userTickerIds: [String]) {
+        self.userTickerIds = userTickerIds
     }
     
 }

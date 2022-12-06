@@ -1,54 +1,48 @@
 import WatchConnectivity
 
-protocol ConnectivityProvider {
+protocol ConnectivityProvider: AnyObject {
     
-    func send(tickers: [Ticker])
     func send(userTickerIds: [String])
+    
+    var delegate: ConnectivityProviderDelegate? { get set }
+}
+
+protocol ConnectivityProviderDelegate: AnyObject {
+    
+    var userTickerIds: [String] { get }
 }
 
 final class WatchOSConnectivityProvider: NSObject, ConnectivityProvider {
     
     private let session: WCSession
     
+    weak var delegate: ConnectivityProviderDelegate?
+    
     init(session: WCSession = .default) {
         self.session = session
         
         super.init()
         
-        if WCSession.isSupported() {
-            session.delegate = self
-            session.activate()
-        }
-    }
-    
-    func send(tickers: [Ticker]) {
-        send(message: ["tickers": tickers])
+        session.delegate = self
+        session.activate()
     }
     
     func send(userTickerIds: [String]) {
-        send(message: ["userTickerIds": userTickerIds])
-    }
-    
-    private func send(message: [String: Any]) {
-        guard session.isReachable else { return }
-        
-        try? session.updateApplicationContext(message)
-        
-        session.sendMessage(message, replyHandler: { _ in } )
+        try? session.updateApplicationContext(["userTickerIds": userTickerIds])
     }
     
 }
 
 extension WatchOSConnectivityProvider: WCSessionDelegate {
     
-    func sessionDidBecomeInactive(_ session: WCSession) {}
-    
-    func sessionDidDeactivate(_ session: WCSession) {}
-    
     func session(
         _ session: WCSession,
         activationDidCompleteWith activationState: WCSessionActivationState,
         error: Error?
     ) {}
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    
+    func sessionDidDeactivate(_ session: WCSession) {}
     
 }
