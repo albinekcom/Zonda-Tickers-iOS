@@ -1,7 +1,7 @@
 import Combine
 import WidgetKit
 
-final class ModelData: ObservableObject, ConnectivityProviderDelegate {
+final class ModelData: ObservableObject, WatchConnectivityProviderDelegate {
     
     enum State: Equatable {
         
@@ -45,7 +45,7 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
         userTickersIdService: UserTickersIdService,
         tickerService: TickerService,
         widgetReloadable: WidgetReloadable = WidgetCenter.shared,
-        connectivityProvider: ConnectivityProvider = WatchOSConnectivityProvider()
+        connectivityProvider: ConnectivityProvider = WatchConnectivityProvider()
     ) {
         self.userTickersIdService = userTickersIdService
         self.tickerService = tickerService

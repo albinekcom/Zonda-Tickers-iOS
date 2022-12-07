@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SystemListView: View {
     
-    private let rowsModel: [StandardRow.Model]
+    private let rowsModel: [StandardRowView.Model]
     private let maximumCount: Int
     private let isSystemSmall: Bool
     
@@ -34,7 +34,7 @@ struct SystemListView: View {
 
 private extension Optional where Wrapped == Array<Ticker> {
     
-    func rowModels(maximumCount: Int) -> [StandardRow.Model] {
+    func rowModels(maximumCount: Int) -> [StandardRowView.Model] {
         guard let self = self else { return (1...maximumCount).map { _ in .placeholder } }
 
         return self
@@ -44,20 +44,20 @@ private extension Optional where Wrapped == Array<Ticker> {
     
 }
 
-private extension StandardRow.Model {
+private extension StandardRowView.Model {
     
     @ViewBuilder
     func view(isSystemSmall: Bool) -> some View {
         if isSystemSmall {
             SystemSmallRowView(model: self)
         } else {
-            StandardRow(model: self)
+            StandardRowView(model: self)
         }
     }
     
 }
 
-private extension StandardRow.Model {
+private extension StandardRowView.Model {
     
     static let placeholder: Self = .init(
         firstCurrencyId: nil,

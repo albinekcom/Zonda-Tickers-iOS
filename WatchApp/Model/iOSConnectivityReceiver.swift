@@ -34,7 +34,7 @@ extension iOSConnectivityReceiver: WCSessionDelegate {
         didReceiveApplicationContext applicationContext: [String: Any]
     ) {
         DispatchQueue.main.async { [weak self] in
-            guard let userTickerIds = applicationContext["userTickerIds"] as? [String] else { return }
+            guard let userTickerIds = applicationContext[WatchConnectivityKey.Parameter.userTickerIds] as? [String] else { return }
                 
             self?.delegate?.userTickerIdsDidUpdate(userTickerIds: userTickerIds)
         }

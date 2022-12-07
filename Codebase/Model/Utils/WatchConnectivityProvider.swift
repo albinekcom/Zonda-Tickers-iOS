@@ -4,10 +4,10 @@ protocol ConnectivityProvider: AnyObject {
     
     func send(userTickerIds: [String])
     
-    var delegate: ConnectivityProviderDelegate? { get set }
+    var delegate: WatchConnectivityProviderDelegate? { get set }
 }
 
-protocol ConnectivityProviderDelegate: AnyObject {
+protocol WatchConnectivityProviderDelegate: AnyObject {
     
     var userTickerIds: [String] { get }
 }
@@ -22,11 +22,11 @@ protocol WCSessionProtocol: AnyObject {
 
 extension WCSession: WCSessionProtocol {}
 
-final class WatchOSConnectivityProvider: NSObject, ConnectivityProvider {
+final class WatchConnectivityProvider: NSObject, ConnectivityProvider {
     
     private let session: WCSessionProtocol
     
-    weak var delegate: ConnectivityProviderDelegate?
+    weak var delegate: WatchConnectivityProviderDelegate?
     
     init(session: WCSessionProtocol = WCSession.default) {
         self.session = session
@@ -38,12 +38,12 @@ final class WatchOSConnectivityProvider: NSObject, ConnectivityProvider {
     }
     
     func send(userTickerIds: [String]) {
-        try? session.updateApplicationContext(["userTickerIds": userTickerIds])
+        try? session.updateApplicationContext([WatchConnectivityKey.Parameter.userTickerIds: userTickerIds])
     }
     
 }
 
-extension WatchOSConnectivityProvider: WCSessionDelegate {
+extension WatchConnectivityProvider: WCSessionDelegate {
     
     func session(
         _ session: WCSession,
