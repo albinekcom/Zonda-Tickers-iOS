@@ -23,7 +23,6 @@ struct ListView: View {
                 ForEach(modelData.userTickers) { ticker in
                     NavigationLink {
                         DetailView(tickerId: ticker.id)
-                            .environmentObject(modelData)
                     } label: {
                         TickerRowView(ticker: ticker)
                     }
