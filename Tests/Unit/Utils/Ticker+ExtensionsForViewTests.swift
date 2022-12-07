@@ -117,7 +117,8 @@ final class Ticker_ExtensionsForViewTests: XCTestCase {
             percentageChangeWithoutSignText: "100.00%",
             percentageChangeWithPositiveSignText: "+100.00%",
             changeImageName: .arrowTriangleUpFill,
-            changeColor: .green
+            changeColor: .green,
+            isGain: true
         ), Ticker.stub(rate: 2, average: 1).standardRowModel)
     }
     
