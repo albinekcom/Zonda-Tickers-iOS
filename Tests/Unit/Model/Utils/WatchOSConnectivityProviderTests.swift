@@ -5,7 +5,7 @@ import XCTest
 final class WatchOSConnectivityProviderTests: XCTestCase {
     
     private var wcSessionPartialSpy: WCSessionPartialSpy!
-    private var sut: WatchOSConnectivityProvider!
+    private var sut: WatchConnectivityProvider!
     
     // MARK: - Setting Up
     

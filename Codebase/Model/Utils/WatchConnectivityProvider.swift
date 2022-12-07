@@ -4,10 +4,10 @@ protocol ConnectivityProvider: AnyObject {
     
     func send(userTickerIds: [String])
     
-    var delegate: WatchConnectivityProviderDelegate? { get set }
+    var delegate: ConnectivityProviderDelegate? { get set }
 }
 
-protocol WatchConnectivityProviderDelegate: AnyObject {
+protocol ConnectivityProviderDelegate: AnyObject {
     
     var userTickerIds: [String] { get }
 }
@@ -26,7 +26,7 @@ final class WatchConnectivityProvider: NSObject, ConnectivityProvider {
     
     private let session: WCSessionProtocol
     
-    weak var delegate: WatchConnectivityProviderDelegate?
+    weak var delegate: ConnectivityProviderDelegate?
     
     init(session: WCSessionProtocol = WCSession.default) {
         self.session = session

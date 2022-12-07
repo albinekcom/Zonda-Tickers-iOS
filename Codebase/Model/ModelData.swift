@@ -1,7 +1,7 @@
 import Combine
 import WidgetKit
 
-final class ModelData: ObservableObject, WatchConnectivityProviderDelegate {
+final class ModelData: ObservableObject, ConnectivityProviderDelegate {
     
     enum State: Equatable {
         
