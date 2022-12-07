@@ -15,7 +15,7 @@ struct DetailView: View {
         Group {
             if let ticker = ticker {
                 List(ticker.detailRowModels) {
-                    DetailRow(model: $0)
+                    DetailRowView(model: $0)
                 }
                 .animation(.default, value: ticker)
             } else {
@@ -30,7 +30,7 @@ struct DetailView: View {
 
 private extension Ticker {
     
-    var detailRowModels: [DetailRow.Model] {
+    var detailRowModels: [DetailRowView.Model] {
         [
             .init(title: "Name", value: firstCurrencyName),
             .init(title: "Rate", value: rateText),

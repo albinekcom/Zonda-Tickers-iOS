@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DetailRow: View {
+struct DetailRowView: View {
     
     let model: Model
     
@@ -21,7 +21,7 @@ struct DetailRow: View {
     
 }
 
-extension DetailRow {
+extension DetailRowView {
     
     struct Model: Identifiable {
         
@@ -50,10 +50,9 @@ extension DetailRow {
 struct DetailRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        DetailRow(model: .init(
+        DetailRowView(model: .init(
             title: "Title",
-            value: "Value",
-            valueColor: .red
+            value: "1234.567"
         ))
     }
     

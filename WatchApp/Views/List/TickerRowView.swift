@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TickerRow: View {
+struct TickerRowView: View {
     
     let ticker: Ticker
     
@@ -40,7 +40,7 @@ struct TickerRow: View {
 struct TickerRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        TickerRow(ticker: .init(
+        TickerRowView(ticker: .init(
             firstCurrency: .init(id: "btc"),
             secondCurrency: .init(id: "pln"),
             rate: 123.45,

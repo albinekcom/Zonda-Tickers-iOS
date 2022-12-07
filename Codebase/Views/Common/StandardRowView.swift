@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct StandardRow: View {
+struct StandardRowView: View {
     
     let model: Model
     
@@ -17,7 +17,7 @@ struct StandardRow: View {
     
     private var titleLabel: some View {
         HStack {
-            CurrencyLogo(currencyId: model.firstCurrencyId)
+            CurrencyLogoView(currencyId: model.firstCurrencyId)
                 .frame(maxWidth: 32, maxHeight: 32)
             
             HStack(alignment: .top, spacing: 4) {
@@ -49,7 +49,7 @@ struct StandardRow: View {
     
 }
 
-extension StandardRow {
+extension StandardRowView {
     
     struct Model: Equatable {
         
@@ -76,7 +76,7 @@ extension StandardRow {
 struct StandardRow_Previews: PreviewProvider {
 
     static var previews: some View {
-        StandardRow(model: .init(
+        StandardRowView(model: .init(
             firstCurrencyId: "btc",
             firstCurrencyText: "BTC",
             secondCurrencyText: "PLN",

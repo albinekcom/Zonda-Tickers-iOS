@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct TickerRow: View {
+struct TickerRowView: View {
     
     let ticker: Ticker
     
     var body: some View {
-        StandardRow(model: ticker.standardRowModel)
+        StandardRowView(model: ticker.standardRowModel)
     }
     
 }

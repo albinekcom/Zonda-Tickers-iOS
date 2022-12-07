@@ -1,6 +1,6 @@
 extension Ticker {
     
-    var standardRowModel: StandardRow.Model {
+    var standardRowModel: StandardRowView.Model {
         .init(
             firstCurrencyId: firstCurrency.id,
             firstCurrencyText: firstCurrencyText,

@@ -49,7 +49,7 @@ private extension StandardRow.Model {
     @ViewBuilder
     func view(isSystemSmall: Bool) -> some View {
         if isSystemSmall {
-            SystemSmallRow(model: self)
+            SystemSmallRowView(model: self)
         } else {
             StandardRow(model: self)
         }

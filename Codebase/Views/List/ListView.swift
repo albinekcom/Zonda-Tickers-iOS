@@ -68,7 +68,7 @@ struct ListView: View {
                     NavigationLink {
                         DetailView(tickerId: ticker.id)
                     } label: {
-                        TickerRow(ticker: ticker)
+                        TickerRowView(ticker: ticker)
                             .padding(.vertical, 8)
                     }
                 }

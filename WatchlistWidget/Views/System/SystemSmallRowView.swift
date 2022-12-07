@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct SystemSmallRow: View {
+struct SystemSmallRowView: View {
     
-    let model: StandardRow.Model
+    let model: StandardRowView.Model
     
     var body: some View {
         HStack(spacing: 0) {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CurrencyLogo: View {
+struct CurrencyLogoView: View {
     
     let currencyId: String?
     
@@ -30,8 +30,8 @@ struct CurrencyLogo: View {
 struct CurrencyLogo_Previews: PreviewProvider {
 
     static var previews: some View {
-        CurrencyLogo(currencyId: "btc")
-        CurrencyLogo(currencyId: "unknown")
+        CurrencyLogoView(currencyId: "btc")
+        CurrencyLogoView(currencyId: "unknown")
     }
 
 }

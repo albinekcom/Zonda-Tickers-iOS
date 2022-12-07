@@ -25,7 +25,7 @@ struct ListView: View {
                         DetailView(tickerId: ticker.id)
                             .environmentObject(modelData)
                     } label: {
-                        TickerRow(ticker: ticker)
+                        TickerRowView(ticker: ticker)
                     }
                 }
             }

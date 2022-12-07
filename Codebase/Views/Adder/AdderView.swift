@@ -49,7 +49,7 @@ struct AdderView: View {
                     modelData.appendUserTickerId(ticker.id)
                 }
             }) {
-                TickerRow(ticker: ticker)
+                TickerRowView(ticker: ticker)
                     .modifier(PlusIconAppender())
                     .padding(.vertical, 8)
             }
