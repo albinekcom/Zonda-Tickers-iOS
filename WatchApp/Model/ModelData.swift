@@ -41,6 +41,10 @@ final class ModelData: ObservableObject {
         tickers = fetchedTickers
     }
     
+    func reloadLocalTickers() {
+        tickers = tickerService.loaded
+    }
+    
     private func refreshWidgets() {
         if #available(watchOS 9.0, *) {
             WidgetCenter.shared.reloadAllTimelines()

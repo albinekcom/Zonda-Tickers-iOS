@@ -4,6 +4,7 @@ struct ListView: View {
     
     @EnvironmentObject private var modelData: ModelData
     @EnvironmentObject private var appEnvironment: AppEnvironment
+    @Environment(\.scenePhase) private var scenePhase
     
     @State private var isShowingAdder = false
     @StateObject private var automaticMethodInvoker = AutomaticMethodInvoker()
@@ -47,6 +48,11 @@ struct ListView: View {
                 
                 automaticMethodInvoker.invokeMethod = { await modelData.refreshTickers() }
                 automaticMethodInvoker.start()
+            }
+            .onChange(of: scenePhase) {
+                guard $0 == .active else { return }
+                
+                modelData.reloadLocalTickers()
             }
     }
     

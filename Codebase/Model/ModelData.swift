@@ -141,4 +141,8 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
         }
     }
     
+    func reloadLocalTickers() {
+        tickers = tickerService.loaded
+    }
+    
 }
