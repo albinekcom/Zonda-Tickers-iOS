@@ -9,7 +9,12 @@ struct AccessoryRectangularListView: View {
         tickers: [Ticker]?,
         maximumCount: Int
     ) {
-        models = (0...maximumCount).map { tickers?[$0] }
+        if let tickers = tickers {
+            models = tickers.count < maximumCount ? tickers : Array(tickers[..<maximumCount])
+        } else {
+            models = (0..<maximumCount).map { _ in nil }
+        }
+        
         self.maximumCount = maximumCount
     }
     

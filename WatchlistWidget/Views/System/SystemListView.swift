@@ -11,7 +11,12 @@ struct SystemListView: View {
         maximumCount: Int,
         isSystemSmall: Bool
     ) {
-        models = (0...maximumCount).map { tickers?[$0] }
+        if let tickers = tickers {
+            models = tickers.count < maximumCount ? tickers : Array(tickers[..<maximumCount])
+        } else {
+            models = (0..<maximumCount).map { _ in nil }
+        }
+        
         self.maximumCount = maximumCount
         self.isSystemSmall = isSystemSmall
     }
