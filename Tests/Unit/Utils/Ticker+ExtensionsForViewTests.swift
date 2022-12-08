@@ -16,8 +16,12 @@ final class Ticker_ExtensionsForViewTests: XCTestCase {
         XCTAssertEqual("PLN", Ticker.stub().secondCurrencyText)
     }
     
-    func test_name() {
-        XCTAssertEqual("BTC \\ PLN", Ticker.stub().name)
+    func test_title() {
+        XCTAssertEqual("BTC \\ PLN", Ticker.stub().title)
+    }
+    
+    func test_shortTitle() {
+        XCTAssertEqual("BTC\\PLN", Ticker.stub().shortTitle)
     }
     
     func test_rateText() {
@@ -98,58 +102,6 @@ final class Ticker_ExtensionsForViewTests: XCTestCase {
     func test_volumeValueText() {
         XCTAssertEqual("-", Ticker.stub().volumeValueText)
         XCTAssertEqual("25.00", Ticker.stub(rate: 5, volume: 5).volumeValueText)
-    }
-    
-    func test_name_for_optional_ticker() {
-        let optionalNilTicker: Ticker? = nil
-        XCTAssertEqual("- \\ -", optionalNilTicker.name)
-        
-        let optionalTicker: Ticker? = .stub(rate: 1, average: 2)
-        XCTAssertEqual("BTC \\ PLN", optionalTicker.name)
-    }
-    
-    func test_standardRowModel() {
-        XCTAssertEqual(.init(
-            firstCurrencyId: "btc",
-            firstCurrencyText: "BTC",
-            secondCurrencyText: "PLN",
-            rateText: "2.00",
-            percentageChangeWithoutSignText: "100.00%",
-            percentageChangeWithPositiveSignText: "+100.00%",
-            changeImageName: .arrowTriangleUpFill,
-            changeColor: .green,
-            isGain: true
-        ), Ticker.stub(rate: 2, average: 1).standardRowModel)
-    }
-    
-}
-
-private extension Ticker {
-    
-    static func stub(
-        firstCurrency: Currency = .init(id: "btc"),
-        secondCurrency: Currency = .init(id: "pln"),
-        highestBid: Double? = nil,
-        lowestAsk: Double? = nil,
-        rate: Double? = nil,
-        previousRate: Double? = nil,
-        highestRate: Double? = nil,
-        lowestRate: Double? = nil,
-        volume: Double? = nil,
-        average: Double? = nil
-    ) -> Ticker {
-        .init(
-            firstCurrency: firstCurrency,
-            secondCurrency: secondCurrency,
-            highestBid: highestBid,
-            lowestAsk: lowestAsk,
-            rate: rate,
-            previousRate: previousRate,
-            highestRate: highestRate,
-            lowestRate: lowestRate,
-            volume: volume,
-            average: average
-        )
     }
     
 }

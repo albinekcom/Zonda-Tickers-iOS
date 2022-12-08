@@ -18,13 +18,14 @@ struct ListView: View {
     private var content: some View {
         if modelData.userTickers.isEmpty {
             Text("No Tickers")
+            NoTickersView()
         } else {
             List {
                 ForEach(modelData.userTickers) { ticker in
                     NavigationLink {
                         DetailView(tickerId: ticker.id)
                     } label: {
-                        TickerRowView(ticker: ticker)
+                        ListRowView(ticker: ticker)
                     }
                 }
             }

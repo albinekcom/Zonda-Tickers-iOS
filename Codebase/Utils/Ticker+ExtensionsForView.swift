@@ -14,8 +14,12 @@ extension Ticker {
         secondCurrency.id.uppercased()
     }
     
-    var name: String {
+    var title: String {
         firstCurrencyText + " \\ " + secondCurrencyText
+    }
+    
+    var shortTitle: String {
+        firstCurrencyText + "\\" + secondCurrencyText
     }
     
     var rateText: String {
@@ -78,14 +82,6 @@ extension Ticker {
     
     private func defaultPretty(value: Double?) -> String {
         value?.pretty(precision: secondCurrency.precision) ?? "-"
-    }
-    
-}
-
-extension Optional where Wrapped == Ticker {
-    
-    var name: String {
-        self?.name ?? "- \\ -"
     }
     
 }

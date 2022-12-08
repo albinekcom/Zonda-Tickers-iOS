@@ -14,7 +14,7 @@ final class FileManagerDataServiceTests: XCTestCase {
     }
     
     func test_saveAndLoad_tickers() {
-        let expectedTickers: [Ticker] = [.stub, .stub2]
+        let expectedTickers: [Ticker] = [.stub1, .stub2]
         
         fileManagerDataService.save(tickers: expectedTickers)
         
@@ -35,7 +35,7 @@ final class FileManagerDataServiceTests: XCTestCase {
     }
     
     func test_saveAndLoad_tickers_for_nil_fileURL() {
-        let expectedTickers: [Ticker] = [.stub, .stub2]
+        let expectedTickers: [Ticker] = [.stub1, .stub2]
         
         let fileManagerDataService = FileManagerDataService(
             sharedContainer: SharedContainerStub(),

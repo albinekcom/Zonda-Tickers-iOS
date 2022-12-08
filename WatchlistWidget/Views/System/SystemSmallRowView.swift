@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct SystemSmallRowView: View {
+struct SystemSmallTickerRowView: View {
     
-    let model: StandardRowView.Model
+    let ticker: Ticker?
     
     var body: some View {
         HStack(spacing: 0) {
@@ -14,9 +14,9 @@ struct SystemSmallRowView: View {
     
     private var titleLabel: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(model.firstCurrencyText)
+            Text(ticker.firstCurrencyText)
                 .font(.callout)
-            Text("\\ \(model.secondCurrencyText)")
+            Text("\\ \(ticker.secondCurrencyText)")
                 .font(.caption2)
                 .foregroundColor(.secondary)
         }
@@ -25,11 +25,11 @@ struct SystemSmallRowView: View {
     
     private var values: some View {
         VStack(alignment: .trailing, spacing: 4) {
-            Text(model.rateText)
+            Text(ticker.rateText)
                 .font(.callout)
-            Text(model.percentageChangeWithPositiveSignText)
+            Text(ticker.percentageChangeWithPositiveSignText)
                 .font(.caption)
-                .foregroundColor(model.changeColor)
+                .foregroundColor(ticker.changeColor)
         }
         .lineLimit(1)
     }

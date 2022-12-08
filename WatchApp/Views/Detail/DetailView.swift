@@ -2,9 +2,9 @@ import SwiftUI
 
 struct DetailView: View {
     
-    let tickerId: String
-    
     @EnvironmentObject private var modelData: ModelData
+    
+    let tickerId: String
     
     private var ticker: Ticker? {
         modelData.userTickers.ticker(id: tickerId)
@@ -13,7 +13,7 @@ struct DetailView: View {
     var body: some View {
         Group {
             if let ticker = ticker {
-                List(ticker.detailRowModels) {
+                List(ticker.detailRowViewModels) {
                     DetailRowView(model: $0)
                 }
                 .animation(.default, value: ticker)
@@ -21,27 +21,8 @@ struct DetailView: View {
                 Text("This Ticker is no longer supported")
             }
         }
-        .navigationTitle(ticker.name)
+        .navigationTitle(ticker.title)
     }
-    
-}
-
-private extension Ticker {
-    
-    var detailRowModels: [DetailRowView.Model] { [
-        .init(title: "Name", value: firstCurrencyName),
-        .init(title: "Rate", value: rateText),
-        .init(title: "Change", value: changeText, valueColor: changeColor),
-        .init(title: "Change (%)", value: percentageChangeWithPositiveSignText, valueColor: changeColor),
-        .init(title: "Previous rate", value: previousRateText),
-        .init(title: "Highest rate", value: highestRateText),
-        .init(title: "Lowest rate", value: lowestRateText),
-        .init(title: "Bid", value: highestBidText),
-        .init(title: "Ask", value: lowestAskText),
-        .init(title: "Average", value: averageText),
-        .init(title: "Volume", value: volumeText),
-        .init(title: "Volume value", value: volumeValueText)
-    ] }
     
 }
 

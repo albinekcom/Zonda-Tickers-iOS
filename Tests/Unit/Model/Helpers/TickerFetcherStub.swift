@@ -18,7 +18,7 @@ final class TickerFetcherStub: TickerFetcher {
     func fetch() async throws -> [Ticker] {
         switch variant {
         case .standard:
-            return [.stub, .stub2]
+            return [.stub1, .stub2]
             
         case .error:
             throw CustomError.fetch

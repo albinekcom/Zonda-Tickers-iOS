@@ -10,7 +10,7 @@ struct AccessoryInlineView: View {
         } else {
             HStack {
                 Image(systemName: ticker.changeImageName)
-                    .rotationEffect(.radians((ticker?.change ?? 0) > 0 ? 0 : .pi))
+                    .rotationEffect(.radians(ticker.change > 0 ? 0 : .pi))
                     .foregroundColor(ticker.changeColor)
                 ticker.intlineText
             }
@@ -26,17 +26,9 @@ struct AccessoryInlineView: View {
 private extension Optional where Wrapped == Ticker {
     
     var intlineText: Text {
-        guard let self = self else { return Text("-\\- -") }
+        guard let self = self else { return Text("-\\- " + "-") }
         
-        return Text(self.firstCurrencyText + "\\" + self.secondCurrencyText + " ") + Text(self.percentageChangeWithPositiveSignText).foregroundColor(self.changeColor)
-    }
-    
-    var changeImageName: Image.SystemName {
-        self?.changeImageName ?? .squareFill
-    }
-    
-    var changeColor: Color {
-        self?.changeColor ?? .primary
+        return Text(self.shortTitle + " ") + Text(self.percentageChangeWithPositiveSignText).foregroundColor(self.changeColor)
     }
     
 }

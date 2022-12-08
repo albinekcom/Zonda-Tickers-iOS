@@ -2,7 +2,7 @@
 
 extension Ticker {
     
-    static var stub: Self {
+    static var stub1: Self {
         .init(
             firstCurrency: .init(id: "btc", name: "Bitcoin", precision: 8),
             secondCurrency: .init(id: "pln", name: "Złoty", precision: 2),
@@ -44,6 +44,32 @@ extension Ticker {
             lowestRate: 6,
             volume: 7,
             average: 8
+        )
+    }
+    
+    static func stub(
+        firstCurrency: Currency = .init(id: "btc"),
+        secondCurrency: Currency = .init(id: "pln"),
+        highestBid: Double? = nil,
+        lowestAsk: Double? = nil,
+        rate: Double? = nil,
+        previousRate: Double? = nil,
+        highestRate: Double? = nil,
+        lowestRate: Double? = nil,
+        volume: Double? = nil,
+        average: Double? = nil
+    ) -> Ticker {
+        .init(
+            firstCurrency: firstCurrency,
+            secondCurrency: secondCurrency,
+            highestBid: highestBid,
+            lowestAsk: lowestAsk,
+            rate: rate,
+            previousRate: previousRate,
+            highestRate: highestRate,
+            lowestRate: lowestRate,
+            volume: volume,
+            average: average
         )
     }
     

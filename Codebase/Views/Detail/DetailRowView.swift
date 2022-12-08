@@ -9,33 +9,33 @@ struct DetailRowView: View {
             Text(LocalizedStringKey(model.title))
                 .font(.callout)
             Spacer()
-            Text(model.value)
+            Text(model.valueText)
                 .font(.body)
                 .foregroundColor(model.valueColor)
         }
         .padding(.vertical)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(LocalizedStringKey(model.title)))
-        .accessibilityValue(Text(model.value))
+        .accessibilityValue(Text(model.valueText))
     }
     
 }
 
 extension DetailRowView {
     
-    struct Model: Identifiable {
+    struct Model: Identifiable, Equatable {
         
         let title: String
-        let value: String
+        let valueText: String
         let valueColor: Color
         
         init(
             title: String,
-            value: String,
+            valueText: String,
             valueColor: Color = .secondary
         ) {
             self.title = title
-            self.value = value
+            self.valueText = valueText
             self.valueColor = valueColor
         }
         
@@ -52,7 +52,7 @@ struct DetailRow_Previews: PreviewProvider {
     static var previews: some View {
         DetailRowView(model: .init(
             title: "Title",
-            value: "1234.567"
+            valueText: "1234.567"
         ))
     }
     

@@ -10,7 +10,7 @@ final class LocalDataServicePartialSpy: LocalDataService {
     }
     
     func loadTickers() -> [Ticker] {
-        [.stub, .stub3]
+        [.stub1, .stub3]
     }
     
     func save(userTickersId: [String]) {

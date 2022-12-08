@@ -25,14 +25,8 @@ struct AccessoryCornerView: View {
 
 private extension Optional where Wrapped == Ticker {
     
-    var firstCurrencyText: String {
-        guard let self = self else { return "-" }
-        
-        return self.firstCurrencyText
-    }
-    
     var intlineText: Text {
-        guard let self = self else { return Text("\\" + "- -") }
+        guard let self = self else { return Text("\\- " + "-") }
         
         return Text("\\" + self.secondCurrencyText + " ") + Text(self.percentageChangeWithPositiveSignText).foregroundColor(self.changeColor)
     }

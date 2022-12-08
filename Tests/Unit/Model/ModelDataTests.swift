@@ -49,18 +49,18 @@ final class ModelDataTests: XCTestCase {
     }
     
     func test_userTickers() {
-        XCTAssertEqual([.stub, .init(id: "xxx-zzz")!], sut.userTickers)
+        XCTAssertEqual([.stub1, .init(id: "xxx-zzz")!], sut.userTickers)
     }
     
     func test_ticker() {
-        XCTAssertEqual(.stub, sut.ticker(id: "btc-pln"))
+        XCTAssertEqual(.stub1, sut.ticker(id: "btc-pln"))
         XCTAssertNil(sut.ticker(id: "unknown-ticker"))
     }
     
     func test_appendUserTickerId() {
         sut.appendUserTickerId("appended-newtickerid")
         
-        XCTAssertEqual([.stub, .init(id: "xxx-zzz")!, .init(id: "appended-newtickerid")!], sut.userTickers)
+        XCTAssertEqual([.stub1, .init(id: "xxx-zzz")!, .init(id: "appended-newtickerid")!], sut.userTickers)
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickersIdInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
         XCTAssertTrue(connectivityProviderPartialSpy.sendInvoked)
@@ -69,7 +69,7 @@ final class ModelDataTests: XCTestCase {
     
     func test_removeUserTicker() {
         sut.removeUserTicker(at: .init(integer: 1))
-        XCTAssertEqual([.stub], sut.userTickers)
+        XCTAssertEqual([.stub1], sut.userTickers)
         
         sut.removeUserTicker(at: .init(integer: 0))
         XCTAssertEqual([], sut.userTickers)
@@ -86,7 +86,7 @@ final class ModelDataTests: XCTestCase {
     func test_moveUserTicker() {
         sut.moveUserTicker(from: .init(integer: 1), to: 0)
         
-        XCTAssertEqual([.init(id: "xxx-zzz")!, .stub], sut.userTickers)
+        XCTAssertEqual([.init(id: "xxx-zzz")!, .stub1], sut.userTickers)
         
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickersIdInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
@@ -97,7 +97,7 @@ final class ModelDataTests: XCTestCase {
         await sut.refreshTickers()
 
         XCTAssertEqual([.stub2], sut.availableTickers())
-        XCTAssertEqual([.stub, .init(id: "xxx-zzz")!], sut.userTickers)
+        XCTAssertEqual([.stub1, .init(id: "xxx-zzz")!], sut.userTickers)
         XCTAssertEqual(.refreshingSuccess, sut.state)
         XCTAssertTrue(localDataServicePartialSpy.saveTickersInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
@@ -110,7 +110,7 @@ final class ModelDataTests: XCTestCase {
         await sut.refreshTickers()
         
         XCTAssertEqual([.stub3], sut.availableTickers())
-        XCTAssertEqual([.stub, .init(id: "xxx-zzz")!], sut.userTickers)
+        XCTAssertEqual([.stub1, .init(id: "xxx-zzz")!], sut.userTickers)
         XCTAssertEqual(.refreshingFailure(error: TickerFetcherStub.CustomError.fetch), sut.state)
         XCTAssertFalse(localDataServicePartialSpy.saveTickersInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)

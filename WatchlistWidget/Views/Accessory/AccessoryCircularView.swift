@@ -18,10 +18,10 @@ struct AccessoryCircularView: View {
                     .multilineTextAlignment(.center)
             } else {
                 VStack {
-                    Image(systemName: ticker.changeImageName.rawValue)
-                        .rotationEffect(.radians((ticker?.change ?? 0) > 0 ? 0 : .pi))
+                    Image(systemName: ticker.changeImageName)
+                        .rotationEffect(.radians(ticker.change > 0 ? 0 : .pi))
                         .foregroundColor(ticker.changeColor)
-                    Text(ticker.shortName)
+                    Text(ticker.shortTitle)
                     Text(ticker.percentageChangeWithoutSignText)
                         .foregroundColor(ticker.changeColor)
                 }
@@ -32,26 +32,6 @@ struct AccessoryCircularView: View {
     
     private var ticker: Ticker? {
         tickers?.first
-    }
-    
-}
-
-private extension Optional where Wrapped == Ticker {
-    
-    var changeImageName: Image.SystemName {
-        self?.changeImageName ?? .squareFill
-    }
-    
-    var changeColor: Color {
-        self?.changeColor ?? .primary
-    }
-    
-    var shortName: String {
-        (self?.firstCurrencyText ?? "-") + "\\" + (self?.secondCurrencyText ?? "-")
-    }
-    
-    var percentageChangeWithoutSignText: String {
-        self?.percentageChangeWithoutSignText ?? "-"
     }
     
 }
