@@ -38,8 +38,7 @@ final class ModelData: ObservableObject {
     func refresh() async {
         guard let fetchedTickers = try? await tickerService.fetched else { return }
         
-//        tickers = fetchedTickers
-        tickers = []
+        tickers = fetchedTickers
     }
     
     func reloadTickers() {
@@ -58,6 +57,16 @@ extension ModelData: ConnectivityReceiverDelegate {
     
     func userTickerIdsDidUpdate(userTickerIds: [String]) {
         self.userTickerIds = userTickerIds
+    }
+    
+    func userDidUpdate(tickers: [Ticker]?, userTickerIds: [String]?) {
+        if let tickers = tickers {
+            self.tickers = tickers
+        }
+        
+        if let userTickerIds = userTickerIds {
+            self.userTickerIds = userTickerIds
+        }
     }
     
 }

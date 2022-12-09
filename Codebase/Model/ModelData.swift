@@ -62,11 +62,16 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
         }.store(in: &cancellables)
         
         $userTickerIds.sink { [weak self] in
-            self?.userTickerIdService.save(userTickerIds: $0)
+            guard let self = self else { return }
             
-            self?.connectivityProvider.updateUserTickerIds($0)
+            self.userTickerIdService.save(userTickerIds: $0)
             
-            self?.widgetReloadable.reloadAllTimelines()
+            self.connectivityProvider.update(
+                tickers: self.tickers,
+                userTickerIds: $0
+            )
+            
+            self.widgetReloadable.reloadAllTimelines()
         }.store(in: &cancellables)
     }
     

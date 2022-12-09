@@ -63,7 +63,7 @@ final class ModelDataTests: XCTestCase {
         XCTAssertEqual([.stub1, .init(id: "xxx-zzz")!, .init(id: "appended-newtickerid")!], sut.userTickers)
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickerIdsInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
-        XCTAssertTrue(connectivityProviderPartialSpy.updateUserTickerIdsInvoked)
+        XCTAssertTrue(connectivityProviderPartialSpy.updateInvoked)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickerAppended, [.ticker: "appended-newtickerid"])])
     }
     
@@ -76,7 +76,7 @@ final class ModelDataTests: XCTestCase {
         
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickerIdsInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
-        XCTAssertTrue(connectivityProviderPartialSpy.updateUserTickerIdsInvoked)
+        XCTAssertTrue(connectivityProviderPartialSpy.updateInvoked)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [
             (.userTickerDeleted, [.ticker: "xxx-zzz"]),
             (.userTickerDeleted, [.ticker: "btc-pln"])
@@ -90,7 +90,7 @@ final class ModelDataTests: XCTestCase {
         
         XCTAssertTrue(localDataServicePartialSpy.saveUserTickerIdsInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
-        XCTAssertTrue(connectivityProviderPartialSpy.updateUserTickerIdsInvoked)
+        XCTAssertTrue(connectivityProviderPartialSpy.updateInvoked)
     }
     
     func test_refreshTickers_success() async {
@@ -143,12 +143,12 @@ private final class WidgetReloadableSpy: WidgetReloadable {
 
 private final class ConnectivityProviderPartialSpy: ConnectivityProvider {
     
-    private(set) var updateUserTickerIdsInvoked = false
+    private(set) var updateInvoked = false
     
     var delegate: ConnectivityProviderDelegate? = nil
     
-    func updateUserTickerIds(_ userTickerIds: [String]) {
-        updateUserTickerIdsInvoked = true
+    func update(tickers: [Ticker], userTickerIds: [String]) {
+        updateInvoked = true
     }
     
 }

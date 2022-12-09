@@ -1,3 +1,5 @@
+import Foundation
+
 struct Ticker: Codable, Hashable, Identifiable {
     
     struct Currency: Codable, Hashable, Identifiable {
@@ -120,6 +122,16 @@ extension Ticker: Comparable {
     
     static func <(lhs: Ticker, rhs: Ticker) -> Bool {
         lhs.secondCurrency.id == rhs.secondCurrency.id ? lhs.firstCurrency.id < rhs.firstCurrency.id : lhs.secondCurrency.id < rhs.secondCurrency.id
+    }
+    
+}
+
+extension Ticker {
+    
+    var jsonString: String? {
+        guard let jsonData = try? JSONEncoder().encode(self) else { return nil }
+        
+        return .init(data: jsonData, encoding: .utf8)
     }
     
 }

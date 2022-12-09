@@ -18,8 +18,8 @@ final class WatchConnectivityProviderTests: XCTestCase {
     
     // MARK: - Tests
     
-    func test_updateUserTickerIds() {
-        sut.updateUserTickerIds([])
+    func test_update() {
+        sut.update(tickers: [], userTickerIds: [])
         
         XCTAssertTrue(sut === wcSessionPartialSpy.delegate)
         XCTAssertTrue(wcSessionPartialSpy.activateInvoked)

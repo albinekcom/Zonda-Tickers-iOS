@@ -8,6 +8,7 @@ protocol ConnectivityReceiver: AnyObject {
 protocol ConnectivityReceiverDelegate: AnyObject {
     
     func userTickerIdsDidUpdate(userTickerIds: [String])
+    func userDidUpdate(tickers: [Ticker]?, userTickerIds: [String]?)
 }
 
 final class iOSConnectivityReceiver: NSObject {
@@ -25,6 +26,15 @@ final class iOSConnectivityReceiver: NSObject {
         session.activate()
     }
     
+    private func process(message: [String: Any]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.userDidUpdate(
+                tickers: (message[WatchConnectivityKey.Parameter.tickers] as? [String])?.compactMap(\.ticker),
+                userTickerIds: message[WatchConnectivityKey.Parameter.userTickerIds] as? [String]
+            )
+        }
+    }
+    
 }
 
 extension iOSConnectivityReceiver: WCSessionDelegate {
@@ -33,11 +43,14 @@ extension iOSConnectivityReceiver: WCSessionDelegate {
         _ session: WCSession,
         didReceiveApplicationContext applicationContext: [String: Any]
     ) {
-        DispatchQueue.main.async { [weak self] in
-            guard let userTickerIds = applicationContext[WatchConnectivityKey.Parameter.userTickerIds] as? [String] else { return }
-                
-            self?.delegate?.userTickerIdsDidUpdate(userTickerIds: userTickerIds)
-        }
+        process(message: applicationContext)
+    }
+    
+    func session(
+        _ session: WCSession,
+        didReceiveUserInfo userInfo: [String: Any]
+    ) {
+        process(message: userInfo)
     }
     
     func session(
@@ -45,5 +58,15 @@ extension iOSConnectivityReceiver: WCSessionDelegate {
         activationDidCompleteWith activationState: WCSessionActivationState,
         error: Error?
     ) {}
+    
+}
+
+private extension String {
+    
+    var ticker: Ticker? {
+        guard let data = data(using: .utf8) else { return nil }
+        
+        return try? JSONDecoder().decode(Ticker.self, from: data)
+    }
     
 }

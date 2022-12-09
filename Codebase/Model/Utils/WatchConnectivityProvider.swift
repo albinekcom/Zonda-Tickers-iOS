@@ -2,7 +2,7 @@ import WatchConnectivity
 
 protocol ConnectivityProvider: AnyObject {
     
-    func updateUserTickerIds(_ userTickerIds: [String])
+    func update(tickers: [Ticker], userTickerIds: [String])
     
     var delegate: ConnectivityProviderDelegate? { get set }
 }
@@ -38,8 +38,11 @@ final class WatchConnectivityProvider: NSObject, ConnectivityProvider {
         session.activate()
     }
     
-    func updateUserTickerIds(_ userTickerIds: [String]) {
-        let message = [WatchConnectivityKey.Parameter.userTickerIds: userTickerIds]
+    func update(tickers: [Ticker], userTickerIds: [String]) {
+        let message: [String: Any] = [
+            WatchConnectivityKey.Parameter.tickers: tickers.map(\.jsonString),
+            WatchConnectivityKey.Parameter.userTickerIds: userTickerIds
+        ]
         
         try? session.updateApplicationContext(message)
         _ = session.transferCurrentComplicationUserInfo(message)
