@@ -14,6 +14,8 @@ final class WatchConnectivityProviderTests: XCTestCase {
         
         wcSessionPartialSpy = .init()
         sut = .init(session: wcSessionPartialSpy)
+        
+        invokeMandatoryDelegateMethods()
     }
     
     // MARK: - Tests
@@ -27,11 +29,18 @@ final class WatchConnectivityProviderTests: XCTestCase {
         XCTAssertTrue(wcSessionPartialSpy.transferCurrentComplicationUserInfoInvoked)
     }
     
+    private func invokeMandatoryDelegateMethods() {
+        wcSessionPartialSpy.delegate?.sessionDidBecomeInactive(.default)
+        wcSessionPartialSpy.delegate?.sessionDidDeactivate(.default)
+    }
+    
 }
 
 // MARK: - Helpers
 
 private final class WCSessionPartialSpy: WCSessionProtocol {
+    
+    var delegate: WCSessionDelegate?
     
     private(set) var activateInvoked = false
     private(set) var updateApplicationContextInvoked = false
@@ -50,7 +59,5 @@ private final class WCSessionPartialSpy: WCSessionProtocol {
         
         return .init()
     }
-    
-    var delegate: WCSessionDelegate? = nil
     
 }

@@ -14,11 +14,12 @@ protocol ConnectivityProviderDelegate: AnyObject {
 
 protocol WCSessionProtocol: AnyObject {
     
+    var delegate: WCSessionDelegate? { get set }
+    
     func activate()
     func updateApplicationContext(_ applicationContext: [String: Any]) throws
     func transferCurrentComplicationUserInfo(_ userInfo: [String: Any]) -> WCSessionUserInfoTransfer
     
-    var delegate: WCSessionDelegate? { get set }
 }
 
 extension WCSession: WCSessionProtocol {}
