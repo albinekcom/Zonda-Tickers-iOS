@@ -118,11 +118,13 @@ final class ModelDataTests: XCTestCase {
     }
     
     func test_reloadTickers() {
-        // TODO: Insert prepare code here
-        
+        localDataServicePartialSpy.loadTickersStub = []
         sut.reloadTickers()
+        XCTAssertEqual([], sut.availableTickers())
         
-        // TODO: Insert assert code here
+        localDataServicePartialSpy.loadTickersStub = [.stub2, .stub3]
+        sut.reloadTickers()
+        XCTAssertEqual([.stub2, .stub3], sut.availableTickers())
     }
     
 }
