@@ -5,7 +5,7 @@ final class LocalDataServiceUITestsStub: LocalDataService {
     }
     
     func loadTickers() -> [Ticker] {
-        [.stub, .stub3]
+        [.stub1, .stub2]
     }
     
     func save(userTickerIds: [String]) {}
@@ -36,7 +36,7 @@ final class TickerFetcherUITestsStub: TickerFetcher {
     func fetch() async throws -> [Ticker] {
         switch variant {
         case .standard:
-            return [.stub, .stub2]
+            return [.stub1, .stub2]
             
         case .error:
             throw CustomError.fetch
@@ -47,7 +47,7 @@ final class TickerFetcherUITestsStub: TickerFetcher {
 
 private extension Ticker {
     
-    static let stub: Self = .init(
+    static let stub1: Self = .init(
         firstCurrency: .init(id: "btc", name: "Bitcoin", precision: 8),
         secondCurrency: .init(id: "pln", name: "Złoty", precision: 2),
         highestBid: 1,
