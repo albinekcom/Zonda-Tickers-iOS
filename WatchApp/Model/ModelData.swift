@@ -7,7 +7,7 @@ final class ModelData: ObservableObject {
         userTickerIds.userTickers(from: tickers)
     }
     
-    @Published private var tickers: [Ticker] = []
+    @Published private(set) var tickers: [Ticker] = []
     @Published private var userTickerIds: [String] = []
     
     private let userTickerIdService = UserTickerIdService()
@@ -38,7 +38,8 @@ final class ModelData: ObservableObject {
     func refresh() async {
         guard let fetchedTickers = try? await tickerService.fetched else { return }
         
-        tickers = fetchedTickers
+//        tickers = fetchedTickers
+        tickers = []
     }
     
     func reloadTickers() {

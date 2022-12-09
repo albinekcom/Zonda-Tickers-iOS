@@ -7,7 +7,7 @@ struct DetailView: View {
     let tickerId: String
     
     private var ticker: Ticker? {
-        modelData.userTickers.ticker(id: tickerId)
+        modelData.tickers.ticker(id: tickerId)
     }
     
     var body: some View {
@@ -18,7 +18,7 @@ struct DetailView: View {
                 }
                 .animation(.default, value: ticker)
             } else {
-                Text("This Ticker is no longer supported")
+                Text("No data")
             }
         }
         .navigationTitle(ticker.title)

@@ -30,7 +30,7 @@ final class DetailUITests: UITests {
         application.cells.buttons["XXX \\ ZZZ"].tap()
         
         XCTAssertEqual("- \\ -", application.navigationBars.firstMatch.identifier)
-        XCTAssertTrue(application.staticTexts["This Ticker is no longer supported"].exists)
+        XCTAssertTrue(application.staticTexts["No data"].exists)
     }
     
     private func assertRow(

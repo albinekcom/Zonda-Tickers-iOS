@@ -19,7 +19,7 @@ struct DetailView: View {
                 }
                 .animation(.default, value: ticker)
             } else {
-                Text("This Ticker is no longer supported")
+                Text("No data")
             }
         }
         .navigationTitle(ticker.title)
