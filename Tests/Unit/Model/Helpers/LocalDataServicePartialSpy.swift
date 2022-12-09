@@ -5,6 +5,8 @@ final class LocalDataServicePartialSpy: LocalDataService {
     var loadTickersStub: [Ticker] = [.stub1, .stub3]
     
     private(set) var saveUserTickerIdsInvoked = false
+    private(set) var saveUserTickerIdsInvokedCount = 0
+    
     private(set) var saveTickersInvoked = false
     
     func loadUserTickerIds() -> [String] {
@@ -17,6 +19,7 @@ final class LocalDataServicePartialSpy: LocalDataService {
     
     func save(userTickerIds: [String]) {
         saveUserTickerIdsInvoked = true
+        saveUserTickerIdsInvokedCount += 1
     }
     
     func save(tickers: [Ticker]) {

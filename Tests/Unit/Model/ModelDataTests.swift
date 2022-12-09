@@ -61,9 +61,9 @@ final class ModelDataTests: XCTestCase {
         sut.appendUserTickerId("appended-newtickerid")
         
         XCTAssertEqual([.stub1, .init(id: "xxx-zzz")!, .init(id: "appended-newtickerid")!], sut.userTickers)
-        XCTAssertTrue(localDataServicePartialSpy.saveUserTickerIdsInvoked)
-        XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
-        XCTAssertTrue(connectivityProviderPartialSpy.updateInvoked)
+        XCTAssertEqual(2, localDataServicePartialSpy.saveUserTickerIdsInvokedCount)
+        XCTAssertEqual(3, widgetReloadableSpy.reloadAllTimelinesInvokedCount)
+        XCTAssertEqual(2, connectivityProviderPartialSpy.updateInvokedCount)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickerAppended, [.ticker: "appended-newtickerid"])])
     }
     
@@ -74,9 +74,9 @@ final class ModelDataTests: XCTestCase {
         sut.removeUserTicker(at: .init(integer: 0))
         XCTAssertEqual([], sut.userTickers)
         
-        XCTAssertTrue(localDataServicePartialSpy.saveUserTickerIdsInvoked)
-        XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
-        XCTAssertTrue(connectivityProviderPartialSpy.updateInvoked)
+        XCTAssertEqual(3, localDataServicePartialSpy.saveUserTickerIdsInvokedCount)
+        XCTAssertEqual(4, widgetReloadableSpy.reloadAllTimelinesInvokedCount)
+        XCTAssertEqual(3, connectivityProviderPartialSpy.updateInvokedCount)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [
             (.userTickerDeleted, [.ticker: "xxx-zzz"]),
             (.userTickerDeleted, [.ticker: "btc-pln"])
@@ -87,10 +87,9 @@ final class ModelDataTests: XCTestCase {
         sut.moveUserTicker(from: .init(integer: 1), to: 0)
         
         XCTAssertEqual([.init(id: "xxx-zzz")!, .stub1], sut.userTickers)
-        
-        XCTAssertTrue(localDataServicePartialSpy.saveUserTickerIdsInvoked)
-        XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
-        XCTAssertTrue(connectivityProviderPartialSpy.updateInvoked)
+        XCTAssertEqual(2, localDataServicePartialSpy.saveUserTickerIdsInvokedCount)
+        XCTAssertEqual(3, widgetReloadableSpy.reloadAllTimelinesInvokedCount)
+        XCTAssertEqual(2, connectivityProviderPartialSpy.updateInvokedCount)
     }
     
     func test_refreshTickers_success() async {
@@ -99,8 +98,9 @@ final class ModelDataTests: XCTestCase {
         XCTAssertEqual([.stub2], sut.availableTickers())
         XCTAssertEqual([.stub1, .init(id: "xxx-zzz")!], sut.userTickers)
         XCTAssertEqual(.refreshingSuccess, sut.state)
-        XCTAssertTrue(localDataServicePartialSpy.saveTickersInvoked)
-        XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        XCTAssertEqual(1, localDataServicePartialSpy.saveUserTickerIdsInvokedCount)
+        XCTAssertEqual(3, widgetReloadableSpy.reloadAllTimelinesInvokedCount)
+        XCTAssertEqual(1, connectivityProviderPartialSpy.updateInvokedCount)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickersRefreshed, [.tickers: "btc-pln,xxx-zzz"])])
     }
     
@@ -112,8 +112,9 @@ final class ModelDataTests: XCTestCase {
         XCTAssertEqual([.stub3], sut.availableTickers())
         XCTAssertEqual([.stub1, .init(id: "xxx-zzz")!], sut.userTickers)
         XCTAssertEqual(.refreshingFailure(error: TickerFetcherStub.CustomError.fetch), sut.state)
-        XCTAssertFalse(localDataServicePartialSpy.saveTickersInvoked)
-        XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
+        XCTAssertEqual(1, localDataServicePartialSpy.saveUserTickerIdsInvokedCount)
+        XCTAssertEqual(2, widgetReloadableSpy.reloadAllTimelinesInvokedCount)
+        XCTAssertEqual(1, connectivityProviderPartialSpy.updateInvokedCount)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickersRefreshingFailed, [.tickers: "btc-pln,xxx-zzz"])])
     }
     
@@ -133,22 +134,22 @@ final class ModelDataTests: XCTestCase {
 
 private final class WidgetReloadableSpy: WidgetReloadable {
     
-    private(set) var reloadAllTimelinesInvoked = false
+    private(set) var reloadAllTimelinesInvokedCount = 0
     
     func reloadAllTimelines() {
-        reloadAllTimelinesInvoked = true
+        reloadAllTimelinesInvokedCount += 1
     }
     
 }
 
 private final class ConnectivityProviderPartialSpy: ConnectivityProvider {
     
-    private(set) var updateInvoked = false
+    private(set) var updateInvokedCount = 0
     
     var delegate: ConnectivityProviderDelegate? = nil
     
     func update(tickers: [Ticker], userTickerIds: [String]) {
-        updateInvoked = true
+        updateInvokedCount += 1
     }
     
 }
