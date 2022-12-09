@@ -1,10 +1,10 @@
 import XCTest
 @testable import Zonda_Tickers
 
-final class UserTickerIdsServiceTests: XCTestCase {
+final class UserTickerIdServiceTests: XCTestCase {
     
     private var localDataServicePartialSpy: LocalDataServicePartialSpy!
-    private var sut: UserTickerIdsService!
+    private var sut: UserTickerIdService!
     
     // MARK: - Setting Up
     

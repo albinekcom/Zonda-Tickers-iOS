@@ -16,7 +16,7 @@ struct ListView: View {
             .onChange(of: scenePhase) {
                 guard $0 == .active else { return }
                 
-                modelData.reloadLocalTickers()
+                modelData.reloadTickers()
             }
     }
     

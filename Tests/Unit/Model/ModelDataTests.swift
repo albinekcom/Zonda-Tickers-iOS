@@ -25,7 +25,7 @@ final class ModelDataTests: XCTestCase {
         tickerFetcherStub = .init()
         
         sut = .init(
-            userTickerIdsService: .init(localDataService: localDataServicePartialSpy),
+            userTickerIdService: .init(localDataService: localDataServicePartialSpy),
             tickerService: .init(
                 localDataService: localDataServicePartialSpy,
                 tickerFetcher: tickerFetcherStub
@@ -115,6 +115,14 @@ final class ModelDataTests: XCTestCase {
         XCTAssertFalse(localDataServicePartialSpy.saveTickersInvoked)
         XCTAssertTrue(widgetReloadableSpy.reloadAllTimelinesInvoked)
         analyticsServiceLoggerSpy.assert(expectedLoggedEvents: [(.userTickersRefreshingFailed, [.tickers: "btc-pln,xxx-zzz"])])
+    }
+    
+    func test_reloadTickers() {
+        // TODO: Insert prepare code here
+        
+        sut.reloadTickers()
+        
+        // TODO: Insert assert code here
     }
     
 }

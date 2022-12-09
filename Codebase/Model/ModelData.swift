@@ -38,21 +38,21 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
     
     private var cancellables = Set<AnyCancellable>()
     
-    private let userTickerIdsService: UserTickerIdsService
+    private let userTickerIdService: UserTickerIdService
     private let tickerService: TickerService
     
     init(
-        userTickerIdsService: UserTickerIdsService,
+        userTickerIdService: UserTickerIdService,
         tickerService: TickerService,
         widgetReloadable: WidgetReloadable = WidgetCenter.shared,
         connectivityProvider: ConnectivityProvider = WatchConnectivityProvider()
     ) {
-        self.userTickerIdsService = userTickerIdsService
+        self.userTickerIdService = userTickerIdService
         self.tickerService = tickerService
         self.widgetReloadable = widgetReloadable
         self.connectivityProvider = connectivityProvider
         
-        userTickerIds = userTickerIdsService.loaded
+        userTickerIds = userTickerIdService.loaded
         tickers = tickerService.loaded
         
         connectivityProvider.delegate = self
@@ -62,7 +62,7 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
         }.store(in: &cancellables)
         
         $userTickerIds.sink { [weak self] in
-            self?.userTickerIdsService.save(userTickerIds: $0)
+            self?.userTickerIdService.save(userTickerIds: $0)
             
             self?.connectivityProvider.updateUserTickerIds($0)
             
@@ -74,7 +74,7 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
         let localDataService = serviceFactory.makeLocalDataService()
         
         self.init(
-            userTickerIdsService: .init(localDataService: localDataService),
+            userTickerIdService: .init(localDataService: localDataService),
             tickerService: .init(
                 localDataService: localDataService,
                 tickerFetcher: serviceFactory.makeTickerFetcher()
@@ -141,7 +141,7 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
         }
     }
     
-    func reloadLocalTickers() {
+    func reloadTickers() {
         tickers = tickerService.loaded
     }
     

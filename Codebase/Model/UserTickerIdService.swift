@@ -1,4 +1,4 @@
-final class UserTickerIdsService {
+final class UserTickerIdService {
     
     private let localDataService: LocalDataService
     
