@@ -3,7 +3,7 @@ import SwiftUI
 struct AccessoryRectangularView: View {
     
     let tickers: [Ticker]?
-    let maximumCount: Int
+    let tickersMaximumCount: Int
     
     var body: some View {
         if tickers?.isEmpty == true {
@@ -11,7 +11,7 @@ struct AccessoryRectangularView: View {
         } else {
             AccessoryRectangularListView(
                 tickers: tickers,
-                maximumCount: maximumCount
+                tickersMaximumCount: tickersMaximumCount
             )
         }
     }

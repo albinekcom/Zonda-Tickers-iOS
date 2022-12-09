@@ -5,13 +5,15 @@ struct WatchlistEntryView: View {
     
     let entry: WatchlistTimelineEntry
     
+    @Environment(\.widgetFamily) private var widgetFamily
+    
     var body: some View {
-        switch entry.family {
+        switch widgetFamily {
         case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
             SystemView(
                 tickers: entry.tickers,
-                maximumCount: entry.family.tickersMaximumCount,
-                isSystemSmall: entry.family.isSystemSmall
+                tickersMaximumCount: widgetFamily.tickersMaximumCount,
+                isSystemSmall: widgetFamily == .systemSmall
             )
             
         case .accessoryInline:
@@ -23,7 +25,7 @@ struct WatchlistEntryView: View {
         case .accessoryRectangular:
             AccessoryRectangularView(
                 tickers: entry.tickers,
-                maximumCount: entry.family.tickersMaximumCount
+                tickersMaximumCount: widgetFamily.tickersMaximumCount
             )
             
         @unknown default:
@@ -35,36 +37,21 @@ struct WatchlistEntryView: View {
 
 #if DEBUG && !TESTING
 
+@available(iOSApplicationExtension 16.0, *)
 struct WatchlistEntryView_Previews: PreviewProvider {
     
     static var previews: some View {
-        if #available(iOSApplicationExtension 16.0, *) {
-            watchlistEntryViewPreview(
-                family: .accessoryCircular,
-                tickers: nil
-            )
-            watchlistEntryViewPreview(
-                family: .accessoryCircular,
-                tickers: []
-            )
-            watchlistEntryViewPreview(
-                family: .accessoryCircular,
-                tickers: [Ticker].stub()
-            )
-        } else {
-            EmptyView()
-        }
+        watchlistEntryViewPreview(tickers: nil)
+        watchlistEntryViewPreview(tickers: [])
+        watchlistEntryViewPreview(tickers: [Ticker].stub())
     }
     
     private static func watchlistEntryViewPreview(
-        family: WidgetFamily,
-        tickers: [Ticker]?
+        tickers: [Ticker]?,
+        family: WidgetFamily = .systemMedium
     ) -> some View {
-        WatchlistEntryView(entry: .init(
-            family: family,
-            tickers: tickers
-        ))
-        .previewContext(WidgetPreviewContext(family: family))
+        WatchlistEntryView(entry: .init(tickers: tickers))
+            .previewContext(WidgetPreviewContext(family: family))
     }
     
 }

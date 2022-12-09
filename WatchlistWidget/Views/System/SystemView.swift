@@ -3,7 +3,7 @@ import SwiftUI
 struct SystemView: View {
     
     let tickers: [Ticker]?
-    let maximumCount: Int
+    let tickersMaximumCount: Int
     let isSystemSmall: Bool
     
     var body: some View {
@@ -12,7 +12,7 @@ struct SystemView: View {
         } else {
             SystemListView(
                 tickers: tickers,
-                maximumCount: maximumCount,
+                tickersMaximumCount: tickersMaximumCount,
                 isSystemSmall: isSystemSmall
             )
         }

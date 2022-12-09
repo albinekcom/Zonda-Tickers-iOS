@@ -4,13 +4,15 @@ import WidgetKit
 struct ComplicationsEntryView: View {
     
     let entry: WatchlistTimelineEntry
+    
+    @Environment(\.widgetFamily) private var widgetFamily
 
     var body: some View {
-        switch entry.family {
+        switch widgetFamily {
         case .accessoryRectangular:
             AccessoryRectangularView(
                 tickers: entry.tickers,
-                maximumCount: entry.family.tickersMaximumCount
+                tickersMaximumCount: widgetFamily.tickersMaximumCount
             )
             
         case .accessoryCircular:
@@ -34,29 +36,17 @@ struct ComplicationsEntryView: View {
 struct ComplicationsEntryView_Previews: PreviewProvider {
     
     static var previews: some View {
-        complicationsEntryViewPreview(
-            family: .accessoryInline,
-            tickers: nil
-        )
-        complicationsEntryViewPreview(
-            family: .accessoryInline,
-            tickers: []
-        )
-        complicationsEntryViewPreview(
-            family: .accessoryInline,
-            tickers: [Ticker].stub()
-        )
+        complicationsEntryViewPreview(tickers: nil)
+        complicationsEntryViewPreview(tickers: [])
+        complicationsEntryViewPreview(tickers: [Ticker].stub())
     }
     
     private static func complicationsEntryViewPreview(
-        family: WidgetFamily,
-        tickers: [Ticker]?
+        tickers: [Ticker]?,
+        family: WidgetFamily = .accessoryRectangular
     ) -> some View {
-        ComplicationsEntryView(entry: .init(
-            family: family,
-            tickers: tickers
-        ))
-        .previewContext(WidgetPreviewContext(family: family))
+        ComplicationsEntryView(entry: .init(tickers: tickers))
+            .previewContext(WidgetPreviewContext(family: family))
     }
     
 }

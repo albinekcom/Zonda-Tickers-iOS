@@ -3,28 +3,28 @@ import SwiftUI
 struct SystemListView: View {
     
     private let models: [Ticker?]
-    private let maximumCount: Int
+    private let tickersMaximumCount: Int
     private let isSystemSmall: Bool
     
     init(
         tickers: [Ticker]?,
-        maximumCount: Int,
+        tickersMaximumCount: Int,
         isSystemSmall: Bool
     ) {
         if let tickers = tickers {
-            models = tickers.count < maximumCount ? tickers : Array(tickers[..<maximumCount])
+            models = tickers.count < tickersMaximumCount ? tickers : Array(tickers[..<tickersMaximumCount])
         } else {
-            models = (0..<maximumCount).map { _ in nil }
+            models = (0..<tickersMaximumCount).map { _ in nil }
         }
         
-        self.maximumCount = maximumCount
+        self.tickersMaximumCount = tickersMaximumCount
         self.isSystemSmall = isSystemSmall
     }
     
     var body: some View {
         GeometryReader { proxy in
             VStack(spacing: 0) {
-                ForEach(models, id: \.modelId) { ticker in
+                ForEach(models, id: \.self) { ticker in
                     Group {
                         if isSystemSmall {
                             SystemSmallTickerRowView(ticker: ticker)
@@ -32,7 +32,7 @@ struct SystemListView: View {
                             TickerRowView(ticker: ticker)
                         }
                     }
-                    .frame(height: proxy.size.height / CGFloat(maximumCount))
+                    .frame(height: proxy.size.height / CGFloat(tickersMaximumCount))
                     .padding(.horizontal)
                     
                     Divider()
@@ -41,11 +41,5 @@ struct SystemListView: View {
             }
         }
     }
-    
-}
-
-private extension Optional where Wrapped == Ticker {
-    
-    var modelId: String { self?.id ?? "placeholder" }
     
 }

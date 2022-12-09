@@ -46,10 +46,7 @@ private extension TimelineReloadPolicy {
 private extension TimelineProviderContext {
     
     func watchlistTimelineEntry(tickers: [Ticker]?) -> WatchlistTimelineEntry {
-        .init(
-            family: family,
-            tickers: tickers
-        )
+        .init(tickers: tickers)
     }
     
 }

@@ -3,38 +3,32 @@ import SwiftUI
 struct AccessoryRectangularListView: View {
     
     private let models: [Ticker?]
-    private let maximumCount: Int
+    private let tickersMaximumCount: Int
     
     init(
         tickers: [Ticker]?,
-        maximumCount: Int
+        tickersMaximumCount: Int
     ) {
         if let tickers = tickers {
-            models = tickers.count < maximumCount ? tickers : Array(tickers[..<maximumCount])
+            models = tickers.count < tickersMaximumCount ? tickers : Array(tickers[..<tickersMaximumCount])
         } else {
-            models = (0..<maximumCount).map { _ in nil }
+            models = (0..<tickersMaximumCount).map { _ in nil }
         }
         
-        self.maximumCount = maximumCount
+        self.tickersMaximumCount = tickersMaximumCount
     }
     
     var body: some View {
         GeometryReader { proxy in
             VStack(spacing: 0) {
-                ForEach(models, id: \.modelId) {
+                ForEach(models, id: \.self) {
                     AccessoryRectangularRowView(ticker: $0)
-                        .frame(height: proxy.size.height / CGFloat(maximumCount))
+                        .frame(height: proxy.size.height / CGFloat(tickersMaximumCount))
                 }
                 
                 Spacer()
             }
         }
     }
-    
-}
-
-private extension Optional where Wrapped == Ticker {
-    
-    var modelId: String { self?.id ?? "placeholder" }
     
 }
