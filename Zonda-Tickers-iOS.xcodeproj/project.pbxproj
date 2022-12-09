@@ -77,8 +77,6 @@
 		8C3A2F7E28CA329D001FD018 /* Ticker+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A2F7D28CA329D001FD018 /* Ticker+Stub.swift */; };
 		8C49495528749C8F00C24BC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C49495428749C8E00C24BC0 /* GoogleService-Info.plist */; };
 		8C49E6DA2941E10C00E72EA4 /* DetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80554D28B10FCA004AA3D7 /* DetailRowView.swift */; };
-		8C49E6DB294204DB00E72EA4 /* NoTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381C28D60840000F8F13 /* NoTickersView.swift */; };
-		8C49E6DC294204DE00E72EA4 /* NoTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381C28D60840000F8F13 /* NoTickersView.swift */; };
 		8C49E6DE29423D2500E72EA4 /* OptionalTicker+ExtensionsForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6DD29423D2500E72EA4 /* OptionalTicker+ExtensionsForView.swift */; };
 		8C49E6DF29423D2500E72EA4 /* OptionalTicker+ExtensionsForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6DD29423D2500E72EA4 /* OptionalTicker+ExtensionsForView.swift */; };
 		8C49E6E029423D2500E72EA4 /* OptionalTicker+ExtensionsForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6DD29423D2500E72EA4 /* OptionalTicker+ExtensionsForView.swift */; };
@@ -87,6 +85,8 @@
 		8C49E6E729424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6E629424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift */; };
 		8C49E6E829424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6E629424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift */; };
 		8C49E6EA29424DF200E72EA4 /* Ticker+DetailRowViewModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6E929424DF200E72EA4 /* Ticker+DetailRowViewModelsTests.swift */; };
+		8C54971A2943C4B400B05936 /* NoTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381C28D60840000F8F13 /* NoTickersView.swift */; };
+		8C54971B2943C4B400B05936 /* NoTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381C28D60840000F8F13 /* NoTickersView.swift */; };
 		8C59F484293FCFC700F7A73F /* WatchConnectivityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C59F483293FCFC700F7A73F /* WatchConnectivityProviderTests.swift */; };
 		8C69292A28FF1CFC00441BE8 /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69292928FF1CFC00441BE8 /* WatchApp.swift */; };
 		8C69292E28FF1CFE00441BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C69292D28FF1CFE00441BE8 /* Assets.xcassets */; };
@@ -185,7 +185,6 @@
 		8CD299BE2937B84500BF279A /* WatchConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD299BD2937B84400BF279A /* WatchConnectivityProvider.swift */; };
 		8CD299C02937CB2500BF279A /* iOSConnectivityReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD299BF2937CB2500BF279A /* iOSConnectivityReceiver.swift */; };
 		8CD573142936728900C71D33 /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633382028D609AF000F8F13 /* AccessoryCircularView.swift */; };
-		8CD573152936729400C71D33 /* NoTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633381C28D60840000F8F13 /* NoTickersView.swift */; };
 		8CD57316293672AB00C71D33 /* AccessoryRectangularRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633380E28D5D02D000F8F13 /* AccessoryRectangularRowView.swift */; };
 		8CD57317293672AE00C71D33 /* AccessoryRectangularListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0989528D890B400023B1A /* AccessoryRectangularListView.swift */; };
 		8CD57318293672B000C71D33 /* AccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633380C28D5CEC8000F8F13 /* AccessoryRectangularView.swift */; };
@@ -580,6 +579,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		8C5497192943C49A00B05936 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2633381C28D60840000F8F13 /* NoTickersView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		8C69292828FF1CFC00441BE8 /* WatchApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,7 +721,6 @@
 		8C80554928B10FCA004AA3D7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2633381C28D60840000F8F13 /* NoTickersView.swift */,
 				8C80554A28B10FCA004AA3D7 /* TickerRowView.swift */,
 				26A99FF628D4B4DC00040DA7 /* CurrencyLogoView.swift */,
 			);
@@ -887,6 +893,7 @@
 		8CD9E88628C3A56800812A8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C5497192943C49A00B05936 /* Common */,
 				2633380628D5C9B4000F8F13 /* Accessory */,
 				2633380528D5C991000F8F13 /* System */,
 				8C819D2128BE7904005DFC1D /* WatchlistEntryView.swift */,
@@ -1173,8 +1180,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C54971B2943C4B400B05936 /* NoTickersView.swift in Sources */,
 				8C69295E28FF246F00441BE8 /* AutomaticMethodInvoker.swift in Sources */,
-				8C49E6DC294204DE00E72EA4 /* NoTickersView.swift in Sources */,
 				8C69294328FF209700441BE8 /* TickerWebService.swift in Sources */,
 				8CD299C02937CB2500BF279A /* iOSConnectivityReceiver.swift in Sources */,
 				8C69295928FF21C700441BE8 /* DetailView.swift in Sources */,
@@ -1276,8 +1283,8 @@
 				8CB9013C293535F400DFB721 /* WatchlistTimelineProvider.swift in Sources */,
 				8CB901162935288800DFB721 /* WatchComplications.swift in Sources */,
 				8CB901342935341F00DFB721 /* FileManager+FileURL.swift in Sources */,
-				8CD573152936729400C71D33 /* NoTickersView.swift in Sources */,
 				8CD57316293672AB00C71D33 /* AccessoryRectangularRowView.swift in Sources */,
+				8C54971A2943C4B400B05936 /* NoTickersView.swift in Sources */,
 				8CB90129293529E000DFB721 /* ComplicationsEntryView.swift in Sources */,
 				8CB9012B293533EB00DFB721 /* TickerService.swift in Sources */,
 				8CB901372935342C00DFB721 /* String+GeneratedColor.swift in Sources */,
@@ -1311,7 +1318,6 @@
 				8C80556528B10FCA004AA3D7 /* AdderView.swift in Sources */,
 				26D0989C28D8ACFA00023B1A /* AnalyticsServiceFirebaseLogger.swift in Sources */,
 				8C80555A28B10FCA004AA3D7 /* Double+Pretty.swift in Sources */,
-				8C49E6DB294204DB00E72EA4 /* NoTickersView.swift in Sources */,
 				2654722F28CBC489008BF37C /* TickerService.swift in Sources */,
 				26B2920F28CCBEBE00A82999 /* Dispatching.swift in Sources */,
 				8C80556228B10FCA004AA3D7 /* DetailView.swift in Sources */,
@@ -1493,7 +1499,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1570,7 +1576,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1606,7 +1612,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = WatchApp/WatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchApp/Preview Content\"";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				ENABLE_PREVIEWS = YES;
@@ -1643,7 +1649,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = WatchApp/WatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchApp/Preview Content\"";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				ENABLE_PREVIEWS = YES;
@@ -1679,7 +1685,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = WatchApp/WatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchApp/Preview Content\"";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				ENABLE_PREVIEWS = YES;
@@ -1713,7 +1719,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1747,7 +1753,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1780,7 +1786,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "WatchComplications/Watch Complications.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1816,7 +1822,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "WatchComplications/Watch Complications.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1851,7 +1857,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "WatchComplications/Watch Complications.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2005,7 +2011,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2039,7 +2045,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_ENTITLEMENTS = "Codebase/Supporting Files/Zonda-Tickers.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3102;
+				CURRENT_PROJECT_VERSION = 3103;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AXTXBRU9S7;
 				FRAMEWORK_SEARCH_PATHS = (

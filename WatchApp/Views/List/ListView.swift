@@ -23,7 +23,6 @@ struct ListView: View {
     @ViewBuilder
     private var content: some View {
         if modelData.userTickers.isEmpty {
-            Text("No Tickers")
             NoTickersView()
         } else {
             List {
