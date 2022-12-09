@@ -8,9 +8,9 @@ final class FileManagerDataServiceTests: XCTestCase {
     func test_saveAndLoad_userTickerIds() {
         let expectedUserTickerIds = ["btc-pln", "eth-pln", "lsk-usd", "ltc-pln"]
         
-        fileManagerDataService.save(userTickersId: expectedUserTickerIds)
+        fileManagerDataService.save(userTickerIds: expectedUserTickerIds)
         
-        XCTAssertEqual(expectedUserTickerIds, fileManagerDataService.loadUserTickersId())
+        XCTAssertEqual(expectedUserTickerIds, fileManagerDataService.loadUserTickerIds())
     }
     
     func test_saveAndLoad_tickers() {
@@ -29,9 +29,9 @@ final class FileManagerDataServiceTests: XCTestCase {
             saveDispatchQueue: DispatchQueueStub()
         )
         
-        fileManagerDataService.save(userTickersId: expectedUserTickerIds)
+        fileManagerDataService.save(userTickerIds: expectedUserTickerIds)
         
-        XCTAssertEqual([], fileManagerDataService.loadUserTickersId())
+        XCTAssertEqual([], fileManagerDataService.loadUserTickerIds())
     }
     
     func test_saveAndLoad_tickers_for_nil_fileURL() {

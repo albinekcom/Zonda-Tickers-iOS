@@ -1,4 +1,4 @@
-final class UserTickersIdService {
+final class UserTickerIdsService {
     
     private let localDataService: LocalDataService
     
@@ -7,11 +7,11 @@ final class UserTickersIdService {
     }
     
     var loaded: [String] {
-        localDataService.loadUserTickersId()
+        localDataService.loadUserTickerIds()
     }
     
-    func save(userTickersId: [String]) {
-        localDataService.save(userTickersId: userTickersId)
+    func save(userTickerIds: [String]) {
+        localDataService.save(userTickerIds: userTickerIds)
     }
     
 }

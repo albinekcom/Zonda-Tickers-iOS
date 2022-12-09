@@ -1,6 +1,6 @@
 final class LocalDataServiceUITestsStub: LocalDataService {
     
-    func loadUserTickersId() -> [String] {
+    func loadUserTickerIds() -> [String] {
         ["btc-pln", "xxx-zzz"]
     }
     
@@ -8,7 +8,7 @@ final class LocalDataServiceUITestsStub: LocalDataService {
         [.stub, .stub3]
     }
     
-    func save(userTickersId: [String]) {}
+    func save(userTickerIds: [String]) {}
     
     func save(tickers: [Ticker]) {}
     

@@ -1,10 +1,10 @@
 import XCTest
 @testable import Zonda_Tickers
 
-final class UserTickersIdServiceTests: XCTestCase {
+final class UserTickerIdsServiceTests: XCTestCase {
     
     private var localDataServicePartialSpy: LocalDataServicePartialSpy!
-    private var sut: UserTickersIdService!
+    private var sut: UserTickerIdsService!
     
     // MARK: - Setting Up
     
@@ -22,9 +22,9 @@ final class UserTickersIdServiceTests: XCTestCase {
     }
     
     func test_save() {
-        sut.save(userTickersId: ["eth-pln"])
+        sut.save(userTickerIds: ["eth-pln"])
         
-        XCTAssertTrue(localDataServicePartialSpy.saveUserTickersIdInvoked)
+        XCTAssertTrue(localDataServicePartialSpy.saveUserTickerIdsInvoked)
     }
     
 }

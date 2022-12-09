@@ -2,7 +2,7 @@ import WatchConnectivity
 
 protocol ConnectivityProvider: AnyObject {
     
-    func send(userTickerIds: [String])
+    func updateUserTickerIds(_ userTickerIds: [String])
     
     var delegate: ConnectivityProviderDelegate? { get set }
 }
@@ -16,6 +16,7 @@ protocol WCSessionProtocol: AnyObject {
     
     func activate()
     func updateApplicationContext(_ applicationContext: [String: Any]) throws
+    func transferCurrentComplicationUserInfo(_ userInfo: [String: Any]) -> WCSessionUserInfoTransfer
     
     var delegate: WCSessionDelegate? { get set }
 }
@@ -37,8 +38,11 @@ final class WatchConnectivityProvider: NSObject, ConnectivityProvider {
         session.activate()
     }
     
-    func send(userTickerIds: [String]) {
-        try? session.updateApplicationContext([WatchConnectivityKey.Parameter.userTickerIds: userTickerIds])
+    func updateUserTickerIds(_ userTickerIds: [String]) {
+        let message = [WatchConnectivityKey.Parameter.userTickerIds: userTickerIds]
+        
+        try? session.updateApplicationContext(message)
+        _ = session.transferCurrentComplicationUserInfo(message)
     }
     
 }

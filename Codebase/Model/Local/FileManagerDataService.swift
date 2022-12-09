@@ -22,7 +22,7 @@ final class FileManagerDataService: LocalDataService {
     
     // MARK: - Loading
     
-    func loadUserTickersId() -> [String] {
+    func loadUserTickerIds() -> [String] {
         load(from: .userTickerIds) ?? [String]()
     }
     
@@ -32,8 +32,8 @@ final class FileManagerDataService: LocalDataService {
     
     // MARK: - Saving
     
-    func save(userTickersId: [String]) {
-        save(userTickersId, in: .userTickerIds)
+    func save(userTickerIds: [String]) {
+        save(userTickerIds, in: .userTickerIds)
     }
     
     func save(tickers: [Ticker]) {

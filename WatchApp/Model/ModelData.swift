@@ -10,7 +10,7 @@ final class ModelData: ObservableObject {
     @Published private var tickers: [Ticker] = []
     @Published private var userTickerIds: [String] = []
     
-    private let userTickersIdService = UserTickersIdService()
+    private let userTickerIdsService = UserTickerIdsService()
     private let tickerService = TickerService()
     
     private let connectivityReceiver = iOSConnectivityReceiver()
@@ -18,7 +18,7 @@ final class ModelData: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
-        userTickerIds = userTickersIdService.loaded
+        userTickerIds = userTickerIdsService.loaded
         tickers = tickerService.loaded
         
         connectivityReceiver.delegate = self
@@ -28,7 +28,7 @@ final class ModelData: ObservableObject {
         }.store(in: &cancellables)
         
         $userTickerIds.sink { [weak self] in
-            self?.userTickersIdService.save(userTickersId: $0)
+            self?.userTickerIdsService.save(userTickerIds: $0)
             
             self?.refreshWidgets()
         }.store(in: &cancellables)

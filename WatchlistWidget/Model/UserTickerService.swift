@@ -1,12 +1,12 @@
 final class UserTickerService {
     
-    private let userTickersIdService = UserTickersIdService()
+    private let userTickerIdsService = UserTickerIdsService()
     private let tickerService = TickerService()
     
     var userTickers: [Ticker] {
         
         get async {
-            userTickersIdService.loaded.userTickers(from: await tickers)
+            userTickerIdsService.loaded.userTickers(from: await tickers)
         }
         
     }

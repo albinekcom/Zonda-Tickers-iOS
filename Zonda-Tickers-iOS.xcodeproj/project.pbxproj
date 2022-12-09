@@ -22,9 +22,9 @@
 		2654722C28CB836F008BF37C /* AutomaticMethodInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654722B28CB836F008BF37C /* AutomaticMethodInvoker.swift */; };
 		2654722F28CBC489008BF37C /* TickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654722E28CBC489008BF37C /* TickerService.swift */; };
 		2654723028CBC838008BF37C /* TickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654722E28CBC489008BF37C /* TickerService.swift */; };
-		2654723228CBCA2D008BF37C /* UserTickersIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickersIdService.swift */; };
+		2654723228CBCA2D008BF37C /* UserTickerIdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickerIdsService.swift */; };
 		2654723428CBCB9F008BF37C /* StringArray+UserTickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723328CBCB9F008BF37C /* StringArray+UserTickers.swift */; };
-		2654723528CBCBD8008BF37C /* UserTickersIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickersIdService.swift */; };
+		2654723528CBCBD8008BF37C /* UserTickerIdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickerIdsService.swift */; };
 		2654723628CBCBF7008BF37C /* FileManagerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553928B10FC9004AA3D7 /* FileManagerDataService.swift */; };
 		2654723828CBCC54008BF37C /* StringArray+UserTickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723328CBCB9F008BF37C /* StringArray+UserTickers.swift */; };
 		265AD4C928D0EA730051C264 /* ListWithErrorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265AD4C828D0EA730051C264 /* ListWithErrorUITests.swift */; };
@@ -44,7 +44,7 @@
 		26B2921928CCC36F00A82999 /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921828CCC36F00A82999 /* TickerFetcher.swift */; };
 		26B2921A28CCC36F00A82999 /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921828CCC36F00A82999 /* TickerFetcher.swift */; };
 		26B2921C28CCC53900A82999 /* TickerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921B28CCC53900A82999 /* TickerServiceTests.swift */; };
-		26B2921E28CCC54700A82999 /* UserTickersIdServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921D28CCC54700A82999 /* UserTickersIdServiceTests.swift */; };
+		26B2921E28CCC54700A82999 /* UserTickerIdsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921D28CCC54700A82999 /* UserTickerIdsServiceTests.swift */; };
 		26B2922028CCC80E00A82999 /* LocalDataServicePartialSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921F28CCC80E00A82999 /* LocalDataServicePartialSpy.swift */; };
 		26B2922228CCC97300A82999 /* TickerFetcherStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2922128CCC97300A82999 /* TickerFetcherStub.swift */; };
 		26C2ED0728CE2F0000236FAB /* ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2ED0428CE2E7100236FAB /* ListUITests.swift */; };
@@ -87,14 +87,14 @@
 		8C49E6E729424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6E629424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift */; };
 		8C49E6E829424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6E629424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift */; };
 		8C49E6EA29424DF200E72EA4 /* Ticker+DetailRowViewModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E6E929424DF200E72EA4 /* Ticker+DetailRowViewModelsTests.swift */; };
-		8C59F484293FCFC700F7A73F /* WatchOSConnectivityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C59F483293FCFC700F7A73F /* WatchOSConnectivityProviderTests.swift */; };
+		8C59F484293FCFC700F7A73F /* WatchConnectivityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C59F483293FCFC700F7A73F /* WatchConnectivityProviderTests.swift */; };
 		8C69292A28FF1CFC00441BE8 /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69292928FF1CFC00441BE8 /* WatchApp.swift */; };
 		8C69292E28FF1CFE00441BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C69292D28FF1CFE00441BE8 /* Assets.xcassets */; };
 		8C69293128FF1CFE00441BE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C69293028FF1CFE00441BE8 /* Preview Assets.xcassets */; };
 		8C69293728FF1EFE00441BE8 /* TickerArray+Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69293628FF1EFE00441BE8 /* TickerArray+Ticker.swift */; };
 		8C69293828FF1F0400441BE8 /* TickerArray+Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69293628FF1EFE00441BE8 /* TickerArray+Ticker.swift */; };
 		8C69293C28FF202D00441BE8 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69293B28FF202D00441BE8 /* ModelData.swift */; };
-		8C69293E28FF205700441BE8 /* UserTickersIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickersIdService.swift */; };
+		8C69293E28FF205700441BE8 /* UserTickerIdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickerIdsService.swift */; };
 		8C69293F28FF206000441BE8 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553A28B10FC9004AA3D7 /* Ticker.swift */; };
 		8C69294028FF206800441BE8 /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921528CCC2E400A82999 /* LocalDataService.swift */; };
 		8C69294128FF207D00441BE8 /* FileManagerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553928B10FC9004AA3D7 /* FileManagerDataService.swift */; };
@@ -160,7 +160,7 @@
 		8CB90129293529E000DFB721 /* ComplicationsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB90128293529E000DFB721 /* ComplicationsEntryView.swift */; };
 		8CB9012A293533E800DFB721 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553A28B10FC9004AA3D7 /* Ticker.swift */; };
 		8CB9012B293533EB00DFB721 /* TickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654722E28CBC489008BF37C /* TickerService.swift */; };
-		8CB9012C293533EE00DFB721 /* UserTickersIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickersIdService.swift */; };
+		8CB9012C293533EE00DFB721 /* UserTickerIdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654723128CBCA2D008BF37C /* UserTickerIdsService.swift */; };
 		8CB9012D293533F700DFB721 /* APIResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553E28B10FC9004AA3D7 /* APIResponses.swift */; };
 		8CB9012E293533F900DFB721 /* TickerWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80553D28B10FC9004AA3D7 /* TickerWebService.swift */; };
 		8CB9012F293533FB00DFB721 /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B2921828CCC36F00A82999 /* TickerFetcher.swift */; };
@@ -283,7 +283,7 @@
 		2633382028D609AF000F8F13 /* AccessoryCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularView.swift; sourceTree = "<group>"; };
 		2654722B28CB836F008BF37C /* AutomaticMethodInvoker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticMethodInvoker.swift; sourceTree = "<group>"; };
 		2654722E28CBC489008BF37C /* TickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerService.swift; sourceTree = "<group>"; };
-		2654723128CBCA2D008BF37C /* UserTickersIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTickersIdService.swift; sourceTree = "<group>"; };
+		2654723128CBCA2D008BF37C /* UserTickerIdsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTickerIdsService.swift; sourceTree = "<group>"; };
 		2654723328CBCB9F008BF37C /* StringArray+UserTickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringArray+UserTickers.swift"; sourceTree = "<group>"; };
 		265AD4C828D0EA730051C264 /* ListWithErrorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWithErrorUITests.swift; sourceTree = "<group>"; };
 		2694381128CD435500F3321E /* FileManager+FileURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+FileURL.swift"; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 		26B2921528CCC2E400A82999 /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
 		26B2921828CCC36F00A82999 /* TickerFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerFetcher.swift; sourceTree = "<group>"; };
 		26B2921B28CCC53900A82999 /* TickerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerServiceTests.swift; sourceTree = "<group>"; };
-		26B2921D28CCC54700A82999 /* UserTickersIdServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTickersIdServiceTests.swift; sourceTree = "<group>"; };
+		26B2921D28CCC54700A82999 /* UserTickerIdsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTickerIdsServiceTests.swift; sourceTree = "<group>"; };
 		26B2921F28CCC80E00A82999 /* LocalDataServicePartialSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataServicePartialSpy.swift; sourceTree = "<group>"; };
 		26B2922128CCC97300A82999 /* TickerFetcherStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerFetcherStub.swift; sourceTree = "<group>"; };
 		26C2ED0428CE2E7100236FAB /* ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUITests.swift; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 		8C49E6E22942433100E72EA4 /* OptionalTicker+ExtensionsForViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalTicker+ExtensionsForViewTests.swift"; sourceTree = "<group>"; };
 		8C49E6E629424CEE00E72EA4 /* Ticker+DetailRowViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticker+DetailRowViewModels.swift"; sourceTree = "<group>"; };
 		8C49E6E929424DF200E72EA4 /* Ticker+DetailRowViewModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticker+DetailRowViewModelsTests.swift"; sourceTree = "<group>"; };
-		8C59F483293FCFC700F7A73F /* WatchOSConnectivityProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchOSConnectivityProviderTests.swift; sourceTree = "<group>"; };
+		8C59F483293FCFC700F7A73F /* WatchConnectivityProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityProviderTests.swift; sourceTree = "<group>"; };
 		8C69292728FF1CFC00441BE8 /* Zonda Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zonda Tickers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C69292928FF1CFC00441BE8 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
 		8C69292D28FF1CFE00441BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -499,7 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				26B2921328CCBFF800A82999 /* StringArray+UserTickersTests.swift */,
-				8C59F483293FCFC700F7A73F /* WatchOSConnectivityProviderTests.swift */,
+				8C59F483293FCFC700F7A73F /* WatchConnectivityProviderTests.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -555,7 +555,7 @@
 				26B2921228CCBFC100A82999 /* Utils */,
 				8C3A2F7828C90841001FD018 /* TickerTests.swift */,
 				26B2921B28CCC53900A82999 /* TickerServiceTests.swift */,
-				26B2921D28CCC54700A82999 /* UserTickersIdServiceTests.swift */,
+				26B2921D28CCC54700A82999 /* UserTickerIdsServiceTests.swift */,
 				26C96C6B28CF2E3900698935 /* ModelDataTests.swift */,
 				26C96C6F28CF46CB00698935 /* ModelDataStateTests.swift */,
 			);
@@ -651,7 +651,7 @@
 				8C80553C28B10FC9004AA3D7 /* Remote */,
 				8C80553A28B10FC9004AA3D7 /* Ticker.swift */,
 				2654722E28CBC489008BF37C /* TickerService.swift */,
-				2654723128CBCA2D008BF37C /* UserTickersIdService.swift */,
+				2654723128CBCA2D008BF37C /* UserTickerIdsService.swift */,
 				8C80553B28B10FC9004AA3D7 /* ModelData.swift */,
 				2654723728CBCC34008BF37C /* Utils */,
 			);
@@ -1189,7 +1189,7 @@
 				8C69294E28FF212800441BE8 /* TickerArray+Ticker.swift in Sources */,
 				8C69294A28FF20CD00441BE8 /* OptionalString+FirstCharacter.swift in Sources */,
 				8C69293C28FF202D00441BE8 /* ModelData.swift in Sources */,
-				8C69293E28FF205700441BE8 /* UserTickersIdService.swift in Sources */,
+				8C69293E28FF205700441BE8 /* UserTickerIdsService.swift in Sources */,
 				8C69294228FF209100441BE8 /* TickerService.swift in Sources */,
 				8C69295428FF21A000441BE8 /* ListRowView.swift in Sources */,
 				8C69294128FF207D00441BE8 /* FileManagerDataService.swift in Sources */,
@@ -1225,7 +1225,7 @@
 				2633381328D5FD41000F8F13 /* CurrencyLogoView.swift in Sources */,
 				263337F628D5B8F7000F8F13 /* OptionalString+FirstCharacter.swift in Sources */,
 				8C39197228BFBCAB00E2BB34 /* Double+Pretty.swift in Sources */,
-				2654723528CBCBD8008BF37C /* UserTickersIdService.swift in Sources */,
+				2654723528CBCBD8008BF37C /* UserTickerIdsService.swift in Sources */,
 				8CD9E88A28C3A78300812A8C /* SystemListView.swift in Sources */,
 				8C39197128BFBC9D00E2BB34 /* TickerRowView.swift in Sources */,
 				2633382128D609AF000F8F13 /* AccessoryCircularView.swift in Sources */,
@@ -1270,7 +1270,7 @@
 				8CD5731A2936731200C71D33 /* AccessoryInlineView.swift in Sources */,
 				8CD57317293672AE00C71D33 /* AccessoryRectangularListView.swift in Sources */,
 				8CB901362935342600DFB721 /* OptionalString+FirstCharacter.swift in Sources */,
-				8CB9012C293533EE00DFB721 /* UserTickersIdService.swift in Sources */,
+				8CB9012C293533EE00DFB721 /* UserTickerIdsService.swift in Sources */,
 				8CB9012A293533E800DFB721 /* Ticker.swift in Sources */,
 				8CB901312935340000DFB721 /* LocalDataService.swift in Sources */,
 				8CB9013C293535F400DFB721 /* WatchlistTimelineProvider.swift in Sources */,
@@ -1324,7 +1324,7 @@
 				8C80555B28B10FCA004AA3D7 /* String+GeneratedColor.swift in Sources */,
 				263337F528D5B8DC000F8F13 /* OptionalString+FirstCharacter.swift in Sources */,
 				26B2921928CCC36F00A82999 /* TickerFetcher.swift in Sources */,
-				2654723228CBCA2D008BF37C /* UserTickersIdService.swift in Sources */,
+				2654723228CBCA2D008BF37C /* UserTickerIdsService.swift in Sources */,
 				26C96C6E28CF315C00698935 /* WidgetReloadable.swift in Sources */,
 				8C80555828B10FCA004AA3D7 /* APIResponses.swift in Sources */,
 				2694381228CD435500F3321E /* FileManager+FileURL.swift in Sources */,
@@ -1353,11 +1353,11 @@
 				26B2921C28CCC53900A82999 /* TickerServiceTests.swift in Sources */,
 				26D098A128D8B93900023B1A /* AnalyticsServiceTests.swift in Sources */,
 				26D098A728D8BB2B00023B1A /* AnalyticsServiceLoggerSpy.swift in Sources */,
-				8C59F484293FCFC700F7A73F /* WatchOSConnectivityProviderTests.swift in Sources */,
+				8C59F484293FCFC700F7A73F /* WatchConnectivityProviderTests.swift in Sources */,
 				263337F828D5BAD8000F8F13 /* String+FirstCharacterTests.swift in Sources */,
 				8C49E6EA29424DF200E72EA4 /* Ticker+DetailRowViewModelsTests.swift in Sources */,
 				26B2921428CCBFF800A82999 /* StringArray+UserTickersTests.swift in Sources */,
-				26B2921E28CCC54700A82999 /* UserTickersIdServiceTests.swift in Sources */,
+				26B2921E28CCC54700A82999 /* UserTickerIdsServiceTests.swift in Sources */,
 				26A303AA28CDD24300306C07 /* AutomaticMethodInvokerTests.swift in Sources */,
 				8C3A2F7328C8F71A001FD018 /* String+GeneratedColorTests.swift in Sources */,
 				26B2922028CCC80E00A82999 /* LocalDataServicePartialSpy.swift in Sources */,

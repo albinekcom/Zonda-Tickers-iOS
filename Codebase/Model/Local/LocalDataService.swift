@@ -1,9 +1,9 @@
 protocol LocalDataService {
     
-    func loadUserTickersId() -> [String]
+    func loadUserTickerIds() -> [String]
     func loadTickers() -> [Ticker]
     
-    func save(userTickersId: [String])
+    func save(userTickerIds: [String])
     func save(tickers: [Ticker])
     
 }

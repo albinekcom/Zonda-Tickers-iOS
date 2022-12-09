@@ -2,7 +2,7 @@ import WatchConnectivity
 import XCTest
 @testable import Zonda_Tickers
 
-final class WatchOSConnectivityProviderTests: XCTestCase {
+final class WatchConnectivityProviderTests: XCTestCase {
     
     private var wcSessionPartialSpy: WCSessionPartialSpy!
     private var sut: WatchConnectivityProvider!
@@ -18,12 +18,13 @@ final class WatchOSConnectivityProviderTests: XCTestCase {
     
     // MARK: - Tests
     
-    func test_send() {
-        sut.send(userTickerIds: [])
+    func test_updateUserTickerIds() {
+        sut.updateUserTickerIds([])
         
         XCTAssertTrue(sut === wcSessionPartialSpy.delegate)
         XCTAssertTrue(wcSessionPartialSpy.activateInvoked)
         XCTAssertTrue(wcSessionPartialSpy.updateApplicationContextInvoked)
+        XCTAssertTrue(wcSessionPartialSpy.transferCurrentComplicationUserInfoInvoked)
     }
     
 }
@@ -34,6 +35,7 @@ private final class WCSessionPartialSpy: WCSessionProtocol {
     
     private(set) var activateInvoked = false
     private(set) var updateApplicationContextInvoked = false
+    private(set) var transferCurrentComplicationUserInfoInvoked = false
     
     func activate() {
         activateInvoked = true
@@ -41,6 +43,12 @@ private final class WCSessionPartialSpy: WCSessionProtocol {
     
     func updateApplicationContext(_ applicationContext: [String: Any]) throws {
         updateApplicationContextInvoked = true
+    }
+    
+    func transferCurrentComplicationUserInfo(_ userInfo: [String: Any]) -> WCSessionUserInfoTransfer {
+        transferCurrentComplicationUserInfoInvoked = true
+        
+        return .init()
     }
     
     var delegate: WCSessionDelegate? = nil

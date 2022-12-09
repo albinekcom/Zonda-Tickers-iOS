@@ -38,21 +38,21 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
     
     private var cancellables = Set<AnyCancellable>()
     
-    private let userTickersIdService: UserTickersIdService
+    private let userTickerIdsService: UserTickerIdsService
     private let tickerService: TickerService
     
     init(
-        userTickersIdService: UserTickersIdService,
+        userTickerIdsService: UserTickerIdsService,
         tickerService: TickerService,
         widgetReloadable: WidgetReloadable = WidgetCenter.shared,
         connectivityProvider: ConnectivityProvider = WatchConnectivityProvider()
     ) {
-        self.userTickersIdService = userTickersIdService
+        self.userTickerIdsService = userTickerIdsService
         self.tickerService = tickerService
         self.widgetReloadable = widgetReloadable
         self.connectivityProvider = connectivityProvider
         
-        userTickerIds = userTickersIdService.loaded
+        userTickerIds = userTickerIdsService.loaded
         tickers = tickerService.loaded
         
         connectivityProvider.delegate = self
@@ -62,9 +62,9 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
         }.store(in: &cancellables)
         
         $userTickerIds.sink { [weak self] in
-            self?.userTickersIdService.save(userTickersId: $0)
+            self?.userTickerIdsService.save(userTickerIds: $0)
             
-            self?.connectivityProvider.send(userTickerIds: $0)
+            self?.connectivityProvider.updateUserTickerIds($0)
             
             self?.widgetReloadable.reloadAllTimelines()
         }.store(in: &cancellables)
@@ -74,7 +74,7 @@ final class ModelData: ObservableObject, ConnectivityProviderDelegate {
         let localDataService = serviceFactory.makeLocalDataService()
         
         self.init(
-            userTickersIdService: .init(localDataService: localDataService),
+            userTickerIdsService: .init(localDataService: localDataService),
             tickerService: .init(
                 localDataService: localDataService,
                 tickerFetcher: serviceFactory.makeTickerFetcher()

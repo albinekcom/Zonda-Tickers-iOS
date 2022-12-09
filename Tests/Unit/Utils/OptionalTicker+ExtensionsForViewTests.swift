@@ -13,7 +13,7 @@ final class OptionalTicker_ExtensionsForViewTests: XCTestCase {
     
     func test_changeColor() {
         var optionalTicker: Ticker? = nil
-        XCTAssertEqual(.primary, optionalTicker.changeColor)
+        XCTAssertEqual(.secondary, optionalTicker.changeColor)
         
         optionalTicker = Ticker.stub()
         XCTAssertEqual(.secondary, optionalTicker.changeColor)
