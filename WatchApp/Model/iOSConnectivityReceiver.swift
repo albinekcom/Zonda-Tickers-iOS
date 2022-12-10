@@ -29,7 +29,7 @@ final class iOSConnectivityReceiver: NSObject {
     private func process(message: [String: Any]) {
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.userDidUpdate(
-                tickers: (message[WatchConnectivityKey.Parameter.tickers] as? [String])?.compactMap(\.ticker),
+                tickers: (message[WatchConnectivityKey.Parameter.tickers] as? Data)?.tickers,
                 userTickerIds: message[WatchConnectivityKey.Parameter.userTickerIds] as? [String]
             )
         }
@@ -61,12 +61,10 @@ extension iOSConnectivityReceiver: WCSessionDelegate {
     
 }
 
-private extension String {
+private extension Data {
     
-    var ticker: Ticker? {
-        guard let data = data(using: .utf8) else { return nil }
-        
-        return try? JSONDecoder().decode(Ticker.self, from: data)
+    var tickers: [Ticker]? {
+        try? JSONDecoder().decode([Ticker].self, from: self)
     }
     
 }

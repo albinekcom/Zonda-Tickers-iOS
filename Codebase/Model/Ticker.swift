@@ -125,13 +125,3 @@ extension Ticker: Comparable {
     }
     
 }
-
-extension Ticker {
-    
-    var jsonString: String? {
-        guard let jsonData = try? JSONEncoder().encode(self) else { return nil }
-        
-        return .init(data: jsonData, encoding: .utf8)
-    }
-    
-}

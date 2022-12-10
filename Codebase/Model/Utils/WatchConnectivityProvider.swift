@@ -41,7 +41,7 @@ final class WatchConnectivityProvider: NSObject, ConnectivityProvider {
     
     func update(tickers: [Ticker], userTickerIds: [String]) {
         let message: [String: Any] = [
-            WatchConnectivityKey.Parameter.tickers: tickers.map(\.jsonString),
+            WatchConnectivityKey.Parameter.tickers: (try? JSONEncoder().encode(tickers)) as Any,
             WatchConnectivityKey.Parameter.userTickerIds: userTickerIds
         ]
         
