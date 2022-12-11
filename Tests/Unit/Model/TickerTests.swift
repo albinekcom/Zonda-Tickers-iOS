@@ -33,13 +33,5 @@ final class TickerTests: XCTestCase {
         XCTAssertNil(Ticker(id: "-pln"))
         XCTAssertNotNil(Ticker(id: "btc-pln"))
     }
-    
-    func test_jsonString() {
-        let ticker = Ticker.stub1
-        let tickerJsonString = ticker.jsonString!
-        let decodedTicker = try! JSONDecoder().decode(Ticker.self, from: tickerJsonString.data(using: .utf8)!)
-        
-        XCTAssertEqual(ticker, decodedTicker)
-    }
 
 }
